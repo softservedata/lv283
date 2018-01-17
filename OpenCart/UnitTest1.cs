@@ -1,14 +1,19 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using NUnit.Framework;
+//using NSubstitute;
 
 namespace OpenCart
 {
-    [TestClass]
-    public class UnitTest1
+    //[TestClass]
+    //[TestFixture]
+    public class FunctionalTest
     {
-        [TestMethod]
-        public void TestMethod1()
+        //[TestMethod]
+        //[Test]
+        public void CheckOpen()
         {
+            Console.WriteLine("Ok");
         }
     }
 }
