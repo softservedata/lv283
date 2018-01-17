@@ -1,8 +1,6 @@
 ﻿using System;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using OpenCart.CreateData;
-//using NSubstitute;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -126,9 +124,8 @@ namespace OpenCart
 		[Test]
 		public void EditCorrectUserEmail([Range(1, 3)] int Log, [Range(1, 3)] int Dom, [Range(1, 3)] int End)
 		{
-			//string goodEmail = @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-			//		@"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$";
-			EditEmail(Log, Dom, End);
+			//
+            EditEmail(Log, Dom, End);
 			driver.FindElement(By.Id("input-email")).Submit();
 
 			// Check
@@ -233,11 +230,7 @@ namespace OpenCart
 			confirm.Submit();
 
 			// Check
-			//Assert.AreEqual(password.Text, confirm.Text);
-			//actual = driver.FindElement(By.XPath("//div[@class='alert.alert-success']"));
-			//Console.WriteLine("actual string: " + actual.Text.Trim());
-			//Assert.True(actual.Text.Trim().Contains("Success: Your password has been successfully updated."));
-			actual = driver.FindElement(By.XPath("//div[@class='text-danger']"));
+            actual = driver.FindElement(By.XPath("//div[@class='text-danger']"));
 			Console.WriteLine("actual string: " + actual.Text.Trim());
 			Assert.True(actual.Text.Trim().Contains("Password confirmation does not match password!"));
 		}
