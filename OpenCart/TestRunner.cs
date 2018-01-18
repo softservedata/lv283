@@ -15,19 +15,18 @@ namespace OpenCart
         public void BeforeAllMethods()
         {
             driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         [SetUp]
         public void SetUp()
         {
-            driver.Navigate().GoToUrl("http://283-taqc.ml/");
+            
         }
 
         [OneTimeTearDown]
         public void AfterAllMethods()
         {
-            Thread.Sleep(3000);
             driver.Quit();
 
         }
