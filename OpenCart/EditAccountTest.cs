@@ -14,6 +14,8 @@ namespace OpenCart
 		private IWebElement actual;
 		private IWebElement password;
 		private IWebElement confirm;
+		//
+		RandomString randomString = new RandomString();
 
 		[OneTimeSetUp]
 		public void BeforeAllMethods()
@@ -29,20 +31,9 @@ namespace OpenCart
 			driver.Quit();
 		}
 
-		[SetUp]
-		public void SetUp()
-		{
-
-		}
-
-		[TearDown]
-		public void TearDown()
-		{
-			//Console.WriteLine("[TearDown] TearDown()");
-		}
 
 		/// <summary>
-		/// ++++++++++++++++ LOGIN +++++++++++++
+		/// ++++++++++++++++ ONLY LOGIN +++++++++++++
 		/// </summary>
 		private static readonly object[] LoginData =
 		{
@@ -74,8 +65,6 @@ namespace OpenCart
 		[Test]
 		public void EditAccountCorrectTest([Range(1, 3)] int FirstNameLength, [Range(1, 3)] int LastNameLength, [Range(3, 6)] int TelephoneLength)
 		{
-			//
-			RandomString randomString = new RandomString();
 
 			//
 			driver.FindElement(By.XPath("//a[contains(@href, '/edit')]")).Click();
@@ -108,7 +97,6 @@ namespace OpenCart
 		public void EditEmail(int Log, int Dom, int End)
 		{
 			//
-			RandomString randomString = new RandomString();
 			string email;
 			email = randomString.GetRandomString(Log) + "@" + randomString.GetRandomString(Dom) + "." + randomString.GetRandomString(End);
 
@@ -145,13 +133,10 @@ namespace OpenCart
 			Assert.IsTrue(actual.Text.Contains("Edit Information"));
 		}
 
-		/// +++++++++++++++++++++++ Password +++++++++++++++++++
+		/// +++++++++++++++++++++++ Edit Password +++++++++++++++++++
 		/// 
 		public void EditPassword(int LengthPassword)
 		{
-			//
-			RandomString randomString = new RandomString();
-
 			//
 			IWebElement editAccountButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
 			editAccountButton.Click();
@@ -203,8 +188,7 @@ namespace OpenCart
 
 		public void EditConfirm(int LengthConfirm)
 		{
-			//
-			RandomString randomString = new RandomString();
+
 
 			//
 			IWebElement editAccountButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
