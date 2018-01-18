@@ -5,12 +5,13 @@ using OpenQA.Selenium;
 
 namespace OpenCart
 {
+	[TestFixture, Order(2)]
 	public class EditPasswordTest : TestManager
 	{
 		RandomString randomString = new RandomString();
 
 		public static readonly object[] LoginData =
-        {
+		{
 			new object[] { "lion@gmail.com", "qwerty" }
 		};
 
@@ -94,8 +95,6 @@ namespace OpenCart
 
 		public void EditConfirm(int LengthConfirm)
 		{
-
-
 			//
 			IWebElement editAccountButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
 			editAccountButton.Click();

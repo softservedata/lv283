@@ -6,7 +6,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace OpenCart
 {
-	[TestFixture]
+	[TestFixture, Order(3)]
 	class EditAccountDataTest : TestManager
 	{
 		RandomString randomString = new RandomString();
@@ -40,7 +40,7 @@ namespace OpenCart
 			Assert.IsTrue(actual.GetAttribute("href").Contains("logout"));
 		}
 
-		[Test, Order(3)]
+		[Test, Order(8)]
 		public void EditAccountCorrectTest([Range(1, 3)] int FirstNameLength, [Range(1, 3)] int LastNameLength, [Range(3, 6)] int TelephoneLength)
 		{
 
@@ -65,8 +65,6 @@ namespace OpenCart
 			Assert.IsFalse(actual.Text.Contains("Edit Information"));
 		}
 
-
-
 		private static readonly object[] EditData =
 		{
 			new object[] {"lion@gmail.com"}
@@ -87,7 +85,7 @@ namespace OpenCart
 
 		}
 
-		[Test, Order(4)]
+		[Test, Order(9)]
 		public void EditCorrectUserEmail([Range(1, 3)] int Log, [Range(1, 3)] int Dom, [Range(1, 3)] int End)
 		{
 			//
@@ -99,7 +97,7 @@ namespace OpenCart
 			Assert.IsFalse(actual.Text.Contains("Edit Information"));
 		}
 
-		[Test, Order(5)]
+		[Test, Order(10)]
 		public void EditInCorrectUserEmail([Range(33, 35)] int Log, [Range(33, 35)] int Dom, [Range(33, 35)] int End)
 		{
 			//

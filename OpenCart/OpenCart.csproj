@@ -61,11 +61,12 @@
   <ItemGroup>
     <Compile Include="CreateData\RandomString.cs" />
     <Compile Include="EditAccountDataTest.cs" />
-    <Compile Include="EditAccountTest.cs" />
+    <Compile Include="EditLoginTest.cs" />
     <Compile Include="EditPasswordTest.cs" />
     <Compile Include="LoginTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestManager.cs" />
+    <Compile Include="TestManagerFirefox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
