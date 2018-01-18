@@ -80,5 +80,14 @@ namespace OpenCartTest
             }
 
         }
+
+        [Test]
+        public void Test()
+        {
+            driver.FindElement(By.Name("search")).SendKeys("%");
+            driver.FindElement(By.CssSelector(".btn.btn-default.btn-lg")).Click();
+
+            driver.FindElement(By.XPath("//ul[@class = 'pagination']//a[text() = '>']")).Click();
+        }
     }
 }
