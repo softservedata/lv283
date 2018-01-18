@@ -8,33 +8,17 @@ using System.Collections.ObjectModel;
 namespace OpenCart
 {
     [TestFixture]
-    public class FunctionalTest1
+    public class FunctionalTest1 : TestRunner
     {
-        private IWebDriver driver;
 
 
-        [OneTimeSetUp]
-        public void BeforeAllMethods()
+        private static readonly object[] CurrencyData =
         {
-            driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        }
+            new object[] { "MacBook","iPhone"},
+            new object[] { "MacBook", "MacBook"}
+        };
 
-        [SetUp]
-        public void SetUp()
-        {
-            driver.Navigate().GoToUrl("http://283-taqc.ml/");
-        }
-
-        [OneTimeTearDown]
-        public void AfterAllMethods()
-        {
-            Thread.Sleep(3000);
-            driver.Quit();
-
-        }
-
-        //[Test]
+        [Test]
         public void CheckEmptyDropDown()
         {
             driver.FindElement(By.CssSelector(".btn.btn-inverse.btn-block.btn-lg.dropdown-toggle")).Click();
@@ -65,30 +49,36 @@ namespace OpenCart
         }
 
 
-        [Test]
-        public void CheckShoppingCart()
+        [Test, TestCaseSource(nameof(CurrencyData))]
+        public void DeleteDropDown2Items(string itemname1, string itemname2)
         {
-            driver.FindElement(By.XPath("//a[text()='MacBook']/../../../div[@class='button-group']/button[1]")).Click();
+
+            driver.FindElement(By.XPath("//a[text()='" + itemname1 + "']/../../../div[@class='button-group']/button[1]")).Click();
             Thread.Sleep(1000);
-            driver.FindElement(By.XPath("//a[text()='iPhone']/../../../div[@class='button-group']/button[1]")).Click();
+            driver.FindElement(By.XPath("//a[text()='" + itemname2 + "']/../../../div[@class='button-group']/button[1]")).Click();
             Thread.Sleep(1000);
+
 
             IWebElement dropdown = driver.FindElement(By.CssSelector(".btn.btn-inverse.btn-block.btn-lg.dropdown-toggle"));
             dropdown.Click();
-            IWebElement cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text() = 'MacBook']"));
-            Assert.AreEqual("MacBook", cart.Text);
-            cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text()='iPhone']"));
-            Assert.AreEqual("iPhone", cart.Text);
+            IWebElement cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text() = '" + itemname1 + "']"));
+            Assert.AreEqual(itemname1, cart.Text);
+            cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text()='" + itemname2 + "']"));
+            Assert.AreEqual(itemname2, cart.Text);
 
-            cart = driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button"));
-            cart.Click();
+            driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button")).Click();
             Thread.Sleep(1000);
             dropdown.Click();
-            cart = driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button"));
-            cart.Click();
+
+            if (itemname1 != itemname2)
+            {
+                driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button")).Click();
+                dropdown.Click();
+            }
+
             cart = driver.FindElement(By.CssSelector(".dropdown-menu.pull-right"));
             Thread.Sleep(1000);
-            dropdown.Click();
+
             Assert.AreEqual("Your shopping cart is empty!", cart.Text);
 
         }
