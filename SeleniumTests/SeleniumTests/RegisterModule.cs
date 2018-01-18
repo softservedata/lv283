@@ -1,13 +1,7 @@
-﻿using System;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
 
 namespace SeleniumTests
 {
@@ -23,8 +17,6 @@ namespace SeleniumTests
         public bool Register(string email, string password)
         {
             bool isRegistered = false;
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            //driver.Navigate().GoToUrl("http://zewer.beget.tech");
             driver.FindElement(By.ClassName("caret")).Click();
             driver.FindElement(By.LinkText("Register")).Click();
             driver.FindElement(By.Name("firstname")).Clear();
@@ -77,13 +69,16 @@ namespace SeleniumTests
 
         public bool DeleteUser(string email)
         {
+            string admin = "admin";
+            string adminPassword = "lv-283";
+            string adminPanelLink = "http://zewer.beget.tech/admin";
             bool isDeleted = false;
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            driver.Navigate().GoToUrl("http://zewer.beget.tech/admin");
+
+            driver.Navigate().GoToUrl(adminPanelLink);
             driver.FindElement(By.Name("username")).Clear();
-            driver.FindElement(By.Name("username")).SendKeys("admin");
+            driver.FindElement(By.Name("username")).SendKeys(admin);
             driver.FindElement(By.Name("password")).Clear();
-            driver.FindElement(By.Name("password")).SendKeys("lv-283");
+            driver.FindElement(By.Name("password")).SendKeys(adminPassword);
             driver.FindElement(By.CssSelector(".btn.btn-primary")).Click();
             driver.FindElement(By.CssSelector(".fa.fa-user.fw")).Click();
             driver.FindElement(By.XPath("//li[@id='menu-customer']/ul/li")).Click();
@@ -94,8 +89,6 @@ namespace SeleniumTests
             driver.FindElement(By.CssSelector(".btn.btn-danger")).Click();
 
             driver.SwitchTo().Alert().Accept();
-            //driver.FindElement(By.CssSelector(".fa.fa-trash-o")).Click();
-            //alert alert-success
 
             if (driver.FindElement(By.ClassName("close")).Displayed)
             {
