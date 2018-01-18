@@ -76,7 +76,7 @@ namespace OpenCartTest
 
             foreach (IWebElement el in elements)
             {
-                Assert.IsTrue(el.Text.Contains("Ex Tax:"));
+                Assert.IsTrue(el.Text.Contains("Ex Tax: "));
             }
 
         }
