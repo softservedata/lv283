@@ -63,13 +63,28 @@ namespace OpenCart
             Assert.NotNull(driver.FindElement(By.XPath("//a[text()='" + itemName + "']")));
         }
 
-        [Test, Order(2), TestCaseSource(nameof(LikedData))]////////kkjkj
+        [Test, Order(2), TestCaseSource(nameof(LikedData))]
         public void VerifyRemovingFromWishList(string itemName)
         {
             driver.FindElement(By.Id("wishlist-total")).Click();
             driver.FindElement(By.XPath("//a[text()='" + itemName + "']/../..//a[@class='btn btn-danger']")).Click();
             IReadOnlyCollection<IWebElement> iweb = driver.FindElements(By.XPath("//a[text()='" + itemName + "']"));
             Assert.IsTrue(iweb.Count == 0);
+        }
+
+        [Test, Order(2)]
+        public void VerifyAccessToWishList()
+        {
+            driver.FindElement(By.CssSelector(".fa.fa-user")).Click();
+            driver.FindElement(By.XPath("//div[@id='top-links']//a[contains(@href, 'logout')]")).Click();
+            driver.Navigate().GoToUrl("http://zewer.beget.tech/");
+            driver.FindElement(By.Id("wishlist-total")).Click();
+            Assert.IsNotNull(By.Id("input-password"));
+            driver.FindElement(By.Id("input-email")).SendKeys("adelyna.emrie@arockee.com");
+            driver.FindElement(By.Id("input-password")).SendKeys("qwerty");
+            driver.FindElement(By.Id("input-password")).Submit();
+            Assert.IsNotNull(driver.FindElement(By.XPath("//h2[text()='My Wish List']")));
+            Thread.Sleep(3000);
         }
     }
 }
