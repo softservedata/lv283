@@ -13,7 +13,7 @@ namespace OpenCart
         //[Test]
         public void CheckOpen()
         {
-            Console.WriteLine("Ok");
+            Console.WriteLine("Okwwwww");
         }
     }
 }
