@@ -21,12 +21,19 @@ namespace OpenCart
             driver.FindElement(By.XPath("//*[@id='content']//input[@class = 'btn btn-primary']")).Click();
         }
 
+        //[Test]
+        public void logout()
+        {
+            driver.FindElement(By.XPath("//*[@id='top-links']//a[@class='dropdown-toggle']")).Click();
+            driver.FindElement(By.XPath("//*[@id='top-links']//a[text()='Logout']")).Click();
+        }
+
         [Test, Order(2)]
         public void AddShoppingCart()
         {
             driver.FindElement(By.XPath("//*[@id='logo']//img")).Click();
             driver.FindElement(By.XPath("//a[text()='MacBook']/../../../div[@class='button-group']/button[1]")).Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             driver.FindElement(By.XPath("//*[@id='top-links']//a[@title='Shopping Cart']")).Click();
             IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']//a[text() = 'MacBook']"));
             Assert.AreEqual("MacBook", cart.Text);
@@ -47,11 +54,32 @@ namespace OpenCart
         public void DeleteShoppingCart()
         {
             driver.FindElement(By.XPath("//*[@id='content']//button[2]")).Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']/p"));
             Assert.AreEqual("Your shopping cart is empty!", cart.Text);
             driver.FindElement(By.XPath("//*[@id='top-links']//a[@class='dropdown-toggle']")).Click();
             driver.FindElement(By.XPath("//*[@id='top-links']//a[text()='Logout']")).Click();
+        }
+
+        [Test, Order(5)]
+        public void SaveShoppingCart()
+        {
+            login();
+
+            driver.FindElement(By.XPath("//*[@id='menu']//a[text() = 'Tablets']")).Click();
+            driver.FindElement(By.XPath("//*[@id='content']//div[@class = 'button-group']/button[1]")).Click();
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//*[@id='top-links']//a[@title='Shopping Cart']")).Click();
+
+            logout();
+
+            login();
+
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//*[@id='top-links']//a[@title='Shopping Cart']")).Click();
+            Thread.Sleep(1000);
+            IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']//a[text()='Samsung Galaxy Tab 10.1']"));
+            Assert.AreEqual("Samsung Galaxy Tab 10.1", cart.Text);
         }
     }
 }
