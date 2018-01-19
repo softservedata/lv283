@@ -65,6 +65,31 @@ namespace OpenCart
 			Assert.IsFalse(actual.Text.Contains("Edit Information"));
 		}
 
+		[Test, Order(9)]
+		public void EditAccountInCorrectTest([Range(34, 36)] int FirstNameLength, [Range(34, 36)] int LastNameLength, [Range(36, 38)] int TelephoneLength)
+		{
+
+			//
+			driver.FindElement(By.XPath("//a[contains(@href, '/edit')]")).Click();
+
+			//
+			driver.FindElement(By.Id("input-firstname")).Clear();
+			driver.FindElement(By.Id("input-firstname")).SendKeys(randomString.GetRandomString(FirstNameLength));
+
+			//
+			driver.FindElement(By.Id("input-lastname")).Clear();
+			driver.FindElement(By.Id("input-lastname")).SendKeys(randomString.GetRandomString(LastNameLength));
+
+			//
+			driver.FindElement(By.Id("input-telephone")).Clear();
+			driver.FindElement(By.Id("input-telephone")).SendKeys(randomString.GetRandomString(TelephoneLength));
+			driver.FindElement(By.Id("input-lastname")).Submit();
+
+			// Check
+			actual = driver.FindElement(By.XPath("//a[contains(@href, '/edit')]"));
+			Assert.IsTrue(actual.Text.Contains("Edit Information"));
+		}
+
 		private static readonly object[] EditData =
 		{
 			new object[] {"lion@gmail.com"}
@@ -85,7 +110,7 @@ namespace OpenCart
 
 		}
 
-		[Test, Order(9)]
+		[Test, Order(10)]
 		public void EditCorrectUserEmail([Range(1, 3)] int Log, [Range(1, 3)] int Dom, [Range(1, 3)] int End)
 		{
 			//
@@ -97,7 +122,7 @@ namespace OpenCart
 			Assert.IsFalse(actual.Text.Contains("Edit Information"));
 		}
 
-		[Test, Order(10)]
+		[Test, Order(11)]
 		public void EditInCorrectUserEmail([Range(33, 35)] int Log, [Range(33, 35)] int Dom, [Range(33, 35)] int End)
 		{
 			//

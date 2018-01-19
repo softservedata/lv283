@@ -42,6 +42,7 @@ namespace OpenCart
 		/// <summary>
 		/// +++++++++++++++++++++++ Edit Password +++++++++++++++++++
 		/// <summary>
+		/// 
 		public void EditPassword(int LengthPassword)
 		{
 			//
