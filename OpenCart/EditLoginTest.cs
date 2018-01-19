@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 namespace OpenCart
 {
     [TestFixture, Order(1)]
-    public class EditLoginTest :LoginTest
+    public class EditLoginTest :TestManager
 	{
 
 		[Test, Order(1), TestCaseSource(nameof(LoginData))]

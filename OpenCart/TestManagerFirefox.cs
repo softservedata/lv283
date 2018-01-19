@@ -9,7 +9,7 @@ namespace OpenCart
 	public class TestManagerFirefox
 	{
 		protected IWebElement editButton;
-		protected IWebDriver driver;
+		protected IWebDriver driverfox;
 		protected IWebElement actual;
 		protected IWebElement password;
 		protected IWebElement confirm;
@@ -19,15 +19,15 @@ namespace OpenCart
 		[OneTimeSetUp]
 		public void BeforeAllMethods()
 		{
-			driver = new FirefoxDriver();
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-			driver.Navigate().GoToUrl("http://283-taqc.ml/");
+			driverfox = new FirefoxDriver();
+			driverfox.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+			driverfox.Navigate().GoToUrl("http://283-taqc.ml/");
 		}
 
 		[OneTimeTearDown]
 		public void AfterAllMethods()
 		{
-			driver.Quit();
+			driverfox.Quit();
 		}
 	}
 }

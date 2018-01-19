@@ -12,9 +12,7 @@ namespace OpenCart
 		protected IWebDriver driver;
 		protected IWebElement actual;
 		protected IWebElement password;
-		protected IWebElement confirm;
-
-		
+		protected IWebElement confirm;		
 
 		[OneTimeSetUp]
 		public void BeforeAllMethods()
@@ -29,5 +27,41 @@ namespace OpenCart
 		{
 			driver.Quit();
 		}
+
+		public static readonly object[] LoginData =
+		{
+			new object[] { "lion@gmail.com", "qwerty" }
+		};
+
+
+		public void CheckLoginUser(string Email, string Password)
+		{
+			//
+			driver.FindElement(By.ClassName("caret")).Click();
+
+			//
+			driver.FindElement(By.XPath("//a[contains(@href, '/login')]")).Click();
+
+			//
+			driver.FindElement(By.Id("input-email")).Clear();
+			driver.FindElement(By.Id("input-email")).SendKeys(Email);
+
+			//
+			driver.FindElement(By.Id("input-password")).Clear();
+			driver.FindElement(By.Id("input-password")).SendKeys(Password);
+			driver.FindElement(By.Id("input-password")).Submit();
+
+		}
+
+		public void LogoutUser()
+		{
+			//
+			driver.FindElement(By.ClassName("caret")).Click();
+
+			//
+			driver.FindElement(By.XPath("//a[contains(@href, '/logout')]")).Click();
+		}
+
+
 	}
 }

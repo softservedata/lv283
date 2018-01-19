@@ -1,45 +1,27 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenCart.CreateData;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace OpenCart
 {
 	[TestFixture, Order(3)]
+
 	class EditAccountDataTest : TestManager
 	{
 		RandomString randomString = new RandomString();
 
-		public static readonly object[] LoginData =
-		{
-			new object[] { "lion@gmail.com", "qwerty" }
-		};
-
 		[Test, Order(1), TestCaseSource(nameof(LoginData))]
-
-		public void CheckLoginUser(string Email, string Password)
+		public void LoginUser(string Email, string Password)
 		{
 			//
-			driver.FindElement(By.ClassName("caret")).Click();
-
-			//
-			driver.FindElement(By.XPath("//a[contains(@href, '/login')]")).Click();
-
-			//
-			driver.FindElement(By.Id("input-email")).Clear();
-			driver.FindElement(By.Id("input-email")).SendKeys(Email);
-
-			//
-			driver.FindElement(By.Id("input-password")).Clear();
-			driver.FindElement(By.Id("input-password")).SendKeys(Password);
-			driver.FindElement(By.Id("input-password")).Submit();
+			CheckLoginUser(Email, Password);
 
 			//Check
 			actual = driver.FindElement(By.XPath("//a[contains(@href, '/logout')]"));
 			Assert.IsTrue(actual.GetAttribute("href").Contains("logout"));
 		}
 
+		
 		[Test, Order(8)]
 		public void EditAccountCorrectTest([Range(1, 3)] int FirstNameLength, [Range(1, 3)] int LastNameLength, [Range(3, 6)] int TelephoneLength)
 		{
@@ -66,7 +48,7 @@ namespace OpenCart
 		}
 
 		[Test, Order(9)]
-		public void EditAccountInCorrectTest([Range(34, 36)] int FirstNameLength, [Range(34, 36)] int LastNameLength, [Range(36, 38)] int TelephoneLength)
+		public void EditAccountInCorrectTest([Range(33, 36)] int FirstNameLength, [Range(33, 36)] int LastNameLength, [Range(33, 36)] int TelephoneLength)
 		{
 
 			//
