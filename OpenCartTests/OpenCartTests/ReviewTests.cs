@@ -15,6 +15,7 @@ namespace OpenCartTests
     {
         // new StreamReader(@"F:\Git\OpenCartTests\OpenCartTests\BigReview.txt").ReadToEnd().Insert(100, "This is additional string")
         //Data for tests
+      
         private static readonly object[] ReviewData =
         {
             new object[] { "NotAuthorizedCustomer", "This review created by NotAuthorizedUser" },
@@ -26,8 +27,8 @@ namespace OpenCartTests
         {
             new object[] { "Has excactly 25 characts." },
             //Can't run tasts with a lot of characters or streamreader
-            new object[] { new StreamReader(@"D:\Temp\OpenCartTests\OpenCartTests\BigReview.txt").ReadToEnd().Remove(0,1)},
-            new object[] { new StreamReader(@"D:\Temp\OpenCartTests\OpenCartTests\BigReview.txt").ReadToEnd().Remove(0,2)}
+            new object[] { new StreamReader(@"*\Review.txt").ReadToEnd().Remove(0,1)},
+            new object[] { new StreamReader(@"*\Review.txt").ReadToEnd().Remove(0,2)}
         };
         //
         private static readonly object[] ReviewBoundariesInValid =
@@ -35,8 +36,8 @@ namespace OpenCartTests
             new object[] { "Has excactly 24 characts" },
             new object[] { "Has excactly 21 chars" },
             //Can't run tasts with a lot of characters or streamreader
-            new object[] {new StreamReader(@"D:\Temp\OpenCartTests\OpenCartTests\BigReview.txt").ReadToEnd() },
-            new object[] { new StreamReader(@"D:\Temp\OpenCartTests\OpenCartTests\BigReview.txt").ReadToEnd().Insert(0, "Bonus") } };         
+            new object[] {new StreamReader(@"*\Review.txt").ReadToEnd() },
+            new object[] { new StreamReader(@"*\Review.txt").ReadToEnd().Insert(0, "Bonus") } };         
         //
         [Test, TestCaseSource(nameof(ReviewData)), Order(1)]
         public void NotLoggedUserReviewCreation(string customerName, string review)
