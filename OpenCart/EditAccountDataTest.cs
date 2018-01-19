@@ -36,6 +36,10 @@ namespace OpenCart
 			//
 			driver.FindElement(By.Id("input-lastname")).Clear();
 			driver.FindElement(By.Id("input-lastname")).SendKeys(randomString.GetRandomString(LastNameLength));
+			
+			//
+			driver.FindElement(By.Id("input-fax")).Clear();
+			driver.FindElement(By.Id("input-lastname")).SendKeys("Good!");
 
 			//
 			driver.FindElement(By.Id("input-telephone")).Clear();
