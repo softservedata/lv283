@@ -28,10 +28,10 @@ namespace OpenCart
 		public void EditPassword(int LengthPassword)
 		{
 			//
-			IWebElement editAccountButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
+			editAccountButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
 			editAccountButton.Click();
 
-			//
+			//Fill "Password" field
 			password = driver.FindElement(By.Id("input-password"));
 			password.Clear();
 			password.SendKeys(randomString.GetRandomString(LengthPassword));
@@ -68,8 +68,8 @@ namespace OpenCart
 		{
 			//
 			EditPassword(LengthPassword);
-
 			password.Submit();
+
 			// Check
 			actual = driver.FindElement(By.XPath("//div[@class='text-danger']"));
 			Console.WriteLine("actual string: " + actual.Text.Trim());
@@ -79,19 +79,18 @@ namespace OpenCart
 		public void EditConfirm(int LengthConfirm)
 		{
 			//
-			IWebElement editAccountButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
+			editAccountButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
 			editAccountButton.Click();
 
-			//
+			//Fill "Password" field
 			password = driver.FindElement(By.Id("input-password"));
 			password.Clear();
 			password.SendKeys("qwerty");
 
-			//
+			//Fill "Confirm" field
 			confirm = driver.FindElement(By.Id("input-confirm"));
 			confirm.Clear();
 			confirm.SendKeys(randomString.GetRandomString(LengthConfirm));
-			//Thread.Sleep(1000);
 		}
 
 		[Test, Order(6)]
@@ -119,16 +118,16 @@ namespace OpenCart
 		[Test, TestCaseSource(nameof(PasswordData)), Order(7)]
 		public void EditConfirmCorectDataTest(string Password, string Confirm)
 		{
-			//
+			//"Password" button
 			editButton = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
 			editButton.Click();
 
-			//
+			//Fill "Password" field
 			password = driver.FindElement(By.Id("input-password"));
 			password.Clear();
 			password.SendKeys(Password);
 
-			//
+			//Fill "Confirm" field
 			confirm = driver.FindElement(By.Id("input-confirm"));
 			confirm.Clear();
 			confirm.SendKeys(Confirm);

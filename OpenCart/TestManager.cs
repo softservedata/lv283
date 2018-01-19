@@ -12,7 +12,8 @@ namespace OpenCart
 		protected IWebDriver driver;
 		protected IWebElement actual;
 		protected IWebElement password;
-		protected IWebElement confirm;		
+		protected IWebElement confirm;
+		protected IWebElement editAccountButton;
 
 		[OneTimeSetUp]
 		public void BeforeAllMethods()
@@ -36,17 +37,15 @@ namespace OpenCart
 
 		public void CheckLoginUser(string Email, string Password)
 		{
-			//
+			//"Login" button
 			driver.FindElement(By.ClassName("caret")).Click();
-
-			//
 			driver.FindElement(By.XPath("//a[contains(@href, '/login')]")).Click();
 
-			//
+			//Fill "Email" field
 			driver.FindElement(By.Id("input-email")).Clear();
 			driver.FindElement(By.Id("input-email")).SendKeys(Email);
 
-			//
+			//Fill "Password" field
 			driver.FindElement(By.Id("input-password")).Clear();
 			driver.FindElement(By.Id("input-password")).SendKeys(Password);
 			driver.FindElement(By.Id("input-password")).Submit();
