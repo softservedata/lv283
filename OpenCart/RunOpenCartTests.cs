@@ -35,17 +35,18 @@ namespace OpenCart
             IWebElement searchSpan = driver.FindElement(By.ClassName("caret"));
             searchSpan.Click();
 
-            IWebElement search = driver.FindElement(By.LinkText("Login"));
+            IWebElement search = driver.FindElement(By.XPath("//div[@id='top-links']//a[contains(@href, 'account/login')]"));
             search.Click();
 
             IWebElement email = driver.FindElement(By.Id("input-email"));
             email.SendKeys("u1557328@mvrht.net");
 
             IWebElement password = driver.FindElement(By.Id("input-password"));
-            password.SendKeys("qwerty");
+            password.SendKeys("qwerty");password.Submit();
 
-            IWebElement loginButton = driver.FindElement(By.CssSelector("input.btn.btn-primary"));
-            loginButton.Click();
+            //    IWebElement loginButton = driver.FindElement(By.CssSelector("input.btn.btn-primary"));
+            //    loginButton.Click();
+            //
         }
     }
 }

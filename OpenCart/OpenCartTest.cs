@@ -16,7 +16,7 @@ namespace OpenCart
             IWebElement addressBook = driver.FindElement(By.XPath("//a[contains(@href, '/address')]"));
             addressBook.Click();
 
-            IWebElement deleteButton = driver.FindElement(By.XPath("//*[@id='content']/div[1]/table/tbody/tr[2]/td[2]/a[2]"));
+            IWebElement deleteButton = driver.FindElement(By.XPath("//*[@id='content']//tr[2]/td[2]/a[2]"));
             deleteButton.Click();
 
             //Check
