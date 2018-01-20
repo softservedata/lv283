@@ -59,7 +59,6 @@ namespace OpenCart
 
 
             OpenQA.Selenium.Support.UI.SelectElement selectCountry = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-country")));
-        /// was mistake, should change    IWebElement country = driver.FindElement(By.Id("input-country"));
             selectCountry.SelectByText("United Kingdom");
 
 
