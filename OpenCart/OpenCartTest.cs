@@ -57,11 +57,14 @@ namespace OpenCart
             IWebElement postcode = driver.FindElement(By.Id("input-postcode"));
             postcode.SendKeys("88015");
 
-            IWebElement country = driver.FindElement(By.Id("input-country"));
-            country.SendKeys("United Kingdom");
 
-            IWebElement state = driver.FindElement(By.Id("input-zone"));
-            state.SendKeys("Greater London");
+            OpenQA.Selenium.Support.UI.SelectElement selectCountry = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-country")));
+        /// was mistake, should change    IWebElement country = driver.FindElement(By.Id("input-country"));
+            selectCountry.SelectByText("United Kingdom");
+
+
+            OpenQA.Selenium.Support.UI.SelectElement selectState = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-zone")));
+            selectState.SelectByText("Greater London");
 
             IWebElement continueButton = driver.FindElement(By.CssSelector("input.btn.btn-primary"));
             continueButton.Click();
@@ -103,11 +106,11 @@ namespace OpenCart
             postcode.Clear();
             postcode.SendKeys("33167");
 
-            IWebElement country = driver.FindElement(By.Id("input-country"));
-            country.SendKeys("Ireland");
+            OpenQA.Selenium.Support.UI.SelectElement selectCountryEdit = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-country")));
+            selectCountryEdit.SelectByText("Ireland");
 
-            IWebElement state = driver.FindElement(By.Id("input-zone"));
-            state.SendKeys("Dublin");
+            OpenQA.Selenium.Support.UI.SelectElement selectStateEdit = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-zone")));
+            selectStateEdit.SelectByText("Dublin");
 
             IWebElement continueButton = driver.FindElement(By.CssSelector("input.btn.btn-primary"));
             continueButton.Click();
