@@ -11,6 +11,7 @@ using OpenCart.Base;
 
 namespace OpenCart
 {
+    [TestFixture]
     public class CurrencyTest : TestRunner
     {
         private static readonly object[] CurrencyData =
