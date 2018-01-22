@@ -32,21 +32,11 @@ namespace OpenCart
         [SetUp]
         public void Logging()
         {
-            IWebElement searchSpan = driver.FindElement(By.ClassName("caret"));
-            searchSpan.Click();
-
-            IWebElement search = driver.FindElement(By.XPath("//div[@id='top-links']//a[contains(@href, 'account/login')]"));
-            search.Click();
-
-            IWebElement email = driver.FindElement(By.Id("input-email"));
-            email.SendKeys("u1557328@mvrht.net");
-
-            IWebElement password = driver.FindElement(By.Id("input-password"));
-            password.SendKeys("qwerty");password.Submit();
-
-            //    IWebElement loginButton = driver.FindElement(By.CssSelector("input.btn.btn-primary"));
-            //    loginButton.Click();
-            //
+            driver.FindElement(By.ClassName("caret")).Click();
+            driver.FindElement(By.XPath("//div[@id='top-links']//a[contains(@href, 'account/login')]")).Click();
+            driver.FindElement(By.Id("input-email")).SendKeys("u1557328@mvrht.net");
+            driver.FindElement(By.Id("input-password")).SendKeys("qwerty"); 
+            driver.FindElement(By.CssSelector("input.btn.btn-primary")).Click();
         }
     }
 }
