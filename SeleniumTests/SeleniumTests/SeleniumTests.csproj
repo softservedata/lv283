@@ -65,6 +65,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Data\Users\User.cs" />
+    <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="RegisterModule.cs" />
     <Compile Include="TestRunner.cs" />
     <Compile Include="Tests.cs" />
