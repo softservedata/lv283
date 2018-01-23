@@ -119,5 +119,16 @@ namespace OpenCart
 			actual = driver.FindElement(By.XPath("//a[contains(@href, '/edit')]"));
 			Assert.IsTrue(actual.Text.Contains("Edit Information"));
 		}
+
+		[Test, Order(12)]
+		public void Logout()
+		{
+			//
+			LogoutUser();
+
+			// Check
+			actual = driver.FindElement(By.XPath("//a[contains(@href, '/login')]"));
+			Assert.IsTrue(actual.GetAttribute("href").Contains("login"));
+		}
 	}
 }

@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateData\RandomString.cs" />
+    <Compile Include="Data\Users\User.cs" />
+    <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="EditAccountDataTest.cs" />
     <Compile Include="EditLoginTest.cs" />
     <Compile Include="EditPasswordTest.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestManager.cs" />
     <Compile Include="TestManagerFirefox.cs" />
+    <Compile Include="UserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
