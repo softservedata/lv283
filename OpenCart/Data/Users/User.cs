@@ -6,7 +6,108 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Data.Users
 {
-    public class User
+
+    public interface IFirstname
+    {
+        ILastname SetFirstname(string firstname);
+}
+
+    public interface ILastname
+    {
+        IEmail SetLastname(string lastname);
+    }
+
+    public interface IEmail
+    {
+        IPhone SetEmail(string email);
+    }
+
+    public interface IPhone
+    {
+        IAddressMain SetPhone(string phone);
+    }
+
+    public interface IAddressMain
+    {
+        ICity SetAddressMain(string addressMain);
+    }
+
+    public interface ICity
+    {
+        IPostcode SetCity(string city);
+    }
+
+    public interface IPostcode
+    {
+        ICoutry SetPostcode(string postcode);
+    }
+
+    public interface ICoutry
+    {
+        IRegionState SetCoutry(string coutry);
+    }
+
+    public interface IRegionState
+    {
+        IPassword SetRegionState(string regionState);
+    }
+
+    public interface IPassword
+    {
+        ISubscribe SetPassword(string password);
+    }
+
+    public interface ISubscribe
+    {
+        IFax SetSubscribe(bool subscribe);
+    }
+
+    public interface IFax : IUserBuilder
+    {
+        ICompany SetFax(string fax);
+    }
+
+    public interface ICompany : IUserBuilder
+    {
+        IAddressAdd SetCompany(string company);
+    }
+
+    public interface IAddressAdd : IUserBuilder
+    {
+        IUserBuilder SetAddressAdd(string addressAdd);
+    }
+
+    public interface IUserBuilder
+    {
+        // 5. Add Builder
+        //User Build();
+        // 6. Add Dependency Inversion
+        IUser Build();
+    }
+
+    // 6. Add Dependency Inversion
+    public interface IUser
+    {
+        string GetFirstname();
+        string GetLastname();
+        string GetEmail();
+        string GetPhone();
+        string GetAddressMain();
+        string GetCity();
+        string GetPostcode();
+        string GetCoutry();
+        string GetRegionState();
+        string GetPassword();
+        bool GetSubscribe();
+        string GetFax();
+        string GetCompany();
+        string GetAddressAdd();
+    }
+
+    public class User : IFirstname, ILastname, IEmail,
+        IPhone, IAddressMain, ICity, IPostcode, ICoutry,
+        IRegionState, IPassword, ISubscribe,
+        IFax, ICompany, IAddressAdd, IUserBuilder, IUser
     {
         // Required
         private string firstname;
@@ -45,95 +146,117 @@ namespace OpenCart.Data.Users
         //}
         //
         // 2. Add public Default Constructor and Setters/Getters
-        public User()
+        //public User()
+        //{ }
+        //
+        // 4. Static Factory
+        private User()
         { }
+
+        // 4. Static Factory
+        //public static User Get()
+        // 5. Add Builder.
+        public static IFirstname Get()
+        {
+            return new User();
+        }
 
         // Setters
 
         // 2.
         //public void SetFirstname(string firstname)
         // 3. Add Fluent Interface
-        public User SetFirstname(string firstname)
+        //public User SetFirstname(string firstname)
+        // 5. Add Builder
+        public ILastname SetFirstname(string firstname)
         {
             this.firstname = firstname;
             return this;
         }
 
-        public User SetLastname(string lastname)
+        public IEmail SetLastname(string lastname)
         {
             this.lastname = lastname;
             return this;
         }
 
-        public User SetEmail(string email)
+        public IPhone SetEmail(string email)
         {
             this.email = email;
             return this;
         }
 
-        public User SetPhone(string phone)
+        public IAddressMain SetPhone(string phone)
         {
             this.phone = phone;
             return this;
         }
 
-        public User SetAddressMain(string addressMain)
+        public ICity SetAddressMain(string addressMain)
         {
             this.addressMain = addressMain;
             return this;
         }
 
-        public User SetCity(string city)
+        public IPostcode SetCity(string city)
         {
             this.city = city;
             return this;
         }
 
-        public User SetPostcode(string postcode)
+        public ICoutry SetPostcode(string postcode)
         {
             this.postcode = postcode;
             return this;
         }
 
-        public User SetCoutry(string coutry)
+        public IRegionState SetCoutry(string coutry)
         {
             this.coutry = coutry;
             return this;
         }
 
-        public User SetRegionState(string regionState)
+        public IPassword SetRegionState(string regionState)
         {
             this.regionState = regionState;
             return this;
         }
 
-        public User SetPassword(string password)
+        public ISubscribe SetPassword(string password)
         {
             this.password = password;
             return this;
         }
 
-        public User SetSubscribe(bool subscribe)
+        public IFax SetSubscribe(bool subscribe)
         {
             this.subscribe = subscribe;
             return this;
         }
 
-        public User SetFax(string fax)
+        public ICompany SetFax(string fax)
         {
             this.fax = fax;
             return this;
         }
 
-        public User SetCompany(string company)
+        public IAddressAdd SetCompany(string company)
         {
             this.company = company;
             return this;
         }
 
-        public User SetAddressAdd(string addressAdd)
+        public IUserBuilder SetAddressAdd(string addressAdd)
         {
             this.addressAdd = addressAdd;
+            return this;
+        }
+
+        // 5. Add Builder
+        //public User Build()
+        // 6. Add Dependency Inversion
+        public IUser Build()
+        {
             return this;
         }
 
