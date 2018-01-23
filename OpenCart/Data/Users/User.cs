@@ -215,16 +215,13 @@ namespace OpenCart.Data.Users
 			return this;
 		}
 
-		// 5. Add Builder
-		//public User Build()
-		// 6. Add Dependency Inversion
+		//Add Dependency Inversion
 		public IUser Build()
 		{
 			return this;
 		}
 
 		// Getters
-
 		public string GetFirstname()
 		{
 			return firstname;

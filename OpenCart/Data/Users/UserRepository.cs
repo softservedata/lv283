@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Data.Users
 {
-	// 8. Use Repository
-	// a) Use Static Class
-	// b) All Static Methods
-	// c) Use Pattern Singleton
-	// 9. Use Singleton
+	//Use Repository
+	//Use Singleton
 	public class UserRepository
 	{
 		private volatile static UserRepository instance;
