@@ -87,7 +87,7 @@ namespace SeleniumTests
             driver.FindElement(By.Id("button-filter")).Click();
             driver.FindElement(By.ClassName("text-center")).Click();
             driver.FindElement(By.CssSelector(".btn.btn-danger")).Click();
-
+            //checkVersion
             driver.SwitchTo().Alert().Accept();
 
             if (driver.FindElement(By.ClassName("close")).Displayed)
