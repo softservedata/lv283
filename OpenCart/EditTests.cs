@@ -9,6 +9,7 @@ using OpenQA.Selenium.Chrome;
 using OpenCart.Pages;
 using OpenCart.Data.Users;
 using OpenCart.Data.Passwords;
+using System.Threading;
 
 namespace OpenCart
 {
@@ -17,60 +18,76 @@ namespace OpenCart
 	{
 		//private IWebDriver driver;
 
-		//[SetUp]
-		//public void SetUp()
-		//{
-		//	driver = new ChromeDriver();
-		//	driver.Manage().Window.Maximize();
-		//}
 		//DataProvider
 		private static readonly object[] UsersData =
 		{
             //Use Repository
             //Use Singleton
-            new object[] { UserRepository.Get().AdminUser() }
+            new object[] { UserRepository.Get().ValidUser() }
 		};
 
 		//Parameterize Test
-		[Test, TestCaseSource(nameof(UsersData))]
+		[Test, Order(1), TestCaseSource(nameof(UsersData))]
 		public void LoginUser(IUser user)
 		{
 			HomePage home = new HomePage(driver);
 			home.goToPage();
 			LoginPage login = home.goToLoginPage();
 			AccountPage accountPage = login.goToAccountPage(user.GetEmail(), user.GetPassword());
-			Console.WriteLine("user.GetEmail() = " + user.GetEmail());
-			Console.WriteLine("user.GetPassword() = " + user.GetPassword());
-			accountPage.goToEditPasswordPage();
-			//accountPage.clickOnLogout();
-		}
-		//DataProvider
-		private static readonly object[] PasswordsData =
-		{
-            //Use Repository
-            //Use Singleton
-            new object[] {  PasswordRepository.Get().AdminPassword() }
-		};
-		[Test, TestCaseSource(nameof(PasswordsData))]
-		public void EditPassword(Data.Passwords.IPassword password)
-		{
-			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
-			editPasswordPage.EnterPassword(password.GetPasswordField());
-
-			editPasswordPage.EnterConfirm(password.GetConfirmField());
-
-			editPasswordPage.ChangePassword(password.GetPasswordField(), password.GetConfirmField());
-			//AccountPage accountPage = login.goToAccountPage(user.GetEmail(), user.GetPassword());
-			//Console.WriteLine("user.GetEmail() = " + user.GetEmail());
-			//Console.WriteLine("user.GetPassword() = " + user.GetPassword());
 			//accountPage.goToEditPasswordPage();
 			//accountPage.clickOnLogout();
 		}
 
-		//[TearDown]
-		//public void TearDown()
-		//{
-		//	driver.Close();
-		//}
+
+		private static readonly object[] PasswordsData =
+		{
+            new object[] {  PasswordRepository.Get().IncorrectPasswordLessThanFour() },
+			new object[] {  PasswordRepository.Get().IncorrectPasswordLessThanTwentyOne() }
+		};
+
+		[Test, Order(2), TestCaseSource(nameof(PasswordsData))]
+		public void EditIncorrectPasswordField(Data.Passwords.IPassword password)
+		{
+			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
+			editPasswordPage.GoToEditPassword();
+			editPasswordPage.EnterPassword(password.GetPasswordField());
+			editPasswordPage.CheckEnterPassword();
+			Thread.Sleep(1000);
+		}
+
+		private static readonly object[] ConfirmsData =
+        {
+			new object[] {  PasswordRepository.Get().IncorrectConfirm() }
+		};
+
+		[Test, Order(3), TestCaseSource(nameof(ConfirmsData))]
+		public void EditIncorrectConfirmField(Data.Passwords.IPassword password)
+		{
+			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
+			editPasswordPage.GoToEditPassword();
+			editPasswordPage.EnterConfirm(password.GetPasswordField(), password.GetConfirmField());
+
+			Thread.Sleep(1000);
+			editPasswordPage.CheckEnterConfirm();			
+		}
+
+		private static readonly object[] CorrectPasswordData =
+        {
+			new object[] {  PasswordRepository.Get().Password4() },
+			new object[] {  PasswordRepository.Get().Password20() },
+			new object[] {  PasswordRepository.Get().Password6() }
+		};
+
+		[Test, Order(4), TestCaseSource(nameof(CorrectPasswordData))]
+		public void ChangePassword(Data.Passwords.IPassword password)
+		{
+
+			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
+			editPasswordPage.GoToEditPassword();
+			editPasswordPage.EnterConfirm(password.GetPasswordField(), password.GetConfirmField());
+			Thread.Sleep(1000);
+			editPasswordPage.CheckChangePassword();
+		}
+
 	}
-}
+	}

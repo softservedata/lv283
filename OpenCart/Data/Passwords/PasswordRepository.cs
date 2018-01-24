@@ -32,13 +32,55 @@ namespace OpenCart.Data.Passwords
 
 		//Data for Admin user from admin panel
 		//Currently incorrect
-		public IPassword AdminPassword()
+		public IPassword IncorrectPasswordLessThanFour()
+		{
+			return Password.Get()
+				.SetPasswordField("qwe")
+				.SetConfirmField("qwe")
+				.Build();
+		}
+
+		public IPassword IncorrectPasswordLessThanTwentyOne()
+		{
+			return Password.Get()
+				.SetPasswordField("q20172017201720172017")
+				.SetConfirmField("q20172017201720172017")
+				.Build();
+		}
+
+		public IPassword IncorrectConfirm()
+		{
+			return Password.Get()
+				.SetPasswordField("qwety")
+				.SetConfirmField("qwerty1111111")
+				.Build();
+		}
+
+		public IPassword Password4()
+		{
+			return Password.Get()
+				.SetPasswordField("qwer")
+				.SetConfirmField("qwer")
+				.Build();
+		}
+
+		public IPassword Password20()
+		{
+			return Password.Get()
+				.SetPasswordField("20172017201720172017")
+				.SetConfirmField("20172017201720172017")
+				.Build();
+		}
+
+		public IPassword Password6()
 		{
 			return Password.Get()
 				.SetPasswordField("qwerty")
 				.SetConfirmField("qwerty")
 				.Build();
 		}
+
+
 
 		public List<IPassword> ExcelPasswords()
 		{
