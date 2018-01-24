@@ -78,7 +78,7 @@ namespace OpenCart.Pages
 			Assert.IsTrue(actual.Text.Contains("Change"));
 		}
 
-			public void Logout()
+		public void Logout()
 		{
 			AccountPage accountPage = new AccountPage(driver);
 			accountPage.clickOnLogout();

@@ -10,6 +10,7 @@ using OpenCart.Pages;
 using OpenCart.Data.Users;
 using OpenCart.Data.Passwords;
 using System.Threading;
+using OpenCart.Data.AccountsInfo;
 
 namespace OpenCart
 {
@@ -52,7 +53,7 @@ namespace OpenCart
 			editPasswordPage.GoToEditPassword();
 			editPasswordPage.EnterPassword(password.GetPasswordField());
 			editPasswordPage.CheckEnterPassword();
-			Thread.Sleep(1000);
+			//Thread.Sleep(1000);
 		}
 
 		private static readonly object[] ConfirmsData =
@@ -66,8 +67,6 @@ namespace OpenCart
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
 			editPasswordPage.GoToEditPassword();
 			editPasswordPage.EnterConfirm(password.GetPasswordField(), password.GetConfirmField());
-
-			Thread.Sleep(1000);
 			editPasswordPage.CheckEnterConfirm();			
 		}
 
@@ -85,9 +84,46 @@ namespace OpenCart
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
 			editPasswordPage.GoToEditPassword();
 			editPasswordPage.EnterConfirm(password.GetPasswordField(), password.GetConfirmField());
-			Thread.Sleep(1000);
 			editPasswordPage.CheckChangePassword();
 		}
+
+		private static readonly object[] AccountData =
+		{
+            new object[] { AccountInfoRepository.Get().InvalidUser() }
+		};
+
+		[Test, Order(5), TestCaseSource(nameof(AccountData))]
+		public void ChangeFirsname(IAccountInfo accountInfo)
+		{
+			EditAccountPage editAccountPage = new EditAccountPage(driver);
+			editAccountPage.GoToEditAccount();
+
+			editAccountPage.EnterFirstname(accountInfo.GetFirstname());
+			editAccountPage.CheckEditInvalideInformation();
+		}
+
+		[Test, Order(6), TestCaseSource(nameof(AccountData))]
+		public void ChangeLastname(IAccountInfo accountInfo)
+		{
+			EditAccountPage editAccountPage = new EditAccountPage(driver);
+			editAccountPage.GoToEditAccount();
+
+			editAccountPage.EnterLastname(accountInfo.GetLastname());
+			editAccountPage.CheckEditInvalideInformation();
+		}
+
+		[Test, Order(7), TestCaseSource(nameof(AccountData))]
+		public void ChangeTelephone(IAccountInfo accountInfo)
+		{
+			EditAccountPage editAccountPage = new EditAccountPage(driver);
+			editAccountPage.GoToEditAccount();
+
+			editAccountPage.EnterTelephone(accountInfo.GetPhone());
+			editAccountPage.CheckEditInvalideInformation();
+			editAccountPage.Logout();
+		}
+
+
 
 	}
 	}

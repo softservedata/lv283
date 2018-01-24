@@ -60,22 +60,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateData\RandomString.cs" />
+    <Compile Include="Data\AccountsInfo\AccountInfo.cs" />
+    <Compile Include="Data\AccountsInfo\AccountInfoRepository.cs" />
     <Compile Include="Data\Passwords\PasswordRepository.cs" />
     <Compile Include="Data\Passwords\Password.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
-    <Compile Include="EditAccountDataTest.cs" />
-    <Compile Include="EditLoginTest.cs" />
+    <Compile Include="FirstVersion\EditAccountDataTest.cs" />
+    <Compile Include="FirstVersion\EditLoginTest.cs" />
     <Compile Include="EditTests.cs" />
     <Compile Include="Pages\AccountPage.cs" />
     <Compile Include="Pages\EditAccountPage.cs" />
-    <Compile Include="EditPasswordTest.cs" />
+    <Compile Include="FirstVersion\EditPasswordTest.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
-    <Compile Include="LoginTest.cs" />
+    <Compile Include="FirstVersion\LoginTest.cs" />
     <Compile Include="Pages\EditPasswordPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestManager.cs" />
+    <Compile Include="FirstVersion\TestManager.cs" />
     <Compile Include="TestRunner.cs" />
   </ItemGroup>
   <ItemGroup>
