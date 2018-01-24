@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\TestRunner.cs" />
+    <Compile Include="BrowsersTest.cs" />
     <Compile Include="CurrencyTest.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
