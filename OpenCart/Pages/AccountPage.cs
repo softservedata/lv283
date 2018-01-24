@@ -18,11 +18,29 @@ namespace OpenCart.Pages
 			PageFactory.InitElements(driver, this);
 		}
 
+		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/password')]")]
+		private IWebElement editPassword;
+
+		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/edit')]")]
+		private IWebElement editAccount;
+
 		[FindsBy(How = How.ClassName, Using = "caret")]
 		private IWebElement myAccount;
 
 		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/logout')]")]
 		private IWebElement logout;
+
+		public EditPasswordPage goToEditPasswordPage()
+		{
+			editPassword.Click();
+        	return new EditPasswordPage(driver);
+		}
+
+		public EditAccountPage goToEditAccountPage()
+		{
+			editPassword.Click();
+			return new EditAccountPage(driver);
+		}
 
 		public void clickOnLogout()
 		{
