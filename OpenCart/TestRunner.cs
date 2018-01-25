@@ -1,7 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 
@@ -11,6 +10,8 @@ namespace OpenCart
 	{
 		protected IWebDriver driver;
 		protected WebDriverWait wait;
+
+		private readonly string url = @"http://283-taqc.ml/";
 
 		[OneTimeSetUp]
 		public void BeforeAllMethods()
@@ -26,10 +27,10 @@ namespace OpenCart
 			driver.Quit();
 		}
 
-		//[SetUp]
-		//public void BeforeTest()
-		//{
-		//	driver.Navigate().GoToUrl("");
-		//}
+		[SetUp]
+		public void BeforeTest()
+		{
+			driver.Navigate().GoToUrl(url);
+		}
 	}
 }

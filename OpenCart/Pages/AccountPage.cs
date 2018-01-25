@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace OpenCart.Pages
 {
 	public class AccountPage:TestRunner
 	{
-		//private IWebDriver driver;
-
 		public AccountPage(IWebDriver driver)
 		{
 			this.driver = driver;
@@ -19,33 +13,34 @@ namespace OpenCart.Pages
 		}
 
 		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/password')]")]
-		private IWebElement editPassword;
+		public IWebElement EditPassword { get; protected set; }
 
 		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/edit')]")]
-		private IWebElement editAccount;
+		public IWebElement EditAccount { get; protected set; }
 
 		[FindsBy(How = How.ClassName, Using = "caret")]
-		private IWebElement myAccount;
+		public IWebElement MyAccount { get; protected set; }
 
 		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/logout')]")]
-		private IWebElement logout;
+		public IWebElement Logout { get; protected set; }
 
-		public EditPasswordPage goToEditPasswordPage()
+		public EditPasswordPage GoToEditPasswordPage()
 		{
-			editPassword.Click();
+			EditPassword.Click();
         	return new EditPasswordPage(driver);
 		}
 
-		public EditAccountPage goToEditAccountPage()
+		public EditAccountPage GoToEditAccountPage()
 		{
-			editPassword.Click();
+			EditPassword.Click();
 			return new EditAccountPage(driver);
 		}
 
-		public void clickOnLogout()
+		public void ClickOnLogout()
 		{
-			myAccount.Click();
-			logout.Click();
+			MyAccount.Click();
+			Logout.Click();
+			wait.Until(ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, '/login')]")));
 		}
 	}
 }

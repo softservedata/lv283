@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using OpenCart.Data.Users;
 
 namespace OpenCart.Pages
 {
 	public class LoginPage : TestRunner
 	{
-		//private IWebDriver driver;
-		//private WebDriverWait wait;
-
 		public LoginPage(IWebDriver driver)
 		{
 			this.driver = driver;
@@ -22,17 +16,16 @@ namespace OpenCart.Pages
 		}
 
 		[FindsBy(How = How.Id, Using = "input-email")]
-		private IWebElement email;
+		public IWebElement Email { get; protected set; }
 
 		[FindsBy(How = How.Id, Using = "input-password")]
-		private IWebElement password;
-		
-		public AccountPage goToAccountPage(string emails, string passwords)
-		{
+		public IWebElement Password { get; protected set; }
 
-			email.SendKeys(emails);
-			password.SendKeys(passwords);
-			password.Submit();
+		public AccountPage GoToAccountPage(IUser user)
+		{
+			Email.SendKeys(user.GetEmail());
+			Password.SendKeys(user.GetPassword());
+			Password.Submit();
 			wait.Until(ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, '/logout')]")));
 			return new AccountPage(driver);
 		}

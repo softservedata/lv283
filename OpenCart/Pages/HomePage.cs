@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace OpenCart.Pages
 {
-	public class HomePage:TestRunner
+	public class HomePage: TestRunner
 	{
-		//private IWebDriver driver;
-
 		public HomePage(IWebDriver driver)
 		{
 			this.driver = driver;
@@ -19,20 +13,16 @@ namespace OpenCart.Pages
 		}
 
 		[FindsBy(How = How.ClassName, Using = "caret")]
-		private IWebElement myAccount;
+		public IWebElement MyAccount { get; protected set; }
 
 		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/login')]")]
-		private IWebElement login;
+		public IWebElement Login { get; protected set; }
 
-		public void goToPage()
+		public LoginPage GoToLoginPage()
 		{
-			driver.Navigate().GoToUrl("http://283-taqc.ml/");
-		}
-
-		public LoginPage goToLoginPage()
-		{
-			myAccount.Click();
-			login.Click();
+			MyAccount.Click();
+			Login.Click();
+			wait.Until(ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, '/logout')]")));
 			return new LoginPage(driver);
 		}
 	}

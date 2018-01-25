@@ -69,6 +69,9 @@
     <Compile Include="FirstVersion\EditAccountDataTest.cs" />
     <Compile Include="FirstVersion\EditLoginTest.cs" />
     <Compile Include="EditTests.cs" />
+    <Compile Include="PagesTest\EditAccountPageTest.cs" />
+    <Compile Include="PagesTest\EditPasswordPageTest.cs" />
+    <Compile Include="PagesTest\LoginPageTest.cs" />
     <Compile Include="Pages\AccountPage.cs" />
     <Compile Include="Pages\EditAccountPage.cs" />
     <Compile Include="FirstVersion\EditPasswordTest.cs" />

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-
 
 namespace OpenCart.Pages
 {
@@ -19,85 +13,84 @@ namespace OpenCart.Pages
 		}
 
 		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/edit')]")]
-		private IWebElement editButton;
+		public IWebElement EditButton { get; protected set; }
 
 		[FindsBy(How = How.Id, Using = "input-firstname")]
-		private IWebElement firstname;
+		public IWebElement Firstname { get; protected set; }
 
 		[FindsBy(How = How.Id, Using = "input-lastname")]
-		private IWebElement lastname;
+		public IWebElement Lastname { get; protected set; }
 
 		[FindsBy(How = How.Id, Using = "input-email")]
-		private IWebElement email;
+		public IWebElement Email { get; protected set; }
 
 		[FindsBy(How = How.Id, Using = "input-telephone")]
-		private IWebElement telephone;
+		public IWebElement Telephone { get; protected set; }
 
 		[FindsBy(How = How.Id, Using = "input-fax")]
-		private IWebElement fax;
+		public IWebElement Fax { get; protected set; }
 
 		[FindsBy(How = How.XPath, Using = "//a[contains(@href, '/edit')]")]
-		private IWebElement actual;
-
+		public IWebElement Actual { get; protected set; }
 
 		public void GoToEditAccount()
 		{
-			editButton.Click();
+			EditButton.Click();
 		}
 
 		public void EnterFirstname(string firstnameField)
 		{
-			firstname.Clear();
-			firstname.SendKeys(firstnameField);
+			Firstname.Clear();
+			Firstname.SendKeys(firstnameField);
 			///////////
-			firstname.Submit();
+			Firstname.Submit();
 		}
 
 		public void EnterLastname(string lastnameField)
 		{
-			lastname.Clear();
-			lastname.SendKeys(lastnameField);
+			Lastname.Clear();
+			Lastname.SendKeys(lastnameField);
 			///////////
-			lastname.Submit();
+			Lastname.Submit();
 		}
 
 		public void EnterEmail(string emailField)
 		{
-			email.Clear();
-			email.SendKeys(emailField);
+			Email.Clear();
+			Email.SendKeys(emailField);
 			///////////
 		}
 
 		public void EnterTelephone(string telephoneField)
 		{
-			telephone.Clear();
-			telephone.SendKeys(telephoneField);
+			Telephone.Clear();
+			Telephone.SendKeys(telephoneField);
 			///////////
-			telephone.Submit();
+			Telephone.Submit();
 		}
 
 		public void EnterFax(string faxField)
 		{
-			fax.Clear();
-			fax.SendKeys(faxField);
+			Fax.Clear();
+			Fax.SendKeys(faxField);
 			///////////
-			fax.Submit();
+			Fax.Submit();
 		}
 
 		public void CheckEditInvalideInformation()
 		{
-			Assert.IsTrue(actual.Text.Contains("Edit Information"));
+			Assert.IsTrue(Actual.Text.Contains("Edit Information"));
 		}
 
 		public void CheckEditValideInformation()
 		{
-			Assert.IsFalse(actual.Text.Contains("Edit Information"));
+			Assert.IsFalse(Actual.Text.Contains("Edit Information"));
 		}
 
 		public void Logout()
 		{
 			AccountPage accountPage = new AccountPage(driver);
-			accountPage.clickOnLogout();
+			accountPage.ClickOnLogout();
 		}
 
 	}
