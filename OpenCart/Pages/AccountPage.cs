@@ -32,7 +32,7 @@ namespace OpenCart.Pages
 
 		public EditAccountPage GoToEditAccountPage()
 		{
-			EditPassword.Click();
+			EditAccount.Click();
 			return new EditAccountPage(driver);
 		}
 

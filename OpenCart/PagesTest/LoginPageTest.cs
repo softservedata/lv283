@@ -11,7 +11,7 @@ namespace OpenCart.PagesTest
 		{
 			HomePage home = new HomePage(driver);
 			LoginPage login = home.GoToLoginPage();
-			AccountPage accountPage = login.GoToAccountPage(user);
+			//AccountPage accountPage = login.GoToAccountPage(user);
 			wait.Until(ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, '/logout')]")));
 		}
 

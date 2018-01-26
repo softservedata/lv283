@@ -19,6 +19,7 @@ namespace OpenCart
 			driver = new ChromeDriver();
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 			driver.Manage().Window.Maximize();
+			driver.Navigate().GoToUrl(url);
 		}
 
 		[OneTimeTearDown]
@@ -30,7 +31,14 @@ namespace OpenCart
 		[SetUp]
 		public void BeforeTest()
 		{
-			driver.Navigate().GoToUrl(url);
+			//driver.Navigate().GoToUrl(url);
+		}
+
+		[SetUp]
+		public void AfterTest()
+		{
+
+			//driver.Navigate().GoToUrl(url);
 		}
 	}
 }

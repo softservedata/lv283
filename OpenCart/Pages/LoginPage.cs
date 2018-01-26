@@ -21,10 +21,10 @@ namespace OpenCart.Pages
 		[FindsBy(How = How.Id, Using = "input-password")]
 		public IWebElement Password { get; protected set; }
 
-		public AccountPage GoToAccountPage(IUser user)
+		public AccountPage GoToAccountPage(string email, string password)
 		{
-			Email.SendKeys(user.GetEmail());
-			Password.SendKeys(user.GetPassword());
+			Email.SendKeys(email);
+			Password.SendKeys(password);
 			Password.Submit();
 			wait.Until(ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, '/logout')]")));
 			return new AccountPage(driver);

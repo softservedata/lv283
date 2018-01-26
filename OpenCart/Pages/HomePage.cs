@@ -6,6 +6,7 @@ namespace OpenCart.Pages
 {
 	public class HomePage: TestRunner
 	{
+
 		public HomePage(IWebDriver driver)
 		{
 			this.driver = driver;
@@ -22,7 +23,7 @@ namespace OpenCart.Pages
 		{
 			MyAccount.Click();
 			Login.Click();
-			wait.Until(ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, '/logout')]")));
+			//wait.Until(ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, '/logout')]")));
 			return new LoginPage(driver);
 		}
 	}
