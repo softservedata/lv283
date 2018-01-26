@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -22,33 +23,28 @@ namespace OpenCart
         public void CheckAppiumAndroid()
         {
             //
-            //ChromeOptions options = new ChromeOptions();
-            //options.AddArguments("--start-maximized");
-            //options.AddArguments("--no-proxy-server");
-            //options.AddArguments("--no-sandbox");
-            //options.AddArguments("--disable-web-security");
-            //options.AddArguments("--ignore-certificate-errors");
-            //options.AddArguments("--disable-extensions");
-            //options.BinaryLocation = @"C:\Users\yharasym\Downloads\ChromiumPortable\ChromiumPortable.exe";
-            //driver = new ChromeDriver(options);
-            //
-            // Deprecated
-            //DesiredCapabilities capabilities = DesiredCapabilities.Chrome();
-            //driver = new RemoteWebDriver(new Uri("127.0.0.1:8888"), capabilities);
-            //driver = new RemoteWebDriver(service.ServiceUrl, capabilities);
-            //
-            // Do not Work
-            //DesiredCapabilities capabilities = new DesiredCapabilities();
-            //capabilities.SetCapability(ChromeOptions.Capability, options);
-            //driver = new RemoteWebDriver(service.ServiceUrl, capabilities);
-            //
-            // Ok
             AppiumDriver<AndroidElement> driver;
-            //AndroidDriver driver;
+            //AndroidDriver<AppiumWebElement> driver;
+            //AndroidDriver<AndroidElement> driver;
             DesiredCapabilities capabilities = new DesiredCapabilities();
             //
-            capabilities.SetCapability(MobileCapabilityType.DeviceName, "Nexus 5 API 23 Android 6");
+            // Your App File
+            //FileStream app = File.Create(@"C:\Users\yharasym\AndroidStudioProjects\my1.apk");
+            //capabilities.SetCapability(MobileCapabilityType.App, app);
+            //capabilities.SetCapability(MobileCapabilityType.App, @"C:\Users\yharasym\AndroidStudioProjects\ApiDemos-debug.apk");
+            capabilities.SetCapability(MobileCapabilityType.App, @"C:\Users\yharasym\AndroidStudioProjects\app-debug.apk");
+            //
+            // Needed if testing on IOS on a specific device. This will be the UDID
+            // Running from CMD
+            // ...\Android\Sdk\platform-tools>adb devices
+            // emulator-5554   device
+            //capabilities.SetCapability(MobileCapabilityType.DeviceName, "Nexus 5 API 23 Android 6");
+            capabilities.SetCapability(MobileCapabilityType.DeviceName, "emulator-5554");
             //capabilities.SetCapability("deviceName", "Nexus 5 API 23 Android 6");
+            //
+            //capabilities.SetCapability(MobileCapabilityType.Udid, "Nexus_5_API_23_Android_6:5554");
+            capabilities.SetCapability(MobileCapabilityType.Udid, "emulator-5554");
+            //capabilities.SetCapability("udid", "Nexus_5_API_23_Android_6:5554");
             //
             capabilities.SetCapability(MobileCapabilityType.PlatformVersion, "6.0.0");
             //capabilities.SetCapability("platformVersion", "6.0.0");
@@ -56,25 +52,28 @@ namespace OpenCart
             capabilities.SetCapability(MobileCapabilityType.PlatformName, "Android");
             //capabilities.SetCapability("platformName", "Android");
             //
-            capabilities.SetCapability(MobileCapabilityType.Udid, "Nexus_5_API_23_Android_6:5554");
-            //capabilities.SetCapability("udid", "Nexus_5_API_23_Android_6:5554");
-            //
-            //capabilities.SetCapability(MobileCapabilityType.FullReset, "False");
-            capabilities.SetCapability(MobileCapabilityType.FullReset, "True");
+            capabilities.SetCapability(MobileCapabilityType.FullReset, "false");
+            //capabilities.SetCapability(MobileCapabilityType.FullReset, "True");
             //capabilities.SetCapability("fullReset", "True");
             //
-            //capabilities.SetCapability(MobileCapabilityType.a, "True");
+            //capabilities.SetCapability("appPackage", "edu.softserve.com.my");
+            //capabilities.SetCapability("appActivity", "edu.softserve.com.my.MainActivity");
             //
-            //FileStream app = File.Create(@"C:\Users\yharasym\AndroidStudioProjects\my1.apk");
-            //capabilities.SetCapability(MobileCapabilityType.App, app);
-            capabilities.SetCapability(MobileCapabilityType.App, @"C:\Users\yharasym\AndroidStudioProjects\my1.apk");
+            //capabilities.SetCapability("userName", SERVER_USER);
+            //capabilities.SetCapability("password", SERVER_PASSWORD);
+            //
+            //driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities, TimeSpan.FromSeconds(180));
+            //driver = new AppiumDriver(...);
+            //driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities, TimeSpan.FromMinutes(10));
             driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities);
             //
             //
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            //driver.Navigate().GoToUrl("http://atqc-shop.epizy.com");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             //
-            //driver.FindElement(By.CssSelector(".btn.btn-link.dropdown-toggle")).Click();
+            driver.FindElement(By.Id("edu.softserve.com.my:id/editText")).Clear();
+            driver.FindElement(By.Id("edu.softserve.com.my:id/editText")).SendKeys("Ivan");
+            driver.FindElement(By.Id("edu.softserve.com.my:id/button")).Click();
+            //
             Thread.Sleep(4000);
             driver.CloseApp();
         }
