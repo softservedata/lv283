@@ -1,19 +1,28 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Interactions;
 
 namespace AppiumTests
 {
-    [TestFixture]
-    public class UnitTest1
+    public abstract class TestRunner
     {
-        AppiumDriver<AndroidElement> driver;
+        protected AppiumDriver<AndroidElement> driver;
 
-        [Test]
-        public void TestMethod1()
+        [OneTimeSetUp]
+        public void BeforeAllMethods()
         {
             const string ipAndPort = "http://127.0.0.1:4723/wd/hub";
 
@@ -32,16 +41,25 @@ namespace AppiumTests
 
             driver = new AndroidDriver<AndroidElement>(new Uri(ipAndPort), cap);
 
-            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(30));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+        }
 
-            driver.FindElementByAccessibilityId("Text").Click();
-            driver.FindElementByAccessibilityId("LogTextBox").Click();
-            driver.FindElementByAccessibilityId("Add").Click();
-
-            Assert.IsTrue(driver.FindElementById("io.appium.android.apis:id/text").GetAttribute("text").Contains("This is a test"));
-
-            //Thread.Sleep(3000);
+        [OneTimeTearDown]
+        public void AfterAllMethods()
+        {
             driver.Quit();
+        }
+
+        //[SetUp]
+        public void BeforeTest()
+        {
+            //driver.ResetApp();
+        }
+
+        [TearDown]
+        public void AfterTest()
+        {
+            driver.ResetApp();
         }
     }
 }
