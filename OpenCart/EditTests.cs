@@ -75,7 +75,6 @@ namespace OpenCart
 		[Test, Order(4), TestCaseSource(nameof(CorrectPasswordData))]
 		public void ChangePassword(Data.Passwords.IPassword password)
 		{
-
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
 			editPasswordPage.GoToEditPassword();
 			editPasswordPage.EnterConfirm(password.GetPasswordField(), password.GetConfirmField());

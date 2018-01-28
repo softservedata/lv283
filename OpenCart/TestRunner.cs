@@ -3,6 +3,8 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
+using OpenCart.Data.Users;
+using OpenCart.Pages;
 
 namespace OpenCart
 {
@@ -28,17 +30,39 @@ namespace OpenCart
 			driver.Quit();
 		}
 
-		[SetUp]
-		public void BeforeTest()
+		private static readonly object[] UsersData =
+        {
+			new object[] { UserRepository.Get().ValidUser() }
+		};
+
+		public void LoginUser(IUser user)
 		{
-			//driver.Navigate().GoToUrl(url);
+			HomePage home = new HomePage(driver);
+			LoginPage login = home.GoToLoginPage();
+			AccountPage accountPage = login.GoToAccountPage(user.GetEmail(), user.GetPassword());
+			accountPage.GoToEditPasswordPage();
+			//accountPage.clickOnLogout();
+		}
+
+
+		public void LogoutUser()
+		{
+			EditAccountPage editAccountPage = new EditAccountPage(driver);
+			editAccountPage.Logout();
+		}
+
+
+		[SetUp]
+		public void BeforeTest(IUser user)
+		{
+			driver.Navigate().GoToUrl(url);
+			LoginUser(user);
 		}
 
 		[SetUp]
 		public void AfterTest()
 		{
-
-			//driver.Navigate().GoToUrl(url);
+          LogoutUser();
 		}
 	}
 }

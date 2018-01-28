@@ -11,6 +11,7 @@ using OpenCart.PagesTest;
 using OpenCart.Data.Users;
 using OpenCart.Data.Passwords;
 using OpenCart.Data.AccountsInfo;
+using OpenQA.Selenium.Support.UI;
 
 namespace OpenCart
 {
