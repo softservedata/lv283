@@ -14,6 +14,7 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Interactions;
+using AppiumTests.Data.Names;
 
 namespace AppiumTests
 {
@@ -26,7 +27,7 @@ namespace AppiumTests
             this.driver = driver;
         }
 
-        public bool CustomAdapterNames()
+        public bool CustomAdapterNames(List<IName> name)
         {
             driver.FindElementByAccessibilityId("Views").Click();
 
@@ -34,8 +35,11 @@ namespace AppiumTests
             driver.FindElementByAccessibilityId("1. Custom Adapter").Click();
 
             driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[1]").Click();
-            Assert.IsTrue(driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[2]").GetAttribute("text").Contains("Arnold"));
-            Assert.IsTrue(driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Contains("David"));
+            //Assert.IsTrue(driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[2]").GetAttribute("text").Contains("Arnold"));
+            Assert.IsTrue(driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[2]").GetAttribute("text").Contains(name[0].GetName()));
+
+            //Assert.IsTrue(driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Contains("David"));
+            Assert.IsTrue(driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Contains(name[1].GetName()));
 
             driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[6]").Click();
             Assert.IsTrue(driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[7]").GetAttribute("text").Contains("Ace"));

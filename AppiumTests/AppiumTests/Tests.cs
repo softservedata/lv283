@@ -14,20 +14,24 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Interactions;
+using AppiumTests.Data.Names;
 
 namespace AppiumTests
 {
     [TestFixture]
     public class Tests : TestRunner
     {
-        //AppiumDriver<AndroidElement> driver;
+        private static readonly object[] UserNames =
+        {
+            new object[] { NameRepository.Get().PeopleNames() }
+        };
 
-        [Test]
-        public void TestMethod1()
+        [Test, TestCaseSource(nameof(UserNames))]
+        public void TestMethod1(List<IName> name)
         {
             View view = new View(driver);
 
-            Assert.IsTrue(view.CustomAdapterNames());
+            Assert.IsTrue(view.CustomAdapterNames(name));
         }
     }
 }

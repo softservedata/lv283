@@ -75,6 +75,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Data\Names\Name.cs" />
+    <Compile Include="Data\Names\NameRepository.cs" />
     <Compile Include="View.cs" />
     <Compile Include="TestRunner.cs" />
     <Compile Include="Tests.cs" />
