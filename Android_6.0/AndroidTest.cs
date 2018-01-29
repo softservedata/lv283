@@ -14,22 +14,36 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Remote;
 using Android_6._0.Pages;
+using Android_6._0.Data.RadioGroups;
 
 namespace Android_6._0
 {
 	[TestFixture]
 	public class AndroidTest:TestRunner
 	{
-		[Test, Order(1)]
-		public void CheckAppiumAndroid()
+
+		private static readonly object[] RadioGroupData =
+		{
+			new object[] { RadioGroupRepository.Get().Snack() },
+			new object[] { RadioGroupRepository.Get().Breakfast() },
+			new object[] { RadioGroupRepository.Get().Lunch() },
+			new object[] { RadioGroupRepository.Get().Dinner() },
+			new object[] { RadioGroupRepository.Get().AllOfThem() },
+			new object[] { RadioGroupRepository.Get().None() }
+		};
+		//Parameterize Test
+		[Test, Order(1), TestCaseSource(nameof(RadioGroupData))]
+		public void CheckAppiumAndroid(IRadioGroup radioGroup)
 		{
 			HomePage home = new HomePage(driver);
 			ViewsPage views = home.GoToViewsPage();
 			RadioGroupPage radioGroupPage = views.GoToRadioGroupPage();
 			Thread.Sleep(1000);
 			radioGroupPage.RadioSnack.Click();
-			radioGroupPage.CheckRadioGroup("2131296259");
+			
+			radioGroupPage.CheckRadioGroup(radioGroup.GetId());
 			Thread.Sleep(1000);
+
 			radioGroupPage.RadioBreakfast.Click();
 			radioGroupPage.CheckRadioGroup("2131296533");
 			Thread.Sleep(1000);

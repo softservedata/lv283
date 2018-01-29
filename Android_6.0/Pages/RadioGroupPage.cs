@@ -50,5 +50,8 @@ namespace Android_6._0.Pages
 			Assert.IsTrue(Actual.GetAttribute("text").Contains(idText));
 		}
 
+
+		}
+
 	}
 }

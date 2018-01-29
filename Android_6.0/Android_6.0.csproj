@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidTest.cs" />
+    <Compile Include="Data\RadioGroups\RadioGroup.cs" />
+    <Compile Include="Data\RadioGroups\RadioGroupRepository.cs" />
+    <Compile Include="Data\Times\Time.cs" />
+    <Compile Include="Data\Times\TimeRepository.cs" />
+    <Compile Include="Pages\DateWidgetsPage.cs" />
+    <Compile Include="Pages\DialogPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\RadioGroupPage.cs" />
     <Compile Include="Pages\ViewsPage.cs" />

@@ -17,6 +17,10 @@ namespace Android_6._0.Pages
 		[FindsBy(How = How.Id, Using = "Radio Group")]
 		public IWebElement RadioGroup { get; protected set; }
 
+
+		[FindsBy(How = How.Id, Using = "Date Widgets")]
+		public IWebElement DateWidgets { get; protected set; }
+
 		public RadioGroupPage GoToRadioGroupPage()
 		{
 			//
@@ -28,6 +32,13 @@ namespace Android_6._0.Pages
 			//
 			RadioGroup.Click();
 			return new RadioGroupPage(driver);
+		}
+
+		public DateWidgetsPage GoToDateWidgetsPage()
+		{
+			//
+			DateWidgets.Click();
+			return new DateWidgetsPage(driver);
 		}
 
 	}
