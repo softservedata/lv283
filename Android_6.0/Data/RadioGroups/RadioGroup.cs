@@ -6,14 +6,34 @@ using System.Threading.Tasks;
 
 namespace Android_6._0.Data.RadioGroups
 {
-	public interface IName : IRadioGroupBuilder
+	public interface ISnack
 	{
-		IId SetName(string name);
+		IBreakfast SetSnack(string snack);
 	}
 
-	public interface IId : IRadioGroupBuilder
+	public interface IBreakfast
 	{
-		IRadioGroupBuilder SetId(string id);
+		ILunch SetBreakfast(string breakfast);
+	}
+
+	public interface ILunch
+	{
+		IDinner SetLunch(string lunch);
+	}
+
+	public interface IDinner
+	{
+		IAll SetDinner(string dinner);
+	}
+
+	public interface IAll
+	{
+		IClear SetAll(string all);
+	}
+
+	public interface IClear : IRadioGroupBuilder
+	{
+		IRadioGroupBuilder SetClear(string clear);
 	}
 
 	public interface IRadioGroupBuilder
@@ -23,34 +43,64 @@ namespace Android_6._0.Data.RadioGroups
 
 	public interface IRadioGroup
 	{
-		string GetName();
-		string GetId();
+		string GetSnack();
+		string GetBreakfast();
+		string GetLunch();
+		string GetDinner();
+		string GetAll();
+		string GetClear();
 	}
 
-	public class RadioGroup : IName, IId, IRadioGroupBuilder,
-		                      IRadioGroup
+	public class RadioGroup : ISnack, IBreakfast, ILunch, IDinner,IAll,IClear,
+		                      IRadioGroupBuilder, IRadioGroup
 	{
-		private string name;
-		private string id;
-
+		private string snack;
+		private string breakfast;
+		private string lunch;
+		private string dinner;
+		private string all;
+		private string clear;
 
 		private RadioGroup()
 		{ }
 
-		public static IName Get()
+		public static ISnack Get()
 		{
 			return new RadioGroup();
 		}
 
-		public IId SetName(string name)
+		public IBreakfast SetSnack(string snack)
 		{
-			this.name = name;
+			this.snack = snack;
 			return this;
 		}
 
-		public IRadioGroupBuilder SetId(string id)
+		public ILunch SetBreakfast(string breakfast)
 		{
-			this.id = id;
+			this.breakfast = breakfast;
+			return this;
+		}
+
+		public IDinner SetLunch(string lunch)
+		{
+			this.lunch = lunch;
+			return this;
+		}
+
+		public IAll SetDinner(string dinner)
+		{
+			this.dinner = dinner;
+			return this;
+		}
+		public IClear SetAll(string all)
+		{
+			this.all = all;
+			return this;
+		}
+
+		public IRadioGroupBuilder SetClear(string clear)
+		{
+			this.clear = clear;
 			return this;
 		}
 
@@ -59,14 +109,34 @@ namespace Android_6._0.Data.RadioGroups
 			return this;
 		}
 			
-		public string GetName()
+		public string GetSnack()
 		{
-			return name;
+			return snack;
 		}
 
-		public string GetId()
+		public string GetBreakfast()
 		{
-			return id;
+			return breakfast;
+		}
+
+		public string GetLunch()
+		{
+			return lunch;
+		}
+
+		public string GetDinner()
+		{
+			return dinner;
+		}
+
+		public string GetAll()
+		{
+			return all;
+		}
+
+		public string GetClear()
+		{
+			return clear;
 		}
 
 	}

@@ -27,7 +27,7 @@ namespace Android_6._0.Pages
 			Thread.Sleep(1000);
 			driver.Swipe(650, 1700, 650, 250, 2000);
 			Thread.Sleep(1000);
-			driver.Swipe(650, 1750, 650, 1500, 2000);
+			driver.Swipe(650, 1750, 650, 1400, 2000);
 			Thread.Sleep(1000);
 			//
 			RadioGroup.Click();

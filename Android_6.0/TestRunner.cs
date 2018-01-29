@@ -37,8 +37,7 @@ namespace Android_6._0
 		{
 			driver.CloseApp();
 		}
-
-		
+			
 
 		[SetUp]
 		public void BeforeTest()

@@ -24,14 +24,14 @@ namespace Android_6._0
 
 		private static readonly object[] RadioGroupData =
 		{
-			new object[] { RadioGroupRepository.Get().Snack() },
-			new object[] { RadioGroupRepository.Get().Breakfast() },
-			new object[] { RadioGroupRepository.Get().Lunch() },
-			new object[] { RadioGroupRepository.Get().Dinner() },
-			new object[] { RadioGroupRepository.Get().AllOfThem() },
-			new object[] { RadioGroupRepository.Get().None() }
+			new object[] { RadioGroupRepository.Get().Group() }
+			//new object[] { RadioGroupRepository.Get().Breakfast() },
+			//new object[] { RadioGroupRepository.Get().Lunch() },
+			//new object[] { RadioGroupRepository.Get().Dinner() },
+			//new object[] { RadioGroupRepository.Get().AllOfThem() },
+			//new object[] { RadioGroupRepository.Get().None() }
 		};
-		//Parameterize Test
+
 		[Test, Order(1), TestCaseSource(nameof(RadioGroupData))]
 		public void CheckAppiumAndroid(IRadioGroup radioGroup)
 		{
@@ -39,28 +39,26 @@ namespace Android_6._0
 			ViewsPage views = home.GoToViewsPage();
 			RadioGroupPage radioGroupPage = views.GoToRadioGroupPage();
 			Thread.Sleep(1000);
-			radioGroupPage.RadioSnack.Click();
-			
-			radioGroupPage.CheckRadioGroup(radioGroup.GetId());
+			radioGroupPage.RadioSnack.Click();			
+			radioGroupPage.CheckRadioGroup(radioGroup.GetSnack());
 			Thread.Sleep(1000);
-
 			radioGroupPage.RadioBreakfast.Click();
-			radioGroupPage.CheckRadioGroup("2131296533");
+			radioGroupPage.CheckRadioGroup(radioGroup.GetBreakfast());
 			Thread.Sleep(1000);
 			radioGroupPage.RadioLunch.Click();
-			radioGroupPage.CheckRadioGroup("2131296531");
+			radioGroupPage.CheckRadioGroup(radioGroup.GetLunch());
 			Thread.Sleep(1000);
 			radioGroupPage.RadioDinner.Click();
-			radioGroupPage.CheckRadioGroup("2131296534");
+			radioGroupPage.CheckRadioGroup(radioGroup.GetDinner());
 			Thread.Sleep(1000);
 			radioGroupPage.RadioAll.Click();
-			radioGroupPage.CheckRadioGroup("2131296535");
+			radioGroupPage.CheckRadioGroup(radioGroup.GetAll());
 			Thread.Sleep(1000);
 			radioGroupPage.ButtonClear.Click();
-			radioGroupPage.CheckRadioGroup("(none)");
+			radioGroupPage.CheckRadioGroup(radioGroup.GetClear());
 			Thread.Sleep(1000);
-			
 		}
+
 
 	}
 }

@@ -23,6 +23,10 @@ namespace Android_6._0.Pages
 			PageFactory.InitElements(driver, this);
 		}
 
+		public RadioGroupPage()
+		{
+		}
+
 		[FindsBy(How = How.Id, Using = "io.appium.android.apis:id/snack")]
 		public IWebElement RadioSnack { get; protected set; }
 
@@ -50,7 +54,40 @@ namespace Android_6._0.Pages
 			Assert.IsTrue(Actual.GetAttribute("text").Contains(idText));
 		}
 
+		public void CheckSnack(string idText)
+		{
+			RadioSnack.Click();
+			CheckRadioGroup(idText);
+		}
 
+		public void CheckBreakfast(string idText)
+		{
+			RadioBreakfast.Click();
+			CheckRadioGroup(idText);
+		}
+
+		public void CheckLunch(string idText)
+		{
+			RadioLunch.Click();
+			CheckRadioGroup(idText);
+		}
+
+		public void CheckDinner(string idText)
+		{
+			RadioDinner.Click();
+			CheckRadioGroup(idText);
+		}
+		
+		public void CheckAll(string idText)
+		{
+			RadioAll.Click();
+			CheckRadioGroup(idText);
+		}
+
+		public void CheckClear(string idText)
+		{
+			ButtonClear.Click();
+			CheckRadioGroup(idText);
 		}
 
 	}

@@ -43,10 +43,10 @@ namespace Android_6._0.Data.Times
 
 		}
 
-		public static IM Get()
-		{
-			return new Time();
-		}
+		//public static IM Get()
+		//{
+		//	return new Time();
+		//}
 
 
 
