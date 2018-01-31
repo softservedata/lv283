@@ -11,7 +11,6 @@ namespace CalculatorTestClient
 		public void BeforeAllMethods()
 		{
 			calc = new CalcSEIClient();
-
 			Logger.InitLogger();
 			Logger.Log.Info("Run Tests");
 		}
