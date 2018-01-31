@@ -15,12 +15,15 @@ using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Remote;
 using Android_6._0.Pages;
 using Android_6._0.Data.RadioGroups;
+using Android_6._0.Data.Times;
+using Android_6._0.CreateData;
 
 namespace Android_6._0
 {
 	[TestFixture]
 	public class AndroidTest:TestRunner
 	{
+		RandomString randomString = new RandomString();
 
 		private static readonly object[] RadioGroupData =
 		{
@@ -33,7 +36,7 @@ namespace Android_6._0
 		};
 
 		[Test, Order(1), TestCaseSource(nameof(RadioGroupData))]
-		public void CheckAppiumAndroid(IRadioGroup radioGroup)
+		public void CheckRadioGroup(IRadioGroup radioGroup)
 		{
 			HomePage home = new HomePage(driver);
 			ViewsPage views = home.GoToViewsPage();
@@ -57,6 +60,30 @@ namespace Android_6._0
 			radioGroupPage.ButtonClear.Click();
 			radioGroupPage.CheckRadioGroup(radioGroup.GetClear());
 			Thread.Sleep(1000);
+			driver.Navigate().Back();
+			Thread.Sleep(1000);
+			driver.Navigate().Back();
+			Thread.Sleep(1000);
+		}
+
+//		private static readonly object[] TimeData =
+//{
+//			new object[] { TimeRepository.Get().GroupTime() }
+//			//new object[] { RadioGroupRepository.Get().Breakfast() },
+//			//new object[] { RadioGroupRepository.Get().Lunch() },
+//			//new object[] { RadioGroupRepository.Get().Dinner() },
+//			//new object[] { RadioGroupRepository.Get().AllOfThem() },
+//			//new object[] { RadioGroupRepository.Get().None() }
+//		};
+		//[Test, Order(2)]
+		public void CheckInline([Range(1, 12)] int h, [Range(0, 59)] int m ) 
+		{
+			HomePage home = new HomePage(driver);
+			ViewsPage views = home.GoToViewsPage();
+			DateWidgetsPage dateWidgets = views.GoToDateWidgetsPage();
+			InlinePage inlinePage = dateWidgets.GoToInlinePage();
+			Thread.Sleep(1000);
+			inlinePage.GhangeTime(randomString.GetRandomString(h), randomString.GetRandomString(m));
 		}
 
 

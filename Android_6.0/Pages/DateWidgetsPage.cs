@@ -31,9 +31,14 @@ namespace Android_6._0.Pages
 
 		public DialogPage GoToDialogPage()
 		{
-			//
 			Dialog.Click();
 			return new DialogPage(driver);
+		}
+
+		public InlinePage GoToInlinePage()
+		{
+			Inline.Click();
+			return new InlinePage(driver);
 		}
 
 	}

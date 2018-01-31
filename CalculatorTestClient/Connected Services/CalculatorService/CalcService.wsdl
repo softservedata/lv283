@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://edu.softserve.com/" name="CalcService" targetNamespace="http://edu.softserve.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://localhost:8080/Lv283Service/services/CalcPort?xsd=calc_schema1.xsd" namespace="http://edu.softserve.com/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="mod">
+    <wsdl:part name="parameters" element="tns:mod" />
+  </wsdl:message>
+  <wsdl:message name="divResponse">
+    <wsdl:part name="parameters" element="tns:divResponse" />
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part name="parameters" element="tns:add" />
+  </wsdl:message>
+  <wsdl:message name="sub">
+    <wsdl:part name="parameters" element="tns:sub" />
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part name="parameters" element="tns:addResponse" />
+  </wsdl:message>
+  <wsdl:message name="modResponse">
+    <wsdl:part name="parameters" element="tns:modResponse" />
+  </wsdl:message>
+  <wsdl:message name="factorial">
+    <wsdl:part name="parameters" element="tns:factorial" />
+  </wsdl:message>
+  <wsdl:message name="sqrResponse">
+    <wsdl:part name="parameters" element="tns:sqrResponse" />
+  </wsdl:message>
+  <wsdl:message name="mulResponse">
+    <wsdl:part name="parameters" element="tns:mulResponse" />
+  </wsdl:message>
+  <wsdl:message name="mul">
+    <wsdl:part name="parameters" element="tns:mul" />
+  </wsdl:message>
+  <wsdl:message name="about">
+    <wsdl:part name="parameters" element="tns:about" />
+  </wsdl:message>
+  <wsdl:message name="sqrtResponse">
+    <wsdl:part name="parameters" element="tns:sqrtResponse" />
+  </wsdl:message>
+  <wsdl:message name="factorialResponse">
+    <wsdl:part name="parameters" element="tns:factorialResponse" />
+  </wsdl:message>
+  <wsdl:message name="div1">
+    <wsdl:part name="parameters" element="tns:div1" />
+  </wsdl:message>
+  <wsdl:message name="div">
+    <wsdl:part name="parameters" element="tns:div" />
+  </wsdl:message>
+  <wsdl:message name="subResponse">
+    <wsdl:part name="parameters" element="tns:subResponse" />
+  </wsdl:message>
+  <wsdl:message name="div1Response">
+    <wsdl:part name="parameters" element="tns:divResponse1" />
+  </wsdl:message>
+  <wsdl:message name="sqr">
+    <wsdl:part name="parameters" element="tns:sqr" />
+  </wsdl:message>
+  <wsdl:message name="sqrt">
+    <wsdl:part name="parameters" element="tns:sqrt" />
+  </wsdl:message>
+  <wsdl:message name="aboutResponse">
+    <wsdl:part name="parameters" element="tns:aboutResponse" />
+  </wsdl:message>
+  <wsdl:message name="pow">
+    <wsdl:part name="parameters" element="tns:pow" />
+  </wsdl:message>
+  <wsdl:message name="powResponse">
+    <wsdl:part name="parameters" element="tns:powResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalcSEI">
+    <wsdl:operation name="mod">
+      <wsdl:input name="mod" message="tns:mod" />
+      <wsdl:output name="modResponse" message="tns:modResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <wsdl:input name="add" message="tns:add" />
+      <wsdl:output name="addResponse" message="tns:addResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="div">
+      <wsdl:input name="div" message="tns:div" />
+      <wsdl:output name="divResponse" message="tns:divResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sub">
+      <wsdl:input name="sub" message="tns:sub" />
+      <wsdl:output name="subResponse" message="tns:subResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="factorial">
+      <wsdl:input name="factorial" message="tns:factorial" />
+      <wsdl:output name="factorialResponse" message="tns:factorialResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mul">
+      <wsdl:input name="mul" message="tns:mul" />
+      <wsdl:output name="mulResponse" message="tns:mulResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sqr">
+      <wsdl:input name="sqr" message="tns:sqr" />
+      <wsdl:output name="sqrResponse" message="tns:sqrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sqrt">
+      <wsdl:input name="sqrt" message="tns:sqrt" />
+      <wsdl:output name="sqrtResponse" message="tns:sqrtResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="about">
+      <wsdl:input name="about" message="tns:about" />
+      <wsdl:output name="aboutResponse" message="tns:aboutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="pow">
+      <wsdl:input name="pow" message="tns:pow" />
+      <wsdl:output name="powResponse" message="tns:powResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="div1">
+      <wsdl:input name="div1" message="tns:div1" />
+      <wsdl:output name="div1Response" message="tns:div1Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalcServiceSoapBinding" type="tns:CalcSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mod">
+      <soap:operation soapAction="urn:Mod" style="document" />
+      <wsdl:input name="mod">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="modResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="urn:Add" style="document" />
+      <wsdl:input name="add">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="div">
+      <soap:operation soapAction="urn:Div" style="document" />
+      <wsdl:input name="div">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="divResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sub">
+      <soap:operation soapAction="urn:Sub" style="document" />
+      <wsdl:input name="sub">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="subResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="factorial">
+      <soap:operation soapAction="urn:Factorial" style="document" />
+      <wsdl:input name="factorial">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="factorialResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mul">
+      <soap:operation soapAction="urn:Mul" style="document" />
+      <wsdl:input name="mul">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="mulResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqr">
+      <soap:operation soapAction="urn:Sqr" style="document" />
+      <wsdl:input name="sqr">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sqrResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqrt">
+      <soap:operation soapAction="urn:Sqrt" style="document" />
+      <wsdl:input name="sqrt">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sqrtResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="about">
+      <soap:operation soapAction="urn:About" style="document" />
+      <wsdl:input name="about">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="aboutResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pow">
+      <soap:operation soapAction="urn:Pow" style="document" />
+      <wsdl:input name="pow">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="powResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="div1">
+      <soap:operation soapAction="urn:Div1" style="document" />
+      <wsdl:input name="div1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="div1Response">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalcService">
+    <wsdl:port name="CalcPort" binding="tns:CalcServiceSoapBinding">
+      <soap:address location="http://localhost:8080/Lv283Service/services/CalcPort" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

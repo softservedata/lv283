@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -49,7 +50,10 @@ namespace Android_6._0
 		[SetUp]
 		public void AfterTest()
 		{
-			//LogoutUser();
+			//driver.Navigate().Back();
+			//Thread.Sleep(1000);
+			//driver.Navigate().Back();
+			//Thread.Sleep(1000);
 		}
 	}
 }

@@ -6,7 +6,40 @@ using System.Threading.Tasks;
 
 namespace Android_6._0.Data.Times
 {
-	class TimeRepository
+	public class TimeRepository
 	{
+		private volatile static TimeRepository instance;
+		private static object lockingObject = new object();
+
+		private TimeRepository()
+		{
+		}
+
+		public static TimeRepository Get()
+		{
+			if (instance == null)
+			{
+				lock (lockingObject)
+				{
+					if (instance == null)
+					{
+						instance = new TimeRepository();
+					}
+				}
+			}
+			return instance;
+		}
+
+		/////////////////////
+		public ITime GroupTime()
+		{
+			return Time.Get()
+				.SetMeridiem("pm")
+				.SetHour("10")
+				.SetMinute("55")
+				.Build();
+		}
+
+
 	}
 }
