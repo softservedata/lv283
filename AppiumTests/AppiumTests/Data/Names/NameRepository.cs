@@ -31,13 +31,6 @@ namespace AppiumTests.Data.Names
             return instance;
         }
 
-        /*public IName ValidNames()
-        {
-            return Name.Get()
-                .SetName("123")
-                .Build();
-        }*/
-
         public List<IName> PeopleNames()
         {
             List<IName> result = new List<IName>();
@@ -50,7 +43,85 @@ namespace AppiumTests.Data.Names
 
             result.Add(
                 Name.Get()
+                .SetName("Barry")
+                .Build()
+            );
+
+            result.Add(
+                Name.Get()
+                .SetName("Chuck")
+                .Build()
+            );
+
+            result.Add(
+                Name.Get()
                 .SetName("David")
+                .Build()
+            );
+            return result;
+        }
+
+        public List<IName> DogNames()
+        {
+            List<IName> result = new List<IName>();
+
+            result.Add(
+                Name.Get()
+                .SetName("Ace")
+                .Build()
+            );
+
+            result.Add(
+                Name.Get()
+                .SetName("Bandit")
+                .Build()
+            );
+
+            result.Add(
+                Name.Get()
+                .SetName("Cha-Cha")
+                .Build()
+            );
+
+            result.Add(
+                Name.Get()
+                .SetName("Deuce")
+                .Build()
+            );
+            return result;
+        }
+
+        public List<IName> CatNames()
+        {
+            List<IName> result = new List<IName>();
+
+            result.Add(
+                Name.Get()
+                .SetName("Fluffy")
+                .Build()
+            );
+
+            result.Add(
+                Name.Get()
+                .SetName("Snuggles")
+                .Build()
+            );
+            return result;
+        }
+
+        public List<IName> FishNames()
+        {
+            List<IName> result = new List<IName>();
+
+            result.Add(
+                Name.Get()
+                .SetName("Goldy")
+                .Build()
+            );
+
+            result.Add(
+                Name.Get()
+                .SetName("Bubbles")
                 .Build()
             );
             return result;

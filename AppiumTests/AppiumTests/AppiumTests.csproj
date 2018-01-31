@@ -77,7 +77,7 @@
   <ItemGroup>
     <Compile Include="Data\Names\Name.cs" />
     <Compile Include="Data\Names\NameRepository.cs" />
-    <Compile Include="View.cs" />
+    <Compile Include="CustomAdapter.cs" />
     <Compile Include="TestRunner.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

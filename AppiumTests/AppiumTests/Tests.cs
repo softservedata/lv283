@@ -21,17 +21,56 @@ namespace AppiumTests
     [TestFixture]
     public class Tests : TestRunner
     {
-        private static readonly object[] UserNames =
+        private static readonly object[] People =
         {
             new object[] { NameRepository.Get().PeopleNames() }
         };
 
-        [Test, TestCaseSource(nameof(UserNames))]
-        public void TestMethod1(List<IName> name)
+        [Test, Order(1), TestCaseSource(nameof(People))]
+        public void PeopleNamesTest(List<IName> name)
         {
-            View view = new View(driver);
+            CustomAdapter adapter = new CustomAdapter(driver);
 
-            Assert.IsTrue(view.CustomAdapterNames(name));
+            Assert.IsTrue(adapter.CheckPeopleNames(name));
+        }
+
+        private static readonly object[] Dogs =
+        {
+            new object[] { NameRepository.Get().DogNames() }
+        };
+
+        [Test, Order(2), TestCaseSource(nameof(Dogs))]
+        public void DogNamesTest(List<IName> name)
+        {
+            CustomAdapter adapter = new CustomAdapter(driver);
+
+            Assert.IsTrue(adapter.CheckDogNames(name));
+        }
+
+        private static readonly object[] Cats =
+        {
+            new object[] { NameRepository.Get().CatNames() }
+        };
+
+        [Test, Order(3), TestCaseSource(nameof(Cats))]
+        public void CatsNamesTest(List<IName> name)
+        {
+            CustomAdapter adapter = new CustomAdapter(driver);
+
+            Assert.IsTrue(adapter.CheckCatNames(name));
+        }
+
+        private static readonly object[] Fishes =
+        {
+            new object[] { NameRepository.Get().FishNames() }
+        };
+
+        [Test, Order(4), TestCaseSource(nameof(Fishes))]
+        public void FishesNamesTest(List<IName> name)
+        {
+            CustomAdapter adapter = new CustomAdapter(driver);
+
+            Assert.IsTrue(adapter.CheckFishNames(name));
         }
     }
 }
