@@ -5,8 +5,6 @@ namespace CalculatorTestClient
 {
 	public class FunctionPow : TestRunner
 	{
-		//CalcSEIClient calc = new CalcSEIClient();
-		//public double bases, exponent;
 		public double actual;
 		public double extended;
 
@@ -21,7 +19,6 @@ namespace CalculatorTestClient
 			{
 				Console.WriteLine(ex.Message);
 			}
-
 	    }
 
 		public void Check(double extended, double actual)

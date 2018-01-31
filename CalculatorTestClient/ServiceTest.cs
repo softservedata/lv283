@@ -1,6 +1,4 @@
-﻿using System;
-using CalculatorTestClient.CalculatorService;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace CalculatorTestClient
 {
