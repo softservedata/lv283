@@ -7,23 +7,10 @@ namespace CalculatorTestClient
 	[TestFixture]
 	public class ServiceTest : FunctionPow
 	{
-		//[Test]
-		//public void PowTest(
-		//               [Values(2)] int a,
-		//			[Values(-10, 0, 10)] int b)
-		//{
-		//	CalcSEIClient calc = new CalcSEIClient();
-		//	double actual = calc.pow(a, b);
-		//	Console.WriteLine(" {0} ^ {1} = {2} ", a, b, actual);
-		//	Console.WriteLine(" {0} ^ {1} = {2} ", a, b, Math.Pow(a,b));
-		//	Console.WriteLine("Answer: " + calc.about("Ivan"));
-		//}
-
-
 		[Test, Order(2)]
 		public void PowOneToAll(
-			[Values(1)] int bases,
-			[Range(-10, 10)] int exponent)
+			        [Values(1)] int bases,
+			        [Range(-10, 10)] int exponent)
 		{
 			Set(bases, exponent);
 			Check(extended, actual);
@@ -40,7 +27,7 @@ namespace CalculatorTestClient
 
 		[Test, Order(4)]
 		public void PowZeroToPositive(
-					[Values(0)] int a,
+					[Values(0)] int bases,
 					[Range(1, 10)] int exponent)
 		{
 			Set(bases, exponent);
@@ -66,9 +53,27 @@ namespace CalculatorTestClient
 		}
 
 		[Test, Order(7)]
-		public void PowNegativeOneToNegativeAdd(
+		public void PowNegativeOneToNegativeOdd(
 					[Values(-1)] int bases,
 					[Range(-11, -1, 2)] int exponent)
+		{
+			Set(bases, exponent);
+			Check(extended, actual);
+		}
+
+		[Test, Order(8)]
+		public void PowNegativeOneToPositivePaired(
+					[Values(-1)] int bases,
+					[Range(2, 12, 2)] int exponent)
+		{
+			Set(bases, exponent);
+			Check(extended, actual);
+		}
+
+		[Test, Order(9)]
+		public void PowNegativeOneToPositiveOdd(
+					[Values(-1)] int bases,
+					[Range(1, 11, 2)] int exponent)
 		{
 			Set(bases, exponent);
 			Check(extended, actual);
