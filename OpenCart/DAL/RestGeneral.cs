@@ -60,7 +60,17 @@ namespace OpenCart.DAL
         // {
         //}
 
-        //public async Task<int> Create(T element) { } // POST
+        //public async Task<int> Create(T element) // POST
+        //{ 
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri("http://localhost:6740");
+        //        var content = new FormUrlEncodedContent(new[] { new KeyValuePair<string, string>("", "login") });
+        //        var result = await client.PostAsync("/api/Membership/exists", content);
+        //        string resultContent = await result.Content.ReadAsStringAsync();
+        //        Console.WriteLine(resultContent);
+        //    }
+        //}
 
         //public async Task<T> Update(T searchElement, T modifyElement) { } // PUT
 
