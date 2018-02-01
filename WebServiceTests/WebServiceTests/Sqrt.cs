@@ -10,18 +10,19 @@ namespace WebServiceTests
 {
     public static class Sqrt
     {
-        public static double GetSqrt(CalcSEIClient calc, double number)
+        public static bool GetSqrt(CalcSEIClient calc, double number, out double actual)
         {
-            double rez = 0;
+            actual = 0xA;
             try
             {
-                rez = calc.sqrt(number);
+                actual = calc.sqrt(number);
+                return true;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            return rez;
+            return false;
         }
     }
 }

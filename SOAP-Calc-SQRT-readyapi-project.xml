@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7b708791-6d30-40b2-9f51-93ebe97b9fa1" created="2.2.0" activeEnvironment="Default environment" name="SOAP Calc SQRT" resourceRoot="" updated="2.2.0 2017-11-28T12:17:25Z" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3736cbe5-aa69-4a56-98d4-fddbb2efc79e" wsaVersion="NONE" name="CalcServiceSoapBinding" type="wsdl" bindingName="{http://edu.softserve.com/}CalcServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://192.168.131.128:8080/Lv283Service/services/CalcPort?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.131.128:8080/Lv283Service/services/CalcPort?wsdl"><con:part><con:url>http://192.168.131.128:8080/Lv283Service/services/CalcPort?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalcService" targetNamespace="http://edu.softserve.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://edu.softserve.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://edu.softserve.com/" schemaLocation="http://192.168.131.128:8080/Lv283Service/services/CalcPort?xsd=calc_schema1.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="mod">
+    <wsdl:part element="tns:mod" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="divResponse">
+    <wsdl:part element="tns:divResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part element="tns:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sub">
+    <wsdl:part element="tns:sub" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="tns:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modResponse">
+    <wsdl:part element="tns:modResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="factorial">
+    <wsdl:part element="tns:factorial" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sqrResponse">
+    <wsdl:part element="tns:sqrResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mulResponse">
+    <wsdl:part element="tns:mulResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mul">
+    <wsdl:part element="tns:mul" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="about">
+    <wsdl:part element="tns:about" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sqrtResponse">
+    <wsdl:part element="tns:sqrtResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="factorialResponse">
+    <wsdl:part element="tns:factorialResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="div1">
+    <wsdl:part element="tns:div1" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="div">
+    <wsdl:part element="tns:div" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subResponse">
+    <wsdl:part element="tns:subResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="div1Response">
+    <wsdl:part element="tns:divResponse1" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sqr">
+    <wsdl:part element="tns:sqr" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sqrt">
+    <wsdl:part element="tns:sqrt" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="aboutResponse">
+    <wsdl:part element="tns:aboutResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pow">
+    <wsdl:part element="tns:pow" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="powResponse">
+    <wsdl:part element="tns:powResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalcSEI">
+    <wsdl:operation name="mod">
+      <wsdl:input message="tns:mod" name="mod"></wsdl:input>
+      <wsdl:output message="tns:modResponse" name="modResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:add" name="add"></wsdl:input>
+      <wsdl:output message="tns:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="div">
+      <wsdl:input message="tns:div" name="div"></wsdl:input>
+      <wsdl:output message="tns:divResponse" name="divResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sub">
+      <wsdl:input message="tns:sub" name="sub"></wsdl:input>
+      <wsdl:output message="tns:subResponse" name="subResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="factorial">
+      <wsdl:input message="tns:factorial" name="factorial"></wsdl:input>
+      <wsdl:output message="tns:factorialResponse" name="factorialResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mul">
+      <wsdl:input message="tns:mul" name="mul"></wsdl:input>
+      <wsdl:output message="tns:mulResponse" name="mulResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqr">
+      <wsdl:input message="tns:sqr" name="sqr"></wsdl:input>
+      <wsdl:output message="tns:sqrResponse" name="sqrResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqrt">
+      <wsdl:input message="tns:sqrt" name="sqrt"></wsdl:input>
+      <wsdl:output message="tns:sqrtResponse" name="sqrtResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="about">
+      <wsdl:input message="tns:about" name="about"></wsdl:input>
+      <wsdl:output message="tns:aboutResponse" name="aboutResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pow">
+      <wsdl:input message="tns:pow" name="pow"></wsdl:input>
+      <wsdl:output message="tns:powResponse" name="powResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="div1">
+      <wsdl:input message="tns:div1" name="div1"></wsdl:input>
+      <wsdl:output message="tns:div1Response" name="div1Response"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalcServiceSoapBinding" type="tns:CalcSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="mod">
+      <soap:operation soapAction="urn:Mod" style="document"/>
+      <wsdl:input name="mod">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="urn:Add" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="div">
+      <soap:operation soapAction="urn:Div" style="document"/>
+      <wsdl:input name="div">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="divResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sub">
+      <soap:operation soapAction="urn:Sub" style="document"/>
+      <wsdl:input name="sub">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="factorial">
+      <soap:operation soapAction="urn:Factorial" style="document"/>
+      <wsdl:input name="factorial">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="factorialResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mul">
+      <soap:operation soapAction="urn:Mul" style="document"/>
+      <wsdl:input name="mul">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mulResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqr">
+      <soap:operation soapAction="urn:Sqr" style="document"/>
+      <wsdl:input name="sqr">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sqrResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sqrt">
+      <soap:operation soapAction="urn:Sqrt" style="document"/>
+      <wsdl:input name="sqrt">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sqrtResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="about">
+      <soap:operation soapAction="urn:About" style="document"/>
+      <wsdl:input name="about">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="aboutResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pow">
+      <soap:operation soapAction="urn:Pow" style="document"/>
+      <wsdl:input name="pow">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="powResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="div1">
+      <soap:operation soapAction="urn:Div1" style="document"/>
+      <wsdl:input name="div1">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="div1Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalcService">
+    <wsdl:port binding="tns:CalcServiceSoapBinding" name="CalcPort">
+      <soap:address location="http://192.168.131.128:8080/Lv283Service/services/CalcPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://192.168.131.128:8080/Lv283Service/services/CalcPort?xsd=calc_schema1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="unqualified" targetNamespace="http://edu.softserve.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://edu.softserve.com/">
+  <xs:element name="about" type="tns:about"/>
+  <xs:element name="aboutResponse" type="tns:aboutResponse"/>
+  <xs:element name="add" type="tns:add"/>
+  <xs:element name="addResponse" type="tns:addResponse"/>
+  <xs:element name="div" type="tns:div"/>
+  <xs:element name="div1" type="tns:div1"/>
+  <xs:element name="divResponse" type="tns:divResponse"/>
+  <xs:element name="divResponse1" type="tns:divResponse1"/>
+  <xs:element name="factorial" type="tns:factorial"/>
+  <xs:element name="factorialResponse" type="tns:factorialResponse"/>
+  <xs:element name="mod" type="tns:mod"/>
+  <xs:element name="modResponse" type="tns:modResponse"/>
+  <xs:element name="mul" type="tns:mul"/>
+  <xs:element name="mulResponse" type="tns:mulResponse"/>
+  <xs:element name="pow" type="tns:pow"/>
+  <xs:element name="powResponse" type="tns:powResponse"/>
+  <xs:element name="sqr" type="tns:sqr"/>
+  <xs:element name="sqrResponse" type="tns:sqrResponse"/>
+  <xs:element name="sqrt" type="tns:sqrt"/>
+  <xs:element name="sqrtResponse" type="tns:sqrtResponse"/>
+  <xs:element name="sub" type="tns:sub"/>
+  <xs:element name="subResponse" type="tns:subResponse"/>
+  <xs:complexType name="mod">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="add">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="div">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="divResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sub">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factorial">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factorialResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mul">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mulResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqr">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqrResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqrt">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqrtResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="about">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aboutResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pow">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="powResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="div1">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="divResponse1">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint></con:endpoints><con:operation id="30bc92cb-1b60-4275-ab6d-7eb1e099c6a5" isOneWay="false" action="urn:About" name="about" bindingOperationName="about" type="Request-Response" outputName="aboutResponse" inputName="about" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ffed8fce-d477-4608-8137-106f06b5f139" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:about>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+      </edu:about>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:About"/></con:call></con:operation><con:operation id="81f441c3-844e-48e6-8507-b46215d67da6" isOneWay="false" action="urn:Add" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="add" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="92728273-6108-48e3-9326-c01de6b72b70" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:add>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Add"/></con:call></con:operation><con:operation id="1524cd43-dcb4-4371-a835-81c2e38654ef" isOneWay="false" action="urn:Div" name="div" bindingOperationName="div" type="Request-Response" outputName="divResponse" inputName="div" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="553b27a1-d2d1-4999-8661-e8856e6df903" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:div>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:div>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Div"/></con:call></con:operation><con:operation id="f0568a7c-2e73-4cfd-8f23-c999b546cda4" isOneWay="false" action="urn:Div1" name="div1" bindingOperationName="div1" type="Request-Response" outputName="div1Response" inputName="div1" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="da0af853-855e-49df-af67-e01e9b40ceb2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:div1>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:div1>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Div1"/></con:call></con:operation><con:operation id="bcd1e64b-afdd-4e94-ae54-c1eaa0ce9f88" isOneWay="false" action="urn:Factorial" name="factorial" bindingOperationName="factorial" type="Request-Response" outputName="factorialResponse" inputName="factorial" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8556cabb-ed83-46cf-b9a5-03f50c823a1b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:factorial>\r
+         <arg0>?</arg0>\r
+      </edu:factorial>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Factorial"/></con:call></con:operation><con:operation id="48fb9239-c68e-4117-956e-c5b6fe609c9b" isOneWay="false" action="urn:Mod" name="mod" bindingOperationName="mod" type="Request-Response" outputName="modResponse" inputName="mod" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="68a49aee-ee66-4191-a906-267d25ea6e02" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:mod>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:mod>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Mod"/></con:call></con:operation><con:operation id="ed91de84-8a89-4f0b-9ca8-62a02689c545" isOneWay="false" action="urn:Mul" name="mul" bindingOperationName="mul" type="Request-Response" outputName="mulResponse" inputName="mul" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5138a3e1-f4f6-4ecf-bfb5-157549db06d1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:mul>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:mul>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Mul"/></con:call></con:operation><con:operation id="ff6915fc-68b0-4c3d-b6a2-ddd9bc526bf7" isOneWay="false" action="urn:Pow" name="pow" bindingOperationName="pow" type="Request-Response" outputName="powResponse" inputName="pow" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="56e0138e-9671-46a7-8293-04a67636d0e6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:pow>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:pow>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Pow"/></con:call></con:operation><con:operation id="dcaf7bc4-6c81-4811-91fd-2eea12f51acf" isOneWay="false" action="urn:Sqr" name="sqr" bindingOperationName="sqr" type="Request-Response" outputName="sqrResponse" inputName="sqr" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5d2bae4-18cb-4861-a76f-2a0343be4263" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:sqr>\r
+         <arg0>?</arg0>\r
+      </edu:sqr>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Sqr"/></con:call></con:operation><con:operation id="c7a10f2b-a98f-4ba2-809d-ab902e5cc719" isOneWay="false" action="urn:Sqrt" name="sqrt" bindingOperationName="sqrt" type="Request-Response" outputName="sqrtResponse" inputName="sqrt" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e331b30-1192-4424-b4e2-38cdaaa2dd50" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:sqrt>\r
+         <arg0>?</arg0>\r
+      </edu:sqrt>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Sqrt"/></con:call></con:operation><con:operation id="e6e2edba-afa3-4154-a096-db9162406db6" isOneWay="false" action="urn:Sub" name="sub" bindingOperationName="sub" type="Request-Response" outputName="subResponse" inputName="sub" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c8adf0c9-f52b-43a7-aed9-1a04be381934" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:sub>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:sub>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:Sub"/></con:call></con:operation></con:interface><con:testSuite id="b72d3f8e-9cc2-47e2-a84d-1c5caec5ce2a" name="SqrtTestSoap"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="773df96a-9bfb-4ad1-9bec-a6067ef96816" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="about TestCase" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" id="0da61c44-e54a-4be2-9f50-a8e58147ac4c" name="about"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>about</con:operation><con:request name="about" id="eeb1c7c8-b7c1-4816-a60f-a8034aa7fcac"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:about>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+      </edu:about>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:About"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="7477132a-427b-4972-bfc9-0b96d1b95d0c" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="add TestCase" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" id="047806de-2cdd-4ef2-8b11-4adb42544c2a" name="add"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>add</con:operation><con:request name="add" id="3e24a3ff-d300-4f4f-b530-456f161f4e1a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <edu:add>
+         <arg0>4</arg0>
+         <arg1>3</arg1>
+      </edu:add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="urn:Add" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="fa6117cd-8ace-492f-a5f2-072f6f06517e" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="div TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="00b7bad3-2bc9-4fc8-a6fc-917598640cae" name="div"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>div</con:operation><con:request name="div" id="b357ddeb-d86b-4ed0-b474-3addbd4fddb1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:div>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:div>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Div"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="cd3ce6ed-bd5e-42bb-908f-739c6908507b" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="div1 TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="c170b047-f310-4b92-a4d2-88673e5d6ac6" name="div1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>div1</con:operation><con:request name="div1" id="fbd4a134-9aae-4c8c-a9b0-a85b205ea7ce"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:div1>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:div1>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Div1"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="f7728525-7199-4a45-943e-aeb2ad785758" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="factorial TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="d5203c09-e815-4356-9fd1-4ce23de49859" name="factorial"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>factorial</con:operation><con:request name="factorial" id="e2a76c64-1059-4aa6-8ed0-0cf814bf6589"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:factorial>\r
+         <arg0>?</arg0>\r
+      </edu:factorial>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Factorial"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="546a748b-6385-4c54-a19c-60a22fbd3467" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="mod TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="979b7492-dcc6-44c9-a994-83d111013dfd" name="mod"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>mod</con:operation><con:request name="mod" id="dc6f2a9a-1850-4264-ad1f-23b0c89b8a4d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:mod>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:mod>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Mod"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="6128e3b5-2756-4ac3-ba6d-b4adb7074518" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="mul TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="0713ef58-a8a1-4047-9894-5ff00c20cf88" name="mul"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>mul</con:operation><con:request name="mul" id="9a312b04-0694-45ff-9370-b6419b153b95"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:mul>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:mul>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Mul"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="6daf2a60-ac53-4582-ba00-a38a184aebb1" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="pow TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="ca8286da-c505-4db4-9cf3-8e8863eca829" name="pow"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>pow</con:operation><con:request name="pow" id="da6c85eb-01db-4f54-8b55-58342f98025c"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:pow>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:pow>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Pow"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="37240d44-8777-4da7-b94b-fd71bb12fca9" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="sqr TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="03405b39-c0a4-4c01-9ddb-cdaf59917f4f" name="sqr"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>sqr</con:operation><con:request name="sqr" id="b1ffdd09-7abc-489a-a982-88a8e9c33283"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:sqr>\r
+         <arg0>?</arg0>\r
+      </edu:sqr>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Sqr"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="230f4547-a23e-411e-9aa5-22823833dc07" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="sqrt TestCase" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="DataForSOAP" id="e1bb8b1b-423b-4980-afd1-2d694ca591a4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting></con:settings><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Directory"><con:configuration><directory/><filter/><encoding/></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>arg0</con:property><con:startRow/><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:testStep type="request" id="3db7e5ee-0526-47be-a742-e7cac1fee22e" name="sqrt"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>sqrt</con:operation><con:request name="sqrt" id="f1b99c26-c75d-472a-8ac5-bdf4eca56c91"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <edu:sqrt>
+         <arg0>25</arg0>
+      </edu:sqrt>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="urn:Sqrt" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="92ba7556-450c-4d2d-996f-9cc09d4f1b58"><con:settings/><con:config><dataSourceStep>DataForSOAP</dataSourceStep><targetStep>sqrt</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>e1bb8b1b-423b-4980-afd1-2d694ca591a4</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>3db7e5ee-0526-47be-a742-e7cac1fee22e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>92ba7556-450c-4d2d-996f-9cc09d4f1b58</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="5fd7f718-5be4-4a4f-9070-9d750b308fea" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="sub TestCase" searchProperties="true" timeout="0"><con:settings/><con:testStep type="request" id="47cc74df-3d40-4af9-870f-073e65873834" name="sub"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalcServiceSoapBinding</con:interface><con:operation>sub</con:operation><con:request name="sub" id="46a054dd-946c-4246-9878-67f27a213d39"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.131.128:8080/Lv283Service/services/CalcPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edu="http://edu.softserve.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edu:sub>\r
+         <arg0>?</arg0>\r
+         <arg1>?</arg1>\r
+      </edu:sub>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="urn:Sub"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:reportTemplates/><con:xmlTemplates/><con:xmlTemplates/><con:parameters/><con:parameters/></con:reporting><con:reporting/><con:authRepository/><con:tags/></con:soapui-project>
