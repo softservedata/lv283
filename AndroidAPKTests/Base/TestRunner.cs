@@ -30,8 +30,7 @@ namespace AndroidAPKTests.Base
             capabilities.SetCapability(MobileCapabilityType.FullReset, "false");
 
             driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities);
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100));
         }
 
         [OneTimeTearDown]
@@ -56,6 +55,7 @@ namespace AndroidAPKTests.Base
         [TearDown]
         public void TearDown()
         {
+            driver.ResetApp();
         }
     }
 }
