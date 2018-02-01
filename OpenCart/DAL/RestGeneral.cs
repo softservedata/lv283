@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+//using System.Collections.Generic;
+//using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Globalization;
 
@@ -47,6 +47,7 @@ namespace OpenCart.DAL
             var serializer = new DataContractJsonSerializer(typeof(List<T>));
             var streamTask = client.GetStreamAsync(url);
             repositories = serializer.ReadObject(await streamTask) as List<T>;
+            return repositories;
         }
 
         public List<T> GetAll()

@@ -23,12 +23,14 @@ namespace OpenCart.BLL
             return result;
         }
 
-        public FoundationNET GetByName(string name)
+        public FoundationNET GetFoundationByName(string name)
         {
+            Console.WriteLine("Search name = " + name);
             FoundationNET result = null;
             foreach (FoundationNET current in GetFoundations())
             {
-                if (current.Name.ToLower().Contains(name))
+                Console.WriteLine("current Name = " + current.Name);
+                if (current.Name.ToLower().Trim().Equals(name.ToLower().Trim()))
                 {
                     result = current;
                     break;

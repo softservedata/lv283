@@ -85,6 +85,7 @@
     <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="FunctionalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestGitTest.cs" />
     <Compile Include="UserTest.cs" />
   </ItemGroup>
   <ItemGroup>
