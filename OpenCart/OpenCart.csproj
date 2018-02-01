@@ -60,6 +60,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
     <Reference Include="WebDriver, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.8.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
@@ -70,8 +74,13 @@
   <ItemGroup>
     <Compile Include="AppiumTest.cs" />
     <Compile Include="Base\TestRunner.cs" />
+    <Compile Include="BLL\FoundationBLL.cs" />
     <Compile Include="BrowsersTest.cs" />
     <Compile Include="CurrencyTest.cs" />
+    <Compile Include="DAL\FoundationDAL.cs" />
+    <Compile Include="DAL\RestGeneral.cs" />
+    <Compile Include="Data\Rest\FoundationNET.cs" />
+    <Compile Include="Data\Rest\FoundationRepository.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="FunctionalTest.cs" />
