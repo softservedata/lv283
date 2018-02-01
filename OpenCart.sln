@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCart", "OpenCart\OpenCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soap", "Soap\Soap.csproj", "{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appium", "appium\appium.csproj", "{910C33A4-0CCC-4555-AA84-7858069FF477}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910C33A4-0CCC-4555-AA84-7858069FF477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910C33A4-0CCC-4555-AA84-7858069FF477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910C33A4-0CCC-4555-AA84-7858069FF477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910C33A4-0CCC-4555-AA84-7858069FF477}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
