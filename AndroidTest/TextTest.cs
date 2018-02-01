@@ -21,45 +21,34 @@ namespace AndroidTest
     [TestFixture]
     public class TextTest : TestRunner
     {
-        //[Test]
-        public void LinkifyTest()
-        {
-
-        }
-
-        [Test, Order(1)]
-        public void LogTextBoxTestAdd()
+        
+        [Test]
+        public void VerifyAddingTextLogTextBox()
         {
             driver.FindElement(By.Id("Text")).Click();
-            string expectedText = "This is a test\r\n";
             driver.FindElement(By.Id("LogTextBox")).Click();
             driver.FindElement(By.Id("Add")).Click();
+
+            string expectedText = "This is a test\r\n";
             string actualText = driver.FindElement(By.Id("io.appium.android.apis:id/text")).Text;
+
             Assert.AreEqual(expectedText, actualText);
-            driver.Navigate().Back();
-            driver.Navigate().Back();
         }
 
-        private static readonly object[] DatesData =
+        private static readonly object[] ButtonsToClick =
         {
-            new object[] { DateRepository.Get().Christmass() }
-		};
+            new object[] { "This use the default marquee animation limit of 3" },
+            new object[] { "This will run the marquee animation once" },
+            new object[] { "This will run the marquee animation forever" }
+        };
 
-        [Test, Order(2), TestCaseSource(nameof(DatesData))]
-        public void DateWidgetsTest(IDate date)
+        [Test, TestCaseSource(nameof(ButtonsToClick))]
+        public void ClickMarqueeButtons(string buttonName)
         {
-            driver.FindElement(By.Id("Views")).Click();
-            driver.FindElement(By.Id("Date Widgets")).Click();
-            driver.FindElement(By.Id("1. Dialog")).Click();
-            string currentDate = driver.FindElement(By.Id("io.appium.android.apis:id/dateDisplay")).Text;
-            Console.WriteLine(currentDate);
-            DateTime dt = Convert.ToDateTime(currentDate);
-            Console.WriteLine(dt.Year);
-            driver.FindElement(By.Id("change the date")).Click();
-            driver.FindElement(By.Id("android:id/date_picker_header_year"));
-            driver.FindElement(By.ClassName("android.widget.TextView")).Click();
-            Console.WriteLine(date.ToString());
-            driver.FindElement(By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.ViewAnimator/android.widget.ListView/android.widget.TextView[6]")).Click();
+            driver.FindElement(By.Id("Text")).Click();
+            driver.FindElement(By.Id("Marquee")).Click();
+
+            driver.FindElement(By.Id(buttonName)).Click();
         }
     }
 }

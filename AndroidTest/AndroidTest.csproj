@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Data\Dates\Date.cs" />
     <Compile Include="Data\Dates\DateRepository.cs" />
+    <Compile Include="DateWidgetsTest.cs" />
     <Compile Include="TestRunner.cs" />
     <Compile Include="TextTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

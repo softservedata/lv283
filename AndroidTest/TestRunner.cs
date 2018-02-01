@@ -12,27 +12,27 @@ namespace AndroidTest
     {
         protected AppiumDriver<AndroidElement> driver;
 
-        private string url = @"D:\SoftServe\ApiDemos-debug.apk";
-        private string uri = "http://127.0.0.1:4723/wd/hub";
+        private const string Url = @"D:\SoftServe\ApiDemos-debug.apk";
+        private const string Uri = "http://127.0.0.1:4723/wd/hub";
 
         [OneTimeSetUp]
         public void BeforeAllMethods()
         {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability(MobileCapabilityType.App, url);
+            capabilities.SetCapability(MobileCapabilityType.App, Url);
             capabilities.SetCapability(MobileCapabilityType.DeviceName, "emulator-5554");
             capabilities.SetCapability(MobileCapabilityType.Udid, "emulator-5554");
             capabilities.SetCapability(MobileCapabilityType.PlatformVersion, "6.0.0");
             capabilities.SetCapability(MobileCapabilityType.PlatformName, "Android");
             capabilities.SetCapability(MobileCapabilityType.FullReset, "false");
-            driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities);
-            driver.Navigate().GoToUrl(@"D:\SoftServe\ApiDemos-debug.apk");
+            driver = new AndroidDriver<AndroidElement>(new Uri(Uri), capabilities);
+            driver.Navigate().GoToUrl(Url);
         }
 
         [OneTimeTearDown]
         public void AfterAllMethods()
         {
-            
+            driver.CloseApp();
         }
 
 
@@ -45,7 +45,7 @@ namespace AndroidTest
         [SetUp]
         public void AfterTest()
         {
-
+            driver.ResetApp();
         }
     }
 }
