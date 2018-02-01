@@ -28,7 +28,7 @@ namespace AndroidTest
             //Change year
             driver.FindElement(By.Id("android:id/date_picker_header_year")).Click();
             driver.FindElement(By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.ViewAnimator/android.widget.ListView/android.widget.TextView[@text = \"" + date.GetYear() + "\"]")).Click();
-            //Change date
+            //Change day
             driver.FindElement(By.Id(date.GetDay() + " " + date.GetMonth() + " " + date.GetYear())).Click();
             driver.FindElement(By.Id("android:id/button1")).Click();
             string actualDate = driver.FindElement(By.Id("io.appium.android.apis:id/dateDisplay")).Text;
