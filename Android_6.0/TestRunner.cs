@@ -43,22 +43,17 @@ namespace Android_6._0
 		[SetUp]
 		public void BeforeTest()
 		{
-			//driver.Navigate().GoToUrl(url);
-			//LoginUser(user);
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+			//driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 		}
 
 		[SetUp]
 		public void AfterTest()
 		{
-			//Back();
-			//driver.manage().Timeouts().ImplicitlyWait(Timespan.FromSeconds(60));
+
 		}
-
-
+		
 		public void Back()
 		{
-			driver.Navigate().Back();
 			driver.Navigate().Back();
 		}
 

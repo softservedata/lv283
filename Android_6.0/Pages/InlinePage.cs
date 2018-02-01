@@ -41,16 +41,13 @@ namespace Android_6._0.Pages
 			Assert.IsTrue(Minutes.Text.Contains(m));
 		}
 
-		public void GhangeTime(string h, string m)
+		public void GhangeTime(string hour, string minutes)
 		{
 			Am.Click();
 			Hours.Click();
-			Thread.Sleep(1000);
-			driver.FindElementById(h).Click();
-			Thread.Sleep(1000);
-			driver.FindElementById(m).Click();
-			Thread.Sleep(1000);
-			Check(h, m);
+			driver.FindElementById(hour).Click();
+			driver.FindElementById(minutes).Click();
+			Check(hour, minutes);
 		}
 
 

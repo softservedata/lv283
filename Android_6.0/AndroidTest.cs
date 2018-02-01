@@ -6,7 +6,6 @@ using Android_6._0.Data.Times;
 using Android_6._0.CreateData;
 
 
-
 namespace Android_6._0
 {
 	[TestFixture]
@@ -26,7 +25,7 @@ namespace Android_6._0
 			ViewsPage views = home.GoToViewsPage();
 			RadioGroupPage radioGroupPage = views.GoToRadioGroupPage();
 
-			radioGroupPage.RadioSnack.Click();			
+			radioGroupPage.RadioSnack.Click();
 			radioGroupPage.CheckRadioGroup(radioGroup.GetSnack());
 
 			radioGroupPage.RadioBreakfast.Click();
@@ -43,12 +42,12 @@ namespace Android_6._0
 
 			radioGroupPage.ButtonClear.Click();
 			radioGroupPage.CheckRadioGroup(radioGroup.GetClear());
-
+			Back();
 			Back();
 		}
 
 		private static readonly object[] TimeData =
-        {
+		{
 					new object[] { TimeRepository.Get().GroupTime() }
 					//new object[] { RadioGroupRepository.Get().Breakfast() },
 					//new object[] { RadioGroupRepository.Get().Lunch() },
@@ -65,9 +64,10 @@ namespace Android_6._0
 			ViewsPage views = home.GoToViewsPage();
 			DateWidgetsPage dateWidgets = views.GoToDateWidgetsPage();
 			InlinePage inlinePage = dateWidgets.GoToInlinePage();
-			//Thread.Sleep(1000);
-			//inlinePage.GhangeTime(randomString.GetRandomString(h), randomString.GetRandomString(m));
 			inlinePage.GhangeTime(time.GetHour(), time.GetMinute());
+			Back();
+			Back();
+			Back();
 		}
 
 

@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="AndroidTest.cs" />
     <Compile Include="CreateData\RandomString.cs" />
+    <Compile Include="Data\TestData.cs" />
     <Compile Include="Data\RadioGroups\RadioGroup.cs" />
     <Compile Include="Data\RadioGroups\RadioGroupRepository.cs" />
     <Compile Include="Data\Times\Time.cs" />
