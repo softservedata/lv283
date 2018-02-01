@@ -51,40 +51,40 @@ namespace OpenCart
 
 
         //[Test, TestCaseSource(nameof(CurrencyData))]
-        public void DeleteDropDown2Items(string itemname1, string itemname2)
-        {
-            driver.Navigate().GoToUrl("http://283-taqc.ml/");
-            driver.FindElement(By.XPath("//a[text()='" + itemname1 + "']/../../../div[@class='button-group']/button[1]")).Click();
-            Thread.Sleep(1000);
-            driver.FindElement(By.XPath("//a[text()='" + itemname2 + "']/../../../div[@class='button-group']/button[1]")).Click();
-            Thread.Sleep(1000);
+        //public void DeleteDropDown2Items(string itemname1, string itemname2)
+        //{
+        //    driver.Navigate().GoToUrl("http://283-taqc.ml/");
+        //    driver.FindElement(By.XPath("//a[text()='" + itemname1 + "']/../../../div[@class='button-group']/button[1]")).Click();
+        //    Thread.Sleep(1000);
+        //    driver.FindElement(By.XPath("//a[text()='" + itemname2 + "']/../../../div[@class='button-group']/button[1]")).Click();
+        //    Thread.Sleep(1000);
 
 
-            IWebElement dropdown = driver.FindElement(By.CssSelector(".btn.btn-inverse.btn-block.btn-lg.dropdown-toggle"));
-            dropdown.Click();
-            IWebElement cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text() = '" + itemname1 + "']"));
-            Assert.AreEqual(itemname1, cart.Text);
-            cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text()='" + itemname2 + "']"));
-            Assert.AreEqual(itemname2, cart.Text);
+        //    IWebElement dropdown = driver.FindElement(By.CssSelector(".btn.btn-inverse.btn-block.btn-lg.dropdown-toggle"));
+        //    dropdown.Click();
+        //    IWebElement cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text() = '" + itemname1 + "']"));
+        //    Assert.AreEqual(itemname1, cart.Text);
+        //    cart = driver.FindElement(By.XPath("//*[@id='cart']//a[text()='" + itemname2 + "']"));
+        //    Assert.AreEqual(itemname2, cart.Text);
 
 
-            driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button")).Click();
-            Thread.Sleep(1000);
-            dropdown.Click();
+        //    driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button")).Click();
+        //    Thread.Sleep(1000);
+        //    dropdown.Click();
 
-            if (itemname1 != itemname2)
-            {
-                driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button")).Click();
-                dropdown.Click();
-            }
+        //    if (itemname1 != itemname2)
+        //    {
+        //        driver.FindElement(By.XPath("//*[@id='cart']//td[@class='text-center']/button")).Click();
+        //        dropdown.Click();
+        //    }
 
-            Thread.Sleep(2000);
-            cart = driver.FindElement(By.XPath("//*[@id='cart']//p[text() = 'Your shopping cart is empty!']"));
+        //    Thread.Sleep(2000);
+        //    cart = driver.FindElement(By.XPath("//*[@id='cart']//p[text() = 'Your shopping cart is empty!']"));
             
 
-            Assert.AreEqual("Your shopping cart is empty!", cart.Text);
+        //    Assert.AreEqual("Your shopping cart is empty!", cart.Text);
 
-        }
+        //}
 
     }
 }

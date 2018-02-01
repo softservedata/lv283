@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCart", "OpenCart\OpenCart.csproj", "{0E56089F-E72E-4047-AEBB-F1A344C692B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soap", "Soap\Soap.csproj", "{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{0E56089F-E72E-4047-AEBB-F1A344C692B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E56089F-E72E-4047-AEBB-F1A344C692B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E56089F-E72E-4047-AEBB-F1A344C692B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF892277-627F-4E1C-9D1C-6E8A338BA5C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96E581A5-2F49-4671-9AC2-C121D3A375EF}
 	EndGlobalSection
 EndGlobal

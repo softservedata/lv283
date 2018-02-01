@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://edu.softserve.com/" elementFormDefault="unqualified" targetNamespace="http://edu.softserve.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="about" type="tns:about" />
+  <xs:element name="aboutResponse" type="tns:aboutResponse" />
+  <xs:element name="add" type="tns:add" />
+  <xs:element name="addResponse" type="tns:addResponse" />
+  <xs:element name="div" type="tns:div" />
+  <xs:element name="div1" type="tns:div1" />
+  <xs:element name="divResponse" type="tns:divResponse" />
+  <xs:element name="divResponse1" type="tns:divResponse1" />
+  <xs:element name="factorial" type="tns:factorial" />
+  <xs:element name="factorialResponse" type="tns:factorialResponse" />
+  <xs:element name="mod" type="tns:mod" />
+  <xs:element name="modResponse" type="tns:modResponse" />
+  <xs:element name="mul" type="tns:mul" />
+  <xs:element name="mulResponse" type="tns:mulResponse" />
+  <xs:element name="pow" type="tns:pow" />
+  <xs:element name="powResponse" type="tns:powResponse" />
+  <xs:element name="sqr" type="tns:sqr" />
+  <xs:element name="sqrResponse" type="tns:sqrResponse" />
+  <xs:element name="sqrt" type="tns:sqrt" />
+  <xs:element name="sqrtResponse" type="tns:sqrtResponse" />
+  <xs:element name="sub" type="tns:sub" />
+  <xs:element name="subResponse" type="tns:subResponse" />
+  <xs:complexType name="mod">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="add">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+      <xs:element name="arg1" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="div">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+      <xs:element name="arg1" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="divResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sub">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+      <xs:element name="arg1" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factorial">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factorialResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mul">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+      <xs:element name="arg1" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mulResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqr">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqrResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqrt">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqrtResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="about">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aboutResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pow">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+      <xs:element name="arg1" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="powResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="div1">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="divResponse1">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
