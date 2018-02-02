@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCartTests", "OpenCartTests\OpenCartTests.csproj", "{32D8328A-9989-4E5C-9FB6-0B6854112A74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTests", "..\..\AndroidTests1\AndroidTests\AndroidTests.csproj", "{8C5A6B09-A945-4121-86A3-E79648DF255C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "..\..\WebService\WebService\WebService.csproj", "{43D93FF3-970E-40FF-9A74-17BA9DAACC9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServTests", "..\..\WebServTest\WebServTests\WebServTests\WebServTests.csproj", "{C2D02509-1EAF-454E-A79C-B744CC5657DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTests", "..\..\AndroidTests\AndroidTests\AndroidTests.csproj", "{8C5A6B09-A945-4121-86A3-E79648DF255C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{32D8328A-9989-4E5C-9FB6-0B6854112A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32D8328A-9989-4E5C-9FB6-0B6854112A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32D8328A-9989-4E5C-9FB6-0B6854112A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D93FF3-970E-40FF-9A74-17BA9DAACC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D93FF3-970E-40FF-9A74-17BA9DAACC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D93FF3-970E-40FF-9A74-17BA9DAACC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D93FF3-970E-40FF-9A74-17BA9DAACC9E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C5A6B09-A945-4121-86A3-E79648DF255C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C5A6B09-A945-4121-86A3-E79648DF255C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5A6B09-A945-4121-86A3-E79648DF255C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5A6B09-A945-4121-86A3-E79648DF255C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2D02509-1EAF-454E-A79C-B744CC5657DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2D02509-1EAF-454E-A79C-B744CC5657DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2D02509-1EAF-454E-A79C-B744CC5657DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2D02509-1EAF-454E-A79C-B744CC5657DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
