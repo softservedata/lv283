@@ -37,6 +37,21 @@ namespace OpenCartTests
             Console.WriteLine("[SetUp] SetUp()");
         }
 
+        protected void Logging ()
+        {
+            driver.FindElement(By.CssSelector(".fa.fa-user")).Click();
+            driver.FindElement(By.XPath("//a[text()='Login']")).Click();
+            driver.FindElement(By.Id("input-email")).SendKeys("adelyna.emrie@arockee.com");
+            driver.FindElement(By.Id("input-password")).SendKeys("qwerty");
+            driver.FindElement(By.Id("input-password")).Submit();
+        }
+
+        protected void LogOut()
+        {
+            driver.FindElement(By.CssSelector(".fa.fa-user")).Click();
+            driver.FindElement(By.XPath("//div[@id='top-links']//a[contains(@href, 'logout')]")).Click();
+        }
+
         [TearDown]
         public void TearDown()
         {

@@ -63,12 +63,8 @@ namespace OpenCartTests
         {
 
             //Precondition
-            driver.FindElement(By.CssSelector(".fa.fa-user")).Click();
-            driver.FindElement(By.XPath("//a[text()='Login']")).Click();
-            driver.FindElement(By.Id("input-email")).SendKeys("adelyna.emrie@arockee.com");
-            driver.FindElement(By.Id("input-password")).SendKeys("qwerty");
-            driver.FindElement(By.Id("input-password")).Submit();
-            //Steps
+            Logging();
+           //Steps
             //Getting to review tab
             driver.FindElement(By.XPath(@"//a[text()='Components']")).Click();
             driver.FindElement(By.XPath(@"//a[text() = 'Monitors (2)']")).Click();
@@ -81,8 +77,7 @@ namespace OpenCartTests
             //Check
             Assert.IsTrue(driver.FindElement(By.CssSelector(".alert.alert-danger")).Enabled);
             //Logout
-            driver.FindElement(By.CssSelector(".fa.fa-user")).Click();
-            driver.FindElement(By.XPath("//div[@id='top-links']//a[contains(@href, 'logout')]")).Click();
+
         }
         //
         [Test, TestCaseSource(nameof(ReviewBoundariesValid)), Order (2)]

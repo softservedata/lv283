@@ -73,3 +73,5 @@ D:\Temp\OpenCartTests\OpenCartTests\bin\Debug\WebDriver.xml
 D:\Temp\OpenCartTests\OpenCartTests\bin\Debug\WebDriver.Support.xml
 D:\Temp\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.dll
 D:\Temp\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.pdb
+C:\Users\mlukastc\Source\Repos\lv283\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.dll
+C:\Users\mlukastc\Source\Repos\lv283\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.pdb
