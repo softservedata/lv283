@@ -12,12 +12,8 @@ using System.Threading.Tasks;
 namespace appium
 {
     [TestFixture]
-    public class Tests : TestRunner
+    public class Tests: TestRunner
     {
-        public void ClickView()
-        {
-            driver.FindElement(By.Id("Views")).Click();
-        }
 
         [Test, Order(1)]
         public void PopupMenu()
@@ -47,7 +43,7 @@ namespace appium
         [Test, Order(2)]
         public void ButtonSmall()
         {
-            ClickView();
+            driver.FindElement(By.Id("Views")).Click();
             driver.FindElement(By.Id("Buttons")).Click();
             driver.FindElement(By.Id("Small")).Click();
             driver.Navigate().Back();
@@ -62,6 +58,22 @@ namespace appium
         }
 
         [Test, Order(4)]
+        public void ButtonOff()
+        {
+            driver.FindElement(By.Id("Buttons")).Click();
+            driver.FindElement(By.Id("Toggle")).Click();
+            driver.Navigate().Back();
+        }
+
+        [Test, Order(5)]
+        public void ButtonOn()
+        {
+            driver.FindElement(By.Id("Buttons")).Click();
+            driver.FindElement(By.Id("Toggle")).Click();
+            driver.Navigate().Back();
+        }
+
+        [Test, Order(6)]
         public void ChronometerReset()
         {
             driver.FindElement(By.Id("Chronometer")).Click();
@@ -69,7 +81,7 @@ namespace appium
             driver.FindElement(By.Id("0 seconds")).Click();
         }
 
-        [Test, Order(5)]
+        [Test, Order(7)]
         public void ChronometerStartAndStop()
         {
             driver.FindElement(By.Id("Start")).Click();
@@ -77,17 +89,9 @@ namespace appium
             driver.FindElement(By.Id("1 seconds")).Click();
         }
 
-        //[Test, Order(6)]
-        //public void ChronometerStopAndStart()
-        //{
-        //    driver.FindElement(By.Id("Reset")).Click();
-        //    driver.FindElement(By.Id("Start")).Click();
-        //    System.Threading.Thread.Sleep(1000);
-        //    driver.FindElement(By.Id("Stop")).Click();
-        //    System.Threading.Thread.Sleep(1000);
-        //    driver.FindElement(By.Id("Start")).Click();
-        //    driver.FindElement(By.Id("4 seconds")).Click();
-        //}
+
+       
+
 
 
 
