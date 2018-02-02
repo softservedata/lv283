@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading;
+using System.Configuration;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -15,13 +15,14 @@ namespace Android_6._0
 		protected AndroidElement wait;
 		protected AndroidElement actual;
 
+		//private string url = ConfigurationManager.AppSettings["APK"];
 		private readonly string url = @"D:\ATQC\TAQC.NET\ApiDemos.apk";
 		private readonly string uri = @"http://127.0.0.1:4723/wd/hub";
 
 		[OneTimeSetUp]
 		public void BeforeAllMethods()
 		{
-			DesiredCapabilities capabilities = new DesiredCapabilities();
+		    DesiredCapabilities capabilities = new DesiredCapabilities();
 			//
 			capabilities.SetCapability(MobileCapabilityType.App, url);
 			capabilities.SetCapability(MobileCapabilityType.DeviceName, "emulator-5554");
