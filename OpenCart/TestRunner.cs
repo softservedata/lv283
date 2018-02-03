@@ -15,6 +15,7 @@ namespace OpenCart
         public void BeforeAllMethods()
         {
             driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("http://283-taqc.ml/");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 

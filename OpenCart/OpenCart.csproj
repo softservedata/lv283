@@ -67,7 +67,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs" />
+    <Compile Include="pages\HomePage.cs" />
+    <Compile Include="TestLogedUser.cs" />
+    <Compile Include="pages\LoginPage.cs" />
+    <Compile Include="pages\MainPage.cs" />
     <Compile Include="TestRunner.cs" />
     <Compile Include="FunctionalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
