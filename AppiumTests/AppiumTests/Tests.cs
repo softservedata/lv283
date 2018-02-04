@@ -26,7 +26,7 @@ namespace AppiumTests
             new object[] { NameRepository.Get().PeopleNames() }
         };
 
-        [Test, Order(1), TestCaseSource(nameof(People))]
+        [Test, TestCaseSource(nameof(People))]
         public void PeopleNamesTest(List<IName> name)
         {
             CustomAdapter adapter = new CustomAdapter(driver);
@@ -39,8 +39,8 @@ namespace AppiumTests
             new object[] { NameRepository.Get().DogNames() }
         };
 
-        [Test, Order(2), TestCaseSource(nameof(Dogs))]
-        public void DogNamesTest(List<IName> name)
+        [Test, TestCaseSource(nameof(Dogs))]
+        public void DogsNamesTest(List<IName> name)
         {
             CustomAdapter adapter = new CustomAdapter(driver);
 
@@ -52,7 +52,7 @@ namespace AppiumTests
             new object[] { NameRepository.Get().CatNames() }
         };
 
-        [Test, Order(3), TestCaseSource(nameof(Cats))]
+        [Test, TestCaseSource(nameof(Cats))]
         public void CatsNamesTest(List<IName> name)
         {
             CustomAdapter adapter = new CustomAdapter(driver);
@@ -65,7 +65,7 @@ namespace AppiumTests
             new object[] { NameRepository.Get().FishNames() }
         };
 
-        [Test, Order(4), TestCaseSource(nameof(Fishes))]
+        [Test, TestCaseSource(nameof(Fishes))]
         public void FishesNamesTest(List<IName> name)
         {
             CustomAdapter adapter = new CustomAdapter(driver);

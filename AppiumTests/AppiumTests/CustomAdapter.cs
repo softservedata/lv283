@@ -36,10 +36,10 @@ namespace AppiumTests
 
             driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[1]").Click();            
 
-            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[2]").GetAttribute("text").Contains(name[0].GetName()))
+            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[2]").GetAttribute("text").Equals(name[0].GetName()))
             {
                 name.Reverse();
-                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Contains(name[0].GetName()))
+                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Equals(name[0].GetName()))
                 {
                     driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[1]").Click();
                     return true;
@@ -63,10 +63,10 @@ namespace AppiumTests
 
             driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[2]").Click();
 
-            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[3]").GetAttribute("text").Contains(name[0].GetName()))
+            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[3]").GetAttribute("text").Equals(name[0].GetName()))
             {
                 name.Reverse();
-                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[6]").GetAttribute("text").Contains(name[0].GetName()))
+                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[6]").GetAttribute("text").Equals(name[0].GetName()))
                 {
                     driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[2]").Click();
                     return true;
@@ -90,10 +90,10 @@ namespace AppiumTests
 
             driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[3]").Click();
 
-            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[4]").GetAttribute("text").Contains(name[0].GetName()))
+            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[4]").GetAttribute("text").Equals(name[0].GetName()))
             {
                 name.Reverse();
-                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Contains(name[0].GetName()))
+                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Equals(name[0].GetName()))
                 {
                     driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[3]").Click();
                     return true;
@@ -117,10 +117,10 @@ namespace AppiumTests
 
             driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[4]").Click();
 
-            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Contains(name[0].GetName()))
+            if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[5]").GetAttribute("text").Equals(name[0].GetName()))
             {
                 name.Reverse();
-                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[6]").GetAttribute("text").Contains(name[0].GetName()))
+                if (driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[6]").GetAttribute("text").Equals(name[0].GetName()))
                 {
                     driver.FindElementByXPath("//android.widget.ExpandableListView/android.widget.TextView[4]").Click();
                     return true;
