@@ -24,8 +24,9 @@ namespace OpenCart
         //[Test]
         public void logout()
         {
-            driver.FindElement(By.XPath("//*[@id='top-links']//a[@class='dropdown-toggle']")).Click();
-            driver.FindElement(By.XPath("//*[@id='top-links']//a[text()='Logout']")).Click();
+            HomePage homePage = new HomePage(driver);
+            homePage.MyAccountBtn.Click();
+            homePage.LogOutBtn.Click();
         }
 
         [Test, Order(2)]
@@ -60,8 +61,7 @@ namespace OpenCart
             Thread.Sleep(1000);
             IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']/p"));
             Assert.AreEqual("Your shopping cart is empty!", cart.Text);
-            homePage.MyAccountBtn.Click();
-            homePage.LogOutBtn.Click();
+            logout();
         }
 
         [Test, Order(5)]
@@ -84,6 +84,7 @@ namespace OpenCart
             Thread.Sleep(1000);
             IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']//a[text()='Samsung Galaxy Tab 10.1']"));
             Assert.AreEqual("Samsung Galaxy Tab 10.1", cart.Text);
+            homePage.Delete.Click();
         }
     }
 }

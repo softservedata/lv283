@@ -29,7 +29,6 @@ namespace OpenCart
         public void AfterAllMethods()
         {
             driver.Quit();
-
         }
     }
 }
