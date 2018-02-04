@@ -42,18 +42,14 @@ namespace Android_6._0
 
 			radioGroupPage.ButtonClear.Click();
 			radioGroupPage.CheckRadioGroup(radioGroup.GetClear());
-			Back();
-			Back();
+
 		}
 
 		private static readonly object[] TimeData =
 		{
-					new object[] { TimeRepository.Get().GroupTime() }
-					//new object[] { RadioGroupRepository.Get().Breakfast() },
-					//new object[] { RadioGroupRepository.Get().Lunch() },
-					//new object[] { RadioGroupRepository.Get().Dinner() },
-					//new object[] { RadioGroupRepository.Get().AllOfThem() },
-					//new object[] { RadioGroupRepository.Get().None() }
+			new object[] { TimeRepository.Get().GroupTimeFive() },
+			new object[] { TimeRepository.Get().GroupTimeSeven() },
+			new object[] { TimeRepository.Get().GroupTimeTen() }
 		};
 
 		[Test, Order(2), TestCaseSource(nameof(TimeData))]
@@ -65,9 +61,7 @@ namespace Android_6._0
 			DateWidgetsPage dateWidgets = views.GoToDateWidgetsPage();
 			InlinePage inlinePage = dateWidgets.GoToInlinePage();
 			inlinePage.GhangeTime(time.GetHour(), time.GetMinute());
-			Back();
-			Back();
-			Back();
+
 		}
 
 

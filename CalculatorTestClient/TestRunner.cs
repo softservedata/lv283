@@ -1,4 +1,5 @@
 ﻿using CalculatorTestClient.CalculatorService;
+
 using NUnit.Framework;
 
 namespace CalculatorTestClient
@@ -10,7 +11,8 @@ namespace CalculatorTestClient
 		[OneTimeSetUp]
 		public void BeforeAllMethods()
 		{
-			calc = new CalcSEIClient();
+
+		calc = new CalcSEIClient();
 			Logger.InitLogger();
 			Logger.Log.Info("Run Tests");
 		}

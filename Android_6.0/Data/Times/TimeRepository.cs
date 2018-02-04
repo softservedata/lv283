@@ -40,6 +40,33 @@ namespace Android_6._0.Data.Times
 				.Build();
 		}
 
+		public ITime GroupTimeTen()
+		{
+			return Time.Get()
+				.SetMeridiem("pm")
+				.SetHour("10")
+				.SetMinute("55")
+				.Build();
+		}
+
+		public ITime GroupTimeSeven()
+		{
+			return Time.Get()
+				.SetMeridiem("pm")
+				.SetHour("7")
+				.SetMinute("10")
+				.Build();
+		}
+
+
+		public ITime GroupTimeFive()
+		{
+			return Time.Get()
+				.SetMeridiem("pm")
+				.SetHour("5")
+				.SetMinute("40")
+				.Build();
+		}
 
 	}
 }

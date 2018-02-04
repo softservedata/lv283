@@ -21,6 +21,18 @@ namespace CalculatorTestClient
 			}
 	    }
 
+		public void Pow(double bases, double exponent)
+		{
+			try
+			{
+				actual = calc.pow(bases, exponent);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+		}
+
 		public void Check(double extended, double actual)
 		{
 			Assert.AreEqual(extended, actual);

@@ -1,26 +1,31 @@
 ﻿using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
+using CalculatorTestClient.Data;
 
 namespace CalculatorTestClient
 {
 	[TestFixture]
 	public class ServiceTest : FunctionPow
 	{
+
 		[Test, Order(2)]
 		public void PowOneToAll(
-			        [Values(1)] int bases,
-			        [Range(-10, 10)] int exponent)
+					[Values(1)] int bases,
+					[Range(-10, 10)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual);
+			Assert.AreEqual(extended, actual);
 		}
-		
+
 		[Test, Order(3)]
 		public void PowZeroToZero(
 					[Values(0)] int bases,
 					[Values(0)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual); ;
+			Assert.AreEqual(extended, actual);
 		}
 
 		[Test, Order(4)]
@@ -29,7 +34,7 @@ namespace CalculatorTestClient
 					[Range(1, 10)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual);
+			Assert.AreEqual(extended, actual);
 		}
 
 		[Test, Order(5)]
@@ -38,7 +43,7 @@ namespace CalculatorTestClient
 					[Range(-10, -1)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual);
+			Assert.AreEqual(extended, actual);
 		}
 
 		[Test, Order(6)]
@@ -47,7 +52,7 @@ namespace CalculatorTestClient
 					[Range(-12, -2, 2)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual);
+			Assert.AreEqual(extended, actual);
 		}
 
 		[Test, Order(7)]
@@ -56,7 +61,7 @@ namespace CalculatorTestClient
 					[Range(-11, -1, 2)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual);
+			Assert.AreEqual(extended, actual);
 		}
 
 		[Test, Order(8)]
@@ -65,7 +70,7 @@ namespace CalculatorTestClient
 					[Range(2, 12, 2)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual);
+			Assert.AreEqual(extended, actual);
 		}
 
 		[Test, Order(9)]
@@ -74,8 +79,18 @@ namespace CalculatorTestClient
 					[Range(1, 11, 2)] int exponent)
 		{
 			Set(bases, exponent);
-			Check(extended, actual);
+			Assert.AreEqual(extended, actual);
 		}
+
+		//[Test, Order(1), TestCaseSource(nameof(DataNumbers.TestData))]
+		//public void Pows(
+		//	 double bases,
+		//	 double exponent,
+		//	 double extended)
+		//{
+		//	Pow(bases, exponent);
+		//	Assert.AreEqual(extended, actual);
+		//}
 
 
 	}

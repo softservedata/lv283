@@ -44,13 +44,13 @@ namespace Android_6._0
 		[SetUp]
 		public void BeforeTest()
 		{
-			//driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 		}
 
 		[SetUp]
 		public void AfterTest()
 		{
-
+			driver.ResetApp();
 		}
 		
 		public void Back()
