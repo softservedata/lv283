@@ -101,3 +101,4 @@ C:\Users\Max\source\repos\lv283\OpenCartTests\OpenCartTests\bin\Debug\WebDriver.
 C:\Users\Max\source\repos\lv283\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.csproj.CoreCompileInputs.cache
 C:\Users\Max\source\repos\lv283\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.dll
 C:\Users\Max\source\repos\lv283\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.pdb
+C:\Users\Max\source\repos\lv283\OpenCartTests\OpenCartTests\obj\Debug\OpenCartTests.csprojResolveAssemblyReference.cache

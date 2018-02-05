@@ -24,6 +24,36 @@ namespace OpenCartTests
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
+        public void Preconditions()
+        {
+            driver.FindElement(By.CssSelector(".fa.fa-user")).Click();
+            driver.FindElement(By.XPath("//a[text()='Login']")).Click();
+            driver.FindElement(By.Id("input-email")).SendKeys("adelyna.emrie@arockee.com");
+            driver.FindElement(By.Id("input-password")).SendKeys("qwerty");
+            driver.FindElement(By.Id("input-password")).Submit();
+        }
+
+        public void CreateReview(string review)
+        {
+            driver.FindElement(By.Id("input-review")).SendKeys(review);
+            driver.FindElement(By.CssSelector("input[name=\"rating\"][value =\"3\"]")).Click();
+            driver.FindElement(By.Id("button-review")).Click();
+        }
+
+        public void Logout()
+        {
+            driver.FindElement(By.CssSelector(".fa.fa-user")).Click();
+            driver.FindElement(By.XPath("//div[@id='top-links']//a[contains(@href, 'logout')]")).Click();
+        }
+
+        public void MoveToReviewTab()
+        {
+            driver.FindElement(By.XPath(@"//a[text()='Components']")).Click();
+            driver.FindElement(By.XPath(@"//a[text() = 'Monitors (2)']")).Click();
+            driver.FindElement(By.XPath("//a[contains(@href,'&product_id=42')]")).Click();
+            driver.FindElement(By.XPath("//a[contains(@href,\"#tab-review\")]")).Click();
+        }
+
         [OneTimeTearDown]
         public void AfterAllMethods()
         {
