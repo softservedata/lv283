@@ -18,7 +18,7 @@ namespace AppiumDemo
         {
             DesiredCapabilities capabilities = new DesiredCapabilities();
 
-            capabilities.SetCapability(MobileCapabilityType.App, @"C:\Users\vshynatc\Downloads\ApiDemos-debug.apk");
+            capabilities.SetCapability(MobileCapabilityType.App, @"C:\Users\yharasym\Desktop\ApiDemos.apk");
             capabilities.SetCapability(MobileCapabilityType.DeviceName, "emulator-5554");
             capabilities.SetCapability(MobileCapabilityType.Udid, "emulator-5554");
             capabilities.SetCapability(MobileCapabilityType.PlatformVersion, "6.0.0");
