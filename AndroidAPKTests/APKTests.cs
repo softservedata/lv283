@@ -21,15 +21,15 @@ namespace AndroidAPKTests
             driver.FindElementByAccessibilityId("1. Content By Id").Click();
             IList<AndroidElement> tabs = driver.FindElementsById("android:id/title");
             Assert.IsTrue(tabs[0].Selected);
-            Assert.IsTrue(driver.FindElementById("tab1").Text.Contains("tab1"));
+            StringAssert.Contains("tab1", driver.FindElementById("tab1").Text);
 
             tabs[1].Click();
             Assert.IsTrue(tabs[1].Selected);
-            Assert.IsTrue(driver.FindElementById("tab2").Text.Contains("tab2"));
+            StringAssert.Contains("tab2", driver.FindElementById("tab2").Text);
 
             tabs[2].Click();
             Assert.IsTrue(tabs[2].Selected);
-            Assert.IsTrue(driver.FindElementById("tab3").Text.Contains("tab3"));
+            StringAssert.Contains("tab3", driver.FindElementById("tab3").Text);
 
         }
 
@@ -40,18 +40,18 @@ namespace AndroidAPKTests
             IList<AndroidElement> tabs = driver.FindElementsById("android:id/title");
 
             Assert.IsTrue(tabs[0].Selected);
-            Assert.IsTrue(driver.FindElementByXPath("//android.widget.FrameLayout/android.widget.TextView")
-                .Text.Contains("tab1"));
+            StringAssert.Contains("tab1", driver.FindElementByXPath(
+                "//android.widget.FrameLayout/android.widget.TextView").Text);
 
             tabs[1].Click();
             Assert.IsTrue(tabs[1].Selected);
-            Assert.IsTrue(driver.FindElementByXPath("//android.widget.FrameLayout/android.widget.TextView")
-                .Text.Contains("tab2"));
+            StringAssert.Contains("tab2", driver.FindElementByXPath(
+                "//android.widget.FrameLayout/android.widget.TextView").Text);
 
             tabs[2].Click();
             Assert.IsTrue(tabs[2].Selected);
-            Assert.IsTrue(driver.FindElementByXPath("//android.widget.FrameLayout/android.widget.TextView")
-                .Text.Contains("tab3"));
+            StringAssert.Contains("tab3", driver.FindElementByXPath(
+                "//android.widget.FrameLayout/android.widget.TextView").Text);
         }
 
         [Test]
@@ -63,7 +63,7 @@ namespace AndroidAPKTests
             Assert.IsTrue(tabs[0].Selected);
             Assert.IsTrue(driver.FindElementById("android:id/list").Displayed);
             IList<AndroidElement> items = driver.FindElementsById("android:id/text1");
-            Assert.IsTrue(items.Count > 0);
+            Assert.Greater(items.Count, 0);
         }
 
         [Test]
@@ -76,18 +76,18 @@ namespace AndroidAPKTests
             Assert.IsTrue(tabs[1].Selected);
             Assert.IsTrue(driver.FindElementById("io.appium.android.apis:id/add").Displayed);
             Assert.IsTrue(driver.FindElementById("io.appium.android.apis:id/clear").Displayed);
-            Assert.IsTrue(driver.FindElementById("io.appium.android.apis:id/empty").Text.Contains("No photos"));
+            StringAssert.AreEqualIgnoringCase("No photos", driver.FindElementById("io.appium.android.apis:id/empty").Text);
 
             driver.FindElementById("io.appium.android.apis:id/add").Click();
             IList<AndroidElement> images = driver.FindElements(By.XPath("//android.widget.ImageView"));
-            Assert.IsTrue(images.Count == 1);
+            Assert.AreEqual(1, images.Count);
 
             driver.FindElementById("io.appium.android.apis:id/add").Click();
             images = driver.FindElementsByXPath("//android.widget.ImageView");
-            Assert.IsTrue(images.Count == 2);
+            Assert.AreEqual(2, images.Count);
 
             driver.FindElementById("io.appium.android.apis:id/clear").Click();
-            Assert.IsTrue(driver.FindElementById("io.appium.android.apis:id/empty").Text.Contains("No photos"));
+            StringAssert.AreEqualIgnoringCase("No photos", driver.FindElementById("io.appium.android.apis:id/empty").Text);
         }
 
         [Test]
@@ -103,41 +103,41 @@ namespace AndroidAPKTests
             Assert.IsFalse(driver.FindElementById("io.appium.android.apis:id/button_disabled").Enabled);
 
             driver.FindElementById("io.appium.android.apis:id/edit").SendKeys("1q");
-            Assert.IsTrue(driver.FindElementById("io.appium.android.apis:id/edit").Text.Contains("1q"));
+            StringAssert.AreEqualIgnoringCase("1q", driver.FindElementById("io.appium.android.apis:id/edit").Text);
 
             AndroidElement[] checkboxes = { driver.FindElementById("io.appium.android.apis:id/check1"),
                 driver.FindElementById("io.appium.android.apis:id/check2")};
 
-            Assert.IsTrue(checkboxes[0].GetAttribute("checked").Equals("false"));
-            Assert.IsTrue(checkboxes[1].GetAttribute("checked").Equals("false"));
+            Assert.AreEqual("false", checkboxes[0].GetAttribute("checked"));
+            Assert.AreEqual("false", checkboxes[1].GetAttribute("checked"));
 
             checkboxes[0].Click();
-            Assert.IsTrue(checkboxes[0].GetAttribute("checked").Equals("true"));
-            Assert.IsTrue(checkboxes[1].GetAttribute("checked").Equals("false"));
+            Assert.AreEqual("true", checkboxes[0].GetAttribute("checked"));
+            Assert.AreEqual("false", checkboxes[1].GetAttribute("checked"));
 
             checkboxes[1].Click();
-            Assert.IsTrue(checkboxes[0].GetAttribute("checked").Equals("true"));
-            Assert.IsTrue(checkboxes[1].GetAttribute("checked").Equals("true"));
+            Assert.AreEqual("true", checkboxes[0].GetAttribute("checked"));
+            Assert.AreEqual("true", checkboxes[1].GetAttribute("checked"));
 
             AndroidElement[] radiobuttons = { driver.FindElementById("io.appium.android.apis:id/radio1"),
                 driver.FindElementById("io.appium.android.apis:id/radio2") };
 
-            Assert.IsTrue(radiobuttons[0].GetAttribute("checked").Equals("false"));
-            Assert.IsTrue(radiobuttons[1].GetAttribute("checked").Equals("false"));
+            Assert.AreEqual("false", radiobuttons[0].GetAttribute("checked"));
+            Assert.AreEqual("false", radiobuttons[1].GetAttribute("checked"));
 
             radiobuttons[0].Click();
-            Assert.IsTrue(radiobuttons[0].GetAttribute("checked").Equals("true"));
-            Assert.IsTrue(radiobuttons[1].GetAttribute("checked").Equals("false"));
+            Assert.AreEqual("true", radiobuttons[0].GetAttribute("checked"));
+            Assert.AreEqual("false", radiobuttons[1].GetAttribute("checked"));
 
             radiobuttons[1].Click();
-            Assert.IsTrue(radiobuttons[0].GetAttribute("checked").Equals("false"));
-            Assert.IsTrue(radiobuttons[1].GetAttribute("checked").Equals("true"));
+            Assert.AreEqual("false", radiobuttons[0].GetAttribute("checked"));
+            Assert.AreEqual("true", radiobuttons[1].GetAttribute("checked"));
 
             AndroidElement star = driver.FindElementById("io.appium.android.apis:id/star");
 
-            Assert.IsTrue(star.GetAttribute("checked").Equals("false"));
+            Assert.AreEqual("false", star.GetAttribute("checked"));
             star.Click();
-            Assert.IsTrue(star.GetAttribute("checked").Equals("true"));
+            Assert.AreEqual("true", star.GetAttribute("checked"));
 
             AndroidElement[] toggles = { driver.FindElementById("io.appium.android.apis:id/toggle1"),
                 driver.FindElementById("io.appium.android.apis:id/toggle2") };
@@ -150,11 +150,11 @@ namespace AndroidAPKTests
             toggles[1].Click();
             Assert.IsTrue(toggles[1].GetAttribute("checked").Equals("true") && toggles[1].Text.Contains("ON"));
 
-            Assert.IsTrue(driver.FindElementById("android:id/text1").Text.Contains("Mercury"));
+            StringAssert.AreEqualIgnoringCase("Mercury", driver.FindElementById("android:id/text1").Text);
             driver.FindElementById("android:id/text1").Click();
             IList<AndroidElement> elements = driver.FindElementsById("android:id/text1");
             elements[2].Click();
-            Assert.IsTrue(driver.FindElementById("android:id/text1").Text.Contains("Earth"));
+            StringAssert.AreEqualIgnoringCase("Earth", driver.FindElementById("android:id/text1").Text);
         }
     }
 }
