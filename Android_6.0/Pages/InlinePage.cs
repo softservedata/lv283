@@ -5,12 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Enums;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace Android_6._0.Pages
@@ -35,27 +31,16 @@ namespace Android_6._0.Pages
 		[FindsBy(How = How.Id, Using = "android:id/pm_label")]
 		public IWebElement Pm { get; protected set; }
 
-		public void Check(string h, string m)
-		{
-			Assert.IsTrue(Hours.Text.Contains(h));
-			Assert.IsTrue(Minutes.Text.Contains(m));
-		}
-
 		public void GhangeTime(string hour, string minutes)
 		{
 			Am.Click();
 			Hours.Click();
 			driver.FindElementById(hour).Click();
 			driver.FindElementById(minutes).Click();
-			Check(hour, minutes);
+			Assert.IsTrue(Hours.Text.Contains(hour));
+			Assert.IsTrue(Minutes.Text.Contains(minutes));
 		}
 
-
-
-
-
-
-
-
+		
 	}
 }

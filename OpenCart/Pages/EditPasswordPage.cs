@@ -36,12 +36,6 @@ namespace OpenCart.Pages
 			Password.Submit();
 		}
 
-		//public void CheckEnterPassword(string expected)
-		public void CheckEnterPassword()
-		{
-			Assert.True(Actual.Text.Trim().Contains("Password must be between 4 and 20 characters!"));
-		}
-
 		public void EnterConfirm(string passwordField, string confirmField)
 		{
 			Password.Clear();
@@ -49,12 +43,6 @@ namespace OpenCart.Pages
 			Confirm.Clear();
 			Confirm.SendKeys(confirmField);
 			Confirm.Submit();
-		}
-
-		//public void CheckEnterConfirm(string expected)
-		public void CheckEnterConfirm()
-		{
-			Assert.True(Actual.Text.Trim().Contains("Password confirmation does not match password!"));
 		}
 
 		public void ChangePassword(string passwordField, string confirmField)
@@ -66,11 +54,9 @@ namespace OpenCart.Pages
 			Confirm.Submit();
 		}
 
-		//public void CheckChangePassword(string expected)
-		public void CheckChangePassword()
+		public void ChangePassword()
 		{
 		    Actual = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
-			Assert.IsTrue(Actual.Text.Contains("Change"));
 		}
 
 		public void Logout()

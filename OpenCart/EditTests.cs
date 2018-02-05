@@ -47,8 +47,7 @@ namespace OpenCart
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
 			editPasswordPage.GoToEditPassword();
 			editPasswordPage.EnterPassword(password.GetPasswordField());
-			editPasswordPage.CheckEnterPassword();
-			//Thread.Sleep(1000);
+			Assert.True(editPasswordPage.Actual.Text.Trim().Equals("Password must be between 4 and 20 characters!"));
 		}
 
 		private static readonly object[] ConfirmsData =
@@ -62,7 +61,7 @@ namespace OpenCart
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
 			editPasswordPage.GoToEditPassword();
 			editPasswordPage.EnterConfirm(password.GetPasswordField(), password.GetConfirmField());
-			editPasswordPage.CheckEnterConfirm();
+			Assert.True(editPasswordPage.Actual.Text.Trim().Equals("Password confirmation does not match password!"));
 		}
 
 		private static readonly object[] CorrectPasswordData =
@@ -78,7 +77,8 @@ namespace OpenCart
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
 			editPasswordPage.GoToEditPassword();
 			editPasswordPage.EnterConfirm(password.GetPasswordField(), password.GetConfirmField());
-			editPasswordPage.CheckChangePassword();
+			editPasswordPage.ChangePassword();
+			Assert.IsFalse(editPasswordPage.Actual.Text.Equals("Change"));
 		}
 
 		private static readonly object[] AccountData =
@@ -93,7 +93,7 @@ namespace OpenCart
 			editAccountPage.GoToEditAccount();
 
 			editAccountPage.EnterFirstname(accountInfo.GetFirstname());
-			editAccountPage.CheckEditInvalideInformation();
+			Assert.IsTrue(editAccountPage.Actual.Text.Equals("Edit Information"));
 		}
 
 		[Test, Order(6), TestCaseSource(nameof(AccountData))]
@@ -103,7 +103,7 @@ namespace OpenCart
 			editAccountPage.GoToEditAccount();
 
 			editAccountPage.EnterLastname(accountInfo.GetLastname());
-			editAccountPage.CheckEditInvalideInformation();
+			Assert.IsTrue(editAccountPage.Actual.Text.Equals("Edit Information"));
 		}
 
 		[Test, Order(7), TestCaseSource(nameof(AccountData))]
@@ -113,7 +113,7 @@ namespace OpenCart
 			editAccountPage.GoToEditAccount();
 
 			editAccountPage.EnterTelephone(accountInfo.GetPhone());
-			editAccountPage.CheckEditInvalideInformation();
+			Assert.IsTrue(editAccountPage.Actual.Text.Equals("Edit Information"));
 			//editAccountPage.Logout();
 		}
 

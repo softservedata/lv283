@@ -26,23 +26,17 @@ namespace Android_6._0
 			RadioGroupPage radioGroupPage = views.GoToRadioGroupPage();
 
 			radioGroupPage.RadioSnack.Click();
-			radioGroupPage.CheckRadioGroup(radioGroup.GetSnack());
-
+			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetSnack()));
 			radioGroupPage.RadioBreakfast.Click();
-			radioGroupPage.CheckRadioGroup(radioGroup.GetBreakfast());
-
+			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetBreakfast()));
 			radioGroupPage.RadioLunch.Click();
-			radioGroupPage.CheckRadioGroup(radioGroup.GetLunch());
-
+			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetLunch()));
 			radioGroupPage.RadioDinner.Click();
-			radioGroupPage.CheckRadioGroup(radioGroup.GetDinner());
-
+			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetDinner()));
 			radioGroupPage.RadioAll.Click();
-			radioGroupPage.CheckRadioGroup(radioGroup.GetAll());
-
+			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetAll()));
 			radioGroupPage.ButtonClear.Click();
-			radioGroupPage.CheckRadioGroup(radioGroup.GetClear());
-
+			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetClear()));
 		}
 
 		private static readonly object[] TimeData =

@@ -63,24 +63,6 @@ namespace Android_6._0.Pages
 		public IWebElement Pm { get; protected set; }
 
 
-		public void CheckRadioGroup(string idText)
-		{
-			Assert.IsTrue(DateDisplay.Text.Contains(idText));
-			
-		}
-
-		public void Check(string hour, string minutes)
-		{
-			string time = hour + ":" + minutes;
-			Assert.IsTrue(DateDisplay.Text.Substring(DateDisplay.Text.Length - 5, DateDisplay.Text.Length).Contains(time));
-		}
-
-		public void CheckWidgetsTime(string hour, string minutes)
-		{
-			Assert.IsTrue(Hours.Text.Contains(hour));
-			Assert.IsTrue(Minutes.Text.Contains(minutes));
-		}
-
 		public void GhangeTime(string hour, string minutes)
 		{
 			ChangeTime.Click();
@@ -92,7 +74,8 @@ namespace Android_6._0.Pages
 			Thread.Sleep(3000);
 			driver.FindElementById(minutes).Click();
 			Thread.Sleep(3000);
-			Check(hour, minutes);
+			string time = hour + ":" + minutes;
+			Assert.IsTrue(DateDisplay.Text.Substring(DateDisplay.Text.Length - 5, DateDisplay.Text.Length).Contains(time));
 			Thread.Sleep(3000);
 		}
 
@@ -100,7 +83,8 @@ namespace Android_6._0.Pages
 		{
 			//GhangeTime(hour, minutes);
 			Thread.Sleep(3000);
-			CheckWidgetsTime(hour, minutes);
+			Assert.IsTrue(Hours.Text.Equals(hour));
+			Assert.IsTrue(Minutes.Text.Equals(minutes));
 		}
 
 

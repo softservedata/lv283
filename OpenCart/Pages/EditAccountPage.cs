@@ -79,12 +79,12 @@ namespace OpenCart.Pages
 
 		public void CheckEditInvalideInformation()
 		{
-			Assert.IsTrue(Actual.Text.Contains("Edit Information"));
+			Assert.IsTrue(Actual.Text.Equals("Edit Information"));
 		}
 
 		public void CheckEditValideInformation()
 		{
-			Assert.IsFalse(Actual.Text.Contains("Edit Information"));
+			Assert.IsFalse(Actual.Text.Equals("Edit Information"));
 		}
 
 		public void Logout()

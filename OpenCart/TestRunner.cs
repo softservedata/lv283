@@ -52,17 +52,17 @@ namespace OpenCart
 		}
 
 
-		[SetUp]
-		public void BeforeTest(IUser user)
-		{
-			driver.Navigate().GoToUrl(url);
-			LoginUser(user);
-		}
+		//[SetUp]
+		//public void BeforeTest(IUser user)
+		//{
+		//	driver.Navigate().GoToUrl(url);
+		//	LoginUser(user);
+		//}
 
-		[SetUp]
-		public void AfterTest()
-		{
-          LogoutUser();
-		}
+		//[TearDown]
+		//public void AfterTest()
+		//{
+  //        LogoutUser();
+		//}
 	}
 }
