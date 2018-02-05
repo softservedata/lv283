@@ -13,7 +13,7 @@ namespace OpenCart
     public class RestGitTest
     {
 
-        //[Test]
+        [Test]
         public void FoundationList()
         {
             List<FoundationNET> actualFoundations = new FoundationBLL().GetFoundations();

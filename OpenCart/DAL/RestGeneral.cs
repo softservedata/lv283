@@ -42,12 +42,13 @@ namespace OpenCart.DAL
             }
         }
 
-        private async Task<List<T>> FillAll() // GET
+        //private async Task<List<T>> FillAll() // GET
+        private async Task FillAll() // GET
         {
             var serializer = new DataContractJsonSerializer(typeof(List<T>));
             var streamTask = client.GetStreamAsync(url);
             repositories = serializer.ReadObject(await streamTask) as List<T>;
-            return repositories;
+            //return repositories;
         }
 
         public List<T> GetAll()
