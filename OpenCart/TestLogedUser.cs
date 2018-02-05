@@ -50,13 +50,14 @@ namespace OpenCart
             homePage.CheckOut.Click();
             IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']/h1"));
             Assert.AreEqual("Checkout", cart.Text);
-            homePage.ShopCartList.Click();
+            
         }
 
         [Test, Order(4)]
         public void DeleteShoppingCart()
         {
             HomePage homePage = new HomePage(driver);
+            homePage.ShopCartList.Click();
             homePage.Delete.Click();
             Thread.Sleep(1000);
             IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']/p"));
