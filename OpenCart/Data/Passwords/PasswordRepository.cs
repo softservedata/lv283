@@ -56,7 +56,7 @@ namespace OpenCart.Data.Passwords
 				.Build();
 		}
 
-		public IPassword Password4()
+		public IPassword PasswordFour()
 		{
 			return Password.Get()
 				.SetPasswordField("qwer")
@@ -64,7 +64,7 @@ namespace OpenCart.Data.Passwords
 				.Build();
 		}
 
-		public IPassword Password20()
+		public IPassword PasswordTwenty()
 		{
 			return Password.Get()
 				.SetPasswordField("20172017201720172017")
@@ -72,7 +72,7 @@ namespace OpenCart.Data.Passwords
 				.Build();
 		}
 
-		public IPassword Password6()
+		public IPassword PasswordSix()
 		{
 			return Password.Get()
 				.SetPasswordField("qwerty")

@@ -37,8 +37,6 @@ namespace Android_6._0.Pages
 			Hours.Click();
 			driver.FindElementById(hour).Click();
 			driver.FindElementById(minutes).Click();
-			Assert.IsTrue(Hours.Text.Contains(hour));
-			Assert.IsTrue(Minutes.Text.Contains(minutes));
 		}
 
 		

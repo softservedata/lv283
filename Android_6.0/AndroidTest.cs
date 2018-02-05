@@ -18,7 +18,7 @@ namespace Android_6._0
 			new object[] { RadioGroupRepository.Get().Group() }
 		};
 
-		[Test, Order(1), TestCaseSource(nameof(RadioGroupData))]
+		[Test, TestCaseSource(nameof(RadioGroupData))]
 		public void CheckRadioGroup(IRadioGroup radioGroup)
 		{
 			HomePage home = new HomePage(driver);
@@ -26,17 +26,17 @@ namespace Android_6._0
 			RadioGroupPage radioGroupPage = views.GoToRadioGroupPage();
 
 			radioGroupPage.RadioSnack.Click();
-			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetSnack()));
+			Assert.AreEqual(radioGroup.GetSnack(), radioGroupPage.Actual.Text);
 			radioGroupPage.RadioBreakfast.Click();
-			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetBreakfast()));
+			Assert.AreEqual(radioGroup.GetBreakfast(), radioGroupPage.Actual.Text);
 			radioGroupPage.RadioLunch.Click();
-			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetLunch()));
+			Assert.AreEqual(radioGroup.GetLunch(), radioGroupPage.Actual.Text);
 			radioGroupPage.RadioDinner.Click();
-			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetDinner()));
+			Assert.AreEqual(radioGroup.GetDinner(), radioGroupPage.Actual.Text);
 			radioGroupPage.RadioAll.Click();
-			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetAll()));
+			Assert.AreEqual(radioGroup.GetAll(), radioGroupPage.Actual.Text);
 			radioGroupPage.ButtonClear.Click();
-			Assert.IsTrue(radioGroupPage.Actual.Text.Equals(radioGroup.GetClear()));
+			Assert.AreEqual(radioGroup.GetClear(), radioGroupPage.Actual.Text);
 		}
 
 		private static readonly object[] TimeData =
@@ -44,10 +44,12 @@ namespace Android_6._0
 			new object[] { TimeRepository.Get().GroupTimeFive() },
 			new object[] { TimeRepository.Get().GroupTimeSeven() },
 			new object[] { TimeRepository.Get().GroupTimeTen() }
+			//new object[] { TimeRepository.Get().GroupTimeTwelve() },
+			//new object[] { TimeRepository.Get().GroupTimeEleven() },
+		 //   new object[] { TimeRepository.Get().GroupTimeFirst() }
 		};
 
-		[Test, Order(2), TestCaseSource(nameof(TimeData))]
-		//public void CheckInline([Range(1, 12)] int h, [Range(0, 59)] int m)
+		[Test, TestCaseSource(nameof(TimeData))]
 		public void CheckInline(ITime time)
 		{
 			HomePage home = new HomePage(driver);
@@ -55,6 +57,8 @@ namespace Android_6._0
 			DateWidgetsPage dateWidgets = views.GoToDateWidgetsPage();
 			InlinePage inlinePage = dateWidgets.GoToInlinePage();
 			inlinePage.GhangeTime(time.GetHour(), time.GetMinute());
+			Assert.AreEqual(time.GetHour(), inlinePage.Hours.Text);
+			Assert.AreEqual(time.GetMinute(), inlinePage.Minutes.Text);
 
 		}
 

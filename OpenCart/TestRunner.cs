@@ -35,17 +35,16 @@ namespace OpenCart
 			new object[] { UserRepository.Get().ValidUser() }
 		};
 
-		public void LoginUser(IUser user)
+		public void Login(IUser user)
 		{
 			HomePage home = new HomePage(driver);
 			LoginPage login = home.GoToLoginPage();
 			AccountPage accountPage = login.GoToAccountPage(user.GetEmail(), user.GetPassword());
 			accountPage.GoToEditPasswordPage();
-			//accountPage.clickOnLogout();
 		}
 
 
-		public void LogoutUser()
+		public void Logout()
 		{
 			EditAccountPage editAccountPage = new EditAccountPage(driver);
 			editAccountPage.Logout();
@@ -56,13 +55,13 @@ namespace OpenCart
 		//public void BeforeTest(IUser user)
 		//{
 		//	driver.Navigate().GoToUrl(url);
-		//	LoginUser(user);
+		//	Login(user);
 		//}
 
 		//[TearDown]
 		//public void AfterTest()
 		//{
-  //        LogoutUser();
+		//	Logout();
 		//}
 	}
 }

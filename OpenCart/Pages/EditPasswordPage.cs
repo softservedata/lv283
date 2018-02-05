@@ -59,7 +59,7 @@ namespace OpenCart.Pages
 		    Actual = driver.FindElement(By.XPath("//a[contains(@href, '/password')]"));
 		}
 
-		public void Logout()
+		public void LogOut()
 		{
 			AccountPage accountPage = new AccountPage(driver);
 			accountPage.ClickOnLogout();

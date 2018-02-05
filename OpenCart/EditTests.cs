@@ -1,29 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using NUnit.Framework;
 using OpenCart.Pages;
-using OpenCart.PagesTest;
 using OpenCart.Data.Users;
 using OpenCart.Data.Passwords;
 using OpenCart.Data.AccountsInfo;
-using OpenQA.Selenium.Support.UI;
 
 namespace OpenCart
 {
 	[TestFixture]
 	public class EditTests: TestRunner
 	{
-				
+			
 		private static readonly object[] UsersData =
 		{
             new object[] { UserRepository.Get().ValidUser() }
 		};
-		//Parameterize Test
+
 		[Test, Order(1), TestCaseSource(nameof(UsersData))]
 		public void LoginUser(IUser user)
 		{
@@ -31,10 +22,8 @@ namespace OpenCart
 			LoginPage login = home.GoToLoginPage();
 			AccountPage accountPage = login.GoToAccountPage(user.GetEmail(), user.GetPassword());
 			accountPage.GoToEditPasswordPage();
-			          //accountPage.clickOnLogout();
 		}
-
-
+		
 		private static readonly object[] PasswordsData =
 		{
 			new object[] {  PasswordRepository.Get().IncorrectPasswordLessThanFour() },
@@ -55,7 +44,7 @@ namespace OpenCart
 			new object[] {  PasswordRepository.Get().IncorrectConfirm() }
 		};
 
-		[Test, Order(3), TestCaseSource(nameof(ConfirmsData))]
+		[Test, TestCaseSource(nameof(ConfirmsData))]
 		public void EditIncorrectConfirmField(Data.Passwords.IPassword password)
 		{
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
@@ -66,12 +55,12 @@ namespace OpenCart
 
 		private static readonly object[] CorrectPasswordData =
 		{
-			new object[] {  PasswordRepository.Get().Password4() },
-			new object[] {  PasswordRepository.Get().Password20() },
-			new object[] {  PasswordRepository.Get().Password6() }
+			new object[] {  PasswordRepository.Get().PasswordFour() },
+			new object[] {  PasswordRepository.Get().PasswordTwenty() },
+			new object[] {  PasswordRepository.Get().PasswordSix() }
 		};
 
-		[Test, Order(4), TestCaseSource(nameof(CorrectPasswordData))]
+		[Test, TestCaseSource(nameof(CorrectPasswordData))]
 		public void ChangePassword(Data.Passwords.IPassword password)
 		{
 			EditPasswordPage editPasswordPage = new EditPasswordPage(driver);
@@ -86,7 +75,7 @@ namespace OpenCart
 			new object[] { AccountInfoRepository.Get().InvalidUser() }
 		};
 
-		[Test, Order(5), TestCaseSource(nameof(AccountData))]
+		[Test, TestCaseSource(nameof(AccountData))]
 		public void ChangeFirsname(IAccountInfo accountInfo)
 		{
 			EditAccountPage editAccountPage = new EditAccountPage(driver);
@@ -96,7 +85,7 @@ namespace OpenCart
 			Assert.IsTrue(editAccountPage.Actual.Text.Equals("Edit Information"));
 		}
 
-		[Test, Order(6), TestCaseSource(nameof(AccountData))]
+		[Test, TestCaseSource(nameof(AccountData))]
 		public void ChangeLastname(IAccountInfo accountInfo)
 		{
 			EditAccountPage editAccountPage = new EditAccountPage(driver);
@@ -106,7 +95,7 @@ namespace OpenCart
 			Assert.IsTrue(editAccountPage.Actual.Text.Equals("Edit Information"));
 		}
 
-		[Test, Order(7), TestCaseSource(nameof(AccountData))]
+		[Test, TestCaseSource(nameof(AccountData))]
 		public void ChangeTelephone(IAccountInfo accountInfo)
 		{
 			EditAccountPage editAccountPage = new EditAccountPage(driver);
@@ -114,10 +103,27 @@ namespace OpenCart
 
 			editAccountPage.EnterTelephone(accountInfo.GetPhone());
 			Assert.IsTrue(editAccountPage.Actual.Text.Equals("Edit Information"));
-			//editAccountPage.Logout();
 		}
 
+		private static readonly object[] Emails =
+		{
+			new object[] { AccountInfoRepository.Get().User1() },
+			new object[] { AccountInfoRepository.Get().User2() },
+			new object[] { AccountInfoRepository.Get().User3() },
+			new object[] { AccountInfoRepository.Get().User4() },
+			new object[] { AccountInfoRepository.Get().User5() },
+			new object[] { AccountInfoRepository.Get().User6() },
+			new object[] { AccountInfoRepository.Get().User7() }
+		};
+		[Test, TestCaseSource(nameof(Emails))]
+		public void ChangeEmail(IAccountInfo accountInfo)
+		{
+			EditAccountPage editAccountPage = new EditAccountPage(driver);
+			editAccountPage.GoToEditAccount();
 
+			editAccountPage.EnterEmail(accountInfo.GetEmail());
+			Assert.IsFalse(editAccountPage.Actual.Text.Equals("Edit Information"));
+		}
 
 	}
-	}
+}

@@ -34,12 +34,12 @@ namespace Android_6._0.Data.RadioGroups
 		public IRadioGroup Group()
 		{
 			return RadioGroup.Get()
-				.SetSnack("2131296259")
-				.SetBreakfast("2131296533")
-				.SetLunch("2131296531")
-				.SetDinner("2131296534")
-				.SetAll("2131296535")
-				.SetClear("(none)")
+				.SetSnack("You have selected: 2131296259")
+				.SetBreakfast("You have selected: 2131296533")
+				.SetLunch("You have selected: 2131296531")
+				.SetDinner("You have selected: 2131296534")
+				.SetAll("You have selected: 2131296535")
+				.SetClear("You have selected: (none)")
 				.Build();
 		}
 

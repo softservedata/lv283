@@ -16,7 +16,8 @@ namespace Android_6._0
 		protected AndroidElement actual;
 
 		//private string url = ConfigurationManager.AppSettings["APK"];
-		private readonly string url = @"D:\ATQC\TAQC.NET\ApiDemos.apk";
+		//private readonly string url = @"D:\ATQC\TAQC.NET\ApiDemos.apk"
+		private readonly string url = @"D:\Temp\ApiDemos.apk";
 		private readonly string uri = @"http://127.0.0.1:4723/wd/hub";
 
 		[OneTimeSetUp]

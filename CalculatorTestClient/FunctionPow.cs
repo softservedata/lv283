@@ -26,6 +26,7 @@ namespace CalculatorTestClient
 			try
 			{
 				actual = calc.pow(bases, exponent);
+				extended = Math.Pow(bases, exponent);
 			}
 			catch (Exception ex)
 			{
@@ -33,10 +34,6 @@ namespace CalculatorTestClient
 			}
 		}
 
-		public void Check(double extended, double actual)
-		{
-			Assert.AreEqual(extended, actual);
-		}
 
 	}
 }

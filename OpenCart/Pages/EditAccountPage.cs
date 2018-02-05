@@ -59,6 +59,7 @@ namespace OpenCart.Pages
 			Email.Clear();
 			Email.SendKeys(emailField);
 			///////////
+			Email.Submit();
 		}
 
 		public void EnterTelephone(string telephoneField)
@@ -77,17 +78,8 @@ namespace OpenCart.Pages
 			Fax.Submit();
 		}
 
-		public void CheckEditInvalideInformation()
-		{
-			Assert.IsTrue(Actual.Text.Equals("Edit Information"));
-		}
 
-		public void CheckEditValideInformation()
-		{
-			Assert.IsFalse(Actual.Text.Equals("Edit Information"));
-		}
-
-		public void Logout()
+		public void LogOut()
 		{
 			AccountPage accountPage = new AccountPage(driver);
 			accountPage.ClickOnLogout();
