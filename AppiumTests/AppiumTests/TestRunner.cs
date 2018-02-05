@@ -31,7 +31,7 @@ namespace AppiumTests
             DesiredCapabilities cap = new DesiredCapabilities();
             cap.SetCapability("platformName", "Android");
             cap.SetCapability("platformVersion", "6.0");
-            cap.SetCapability("app", @"C:\Users\Zewer\Desktop\ApiDemos.apk");
+            cap.SetCapability("app", @"C:\Users\yharasym\Desktop\ApiDemos.apk");
 
             //how to check deviceName. cmd => adb devices -l
             //https://discuss.appium.io/t/how-to-get-device-id/8648/4
