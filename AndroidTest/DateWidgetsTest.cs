@@ -2,10 +2,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
 namespace AndroidTest
 {
@@ -14,8 +11,7 @@ namespace AndroidTest
 
         private static readonly object[] DatesData =
         {
-            new object[] { DateRepository.Get().Tomorrow() },
-            new object[] { DateRepository.Get().AfterTomorrow() }
+            new object[] { DateRepository.Get().ValentinesDay() }
         };
 
         [Test, TestCaseSource(nameof(DatesData))]
@@ -25,13 +21,19 @@ namespace AndroidTest
             driver.FindElement(By.Id("Date Widgets")).Click();
             driver.FindElement(By.Id("1. Dialog")).Click();
             driver.FindElement(By.Id("change the date")).Click();
-            //Change year
+
             driver.FindElement(By.Id("android:id/date_picker_header_year")).Click();
             driver.FindElement(By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.ViewAnimator/android.widget.ListView/android.widget.TextView[@text = \"" + date.GetYear() + "\"]")).Click();
-            //Change day
             driver.FindElement(By.Id(date.GetDay() + " " + date.GetMonth() + " " + date.GetYear())).Click();
             driver.FindElement(By.Id("android:id/button1")).Click();
-            string actualDate = driver.FindElement(By.Id("io.appium.android.apis:id/dateDisplay")).Text;
+            string actualDateString = driver.FindElement(By.Id("io.appium.android.apis:id/dateDisplay")).Text;
+            
+            DateTime actualDate = DateTime.ParseExact(
+                    driver.FindElement(By.Id("io.appium.android.apis:id/dateDisplay")).Text,
+                    "M-d-yyyy HH:mm",
+                    CultureInfo.InvariantCulture);
+            Assert.AreEqual(date.ToString(), actualDate.ToString("M-d-yyyy"));
         }
+
     }
 }

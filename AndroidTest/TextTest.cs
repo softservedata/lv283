@@ -43,12 +43,12 @@ namespace AndroidTest
         };
 
         [Test, TestCaseSource(nameof(ButtonsToClick))]
-        public void ClickMarqueeButtons(string buttonName)
+        public void ClickMarqueeButtons(string buttonId)
         {
             driver.FindElement(By.Id("Text")).Click();
             driver.FindElement(By.Id("Marquee")).Click();
 
-            driver.FindElement(By.Id(buttonName)).Click();
+            driver.FindElement(By.Id(buttonId)).Click();
         }
     }
 }

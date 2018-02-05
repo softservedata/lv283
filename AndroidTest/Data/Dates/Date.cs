@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AndroidTest.Data.Dates
 {
 
-    public enum Month { January, February, March, April, May, June, July, August, September, October, November, December };
+    public enum Month { January=1, February, March, April, May, June, July, August, September, October, November, December };
 
     public interface IMonth
     {
@@ -19,7 +19,7 @@ namespace AndroidTest.Data.Dates
         IYear SetDay(string day);
     }
 
-    public interface IYear : IDateBuilder
+    public interface IYear
     {
         IDateBuilder SetYear(string year);
     }
@@ -89,7 +89,7 @@ namespace AndroidTest.Data.Dates
 
         public override string ToString()
         {
-            return String.Format("{0}-{1}-{2}", (int)month+1, day, year);
+            return String.Format("{0}-{1}-{2}", (int)month, day, year);
         }
     }
 }

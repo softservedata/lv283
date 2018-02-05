@@ -28,21 +28,12 @@ namespace AndroidTest.Data.Dates
             return instance;
         }
 
-        public IDate Tomorrow()
+        public IDate ValentinesDay()
         {
             return Date.Get()
                 .SetMonth(Month.February)
                 .SetDay("14")
-                .SetYear("2021")
-                .Build();
-        }
-
-        public IDate AfterTomorrow()
-        {
-            return Date.Get()
-                .SetMonth(Month.February)
-                .SetDay("16")
-                .SetYear("2022")
+                .SetYear("2019")
                 .Build();
         }
     }

@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessToAccount.cs" />
+    <Compile Include="Data\Commodities\Commodity.cs" />
+    <Compile Include="Data\Commodities\CommodityRepository.cs" />
     <Compile Include="TestRunner.cs" />
     <Compile Include="WishListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
