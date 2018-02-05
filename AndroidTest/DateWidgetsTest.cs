@@ -6,6 +6,7 @@ using System.Globalization;
 
 namespace AndroidTest
 {
+    [TestFixture]
     public class DateWidgetsTest : TestRunner
     {
 

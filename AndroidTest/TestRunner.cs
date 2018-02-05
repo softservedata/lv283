@@ -1,6 +1,5 @@
 ﻿using System;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
@@ -39,10 +38,10 @@ namespace AndroidTest
         [SetUp]
         public void BeforeTest()
         {
-
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
         }
 
-        [SetUp]
+        [TearDown]
         public void AfterTest()
         {
             driver.ResetApp();
