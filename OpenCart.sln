@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCart", "OpenCart\OpenCart.csproj", "{0E56089F-E72E-4047-AEBB-F1A344C692B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppiumDemo", "AppiumDemo\AppiumDemo.csproj", "{5BE8E430-5300-413A-B8EE-677DA2A195C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{73EFB5A8-CB24-4F83-9F4D-7E34800626B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0E56089F-E72E-4047-AEBB-F1A344C692B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E56089F-E72E-4047-AEBB-F1A344C692B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E56089F-E72E-4047-AEBB-F1A344C692B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE8E430-5300-413A-B8EE-677DA2A195C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE8E430-5300-413A-B8EE-677DA2A195C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE8E430-5300-413A-B8EE-677DA2A195C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE8E430-5300-413A-B8EE-677DA2A195C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73EFB5A8-CB24-4F83-9F4D-7E34800626B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EFB5A8-CB24-4F83-9F4D-7E34800626B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EFB5A8-CB24-4F83-9F4D-7E34800626B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EFB5A8-CB24-4F83-9F4D-7E34800626B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
