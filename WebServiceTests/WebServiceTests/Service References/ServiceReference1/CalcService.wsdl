@@ -2,7 +2,7 @@
 <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://edu.softserve.com/" name="CalcService" targetNamespace="http://edu.softserve.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
-      <xsd:import schemaLocation="http://192.168.131.128:8080/Lv283Service/services/CalcPort?xsd=calc_schema1.xsd" namespace="http://edu.softserve.com/" />
+      <xsd:import schemaLocation="http://localhost:8080/Lv283Service/services/CalcPort?xsd=calc_schema1.xsd" namespace="http://edu.softserve.com/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="mod">
@@ -221,7 +221,7 @@
   </wsdl:binding>
   <wsdl:service name="CalcService">
     <wsdl:port name="CalcPort" binding="tns:CalcServiceSoapBinding">
-      <soap:address location="http://192.168.131.128:8080/Lv283Service/services/CalcPort" />
+      <soap:address location="http://localhost:8080/Lv283Service/services/CalcPort" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

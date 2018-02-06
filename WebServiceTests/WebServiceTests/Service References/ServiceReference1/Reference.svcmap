@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="347cd638-0b69-4b8e-a1d5-5092a415d86c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7eda8d85-1e79-4ad1-a432-259d976795b3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.131.128:8080/Lv283Service/services/CalcPort?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/Lv283Service/services/CalcPort?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CalcPort.xsd" MetadataType="Schema" ID="4b7a7910-03d2-4175-877e-379b1dbfe249" SourceId="1" SourceUrl="http://192.168.131.128:8080/Lv283Service/services/CalcPort?xsd=calc_schema1.xsd" />
-    <MetadataFile FileName="CalcService.wsdl" MetadataType="Wsdl" ID="ec8fad4b-2aec-43c1-a2e2-f0a2989ad5bc" SourceId="1" SourceUrl="http://192.168.131.128:8080/Lv283Service/services/CalcPort?wsdl" />
+    <MetadataFile FileName="CalcPort.xsd" MetadataType="Schema" ID="a6a0558b-d4d7-4ba8-b3f4-2a8472a64b04" SourceId="1" SourceUrl="http://localhost:8080/Lv283Service/services/CalcPort?xsd=calc_schema1.xsd" />
+    <MetadataFile FileName="CalcService.wsdl" MetadataType="Wsdl" ID="d6cf1b1c-d1b3-44e3-a54a-f746ad337cef" SourceId="1" SourceUrl="http://localhost:8080/Lv283Service/services/CalcPort?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

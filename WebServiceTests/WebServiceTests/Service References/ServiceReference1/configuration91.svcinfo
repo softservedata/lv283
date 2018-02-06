@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="cNXJmHD3Oh7bsi+Wy0KJfD2ueZE=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="VCtOrHi1/Dcb6oxUopMZu0R7Crk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="CalcServiceSoapBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CalcPort" contract="ServiceReference1.CalcSEI" bindingType="basicHttpBinding" address="http://192.168.131.128:8080/Lv283Service/services/CalcPort" bindingConfiguration="CalcServiceSoapBinding">
+    <endpoint name="CalcPort" contract="ServiceReference1.CalcSEI" bindingType="basicHttpBinding" address="http://localhost:8080/Lv283Service/services/CalcPort" bindingConfiguration="CalcServiceSoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.131.128:8080/Lv283Service/services/CalcPort</serializedValue>
+          <serializedValue>http://localhost:8080/Lv283Service/services/CalcPort</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

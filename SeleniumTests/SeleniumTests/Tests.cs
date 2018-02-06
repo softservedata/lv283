@@ -8,7 +8,6 @@ namespace SeleniumTests
     {  
         private static readonly object[] UserDataForLogin =
         {
-            //new object[] { "random@random.com", "123456"}
             new object[] { UserRepository.Get().ValidUser() }
         };
         
@@ -22,7 +21,6 @@ namespace SeleniumTests
             
         private static readonly object[] UserDataForIncorrectLogin =
         {
-            //new object[] { "random@random.com", "12321"}
             new object[] { UserRepository.Get().InvalidUser() }
         };
 
@@ -37,7 +35,6 @@ namespace SeleniumTests
         
         private static readonly object[] UserDataForRegister =
         {
-            //new object[] { "randomm@randomm.com", "123456" }    
             new object[] { UserRepository.Get().NewUser() }
         };
 
