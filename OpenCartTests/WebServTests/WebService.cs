@@ -17,12 +17,12 @@ namespace WebServTests
 
         private static readonly object[] ExceptionData =
         {
-            new object[] { Double.MaxValue,  "OutOfRangeException" },
-            new object[] { Double.MaxValue + 1 , "OutOfRangeException" },
-            new object[] {Double.MaxValue/2 ,"OutOfRangeException"},
-            new object[] { Double.MinValue, "OutOfRangeException" },
-            new object[] { Double.MinValue - 1 , "OutOfRangeException" },
-            new object[] {Double.MinValue/2 , "OutOfRangeException"},
+            new object[] { Double.MaxValue,  "NaN, Infinity" },
+            new object[] { Double.MaxValue + 1 , "NaN, Infinity" },
+            new object[] {Double.MaxValue/2 ,"NaN, Infinity"},
+            new object[] { Double.MinValue, "NaN, Infinity" },
+            new object[] { Double.MinValue - 1 , "NaN, Infinity" },
+            new object[] {Double.MinValue/2 , "NaN, Infinity"},
         };
 
         [Test, TestCaseSource(nameof(TestData))]
@@ -35,13 +35,13 @@ namespace WebServTests
         }
 
 
-        [Test, TestCaseSource(nameof(TestData))]
+        [Test, TestCaseSource(nameof(ExceptionData))]
         public void TestSqrInvlid(double argument, string expected)
         {
             CalcSEIClient client = new CalcSEIClient();
             Console.WriteLine(client.sqr(argument));
             double actual = client.sqr(argument);
-            Assert.AreEqual(expected, actual.ToString());
+            Assert.IsTrue(expected.Contains(actual.ToString()));
         }
     }
 
