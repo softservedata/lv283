@@ -28,10 +28,19 @@ namespace WebServTests
         [Test, TestCaseSource(nameof(TestData))]
         public void TestSqrValid(double argument)
         {
+            double actual = 0.0;
+            double expected = 0.0;
             CalcSEIClient client = new CalcSEIClient();
             Console.WriteLine(client.sqr(argument));
-            double actual = client.sqr(argument);
-            double expected = client.sqr(argument);
+            try
+            {
+                actual = client.sqr(argument);
+                expected = client.sqr(argument);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Assert.AreEqual(expected, actual);
         }
 
