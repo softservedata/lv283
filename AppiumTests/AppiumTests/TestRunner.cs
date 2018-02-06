@@ -28,10 +28,15 @@ namespace AppiumTests
 
             //settings here http://piccy.info/view3/11998164/e853790330ca804685c9a25a18543d0c/orig/
 
+            //launch emulator without Android Studio
+            //cmd -> cd C:\Users\Zewer\AppData\Local\Android\Sdk\
+            //cmd -> emulator -avd Nexus_5_API_23
+
             DesiredCapabilities cap = new DesiredCapabilities();
             cap.SetCapability("platformName", "Android");
             cap.SetCapability("platformVersion", "6.0");
-            cap.SetCapability("app", @"C:\Users\yharasym\Desktop\ApiDemos.apk");
+            //cap.SetCapability("app", @"C:\Users\yharasym\Desktop\ApiDemos.apk");
+            cap.SetCapability("app", @"C:\Users\Zewer\Desktop\ApiDemos.apk");
 
             //how to check deviceName. cmd => adb devices -l
             //https://discuss.appium.io/t/how-to-get-device-id/8648/4
@@ -53,7 +58,7 @@ namespace AppiumTests
         //[SetUp]
         public void BeforeTest()
         {
-            ////
+            //
             //driver.ResetApp();
         }
 
