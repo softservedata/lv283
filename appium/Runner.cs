@@ -16,7 +16,7 @@ namespace appium
         {
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability(MobileCapabilityType.App, @"C:\Users\Andrew\AndroidStudioProjects\MyApplication\ApiDemos-debug.apk");
+            capabilities.SetCapability(MobileCapabilityType.App, @"D:\Temp\ApiDemos.apk");
             capabilities.SetCapability(MobileCapabilityType.DeviceName, "emulator-5554");
             capabilities.SetCapability(MobileCapabilityType.Udid, "emulator-5554");
             capabilities.SetCapability(MobileCapabilityType.PlatformVersion, "6.0.0");

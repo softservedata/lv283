@@ -34,7 +34,8 @@ namespace Soap
 
         public void Check(double num1, double num2, double sum)
         {
-            Assert.AreEqual(sum, client.add(num1, num2), 0.00001);
+            double actual = client.add(num1, num2);
+            Assert.AreEqual(sum, actual, 0.00001);
         }
     }
 }
