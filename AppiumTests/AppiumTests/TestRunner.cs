@@ -53,7 +53,7 @@ namespace AppiumTests
         //[SetUp]
         public void BeforeTest()
         {
-            //
+            ////
             //driver.ResetApp();
         }
 
