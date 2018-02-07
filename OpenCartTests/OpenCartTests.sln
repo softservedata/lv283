@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTests", "AndroidTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServTests", "WebServTests\WebServTests.csproj", "{98B0896E-36A9-446F-8CF5-9C6AEFF167DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestPractice", "RestPractice\RestPractice.csproj", "{1C81C8E0-602F-46E7-A8B0-401F7D582C66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{98B0896E-36A9-446F-8CF5-9C6AEFF167DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98B0896E-36A9-446F-8CF5-9C6AEFF167DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98B0896E-36A9-446F-8CF5-9C6AEFF167DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C81C8E0-602F-46E7-A8B0-401F7D582C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C81C8E0-602F-46E7-A8B0-401F7D582C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C81C8E0-602F-46E7-A8B0-401F7D582C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C81C8E0-602F-46E7-A8B0-401F7D582C66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
