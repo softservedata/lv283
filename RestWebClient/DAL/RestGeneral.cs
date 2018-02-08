@@ -1,21 +1,19 @@
-﻿using System;
-using System.Xml;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Runtime.Serialization.Json;
-using System.Globalization;
+using System.Net;
+using Newtonsoft.Json;
+using RestWebClient.Data.Rest;
 
 namespace RestWebClient.DAL
 {
 	public class RestGeneral<T>
 	{
-		private HttpClient client;
+		private WebClient client;
 		private string url;
 		private string mediaTypeHeaderValue;
 		private Dictionary<string, string> requestHeaders;
-		private List<T> repositories;
+		private string response;
+		private Stream repositories;
 
 		public RestGeneral(string url, string mediaTypeHeaderValue,
 			Dictionary<string, string> requestHeaders)
@@ -28,117 +26,19 @@ namespace RestWebClient.DAL
 
 		private void Init()
 		{
-			client = new HttpClient();
-			client.DefaultRequestHeaders.Accept.Clear();
-			client.DefaultRequestHeaders.Accept
-				.Add(new MediaTypeWithQualityHeaderValue(mediaTypeHeaderValue));
-			foreach (string key in requestHeaders.Keys)
-			{
-				client.DefaultRequestHeaders.Add(key, requestHeaders[key]);
-			}
+			client = new WebClient();
+			response = client.DownloadString(url);
 		}
 
-		//private async Task<List<T>> FillAll() // GET
-		private async Task FillAll() // GET
+		private async Task ReadAll() // GET
 		{
-			var serializer = new DataContractJsonSerializer(typeof(List<T>));
-			var streamTask = client.GetStreamAsync(url);
-			repositories = serializer.ReadObject(await streamTask) as List<T>;
-			//return repositories;
+			repositories = JsonConvert.DeserializeObject<Stream>(response);
 		}
 
-		public List<T> GetAll()
+		public Stream GetAll()
 		{
-			FillAll().Wait();
+			ReadAll().Wait();
 			return repositories;
 		}
-
-		//public async Task<T> GetByKey(string key) // GET
-		// {
-		//}
-
-		//public async Task<int> Create(T element) // POST
-		//{ 
-		//    using (var client = new HttpClient())
-		//    {
-		//        client.BaseAddress = new Uri("http://localhost:6740");
-		//        var content = new FormUrlEncodedContent(new[] { new KeyValuePair<string, string>("", "login") });
-		//        var result = await client.PostAsync("/api/Membership/exists", content);
-		//        string resultContent = await result.Content.ReadAsStringAsync();
-		//        Console.WriteLine(resultContent);
-		//    }
-		//}
-
-		//public async Task<T> Update(T searchElement, T modifyElement) { } // PUT
-
-		//public async Task<bool> Delete(T element) { } // DELETE
-
-		//public async Task<bool> Delete(int id) { } // DELETE
 	}
-	//public class RestGeneral<T>
-	//{
-	//	private HttpClient client;
-	//	private string url;
-	//	private string mediaTypeHeaderValue;
-	//	private Dictionary<string, string> requestHeaders;
-	//	private List<T> repositories;
-
-	//	public RestGeneral(string url, string mediaTypeHeaderValue,
-	//		Dictionary<string, string> requestHeaders)
-	//	{
-	//		this.url = url;
-	//		this.mediaTypeHeaderValue = mediaTypeHeaderValue;
-	//		this.requestHeaders = requestHeaders;
-	//		Init();
-	//	}
-
-	//	private void Init()
-	//	{
-	//		client = new HttpClient();
-	//		client.DefaultRequestHeaders.Accept.Clear();
-	//		client.DefaultRequestHeaders.Accept
-	//			.Add(new MediaTypeWithQualityHeaderValue(mediaTypeHeaderValue));
-	//		foreach (string key in requestHeaders.Keys)
-	//		{
-	//			client.DefaultRequestHeaders.Add(key, requestHeaders[key]);
-	//		}
-	//	}
-
-	//	//private async Task<List<T>> FillAll() // GET
-	//	private async Task FillAll() // GET
-	//	{
-	//		var serializer = new DataContractJsonSerializer(typeof(List<T>));
-	//		var streamTask = client.GetStreamAsync(url);
-	//		repositories = serializer.ReadObject(await streamTask) as List<T>;
-	//		//return repositories;
-	//	}
-
-	//	public List<T> GetAll()
-	//	{
-	//		FillAll().Wait();
-	//		return repositories;
-	//	}
-
-	//	//public async Task<T> GetByKey(string key) // GET
-	//	// {
-	//	//}
-
-	//	//public async Task<int> Create(T element) // POST
-	//	//{ 
-	//	//    using (var client = new HttpClient())
-	//	//    {
-	//	//        client.BaseAddress = new Uri("http://localhost:6740");
-	//	//        var content = new FormUrlEncodedContent(new[] { new KeyValuePair<string, string>("", "login") });
-	//	//        var result = await client.PostAsync("/api/Membership/exists", content);
-	//	//        string resultContent = await result.Content.ReadAsStringAsync();
-	//	//        Console.WriteLine(resultContent);
-	//	//    }
-	//	//}
-
-	//	//public async Task<T> Update(T searchElement, T modifyElement) { } // PUT
-
-	//	//public async Task<bool> Delete(T element) { } // DELETE
-
-	//	//public async Task<bool> Delete(int id) { } // DELETE
-	//}
 }

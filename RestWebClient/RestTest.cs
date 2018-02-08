@@ -1,171 +1,140 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Specialized;
-using System.Net;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//
+using System.Xml;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Globalization;
+using NUnit.Framework;
 
 namespace RestWebClient
 {
-	[TestFixture]
-	[DataContract(Name = "repo")]
-	public class RestTest
+	//[DataContract(Name = "dotnet")]
+	//[DataContract(Name = "anything")]
+	[DataContract()]
+	//[DataContract(Name = "headers")]
+	public class ResultJsonObj
 	{
 		[DataMember(Name = "origin")]
-		public string Name { get; set; }
-
-		[DataMember(Name = "url")]
-		public string Description { get; set; }
+		public string Origin { get; set; }
 
 		[DataMember(Name = "id")]
-		public Uri GitHubHomeUrl { get; set; }
+		public string Id { get; set; }
+
+		[DataMember(Name = "url")]
+		public string Url { get; set; }
+
 		[DataMember(Name = "args")]
-		public Uri Homepage { get; set; }
+		public string Args { get; set; }
 
-		[DataMember(Name = "headers")]
-		public int Watchers { get; set; }
+		//[DataContract(Name = "headers")]
+		//public class Headers
+		//{
+		//   [DataMember(Name = "Host")]
+		//public string Host { get; set; }
 
-		[DataMember(Name = "pushed_at")]
-		private string JsonDate { get; set; }
+		//[DataMember(Name = "User-Agent")]
+		//public string UserAgent { get; set; }
+
+		//[DataMember(Name = "Connection")]
+		//public string Connection { get; set; }
+
+		//[DataMember(Name = "Upgrade-Insecure-Requests")]
+		//public string UpgradeInsecureRequests { get; set; }
+
+		//[DataMember(Name = "Accept-Encoding")]
+		//public string AcceptEncoding { get; set; }
+
+		//[DataMember(Name = "Cookie")]
+		//public string Cookie { get; set; }
+
+		//[DataMember(Name = "Accept")]
+		//public string Accept { get; set; }
+
+		//public override string ToString()
+		//{
+		//	return "\nHost = " + Host + " \nUserAgent = " + UserAgent + "\nConnection = " + Connection +
+		//		"\nUpgradeInsecureRequests = " + UpgradeInsecureRequests
+		//		+ "\nAccept-Encoding= " + AcceptEncoding + "\nCookie= " + Cookie
+		//		+ "\nAccept= " + Accept;
+		//}
+
+		//}
+
+		//[DataMember(Name = "headers")]
+		//public string Headers { get; set; }
+		public override string ToString()
+		{
+			return "\nOrigin = " + Origin + " \nId = " + Id + "\nUrl = " + Url +
+				"\nArgs = " /*+ "\nHeaders = " + Headers*/;
+		}
+
+	}
+
+	public class RestTest
+	{
+		private List<ResultJsonObj> repositories;
+		//private ResultJsonObj repositories;
+
+		private async Task FillAll() // GET
+		{
+			//string url = "https://api.github.com/orgs/dotnet/repos";
+			string url = "http://httpbin.org/stream/10";
+			//string url = "http://httpbin.org/headers";
+			//string mediaTypeHeaderValue = "application/vnd.github.v3+json";
+			string mediaTypeHeaderValue = "application/json";
+			Dictionary<string, string> requestHeaders = new Dictionary<string, string>();
+			//requestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+			//
+			HttpClient client = new HttpClient();
+			client.DefaultRequestHeaders.Accept.Clear();
+			client.DefaultRequestHeaders.Accept
+				.Add(new MediaTypeWithQualityHeaderValue(mediaTypeHeaderValue));
+			foreach (string key in requestHeaders.Keys)
+			{
+				client.DefaultRequestHeaders.Add(key, requestHeaders[key]);
+			}
+			//
+			var serializer = new DataContractJsonSerializer(typeof(List<ResultJsonObj>));
+			//var serializer = new DataContractJsonSerializer(typeof(ResultJsonObj));
+			var streamTask = client.GetStreamAsync(url);
+			repositories = serializer.ReadObject(await streamTask) as List<ResultJsonObj>;
+			//repositories = serializer.ReadObject(await streamTask) as ResultJsonObj;
+			//
+			//HttpResponseMessage response = client.GetAsync(url).Result;
+			//Console.WriteLine("response:  " + response.Content.ReadAsStringAsync().Result);
+			//
+			//Re
+			//Console.WriteLine("response:  " + streamTask.Result.);
+			//return repositories;
+		}
+
+		public List<ResultJsonObj> GetAll()
+		//public ResultJsonObj GetAll()
+		{
+			FillAll().Wait();
+			return repositories;
+		}
 
 		[Test]
-		public void Test()
+		public void CheckFoundationExist()
 		{
-			// WebClient
-			//string url = "http://httpbin.org/stream/10";
-			using (WebClient client = new WebClient())
+			RestTest restTest = new RestTest();
+			List<ResultJsonObj> resultJsonObj = restTest.GetAll();
+			//ResultJsonObj resultJsonObj = restTest.GetAll();
+			//Console.WriteLine("resultJsonObj.Count = " + resultJsonObj.Count);
+			foreach (ResultJsonObj result in resultJsonObj)
 			{
-				string lines = "5";
-				//string url = "http://httpbin.org/stream/5" + lines;
-				string url = "http://httpbin.org/stream/5";
-				string content = client.DownloadString(url);
-				Console.WriteLine(content);
+				Console.WriteLine("" + result);
 			}
-
-			// WebClient
-			//string url = "http://localhost:51266/api/home";
-			//string url = "https://api.github.com/orgs/dotnet/repos";
-			//using (var webClient = new WebClient())
-			//{
-			// GET
-			//var response = webClient.DownloadString(url);
-			//
-			// Post // Error
-			//var pars = new NameValueCollection();
-			//var response = webClient.UploadValues(url, pars);
-			//pars.Add("format", "json");
-			//
-			//Console.WriteLine("response: " + response);
-			//}
-			//
-			//
-			// HttpClient //Method GET
-			//string url = "http://localhost:51266/api/home";
-			//string urlParameters = "";
-			//HttpClient client = new HttpClient();
-			//client.BaseAddress = new Uri(url);
-			// Add an Accept header for JSON format. 
-			//client.DefaultRequestHeaders.Accept.Add(
-			//    new MediaTypeWithQualityHeaderValue("application/json"));
-			// List data response. 
-			//HttpResponseMessage response = client.GetAsync(urlParameters).Result;
-			//
-			// Blocking call! 
-			//if (response.IsSuccessStatusCode)
-			//{
-			// Parse the response body. Blocking! 
-			//var result = response.Content
-			//    .ReadAsStringAsync().Result;
-			//Console.WriteLine("result" + result);
-			//}
-			//else
-			//{
-			//Console.WriteLine("{0} ({1})", (int)response.StatusCode,
-			//    response.ReasonPhrase);
-			//}
-			//
-			// (HttpWebRequest)WebRequest
-			//string url = "http://localhost:51266/api/home/123";
-			//string url = "https://api.github.com/orgs/dotnet/repos";
-			//string data = "";
-			//HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-			//request.Method = "GET"; // DO NOT USE request.GetRequestStream()
-			//request.Method = "POST";
-			//request.Method = "DELETE";
-			//request.Method = "PUT";
-			//request.ContentType = "application/json";
-			//request.ContentLength = data.Length;
-			//using (Stream webStream = request.GetRequestStream())
-			//{
-			//    using (StreamWriter requestWriter =
-			//        new StreamWriter(webStream, System.Text.Encoding.ASCII))
-			//    {
-			//        requestWriter.Write(data);
-			//    }
-			//}
-			//try
-			//{
-			//    WebResponse webResponse = request.GetResponse();
-			//    using (Stream webStream = webResponse.GetResponseStream())
-			//    {
-			//        if (webStream != null)
-			//        {
-			//            using (StreamReader responseReader = new StreamReader(webStream))
-			//            {
-			//                string response = responseReader.ReadToEnd();
-			//                Console.WriteLine("response: " + response);
-			//            }
-			//        }
-			//    }
-			//}
-			//catch (Exception e)
-			//{
-			//    Console.Out.WriteLine("-----------------");
-			//    Console.Out.WriteLine(e.Message);
-			//}
-			//
-			// RestClient
-			//string url = "http://localhost:51266/";
-			////string url = "https://api.github.com/";
-			////var client = new RestClient(url);
-			////// client.Authenticator = new HttpBasicAuthenticator(username, password);
-			////var request = new RestRequest("orgs/dotnet/repos", Method.GET);
-			//
-			//var request = new RestRequest("api/home/123", Method.GET);
-			//var request = new RestRequest("api/home/123", Method.POST);
-			//var request = new RestRequest("api/home/123", Method.DELETE);
-			//var request = new RestRequest("api/home/123", Method.PUT);
-			//
-			//request.AddParameter("name", "value");
-			// adds to POST or URL querystring based on Method
-			//request.AddUrlSegment("id", "123");
-			// replaces matching token in request.Resource
-			// easily add HTTP Headers
-			//request.AddHeader("header", "value");
-			// add files to upload (works with compatible verbs)
-			//request.AddFile(path);
-			// execute the request
-			////IRestResponse response = client.Execute(request);
-			////var content = response.Content;
-			////Console.WriteLine("content: " + content);
-			// raw content as string
-			// or automatically deserialize result
-			// return content type is sniffed
-			// but can be explicitly set via RestClient.AddHandler();
-			//
-			//RestResponse<Person> response2 = client.Execute<Person>(request);
-			//var name = response2.Data.Name;
-			// easy async support
-			//client.ExecuteAsync(request, response => {
-			//    Console.WriteLine(response.Content);
-			//});
-			// async with deserialization
-			//var asyncHandle = client.ExecuteAsync<Person>(request, response => {
-			//    Console.WriteLine(response.Data.Name);
-			//});
-			// abort the request on demand
-			//asyncHandle.Abort();
-			//
-			Console.WriteLine("done");
+			//Console.WriteLine("done  Result: " + resultJsonObj);
+			//StringAssert.AreEqualIgnoringCase(description, actualFoundation.Description);
+			Console.WriteLine("Result: ");
 		}
 	}
 }

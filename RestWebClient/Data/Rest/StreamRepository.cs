@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace RestWebClient.Data.Rest
 {
-
 	public class StreamRepository
 	{
 		private volatile static StreamRepository instance;
@@ -33,8 +27,8 @@ namespace RestWebClient.Data.Rest
 
 		public string UrlGutHub()
 		{
-			return "https://api.github.com/orgs/dotnet/repos";
-		}
+			return "http://httpbin.org/stream/1";
+		}		
 
 		public string MediaTypeHeaderValue()
 		{
@@ -44,7 +38,7 @@ namespace RestWebClient.Data.Rest
 		public Dictionary<string, string> RequestHeaders()
 		{
 			Dictionary<string, string> result = new Dictionary<string, string>();
-			result.Add("User-Agent", ".NET Foundation Repository Reporter");
+			result.Add("origin", "194.44.52.254");
 			return result;
 		}
 	}

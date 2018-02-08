@@ -10,33 +10,35 @@ namespace RestWebClient.BBL
 {
 	public class StreamBLL
 	{
-		private StreamDAL streamDAL;
+			private StreamDAL streamDAL;
 
-		public StreamBLL()
-		{
-			streamDAL = new StreamDAL();
-		}
-
-		public List<Stream> GetStreams()
-		{
-			var result = streamDAL.GetAll();
-			return result;
-		}
-
-		public Stream GetStreamByName(string name)
-		{
-			Console.WriteLine("Search name = " + name);
-			Stream result = null;
-			foreach (Stream current in GetStreams())
+			public StreamBLL()
 			{
-				Console.WriteLine("current Name = " + current.Name);
-				if (current.Name.ToLower().Trim().Equals(name.ToLower().Trim()))
-				{
-					result = current;
-					break;
-				}
+			    streamDAL = new StreamDAL();
 			}
-			return result;
+
+			public Stream GetStreams()
+			{
+				var result = streamDAL.GetAll();
+				return result;
+			}
+
+			public bool GetStreamById(string id)
+			{
+				Console.WriteLine("Search id = " + id);
+			    bool result;
+			    Stream data = null;
+
+			if (data.Id.Equals(id))
+				{
+				result = true;
+				}
+			else
+			{
+				result = false;
+			}
+			    return result;
+
 		}
 	}
 }
