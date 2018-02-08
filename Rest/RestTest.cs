@@ -15,59 +15,14 @@ using NUnit.Framework;
 
 namespace Rest
 {
-    [DataContract()]
-    public class ResultJsonObj
-    {
-        [DataMember(Name = "origin")]
-        public string Origin { get; set; }
-
-        [DataMember(Name = "url")]
-        public string url { get; set; }
-
-        public override string ToString()
-        {
-            return "\nOrigin = " + Origin + "\nUrl = " + url;
-        }
-
-    }
+    
 
     public class RestTest
     {
-        private ResultJsonObj repositories;
-
-        private async Task FillAll() // GET
-        {
-            string url = "http://httpbin.org/get";
-            string mediaTypeHeaderValue = "application/json";
-            //Dictionary<string, string> requestHeaders = new Dictionary<string, string>();
-            //
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept
-                .Add(new MediaTypeWithQualityHeaderValue(mediaTypeHeaderValue));
-            //foreach (string key in requestHeaders.Keys)
-            //{
-            //    client.DefaultRequestHeaders.Add(key, requestHeaders[key]);
-            //}
-
-            //
-            var serializer = new DataContractJsonSerializer(typeof(ResultJsonObj));
-            var streamTask = client.GetStreamAsync(url);
-            //repositories = serializer.ReadObject(await streamTask) as List<ResultJsonObj>;
-            repositories = serializer.ReadObject(await streamTask) as ResultJsonObj;
-        }
-
-
-        public ResultJsonObj GetAll()
-        {
-            FillAll().Wait();
-            return repositories;
-        }
-
         [Test]
         public void CheckFoundationExist()
         {
-            RestTest restTest = new RestTest();
+            RestGeneral restTest = new RestGeneral("http://httpbin.org/get", "application/json");
             ResultJsonObj resultJsonObj = restTest.GetAll();
             Console.WriteLine("done  Result: " + resultJsonObj);
         }
