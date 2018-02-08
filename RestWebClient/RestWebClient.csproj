@@ -72,8 +72,6 @@
     <Compile Include="BBL\StreamBLL.cs" />
     <Compile Include="DAL\RestGeneral.cs" />
     <Compile Include="DAL\StreamDAL.cs" />
-    <Compile Include="Data\Rest\FoundationNET.cs" />
-    <Compile Include="Data\Rest\FoundationRepository.cs" />
     <Compile Include="Data\Rest\Headers.cs" />
     <Compile Include="Data\Rest\Stream.cs" />
     <Compile Include="Data\Rest\StreamRepository.cs" />

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RestWebClient.Data.Rest;
 using RestWebClient.DAL;
 
@@ -10,24 +6,24 @@ namespace RestWebClient.BBL
 {
 	public class StreamBLL
 	{
-			private StreamDAL streamDAL;
+		private StreamDAL streamDAL;
 
-			public StreamBLL()
-			{
-			    streamDAL = new StreamDAL();
-			}
+		public StreamBLL()
+		{
+	        streamDAL = new StreamDAL();
+		}
 
-			public Stream GetStreams()
-			{
-				var result = streamDAL.GetAll();
-				return result;
-			}
+		public Stream GetStreams()
+		{
+			var result = streamDAL.GetAll();
+			return result;
+		}
 
-			public bool GetStreamById(string id)
+		public bool GetStreamById(string id)
 			{
 				Console.WriteLine("Search id = " + id);
 			    bool result;
-			    Stream data = null;
+			    Stream data  = new Stream();
 
 			if (data.Id.Equals(id))
 				{
@@ -40,5 +36,7 @@ namespace RestWebClient.BBL
 			    return result;
 
 		}
+
+       
 	}
 }

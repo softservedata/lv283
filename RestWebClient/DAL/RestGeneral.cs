@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System;
 using System.Net;
 using Newtonsoft.Json;
 using RestWebClient.Data.Rest;
+
 
 namespace RestWebClient.DAL
 {
@@ -10,17 +10,12 @@ namespace RestWebClient.DAL
 	{
 		private WebClient client;
 		private string url;
-		private string mediaTypeHeaderValue;
-		private Dictionary<string, string> requestHeaders;
 		private string response;
 		private Stream repositories;
 
-		public RestGeneral(string url, string mediaTypeHeaderValue,
-			Dictionary<string, string> requestHeaders)
+		public RestGeneral(string url)
 		{
 			this.url = url;
-			this.mediaTypeHeaderValue = mediaTypeHeaderValue;
-			this.requestHeaders = requestHeaders;
 			Init();
 		}
 
@@ -30,14 +25,21 @@ namespace RestWebClient.DAL
 			response = client.DownloadString(url);
 		}
 
-		private async Task ReadAll() // GET
+		private void ReadAll() // GET
 		{
-			repositories = JsonConvert.DeserializeObject<Stream>(response);
+			try
+			{
+				repositories = JsonConvert.DeserializeObject<Stream>(response);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.Message);
+			}
 		}
 
 		public Stream GetAll()
 		{
-			ReadAll().Wait();
+			ReadAll();
 			return repositories;
 		}
 	}

@@ -25,21 +25,22 @@ namespace RestWebClient.Data.Rest
 			return instance;
 		}
 
-		public string UrlGutHub()
+		public string Url()
 		{
 			return "http://httpbin.org/stream/1";
 		}		
 
-		public string MediaTypeHeaderValue()
+		public string Id()
 		{
-			return "application/vnd.github.v3+json";
+			return "0";
 		}
-
-		public Dictionary<string, string> RequestHeaders()
+		public string Host()
 		{
-			Dictionary<string, string> result = new Dictionary<string, string>();
-			result.Add("origin", "194.44.52.254");
-			return result;
+			return "httpbin.org";
+		}
+		public string Connection()
+		{
+			return "close";
 		}
 	}
 }
