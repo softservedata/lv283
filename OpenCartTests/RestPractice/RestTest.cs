@@ -1,36 +1,74 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RestPractice.Rest;
-using RestPractice.BLL;
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//
+using System.Xml;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Globalization;
+using NUnit.Framework;
 namespace RestPractice
 {
-    [TestFixture]
+    [DataContract()]
+    public class ResultJsonObj
+    {
+        [DataMember(Name = "origin")]
+        public string Origin { get; set; }
+
+        [DataMember(Name = "url")]
+        public string url { get; set; }
+
+        public override string ToString()
+        {
+            return "\nOrigin = " + Origin + "\nUrl = " + url;
+        }
+
+    }
+
     public class RestTest
     {
-            [Test]
-        public void FoundationList()
+        private ResultJsonObj repositories;
+
+        private async Task FillAll() // GET
         {
-            List<FoundationNET> actualFoundations = new FoundationBLL().GetFoundations();
-            foreach (FoundationNET current in actualFoundations)
+            string url = "http://httpbin.org/cache";
+            string mediaTypeHeaderValue = "application/json";
+            Dictionary<string, string> requestHeaders = new Dictionary<string, string>();
+            //
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept
+                .Add(new MediaTypeWithQualityHeaderValue(mediaTypeHeaderValue));
+            foreach (string key in requestHeaders.Keys)
             {
-                Console.WriteLine("Name = " + current.Name + " \t\tDescription= " + current.Description);
+                client.DefaultRequestHeaders.Add(key, requestHeaders[key]);
             }
+            
+            //
+            var serializer = new DataContractJsonSerializer(typeof(ResultJsonObj));
+            var streamTask = client.GetStreamAsync(url);
+            //repositories = serializer.ReadObject(await streamTask) as List<ResultJsonObj>;
+            repositories = serializer.ReadObject(await streamTask) as ResultJsonObj;
+        }
+        
+
+        public ResultJsonObj GetAll()
+        {
+            FillAll().Wait();
+            return repositories;
         }
 
-        private static readonly object[] FoundationData =
+        [Test]
+        public void CheckFoundationExist()
         {
-            new object[] { "BenchmarkDotNet", "Powerful .NET library for benchmarking" },
-            new object[] { "core", "Home repository for .NET Core" }
-        };
-
-        [Test, TestCaseSource(nameof(FoundationData))]
-        public void CheckFoundationExist(string name, string description)
-        {
-            FoundationNET actualFoundation = new FoundationBLL().GetFoundationByName(name);
-            StringAssert.AreEqualIgnoringCase(description, actualFoundation.Description);
+            RestTest restTest = new RestTest();
+            ResultJsonObj resultJsonObj = restTest.GetAll();
+            Console.WriteLine("done  Result: " + resultJsonObj);
         }
+
     }
 }
