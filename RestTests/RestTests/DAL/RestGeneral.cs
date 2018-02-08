@@ -6,27 +6,38 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Globalization;
 using System.Web.Script.Serialization;
+using RestTests.Data.Rest;
 
-namespace RestTests
+namespace RestTests.DAL
 {
-    public class IP
+    public class RestGeneral
     {
-        public string Origin { get; set; }
-    }
+        private string url;
+        private string myIp;
+        HttpWebRequest request;
+        JsonData deserializedResult;
 
-    static public class RESTIP
-    {
-        static public void GetIp (out string actual)
+        public RestGeneral(string url)
         {
-            actual = "";
-            string url = "http://httpbin.org/ip";
-            string data = "";
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "GET";
-            request.ContentLength = data.Length;
+            this.url = url;
+            Init();
+        }
+        private void Init()
+        {
+            request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";            
+        }
 
+        public string GetIp()
+        {
+            string actual = "";
+            //string url = "http://httpbin.org/ip";
+
+            //request = (HttpWebRequest)WebRequest.Create(url);
+            //request.Method = "GET";
+
+            //var serializer = new JavaScriptSerializer();            
             var serializer = new JavaScriptSerializer();
-            IP deserializedResult;
 
             try
             {
@@ -38,20 +49,20 @@ namespace RestTests
                         using (StreamReader responseReader = new StreamReader(webStream))
                         {
                             string response = responseReader.ReadToEnd();
-                            
-                            deserializedResult = serializer.Deserialize<IP>(response);
+
+                            deserializedResult = serializer.Deserialize<JsonData>(response);
                             actual = deserializedResult.Origin;
-                            //Console.WriteLine(deserializedResult.Origin);
                         }
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.Out.WriteLine("-----------------");
-                //Console.Out.WriteLine(e.Message);
+                Console.Out.WriteLine(e.Message);
             }
-            //return deserializedResult.Origin;
+
+            return actual;
         }
+
     }
 }

@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Json" />
@@ -53,13 +57,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="RESTIP.cs" />
+    <Compile Include="BLL\RestBLL.cs" />
+    <Compile Include="DAL\FoundationDAL.cs" />
+    <Compile Include="DAL\RestGeneral.cs" />
+    <Compile Include="Data\Rest\JsonData.cs" />
+    <Compile Include="Data\Rest\RestRepository.cs" />
     <Compile Include="RestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

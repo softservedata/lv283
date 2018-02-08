@@ -1,19 +1,25 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using RestTests.Data.Rest;
+using RestTests.BLL;
 
 namespace RestTests
 {
-    [TestClass]
-    public class RestTests
+    [TestFixture]
+    public class RestTests //: TestRunner
     {
-        [TestMethod]
-        public void CheckIP()
+        private static readonly object[] IpData =
         {
-            string expected = "188.230.55.18";
+            new object[] { RestRepository.Get().MyIP() }
+        };
+
+        [Test, TestCaseSource(nameof(IpData))]
+        public void CheckIP (string expected)
+        {
             string actual = "";
+            RestBLL actualRest = new RestBLL();
 
-            RESTIP.GetIp(out actual);
-
+            actual = actualRest.GetFoundations();
             Assert.AreEqual(expected, actual);
         }
     }
