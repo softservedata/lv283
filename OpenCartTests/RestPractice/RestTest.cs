@@ -11,6 +11,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Globalization;
 using NUnit.Framework;
+
 namespace RestPractice
 {
     [DataContract()]
@@ -20,12 +21,25 @@ namespace RestPractice
         public string Origin { get; set; }
 
         [DataMember(Name = "url")]
-        public string url { get; set; }
+        public string Url { get; set; }
 
         public override string ToString()
         {
-            return "\nOrigin = " + Origin + "\nUrl = " + url;
+            return "\n Origin = " + Origin + "\n Url = " + Url + "\n Connection = " + Data.Connection + "\n Host = " + Data.Host;
         }
+
+        [DataMember(Name = "headers")]
+        public Header Data { get; set; }
+
+    }
+
+    public class Header
+    {
+        [DataMember(Name = "Connection")]
+        public string Connection { get; set; }
+
+        [DataMember(Name = "Host")]
+        public string Host { get; set; }
 
     }
 
