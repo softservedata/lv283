@@ -12,18 +12,14 @@ using OpenQA.Selenium.Remote;
 namespace OpenCart
 {
     [TestFixture]
-    public class BrowsersTest
+    public class CiTest
     {
-        private ChromeDriverService service;
         private IWebDriver driver;
 
         [OneTimeSetUp]
         public void BeforeAllMethods()
         {
-            service = ChromeDriverService.CreateDefaultService();
-            //    .CreateDefaultService("./chromedriver.exe");
-            service.Port = 8888;
-            service.Start();
+            Console.WriteLine("[OneTimeSetUp] BeforeAllMethods()");
         }
 
         [OneTimeTearDown]
@@ -33,22 +29,20 @@ namespace OpenCart
             {
                 driver.Quit();
             }
-            if (service != null)
-            {
-                service.Dispose();
-            }
+            Console.WriteLine("[OneTimeTearDown] AfterAllMethods()");
         }
 
         [SetUp]
         public void SetUp()
         {
             //driver.Navigate().GoToUrl("http://atqc-shop.epizy.com");
+            Console.WriteLine("[SetUp] SetUp()");
         }
 
         [TearDown]
         public void TearDown()
         {
-            //Console.WriteLine("[TearDown] TearDown()");
+            Console.WriteLine("[TearDown] TearDown()");
         }
 
         [Test]
@@ -56,34 +50,26 @@ namespace OpenCart
         {
             //
             ChromeOptions options = new ChromeOptions();
-            //options.AddArguments("--start-maximized");
-            //options.AddArguments("--no-proxy-server");
+            options.AddArguments("--start-maximized");
+            options.AddArguments("--no-proxy-server");
             //options.AddArguments("--no-sandbox");
             //options.AddArguments("--disable-web-security");
-            //options.AddArguments("--ignore-certificate-errors");
+            options.AddArguments("--ignore-certificate-errors");
+            options.AddArguments("--headless");
             //options.AddArguments("--disable-extensions");
             //options.BinaryLocation = @"C:\Users\yharasym\Downloads\ChromiumPortable\ChromiumPortable.exe";
-            //driver = new ChromeDriver(options);
-            //
-            // Deprecated
-            //DesiredCapabilities capabilities = DesiredCapabilities.Chrome();
-            //driver = new RemoteWebDriver(new Uri("127.0.0.1:8888"), capabilities);
-            //driver = new RemoteWebDriver(service.ServiceUrl, capabilities);
-            //
-            // Do not Work
-            //DesiredCapabilities capabilities = new DesiredCapabilities();
-            //capabilities.SetCapability(ChromeOptions.Capability, options);
-            //driver = new RemoteWebDriver(service.ServiceUrl, capabilities);
-            //
-            // Ok
-            driver = new RemoteWebDriver(service.ServiceUrl, options);
-            //
-            Console.WriteLine("\t+++RemoteWebDriver Start, service.ServiceUrl =" + service.ServiceUrl);
+            driver = new ChromeDriver(options);
             //
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            driver.p
             driver.Navigate().GoToUrl("http://atqc-shop.epizy.com");
             //
             driver.FindElement(By.CssSelector(".btn.btn-link.dropdown-toggle")).Click();
+            var currencyWebElements = driver.FindElements(By.CssSelector(".currency-select.btn.btn-link.btn-block"));
+            foreach (IWebElement current in currencyWebElements)
+            {
+                Console.WriteLine("2 currency: " + current.Text.Substring(1));
+            }
             Thread.Sleep(4000);
         }
     }
