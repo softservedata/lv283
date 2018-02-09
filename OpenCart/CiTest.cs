@@ -61,7 +61,7 @@ namespace OpenCart
             driver = new ChromeDriver(options);
             //
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            driver.p
+            //
             driver.Navigate().GoToUrl("http://atqc-shop.epizy.com");
             //
             driver.FindElement(By.CssSelector(".btn.btn-link.dropdown-toggle")).Click();
