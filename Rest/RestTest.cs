@@ -15,15 +15,23 @@ using NUnit.Framework;
 
 namespace Rest
 {
-    
-
+    [TestFixture]
     public class RestTest
     {
-        [Test]
-        public void CheckFoundationExist()
+
+        public static readonly object[] Data =
         {
-            RestGeneral restTest = new RestGeneral("http://httpbin.org/get", "application/json");
-            ResultJsonObj resultJsonObj = restTest.GetAll();
+            new object[] {"http://httpbin.org/get", "application/json"},
+            new object[] {"http://httpbin.org/anything", "application/json"},
+            new object[] { "http://httpbin.org/cache", "application/json" },
+            new object[] { "http://httpbin.org/etag/etag", "application/json" }
+        };
+
+
+        [Test, TestCaseSource(nameof(Data))]
+        public void CheckFoundationExist(string link, string header)
+        {
+            ResultJsonObj resultJsonObj = new RestGeneral(link, header).GetAll();
             Console.WriteLine("done  Result: " + resultJsonObj);
         }
 
