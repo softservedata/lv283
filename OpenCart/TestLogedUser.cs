@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using OpenCart.pages;
+using OpenCart.Data;
 
 namespace OpenCart
 {
@@ -16,9 +17,11 @@ namespace OpenCart
         {
             MainPage mainPage = new MainPage(driver);
             LoginPage loginPage = new LoginPage(driver);
+            UserRepository users = UserRepository.Get();
             mainPage.MyAccountBtn.Click();
             mainPage.LoginBtn.Click();
-            loginPage.LoginIntoShop("juwairiyah.bertie@arockee.com", "1111");
+            loginPage.LoginIntoShop(users.DBUser().GetEmail(),
+                users.DBUser().GetPassword());
         }
 
         //[Test]

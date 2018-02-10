@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using System.Threading;
 using OpenCart.pages;
 
+
 namespace OpenCart
 {
     public class TestNotRegistredUser: TestRunner
@@ -41,5 +42,11 @@ namespace OpenCart
             IWebElement cart = driver.FindElement(By.XPath("//*[@id='content']/p"));
             Assert.AreEqual("Your shopping cart is empty!", cart.Text);
         }
+
+        //public void Some()
+        //{
+        //    IUser Ivan = User.Get().SetEmail("fuh").SetPasw("hjfbg").Build();
+            
+        //}
     }
 }
