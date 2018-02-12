@@ -25,7 +25,7 @@ namespace SeleniumTests
         [SetUp]
         public void BeforeTest()
         {
-            driver.Navigate().GoToUrl("http://zewer.beget.tech");
+            driver.Navigate().GoToUrl("http://zewer1bp.beget.tech");
         }
     }
 }

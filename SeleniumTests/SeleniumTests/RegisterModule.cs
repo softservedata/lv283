@@ -77,7 +77,7 @@ namespace SeleniumTests
         {
             string admin = "admin";
             string adminPassword = "lv-283";
-            string adminPanelLink = "http://zewer.beget.tech/admin";
+            string adminPanelLink = "http://zewer1bp.beget.tech/admin";
 
             driver.Navigate().GoToUrl(adminPanelLink);
             driver.FindElement(By.Name("username")).Clear();
