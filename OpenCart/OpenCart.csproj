@@ -79,6 +79,8 @@
     <Compile Include="CurrencyTest.cs" />
     <Compile Include="DAL\FoundationDAL.cs" />
     <Compile Include="DAL\RestGeneral.cs" />
+    <Compile Include="Data\ApplicationSource.cs" />
+    <Compile Include="Data\ApplicationSourceRepository.cs" />
     <Compile Include="Data\Rest\FoundationNET.cs" />
     <Compile Include="Data\Rest\FoundationRepository.cs" />
     <Compile Include="Data\Users\User.cs" />
@@ -87,14 +89,16 @@
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\TestRunner.cs" />
     <Compile Include="Pages\User\AHeadComponent.cs" />
+    <Compile Include="Pages\User\HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestGitTest.cs" />
     <Compile Include="RestTest.cs" />
     <Compile Include="SmokeLoginTest.cs" />
     <Compile Include="Tools\ASearch.cs" />
     <Compile Include="Tools\Browser.cs" />
+    <Compile Include="Tools\BrowserWrapper.cs" />
     <Compile Include="Tools\ISearch.cs" />
-    <Compile Include="Tools\Search.cs" />
+    <Compile Include="Tools\SearchElement.cs" />
     <Compile Include="Tools\SearchImplicit.cs" />
     <Compile Include="UserTest.cs" />
   </ItemGroup>

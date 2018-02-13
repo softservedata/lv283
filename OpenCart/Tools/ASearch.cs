@@ -16,9 +16,9 @@ namespace OpenCart.Tools
 
         public abstract IWebElement GetWebElement(By by, IWebElement fromIWebElement);
 
-        public abstract List<IWebElement> GetWebElements(By by);
+        public abstract ICollection<IWebElement> GetWebElements(By by);
 
-        public abstract List<IWebElement> GetWebElements(By by, IWebElement fromIWebElement);
+        public abstract ICollection<IWebElement> GetWebElements(By by, IWebElement fromIWebElement);
 
         public abstract bool StalenessOf(IWebElement IWebElement);
 
@@ -54,7 +54,7 @@ namespace OpenCart.Tools
             }
         }
 
-        private List<IWebElement> SearchWebElements(By by)
+        private ICollection<IWebElement> SearchWebElements(By by)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace OpenCart.Tools
             }
         }
 
-        private List<IWebElement> SearchWebElements(By by, IWebElement fromIWebElement)
+        private ICollection<IWebElement> SearchWebElements(By by, IWebElement fromIWebElement)
         {
             try
             {
@@ -186,47 +186,47 @@ namespace OpenCart.Tools
         // Get List
 
 
-        public List<IWebElement> Names(string name)
+        public ICollection<IWebElement> Names(string name)
         {
             return SearchWebElements(By.Name(name));
         }
 
 
-        public List<IWebElement> XPaths(string xpath)
+        public ICollection<IWebElement> XPaths(string xpath)
         {
             return SearchWebElements(By.XPath(xpath));
         }
 
 
-        public List<IWebElement> XPaths(string xpath, IWebElement fromIWebElement)
+        public ICollection<IWebElement> XPaths(string xpath, IWebElement fromIWebElement)
         {
             return SearchWebElements(By.XPath(xpath), fromIWebElement);
         }
 
 
-        public List<IWebElement> CssSelectors(string cssSelector)
+        public ICollection<IWebElement> CssSelectors(string cssSelector)
         {
             return SearchWebElements(By.CssSelector(cssSelector));
         }
 
 
-        public List<IWebElement> ClassNames(string className)
+        public ICollection<IWebElement> ClassNames(string className)
         {
             return SearchWebElements(By.ClassName(className));
         }
 
 
-        public List<IWebElement> PartialLinkTexts(string partialLinkText)
+        public ICollection<IWebElement> PartialLinkTexts(string partialLinkText)
         {
             return SearchWebElements(By.PartialLinkText(partialLinkText));
         }
 
-        public List<IWebElement> LinkTexts(string linkText)
+        public ICollection<IWebElement> LinkTexts(string linkText)
         {
             return SearchWebElements(By.LinkText(linkText));
         }
 
-        public List<IWebElement> TagNames(string tagName)
+        public ICollection<IWebElement> TagNames(string tagName)
         {
             return SearchWebElements(By.TagName(tagName));
         }

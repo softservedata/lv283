@@ -15,9 +15,9 @@ namespace OpenCart.Tools
 
         IWebElement GetWebElement(By by, IWebElement fromIWebElement);
 
-        List<IWebElement> GetWebElements(By by);
+        ICollection<IWebElement> GetWebElements(By by);
 
-        List<IWebElement> GetWebElements(By by, IWebElement fromIWebElement);
+        ICollection<IWebElement> GetWebElements(By by, IWebElement fromIWebElement);
 
         bool StalenessOf(IWebElement IWebElement);
 
@@ -59,21 +59,21 @@ namespace OpenCart.Tools
 
         // Get List
 
-        List<IWebElement> Names(string name);
+        ICollection<IWebElement> Names(string name);
 
-        List<IWebElement> XPaths(string xpath);
+        ICollection<IWebElement> XPaths(string xpath);
 
-        List<IWebElement> XPaths(string xpath, IWebElement fromIWebElement);
+        ICollection<IWebElement> XPaths(string xpath, IWebElement fromIWebElement);
 
-        List<IWebElement> CssSelectors(string cssSelector);
+        ICollection<IWebElement> CssSelectors(string cssSelector);
 
-        List<IWebElement> ClassNames(string className);
+        ICollection<IWebElement> ClassNames(string className);
 
-        List<IWebElement> PartialLinkTexts(string partialLinkText);
+        ICollection<IWebElement> PartialLinkTexts(string partialLinkText);
 
-        List<IWebElement> LinkTexts(string linkText);
+        ICollection<IWebElement> LinkTexts(string linkText);
 
-        List<IWebElement> TagNames(string tagName);
+        ICollection<IWebElement> TagNames(string tagName);
 
     }
 }
