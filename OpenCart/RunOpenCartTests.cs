@@ -20,7 +20,7 @@ namespace OpenCart
             options.AddArguments("--ignore-certificate-errors");
             driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.Navigate().GoToUrl("http://zewer.beget.tech");
+            driver.Navigate().GoToUrl("http://zewer1bp.beget.tech/");
         }
 
         [TearDown]
