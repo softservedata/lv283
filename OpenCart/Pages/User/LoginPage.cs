@@ -11,9 +11,13 @@ namespace OpenCart.Pages.User
 {
 	public class LoginPage
 	{
+		public const string  EXPECTED_FIRST_WARNING = "Warning: No match for E-Mail Address and/or Password.";
+		public const string EXPECTED_SECOND_WARNING = "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.";
+
+
 		protected ISearch Search { get; private set; }
 		//		
-		public IWebElement EmailField
+		public IWebElement EmailAdressField
 		{ get { return Search.Name("email"); } }
 
 		public IWebElement PasswordField
@@ -28,24 +32,24 @@ namespace OpenCart.Pages.User
 		}
 
 		//
-		public IWebElement GetEmailField()
+		public IWebElement GetEmailAdressField()
 		{
-			return EmailField;
+			return EmailAdressField;
 		}
 
-		public String GetEmailFieldText()
+		public String GetEmailAdressFieldText()
 		{
-			return GetEmailField().Text;
+			return GetEmailAdressField().Text;
 		}
 
-		public void ClickEmailField()
+		public void ClickEmailAdressField()
 		{
-			GetEmailField().Click();
+			GetEmailAdressField().Click();
 		}
 
 		public void ClearEmailAddressField()
 		{
-			GetEmailField().Clear();
+			GetEmailAdressField().Clear();
 		}
 
 		public IWebElement GetPasswordField()
@@ -83,7 +87,45 @@ namespace OpenCart.Pages.User
 			GetLoginButton().Click();
 		}
 
+		// set Functional
+		private void InputInEmailAdressField(string emailAddress)
+		{
+			GetEmailAdressField().SendKeys(emailAddress);
+		}
 
+		private void inputInPasswordField(string passwordField)
+		{
+			GetPasswordField().SendKeys(passwordField);
+		}
+
+		public void InputEmailAdress(string emailAddress)
+		{
+			ClickEmailAdressField();
+			ClearEmailAddressField();
+			InputInEmailAdressField(emailAddress);
+		}
+
+		public void InputPassword(string passwordField)
+		{
+			ClickPasswordField();
+			ClearPasswordField();
+			inputInPasswordField(passwordField);
+		}
+		
+		public void LoginForLoginPageToMyAccountPage(string email, string password)
+		{
+			InputEmailAdress(email);
+			InputPassword(password);
+			ClickLoginButton();
+		}
+
+		public void LoginForLoginPageToWarning(string email, string wrongPassword)
+		{
+			InputEmailAdress(email);
+			InputPassword(wrongPassword);
+			ClickLoginButton();
+		}
+		
 
 	}
 }
