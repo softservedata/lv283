@@ -9,8 +9,71 @@ using OpenCart.Tools;
 
 namespace OpenCart.Pages.User
 {
+    public class DropdownOptions
+    {
+        protected ISearch Search { get; private set; }
+        public ICollection<IWebElement> ListOptions { get; private set; }
+
+        private DropdownOptions()
+        {
+            this.Search = Application.Get().Search;
+        }
+
+        public DropdownOptions(By searchLocator):base()
+        {
+            InitListOptions(searchLocator);
+        }
+
+        public DropdownOptions(By searchLocator, By lastLocator) : base()
+        {
+            InitListOptions(searchLocator);
+            ListOptions.Add(Search.GetWebElement(lastLocator));
+        }
+
+        private void InitListOptions(By searchLocator)
+        {
+            ListOptions = Search.GetWebElements(searchLocator);
+        }
+
+        public IWebElement GetDropdownOptionByPartialName(string optionName)
+        {
+            IWebElement result = null;
+            foreach (IWebElement current in ListOptions)
+            {
+                if (current.Text.ToLower().Contains(optionName.ToLower()))
+                {
+                    result = current;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        public List<string> GetListOptions()
+        {
+            List<string> result = new List<string>();
+            foreach (IWebElement current in ListOptions)
+            {
+                result.Add(current.Text);
+            }
+            return result;
+        }
+
+        public void ClickDropdownOptionByPartialName(string optionName)
+        {
+            GetDropdownOptionByPartialName(optionName).Click();
+        }
+    }
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     public class AHeadComponent
     {
+        public const string TAG_ATTRIBUTE_VALEU = "value";
+        public const string TAG_ATTRIBUTE_HREF = "href";
+        public const string FIRST_ANCHOR_CSS = "a:first-child";
+        public const string MENUTOP_OPTIONS_XPATH = "//li/a[contains(text(),'{0}')]/..//li/a";
+        public const string MENUTOP_LAST_OPTION_XPATH = "//a[contains(text(),'Show All {0}')]";
         protected ISearch Search { get; private set; }
         //
         public IWebElement Currency
@@ -34,15 +97,274 @@ namespace OpenCart.Pages.User
         public ICollection<IWebElement> MenuTop
             { get { return Search.CssSelectors("ul.nav.navbar-nav > li"); } }
         //
-        //protected ICollection<ProductComponent> ProductComponents;
-        //private DropdownOptions DropdownOptions;
+        protected List<ProductComponent> ProductComponents { get; private set; }
+        private DropdownOptions dropdownOptions;
         //private DropdownCart DropdownCart;
 
         protected AHeadComponent()
         {
             this.Search = Application.Get().Search;
-            // Verify
+            //
+            // Verify Web Elements
+            VerifyWebElements();
+        }
+
+        private void VerifyWebElements()
+        {
             IWebElement verify = Currency;
+            // TODO Check, if Web Elements Exist
+        }
+
+        protected void InitProductComponents(By searchLocator)
+        {
+            ProductComponents = new List<ProductComponent>();
+            ICollection<IWebElement> productWebElements = Search.GetWebElements(searchLocator);
+            foreach (IWebElement current in productWebElements)
+            {
+                ProductComponents.Add(new ProductComponent(current));
+            }
+        }
+
+        // Currency
+        public string GetCurrencyText()
+        {
+            return Currency.Text.Substring(0, 1);
+        }
+
+        public void ClickCurrency()
+        {
+            Currency.Click();
+        }
+
+        // MyAccount
+        public string GetMyAccountText()
+        {
+            return MyAccount.Text;
+        }
+
+        public void ClickMyAccount()
+        {
+            MyAccount.Click();
+        }
+
+        // WishList
+        public string GetWishListText()
+        {
+            return WishList.Text;
+        }
+
+        public int GetWishListNumber()
+        {
+            // TODO RegexUtils.ExtractNumber(RegexPatterns.ALL_DIGITS.ToString(), GetWishListText());
+            return 0;
+        }
+
+        public void ClickWishList()
+        {
+            WishList.Click();
+        }
+
+        // ShoppingCart
+        public string GetShoppingCartText()
+        {
+            return ShoppingCart.Text;
+        }
+
+        public void ClickShoppingCart()
+        {
+            ShoppingCart.Click();
+        }
+
+
+        // Checkout
+        public string GetCheckoutText()
+        {
+            return Checkout.Text;
+        }
+
+        public void ClickCheckout()
+        {
+            Checkout.Click();
+        }
+
+        // Logo
+        public void ClickLogo()
+        {
+            Logo.Click();
+        }
+
+        // SearchProductField
+        public string GetSearchProductFieldText()
+        {
+            return SearchProductField.GetAttribute(TAG_ATTRIBUTE_VALEU);
+        }
+
+        public void SetSearchProductField(string text)
+        {
+            SearchProductField.SendKeys(text);
+        }
+
+        public void ClearSearchProductField()
+        {
+            SearchProductField.Clear();
+        }
+
+        // SearchProductButton
+        public void ClickSearchProductButton()
+        {
+            SearchProductButton.Click();
+        }
+
+        // Cart
+        public string GetCartText()
+        {
+            return Cart.Text;
+        }
+
+        public int GetCartAmount()
+        {
+            // TODO RegexUtils.ExtractNumber(RegexPatterns.FIRST_DIGITS.ToString(), GetCartTotalText());
+            return 0;
+        }
+
+        public double GetCartSum()
+        {
+            //TODO RegexUtils.ExtractDouble(RegexPatterns.LAST_DOUBLE.ToString(), GetCartTotalText());
+            return 0;
+        }
+
+        public void ClickCart()
+        {
+            Cart.Click();
+        }
+
+        // MenuTop
+        public IWebElement GetMenuTopByCategoryPartialName(string categoryName)
+        {
+            IWebElement result = null;
+            foreach (IWebElement current in MenuTop)
+            {
+                if (Search.CssSelector(FIRST_ANCHOR_CSS, current)
+                        .Text.ToLower().Contains(categoryName.ToLower()))
+                {
+                    result = current;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        public List<string> GetMenuTopTexts()
+        {
+            List<string> result = new List<string>();
+            foreach (IWebElement current in MenuTop)
+            {
+                result.Add(Search.CssSelector("a:first-child", current).Text);
+            }
+            return result;
+        }
+
+        public void ClickMenuTopByCategoryPartialName(string categoryName)
+        {
+            bool isClickable = false;
+            foreach (string current in GetMenuTopTexts())
+            {
+                if (current.ToLower().Contains(categoryName.ToLower()))
+                {
+                    isClickable = true;
+                }
+            }
+            if (!isClickable)
+            {
+                // TODO Develop Custom Exceptions
+                throw new Exception("Menu Element not Found");
+            }
+            GetMenuTopByCategoryPartialName(categoryName).Click();
+        }
+
+        // DropdownOptions
+        private void CreateDropdownOptions(By searchLocator, By lastLocator)
+        {
+            if (lastLocator == null)
+            {
+                dropdownOptions = new DropdownOptions(searchLocator);
+            }
+            else
+            {
+                dropdownOptions = new DropdownOptions(searchLocator, lastLocator);
+            }
+        }
+
+        private void ClickDropdownOptionByPartialName(string optionName, By searchLocator, By lastLocator)
+        {
+            bool isClickable = false;
+            CreateDropdownOptions(searchLocator, lastLocator);
+            foreach (string current in dropdownOptions.GetListOptions())
+            {
+                if (current.ToLower().Contains(optionName.ToLower()))
+                {
+                    isClickable = true;
+                }
+            }
+            if (!isClickable)
+            {
+                // TODO Develop Custom Exceptions
+                throw new Exception("SubMenu Element " + optionName + " not Found");
+            }
+            dropdownOptions.ClickDropdownOptionByPartialName(optionName);
+        }
+
+        public void ClickSubMenuTopByPartialName(string categoryName, string optionName)
+        {
+            ClickMenuTopByCategoryPartialName(categoryName);
+            ClickDropdownOptionByPartialName(optionName,
+                    By.XPath(String.Format(MENUTOP_OPTIONS_XPATH, categoryName)),
+                    By.XPath(String.Format(MENUTOP_LAST_OPTION_XPATH, categoryName)));
+        }
+
+        // ProductComponents
+        protected ProductComponent GetProductComponentByProductName(string productName)
+        {
+            ProductComponent result = null;
+            foreach (ProductComponent current in ProductComponents)
+            {
+                if (current.GetNameText().ToLower().Contains(productName.ToLower()))
+                {
+                    result = current;
+                    break;
+                }
+            }
+            if (result == null)
+            {
+                // TODO Develop Custom Exceptions
+                throw new Exception("ProductComponent " + productName + " not Found");
+            }
+            return result;
+        }
+
+        protected List<String> GetProductComponentTexts()
+        {
+            List<string> result = new List<string>();
+            foreach (ProductComponent current in ProductComponents)
+            {
+                result.Add(current.GetNameText());
+            }
+            return result;
+        }
+
+        protected string GetPriceTextByProductName(string productName)
+        {
+            return GetProductComponentByProductName(productName).GetPriceText();
+        }
+
+        protected double GetPriceAmountByProductName(string productName)
+        {
+            return GetProductComponentByProductName(productName).GetPriceAmount();
+        }
+
+        protected void ClickAddToCartByProductName(string productName)
+        {
+            GetProductComponentByProductName(productName).ClickAddToCart();
         }
 
     }
