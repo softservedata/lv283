@@ -72,17 +72,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppiumTest.cs" />
-    <Compile Include="Base\TestRunner.cs" />
-    <Compile Include="BLL\FoundationBLL.cs" />
     <Compile Include="BrowsersTest.cs" />
-    <Compile Include="CurrencyTest.cs" />
-    <Compile Include="DAL\FoundationDAL.cs" />
-    <Compile Include="DAL\RestGeneral.cs" />
     <Compile Include="Data\ApplicationSource.cs" />
     <Compile Include="Data\ApplicationSourceRepository.cs" />
-    <Compile Include="Data\Rest\FoundationNET.cs" />
-    <Compile Include="Data\Rest\FoundationRepository.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="FunctionalTest.cs" />
@@ -92,8 +84,6 @@
     <Compile Include="Pages\User\HomePage.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestGitTest.cs" />
-    <Compile Include="RestTest.cs" />
     <Compile Include="SmokeLoginTest.cs" />
     <Compile Include="Tools\ASearch.cs" />
     <Compile Include="Tools\Browser.cs" />
@@ -108,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Actions\" />
+    <Folder Include="BLL\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
