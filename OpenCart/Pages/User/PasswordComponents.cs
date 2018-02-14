@@ -80,5 +80,17 @@ namespace OpenCart.Pages.User
 			return ChangePassword.Text;
 		}
 
+		// BackButton
+		public void ClickBackButton()
+		{
+		    BackButton.Click();
+		}
+
+		// BackButton
+		public void ClickContinueButton()
+		{
+			ContinueButton.Click();
+		}
+
 	}
 }

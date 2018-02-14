@@ -77,7 +77,6 @@
     <Compile Include="Data\ApplicationSourceRepository.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
-    <Compile Include="FunctionalTest.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\TestRunner.cs" />
     <Compile Include="Pages\User\AccountComponents.cs" />
@@ -85,10 +84,14 @@
     <Compile Include="Pages\User\EditAccountPage.cs" />
     <Compile Include="Pages\User\EditPasswordPage.cs" />
     <Compile Include="Pages\User\HomePage.cs" />
+    <Compile Include="Pages\User\LoginPage.cs" />
+    <Compile Include="Pages\User\LogoutPage.cs" />
+    <Compile Include="Pages\User\MyAccountPage.cs" />
     <Compile Include="Pages\User\PasswordComponents.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmokeLoginTest.cs" />
+    <Compile Include="Tests\Login\TestLoginPage.cs" />
     <Compile Include="Tools\ASearch.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="Tools\BrowserWrapper.cs" />
