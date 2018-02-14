@@ -16,7 +16,7 @@ namespace OpenCart
             driver.FindElement(By.XPath("//a[contains(@href, '/address')]")).Click();
             driver.FindElement(By.XPath("//*[@id='content']//tr[2]/td[2]/a[2]")).Click();
 
-            //Check
+            //Verify
             IWebElement actual = driver.FindElement(By.CssSelector("div>.alert.alert-success"));
             Assert.AreEqual("Your address has been successfully deleted", actual.Text);
 
@@ -46,7 +46,7 @@ namespace OpenCart
             IWebElement continueButton = driver.FindElement(By.CssSelector("input.btn.btn-primary"));
             continueButton.Click();
 
-            //Check
+            //Verify
             IWebElement actual = driver.FindElement(By.CssSelector("div>.alert.alert-success"));
             Assert.AreEqual("Your address has been successfully inserted", actual.Text);
         }
@@ -75,8 +75,8 @@ namespace OpenCart
             selectStateEdit.SelectByText("Dublin");
 
             driver.FindElement(By.CssSelector("input.btn.btn-primary")).Click();
-            
-            //Check
+
+            //Verify
             IWebElement actual = driver.FindElement(By.CssSelector("div>.alert.alert-success"));
             Assert.AreEqual("Your address has been successfully updated", actual.Text);
         }
