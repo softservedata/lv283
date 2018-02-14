@@ -80,8 +80,12 @@
     <Compile Include="FunctionalTest.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\TestRunner.cs" />
+    <Compile Include="Pages\User\AccountComponents.cs" />
     <Compile Include="Pages\User\AHeadComponent.cs" />
+    <Compile Include="Pages\User\EditAccountPage.cs" />
+    <Compile Include="Pages\User\EditPasswordPage.cs" />
     <Compile Include="Pages\User\HomePage.cs" />
+    <Compile Include="Pages\User\PasswordComponents.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmokeLoginTest.cs" />
@@ -99,6 +103,7 @@
   <ItemGroup>
     <Folder Include="Actions\" />
     <Folder Include="BLL\" />
+    <Folder Include="Pages\Admin\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
