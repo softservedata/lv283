@@ -63,7 +63,6 @@ namespace OpenCart
             //capabilities.SetCapability("password", SERVER_PASSWORD);
             //
             //driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities, TimeSpan.FromSeconds(180));
-            //driver = new AppiumDriver(...);
             //driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities, TimeSpan.FromMinutes(10));
             driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities);
             //
