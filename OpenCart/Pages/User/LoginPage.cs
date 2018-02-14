@@ -11,11 +11,6 @@ namespace OpenCart.Pages.User
 {
 	public class LoginPage
 	{
-		private WebElement eMailAddressField;
-		private WebElement passwordField;
-		private WebElement LoginButton;
-		private WebElement warning;
-
 		protected ISearch Search { get; private set; }
 		//		
 		public IWebElement EmailField
@@ -23,6 +18,9 @@ namespace OpenCart.Pages.User
 
 		public IWebElement PasswordField
 		{ get { return Search.Name("password"); } }
+
+		public IWebElement LoginButton
+		{ get { return Search.XPath("//*[@value='Login'] [@class='btn btn-primary']"); } }
 
 		public LoginPage()
 		{
@@ -32,61 +30,60 @@ namespace OpenCart.Pages.User
 		//
 		public IWebElement GetEmailField()
 		{
-			return eMailAddressField;
+			return EmailField;
 		}
 
-		public WebElement getPasswordField()
+		public String GetEmailFieldText()
 		{
-			return passwordField;
+			return GetEmailField().Text;
 		}
 
-		public WebElement getLoginButton()
+		public void ClickEmailField()
+		{
+			GetEmailField().Click();
+		}
+
+		public void ClearEmailAddressField()
+		{
+			GetEmailField().Clear();
+		}
+
+		public IWebElement GetPasswordField()
+		{
+			return PasswordField;
+		}
+
+		public String GetPasswordFieldText()
+		{
+			return GetPasswordField().Text;
+		}
+
+		public void ClickPasswordField()
+		{
+			GetPasswordField().Click();
+		}
+
+		public void ClearPasswordField()
+		{
+			GetPasswordField().Clear();
+		}
+
+		public IWebElement GetLoginButton()
 		{
 			return LoginButton;
 		}
-
-
-		public WebElement getWarningText()
+		
+		public IWebElement GetWarningText()
 		{
-			return getWarningText();
+			return GetWarningText();
 		}
 
-		// get Functional
-		public String getEmailAddressFieldText()
+		public void ClickLoginButton()
 		{
-			return geteMailAddressField().getText();
+			GetLoginButton().Click();
 		}
 
-		public String getPasswordFieldText()
-		{
-			return getPasswordField().getText();
-		}
-		// set Data
 
-		public void clickEMailAddressField()
-		{
-			geteMailAddressField().click();
-		}
-
-		public void clickPasswordField()
-		{
-			getPasswordField().click();
-		}
-
-		public void clickLoginButton()
-		{
-			getLoginButton().click();
-		}
-
-		public void clearEMailAddressField()
-		{
-			geteMailAddressField().clear();
-		}
-
-		public void clearPasswordField()
-		{
-			getPasswordField().clear();
-		}
 
 	}
 }
