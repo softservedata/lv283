@@ -72,6 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\User\LoginAction.cs" />
     <Compile Include="BrowsersTest.cs" />
     <Compile Include="Data\ApplicationSource.cs" />
     <Compile Include="Data\ApplicationSourceRepository.cs" />
@@ -104,7 +105,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Actions\" />
     <Folder Include="Pages\Admin\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

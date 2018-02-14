@@ -9,6 +9,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenCart.Pages;
 using OpenCart.Pages.User;
+using OpenCart.Actions.User;
+using OpenCart.Data.Users;
 
 namespace OpenCart
 {
@@ -17,14 +19,17 @@ namespace OpenCart
     {
         private static readonly object[] CData =
         {
-            new object[] { "U" }
+            new object[] { UserRepository.Get().UserTestLogin()}
         };
 
         [Test, TestCaseSource(nameof(CData))]
-        public void CheckChangeCurrency(string c)
+        public void CheckChangeCurrency(IUser user)
         {
-            HomePage homePage = Application.Get().LoadHomePage();
-            Thread.Sleep(2000);
+			// HomePage homePage = Application.Get().LoadHomePage();
+			LoginPage loginPage = Application.Get().Login();
+			loginPage.InputPassword(user.GetEmail());
+			loginPage.InputPassword(user.GetPassword());
+			Thread.Sleep(2000);
         }
     }
 }

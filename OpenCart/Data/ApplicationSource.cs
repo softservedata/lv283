@@ -49,13 +49,14 @@ namespace OpenCart.Data
         public ApplicationSource(string browserName,
                 long implicitWaitTimeOut,
                 string baseUrl,
-                string adminLoginUrl)
+				//string userLoginUrl,
+				string adminLoginUrl)
         {
             this.BrowserName = browserName;
             //this.DriverPath = driverPath;
             this.ImplicitWaitTimeOut = implicitWaitTimeOut;
             this.BaseUrl = baseUrl;
-            //this.UserLoginUrl = userLoginUrl;
+           // this.UserLoginUrl = userLoginUrl;
             //this.UserLogoutUrl = userLogoutUrl;
             this.AdminLoginUrl = adminLoginUrl;
             //this.AdminLogoutUrl = adminLogoutUrl;

@@ -77,6 +77,11 @@ namespace OpenCart.Pages
             Browser.OpenUrl(ApplicationSource.BaseUrl);
             return new HomePage();
         }
-
-    }
+		public LoginPage Login()
+		{
+			Browser.OpenUrl(ApplicationSource.BaseUrl);
+			//return new LoginPage(getBrowser().getDriver());
+			return new LoginPage();
+		}
+	}
 }

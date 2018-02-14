@@ -36,7 +36,27 @@ namespace OpenCart.Data.Users
             return instance;
         }
 
-        public IUser Admin()
+		public IUser UserTestLogin()
+		{
+			return User.Get()
+					.SetFirstname("FIRSTNAME")
+					.SetLastname("LASTNAME")
+					.SetEmail("lv_269_test@ukr.net")
+					.SetPhone("380511223344")
+					.SetAddressMain("TEST_ADDRESS")
+					.SetCity("Lviv")
+					.SetPostcode("79000")
+					.SetCoutry("Ukraine")
+				    .SetRegionState("L'vivs'ka Oblast'")
+				    .SetPassword("password")
+				    .SetSubscribe(true)
+				    .SetFax("fax")
+				    .SetCompany("company")
+				    .SetAddressAdd("addressAdd")
+					.Build();
+		}
+
+		public IUser Admin()
         {
             return User.Get()
                 .SetFirstname("firstname8Admin")

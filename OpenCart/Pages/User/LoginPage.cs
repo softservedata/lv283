@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenCart.Tools;
+using OpenCart.Data.Users;
 
 namespace OpenCart.Pages.User
 {
@@ -125,7 +126,17 @@ namespace OpenCart.Pages.User
 			InputPassword(wrongPassword);
 			ClickLoginButton();
 		}
-		
+		//Actions
+		public MyAccountPage GoToLoginForLoginPageToMyAccountPage(IUser user)
+		{
+			LoginForLoginPageToMyAccountPage(user.GetEmail(), user.GetPassword());
+			return new MyAccountPage();
+		}
 
+		public LoginPage GoToLoginForLoginPageToWarning(IUser user)
+		{
+			LoginForLoginPageToWarning(user.GetEmail(), user.GetPassword());
+			return new LoginPage();
+		}
 	}
 }
