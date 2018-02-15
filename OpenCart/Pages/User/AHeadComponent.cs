@@ -67,7 +67,7 @@ namespace OpenCart.Pages.User
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public class AHeadComponent
+    public abstract class AHeadComponent
     {
         public const string TAG_ATTRIBUTE_VALEU = "value";
         public const string TAG_ATTRIBUTE_HREF = "href";
@@ -207,6 +207,11 @@ namespace OpenCart.Pages.User
         public void ClearSearchProductField()
         {
             SearchProductField.Clear();
+        }
+
+        public void ClickSearchProductField()
+        {
+            SearchProductField.Click();
         }
 
         // SearchProductButton
@@ -365,6 +370,20 @@ namespace OpenCart.Pages.User
         protected void ClickAddToCartByProductName(string productName)
         {
             GetProductComponentByProductName(productName).ClickAddToCart();
+        }
+
+        protected void ClickAddToWishByProductName(string productName)
+        {
+            GetProductComponentByProductName(productName).ClickAddToWish();
+        }
+
+        // Business Logic
+        public void SuccesSearchProduct(string partialProductName)
+        {
+            ClickSearchProductField();
+            ClearSearchProductField();
+            SetSearchProductField(partialProductName);
+            ClickSearchProductButton();
         }
 
     }

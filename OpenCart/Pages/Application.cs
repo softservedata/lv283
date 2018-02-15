@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenCart.Data;
-using OpenCart.Pages.User;
+using OpenCart.Actions.User;
 using OpenCart.Tools;
 
 namespace OpenCart.Pages
@@ -72,10 +72,10 @@ namespace OpenCart.Pages
             this.Search = new SearchElement(applicationSource);
         }
 
-        public HomePage LoadHomePage()
+        public HomeActions LoadHomeActions()
         {
             Browser.OpenUrl(ApplicationSource.BaseUrl);
-            return new HomePage();
+            return new HomeActions();
         }
 
     }

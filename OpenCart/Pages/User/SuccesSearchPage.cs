@@ -8,35 +8,36 @@ using OpenQA.Selenium.Chrome;
 
 namespace OpenCart.Pages.User
 {
-    public class HomePage : AHeadComponent
+    public class SuccesSearchPage : ANavigatePanelComponent
     {
-        public HomePage() : base()
+        // TODO Add Search Criteria
+
+        public SuccesSearchPage() : base()
         {
             InitProductComponents(By.CssSelector(".product-layout"));
         }
 
-        
-    public new List<string> GetProductComponentTexts()
+        public new List<string> GetProductComponentTexts()
         {
             return base.GetProductComponentTexts();
         }
 
-    public new string GetPriceTextByProductName(string productName)
+        public new string GetPriceTextByProductName(string productName)
         {
             return base.GetPriceTextByProductName(productName);
         }
 
-    public new double GetPriceAmountByProductName(string productName)
+        public new double GetPriceAmountByProductName(string productName)
         {
             return base.GetPriceAmountByProductName(productName);
         }
 
-    public new void ClickAddToCartByProductName(string productName)
+        public new void ClickAddToCartByProductName(string productName)
         {
             base.ClickAddToCartByProductName(productName);
         }
 
-    public new void ClickAddToWishByProductName(string productName)
+        public new void ClickAddToWishByProductName(string productName)
         {
             base.ClickAddToWishByProductName(productName);
         }

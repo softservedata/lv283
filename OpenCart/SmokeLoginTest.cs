@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenCart.Actions.User;
 using OpenCart.Pages;
-using OpenCart.Pages.User;
 
 namespace OpenCart
 {
@@ -23,7 +23,8 @@ namespace OpenCart
         [Test, TestCaseSource(nameof(CData))]
         public void CheckChangeCurrency(string c)
         {
-            HomePage homePage = Application.Get().LoadHomePage();
+            HomeActions homeActions = Application.Get().LoadHomeActions();
+            homeActions
             Thread.Sleep(2000);
         }
     }
