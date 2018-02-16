@@ -354,14 +354,14 @@ namespace OpenCart.Pages.User
         // ProductComponents
         protected ProductComponent GetProductComponentByProductName(string productName)
         {
-            Console.WriteLine("ProductComponents.Count = " + ProductComponents.Count + "  productName = " + productName);
+            //Console.WriteLine("ProductComponents.Count = " + ProductComponents.Count + "  productName = " + productName);
             ProductComponent result = null;
             foreach (ProductComponent current in ProductComponents)
             {
-                Console.WriteLine("current = " + current.Name + "  productName = " + productName);
+                //Console.WriteLine("current = " + current.Name + "  productName = " + productName);
                 if (current.GetNameText().ToLower().Contains(productName.ToLower()))
                 {
-                    Console.WriteLine("FOUND: ProductComponent current = " + current.Name);
+                    //Console.WriteLine("FOUND: ProductComponent current = " + current.Name);
                     result = current;
                     break;
                 }
@@ -391,7 +391,7 @@ namespace OpenCart.Pages.User
 
         protected double GetPriceAmountByProductName(string productName)
         {
-            Console.WriteLine("public new double GetPriceAmountByProductName(string productName) productName = " + productName);
+            //Console.WriteLine("public new double GetPriceAmountByProductName(string productName) productName = " + productName);
             return GetProductComponentByProductName(productName).GetPriceAmount();
         }
 

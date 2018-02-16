@@ -19,14 +19,15 @@ namespace OpenCart.Actions.User
         public SuccesSearchActions SuccesSearchProduct(string partialProductName)
         {
             SuccesSearchPageOperation.SuccesSearchProduct(partialProductName);
-            //return new SuccesSearchActions();
-            return this;
+            //return this;
+            return new SuccesSearchActions();
         }
 
         public SuccesSearchActions ChooseCurrencyByPartialName(string currencyName)
         {
             SuccesSearchPageOperation.ClickCurrencyByPartialName(currencyName);
-            return this;
+            //return this;
+            return new SuccesSearchActions();
         }
 
         public double GetPriceByProductName(string productName)

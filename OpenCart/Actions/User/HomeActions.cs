@@ -31,7 +31,8 @@ namespace OpenCart.Actions.User
         public HomeActions ChooseCurrencyByPartialName(string currencyName)
         {
             HomePageOperation.ClickCurrencyByPartialName(currencyName);
-            return this;
+            //return this;
+            return new HomeActions();
         }
 
         public double GetPriceByProductName(string productName)

@@ -52,7 +52,7 @@ namespace OpenCart.Pages.User
 
         public double GetPriceAmount()
         {
-            Console.WriteLine("GetPriceText() = " + GetPriceText());
+            //Console.WriteLine("GetPriceText() = " + GetPriceText());
             return RegexUtils.ExtractFirstDouble(GetPriceText());
         }
 

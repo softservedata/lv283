@@ -19,9 +19,9 @@ namespace OpenCart
     {
         private static readonly object[] SearchProduct =
         {
-            new object[] { ProductRepository.macBook(), CurrencyRepository.Euro() }
-            //new object[] { ProductRepository.macBook(), CurrencyRepository.PoundSterling() },
-            //new object[] { ProductRepository.macBook(), CurrencyRepository.USDollar() }
+            new object[] { ProductRepository.macBook(), CurrencyRepository.Euro() },
+            new object[] { ProductRepository.macBook(), CurrencyRepository.PoundSterling() },
+            new object[] { ProductRepository.macBook(), CurrencyRepository.USDollar() }
         };
 
         [Test, TestCaseSource(nameof(SearchProduct))]
@@ -30,7 +30,6 @@ namespace OpenCart
             HomeActions homeActions = Application.Get().LoadHomeActions();
             SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
             searchActions = searchActions.ChooseCurrencyByPartialName(currencyName);
-            Thread.Sleep(2000);
             Assert.AreEqual(product.GetPrice(currencyName), searchActions.GetPriceByProductName(product.Name), 0.01);
             //
             Thread.Sleep(2000);
