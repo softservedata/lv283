@@ -52,8 +52,8 @@ namespace OpenCart.Pages.User
 
         public double GetPriceAmount()
         {
-            //TODO RegexUtils.ExtractDouble(RegexPatterns.NUMBER_DOUBLE.ToString(), GetPriceText());
-            return 0;
+            Console.WriteLine("GetPriceText() = " + GetPriceText());
+            return RegexUtils.ExtractFirstDouble(GetPriceText());
         }
 
         public void ClickName()

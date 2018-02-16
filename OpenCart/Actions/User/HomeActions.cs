@@ -16,10 +16,27 @@ namespace OpenCart.Actions.User
             HomePageOperation = new HomePage();
         }
 
+        public HomeActions GotoHomeActions()
+        {
+            HomePageOperation.GotoHome();
+            return new HomeActions();
+        }
+
         public SuccesSearchActions SuccesSearchProduct(string partialProductName)
         {
             HomePageOperation.SuccesSearchProduct(partialProductName);
             return new SuccesSearchActions();
+        }
+
+        public HomeActions ChooseCurrencyByPartialName(string currencyName)
+        {
+            HomePageOperation.ClickCurrencyByPartialName(currencyName);
+            return this;
+        }
+
+        public double GetPriceByProductName(string productName)
+        {
+            return HomePageOperation.GetPriceAmountByProductName(productName);
         }
 
     }

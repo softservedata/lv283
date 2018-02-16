@@ -29,6 +29,7 @@ namespace OpenCart.Pages.User
 
         public new double GetPriceAmountByProductName(string productName)
         {
+            Console.WriteLine("public new double GetPriceAmountByProductName(string productName) productName = " + productName);
             return base.GetPriceAmountByProductName(productName);
         }
 

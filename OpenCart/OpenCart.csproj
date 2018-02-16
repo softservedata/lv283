@@ -83,6 +83,7 @@
     <Compile Include="DAL\RestGeneral.cs" />
     <Compile Include="Data\ApplicationSource.cs" />
     <Compile Include="Data\ApplicationSourceRepository.cs" />
+    <Compile Include="Data\Commons\CurrencyRepository.cs" />
     <Compile Include="Data\Products\Product.cs" />
     <Compile Include="Data\Products\ProductRepository.cs" />
     <Compile Include="Data\Rest\FoundationNET.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="Tools\BrowserWrapper.cs" />
     <Compile Include="Tools\ISearch.cs" />
+    <Compile Include="Tools\RegexUtils.cs" />
     <Compile Include="Tools\SearchElement.cs" />
     <Compile Include="Tools\SearchImplicit.cs" />
     <Compile Include="UserTest.cs" />

@@ -9,22 +9,30 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenCart.Actions.User;
 using OpenCart.Pages;
+using OpenCart.Data.Commons;
+using OpenCart.Data.Products;
 
 namespace OpenCart
 {
     [TestFixture]
     public class SmokeLoginTest : TestRunner
     {
-        private static readonly object[] CData =
+        private static readonly object[] SearchProduct =
         {
-            new object[] { "U" }
+            new object[] { ProductRepository.macBook(), CurrencyRepository.Euro() }
+            //new object[] { ProductRepository.macBook(), CurrencyRepository.PoundSterling() },
+            //new object[] { ProductRepository.macBook(), CurrencyRepository.USDollar() }
         };
 
-        [Test, TestCaseSource(nameof(CData))]
-        public void CheckChangeCurrency(string c)
+        [Test, TestCaseSource(nameof(SearchProduct))]
+        public void VerifySearchByCurrency(Product product, string currencyName)
         {
             HomeActions homeActions = Application.Get().LoadHomeActions();
-            homeActions
+            SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
+            searchActions = searchActions.ChooseCurrencyByPartialName(currencyName);
+            Thread.Sleep(2000);
+            Assert.AreEqual(product.GetPrice(currencyName), searchActions.GetPriceByProductName(product.Name), 0.01);
+            //
             Thread.Sleep(2000);
         }
     }

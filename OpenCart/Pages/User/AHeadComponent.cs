@@ -19,12 +19,12 @@ namespace OpenCart.Pages.User
             this.Search = Application.Get().Search;
         }
 
-        public DropdownOptions(By searchLocator):base()
+        public DropdownOptions(By searchLocator) : this()
         {
             InitListOptions(searchLocator);
         }
 
-        public DropdownOptions(By searchLocator, By lastLocator) : base()
+        public DropdownOptions(By searchLocator, By lastLocator) : this()
         {
             InitListOptions(searchLocator);
             ListOptions.Add(Search.GetWebElement(lastLocator));
@@ -97,8 +97,9 @@ namespace OpenCart.Pages.User
         public ICollection<IWebElement> MenuTop
             { get { return Search.CssSelectors("ul.nav.navbar-nav > li"); } }
         //
-        protected List<ProductComponent> ProductComponents { get; private set; }
         private DropdownOptions dropdownOptions;
+        private DropdownOptions currencyOptions;
+        protected List<ProductComponent> ProductComponents { get; private set; }
         //private DropdownCart DropdownCart;
 
         protected AHeadComponent()
@@ -155,8 +156,7 @@ namespace OpenCart.Pages.User
 
         public int GetWishListNumber()
         {
-            // TODO RegexUtils.ExtractNumber(RegexPatterns.ALL_DIGITS.ToString(), GetWishListText());
-            return 0;
+            return RegexUtils.ExtractFirstNumber(GetWishListText());
         }
 
         public void ClickWishList()
@@ -228,14 +228,12 @@ namespace OpenCart.Pages.User
 
         public int GetCartAmount()
         {
-            // TODO RegexUtils.ExtractNumber(RegexPatterns.FIRST_DIGITS.ToString(), GetCartTotalText());
-            return 0;
+            return RegexUtils.ExtractFirstNumber(GetCartText());
         }
 
         public double GetCartSum()
         {
-            //TODO RegexUtils.ExtractDouble(RegexPatterns.LAST_DOUBLE.ToString(), GetCartTotalText());
-            return 0;
+            return RegexUtils.ExtractFirstDouble(GetCartText());
         }
 
         public void ClickCart()
@@ -327,14 +325,43 @@ namespace OpenCart.Pages.User
                     By.XPath(String.Format(MENUTOP_LAST_OPTION_XPATH, categoryName)));
         }
 
+        // CurrencyOptions
+        private void InitcurrencyOptions()
+        {
+            ClickSearchProductField();
+            ClickCurrency();
+            currencyOptions = new DropdownOptions(By.CssSelector("button.currency-select.btn.btn-link.btn-block"));
+        }
+
+        public IWebElement GetCurrencyByPartialName(string currencyName)
+        {
+            InitcurrencyOptions();
+            return currencyOptions.GetDropdownOptionByPartialName(currencyName);
+        }
+
+        public List<string> GetCurrencies()
+        {
+            InitcurrencyOptions();
+            return currencyOptions.GetListOptions();
+        }
+
+        public void ClickCurrencyByPartialName(string currencyName)
+        {
+            InitcurrencyOptions();
+            currencyOptions.ClickDropdownOptionByPartialName(currencyName);
+        }
+
         // ProductComponents
         protected ProductComponent GetProductComponentByProductName(string productName)
         {
+            Console.WriteLine("ProductComponents.Count = " + ProductComponents.Count + "  productName = " + productName);
             ProductComponent result = null;
             foreach (ProductComponent current in ProductComponents)
             {
+                Console.WriteLine("current = " + current.Name + "  productName = " + productName);
                 if (current.GetNameText().ToLower().Contains(productName.ToLower()))
                 {
+                    Console.WriteLine("FOUND: ProductComponent current = " + current.Name);
                     result = current;
                     break;
                 }
@@ -364,6 +391,7 @@ namespace OpenCart.Pages.User
 
         protected double GetPriceAmountByProductName(string productName)
         {
+            Console.WriteLine("public new double GetPriceAmountByProductName(string productName) productName = " + productName);
             return GetProductComponentByProductName(productName).GetPriceAmount();
         }
 
@@ -378,6 +406,11 @@ namespace OpenCart.Pages.User
         }
 
         // Business Logic
+        public void GotoHome()
+        {
+            ClickLogo();
+        }
+
         public void SuccesSearchProduct(string partialProductName)
         {
             ClickSearchProductField();
