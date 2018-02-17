@@ -78,6 +78,7 @@
     <Compile Include="Data\ApplicationSourceRepository.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
+    <Compile Include="Pages\AlertsText.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\TestRunner.cs" />
     <Compile Include="Pages\User\AccountComponents.cs" />
