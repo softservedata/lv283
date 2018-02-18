@@ -89,6 +89,7 @@
     <Compile Include="Pages\TagAttribute.cs" />
     <Compile Include="Pages\TestRunner.cs" />
     <Compile Include="Pages\User\AccountComponents.cs" />
+    <Compile Include="Pages\User\AColumnRightPartitionalComponent.cs" />
     <Compile Include="Pages\User\AHeadComponent.cs" />
     <Compile Include="Pages\User\ANavigatePanelComponent.cs" />
     <Compile Include="Pages\User\EditAccountPage.cs" />
