@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-	class EditPasswordPage
+	public class EditPasswordPage : AColumnRightUserComponent
 	{
+
 	}
 }

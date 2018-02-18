@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-	public class MyAccountPage
+	public class MyAccountPage : AColumnRightUserComponent
 	{
+
+		public EditAccountPage GotoEditAccountPageFromRightColumn()
+		{
+			ClickEditAccount();
+			return new EditAccountPage();
+		}
+
+		public EditPasswordPage GotoEditPasswordPageFromRightColumn()
+		{
+			ClickPassword();
+			return new EditPasswordPage();
+		}
 	}
 }

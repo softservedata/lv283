@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-	class EditAccountPage
+	public class EditAccountPage : AColumnRightUserComponent
 	{
 	}
 }
