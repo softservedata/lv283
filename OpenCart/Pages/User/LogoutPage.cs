@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,25 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-	class LogoutPage
+	public class LogoutPage : AColumnRightGuestComponent
 	{
+		public IWebElement ContinueButton
+		{ get { return Search.CssSelector(".btn.btn - primary"); } }
+
+		public IWebElement GetContinueButton()
+		{
+			return ContinueButton;
+		}
+
+		public void ClickContinueButton()
+		{
+			GetContinueButton().Click();
+		}
+
+		public HomePage GotoHomePage()
+		{
+			ClickContinueButton();
+			return new HomePage();
+		}
 	}
 }
