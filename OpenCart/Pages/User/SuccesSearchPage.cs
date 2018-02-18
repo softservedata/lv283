@@ -8,13 +8,14 @@ using OpenQA.Selenium.Chrome;
 
 namespace OpenCart.Pages.User
 {
-	public class HomePage : AHeadComponent
+	public class SuccesSearchPage : ANavigatePanelComponent
 	{
-		public HomePage() : base()
+		// TODO Add Search Criteria
+
+		public SuccesSearchPage() : base()
 		{
 			InitProductComponents(By.CssSelector(".product-layout"));
 		}
-
 
 		public new List<string> GetProductComponentTexts()
 		{
@@ -28,6 +29,7 @@ namespace OpenCart.Pages.User
 
 		public new double GetPriceAmountByProductName(string productName)
 		{
+			//Console.WriteLine("public new double GetPriceAmountByProductName(string productName) productName = " + productName);
 			return base.GetPriceAmountByProductName(productName);
 		}
 

@@ -72,10 +72,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\User\HomeActions.cs" />
     <Compile Include="Actions\User\LoginAction.cs" />
+    <Compile Include="Actions\User\SuccesSearchActions.cs" />
     <Compile Include="BrowsersTest.cs" />
     <Compile Include="Data\ApplicationSource.cs" />
     <Compile Include="Data\ApplicationSourceRepository.cs" />
+    <Compile Include="Data\Commons\CurrencyRepository.cs" />
+    <Compile Include="Data\Products\Product.cs" />
+    <Compile Include="Data\Products\ProductRepository.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="Pages\AlertsText.cs" />
@@ -83,6 +88,7 @@
     <Compile Include="Pages\TestRunner.cs" />
     <Compile Include="Pages\User\AccountComponents.cs" />
     <Compile Include="Pages\User\AHeadComponent.cs" />
+    <Compile Include="Pages\User\ANavigatePanelComponent.cs" />
     <Compile Include="Pages\User\EditAccountPage.cs" />
     <Compile Include="Pages\User\EditPasswordPage.cs" />
     <Compile Include="Pages\User\HomePage.cs" />
@@ -91,6 +97,7 @@
     <Compile Include="Pages\User\MyAccountPage.cs" />
     <Compile Include="Pages\User\PasswordComponents.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
+    <Compile Include="Pages\User\SuccesSearchPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmokeLoginTest.cs" />
     <Compile Include="Tests\Login\TestLoginPage.cs" />
@@ -98,6 +105,7 @@
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="Tools\BrowserWrapper.cs" />
     <Compile Include="Tools\ISearch.cs" />
+    <Compile Include="Tools\RegexUtils.cs" />
     <Compile Include="Tools\SearchElement.cs" />
     <Compile Include="Tools\SearchImplicit.cs" />
     <Compile Include="UserTest.cs" />

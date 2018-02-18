@@ -9,70 +9,70 @@ using OpenCart.Tools;
 
 namespace OpenCart.Pages.User
 {
-    public class ProductComponent
-    {
-        protected ISearch Search { get; private set; }
-        public IWebElement ProductLayout { get; private set; }
-        //
-        public IWebElement Name
-            { get { return Search.CssSelector("h4 a", ProductLayout); } }
-        public IWebElement Price
-            { get { return Search.CssSelector(".price", ProductLayout); } }
-        public IWebElement AddToCart
-            { get { return Search.CssSelector(".fa.fa-shopping-cart", ProductLayout); } }
-        public IWebElement AddToWish
-            { get { return Search.CssSelector(".fa.fa-heart", ProductLayout); } }
+	public class ProductComponent
+	{
+		protected ISearch Search { get; private set; }
+		public IWebElement ProductLayout { get; private set; }
+		//
+		public IWebElement Name
+		{ get { return Search.CssSelector("h4 a", ProductLayout); } }
+		public IWebElement Price
+		{ get { return Search.CssSelector(".price", ProductLayout); } }
+		public IWebElement AddToCart
+		{ get { return Search.CssSelector(".fa.fa-shopping-cart", ProductLayout); } }
+		public IWebElement AddToWish
+		{ get { return Search.CssSelector(".fa.fa-heart", ProductLayout); } }
 
-        public ProductComponent(IWebElement productLayout)
-        {
-            this.Search = Application.Get().Search;
-            this.ProductLayout = productLayout;
-            //
-            // Verify Web Elements
-            VerifyWebElements();
-        }
+		public ProductComponent(IWebElement productLayout)
+		{
+			this.Search = Application.Get().Search;
+			this.ProductLayout = productLayout;
+			//
+			// Verify Web Elements
+			VerifyWebElements();
+		}
 
-        private void VerifyWebElements()
-        {
-            IWebElement verify = Name;
-            // TODO Check, if Web Elements Exist
-        }
+		private void VerifyWebElements()
+		{
+			IWebElement verify = Name;
+			// TODO Check, if Web Elements Exist
+		}
 
-        // Name
-        public string GetNameText()
-        {
-            return Name.Text;
-        }
+		// Name
+		public string GetNameText()
+		{
+			return Name.Text;
+		}
 
-        // Price
-        public String GetPriceText()
-        {
-            return Price.Text;
-        }
+		// Price
+		public String GetPriceText()
+		{
+			return Price.Text;
+		}
 
-        public double GetPriceAmount()
-        {
-            //TODO RegexUtils.ExtractDouble(RegexPatterns.NUMBER_DOUBLE.ToString(), GetPriceText());
-            return 0;
-        }
+		public double GetPriceAmount()
+		{
+			//Console.WriteLine("GetPriceText() = " + GetPriceText());
+			return RegexUtils.ExtractFirstDouble(GetPriceText());
+		}
 
-        public void ClickName()
-        {
-            Name.Click();
-        }
+		public void ClickName()
+		{
+			Name.Click();
+		}
 
-        // AddToCart
+		// AddToCart
 
-        public void ClickAddToCart()
-        {
-            AddToCart.Click();
-        }
+		public void ClickAddToCart()
+		{
+			AddToCart.Click();
+		}
 
-        // AddToWish
-        public void ClickAddToWish()
-        {
-            AddToWish.Click();
-        }
+		// AddToWish
+		public void ClickAddToWish()
+		{
+			AddToWish.Click();
+		}
 
-    }
+	}
 }
