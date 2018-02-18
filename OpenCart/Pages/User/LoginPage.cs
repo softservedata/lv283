@@ -12,18 +12,21 @@ namespace OpenCart.Pages.User
 {
 	public class LoginPage
 	{
-		public const string  EXPECTED_FIRST_WARNING = "Warning: No match for E-Mail Address and/or Password.";
+		public const string EXPECTED_FIRST_WARNING = "Warning: No match for E-Mail Address and/or Password.";
 		public const string EXPECTED_SECOND_WARNING = "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.";
 
 
 		protected ISearch Search { get; private set; }
-		//		
+
+		//	EmailAdress	
 		public IWebElement EmailAdressField
 		{ get { return Search.Name("email"); } }
 
+		//	Password
 		public IWebElement PasswordField
 		{ get { return Search.Name("password"); } }
 
+		//	Login
 		public IWebElement LoginButton
 		{ get { return Search.XPath("//*[@value='Login'] [@class='btn btn-primary']"); } }
 
@@ -32,7 +35,7 @@ namespace OpenCart.Pages.User
 			this.Search = Application.Get().Search;
 		}
 
-		//
+		// EmailAdress	
 		public IWebElement GetEmailAdressField()
 		{
 			return EmailAdressField;
@@ -53,6 +56,7 @@ namespace OpenCart.Pages.User
 			GetEmailAdressField().Clear();
 		}
 
+		// Password
 		public IWebElement GetPasswordField()
 		{
 			return PasswordField;
@@ -73,6 +77,7 @@ namespace OpenCart.Pages.User
 			GetPasswordField().Clear();
 		}
 
+		//	Login
 		public IWebElement GetLoginButton()
 		{
 			return LoginButton;
@@ -88,7 +93,7 @@ namespace OpenCart.Pages.User
 			GetLoginButton().Click();
 		}
 
-		// set Functional
+		// Set Functional
 		private void InputInEmailAdressField(string emailAddress)
 		{
 			GetEmailAdressField().SendKeys(emailAddress);
@@ -126,6 +131,7 @@ namespace OpenCart.Pages.User
 			InputPassword(wrongPassword);
 			ClickLoginButton();
 		}
+
 		//Actions
 		public MyAccountPage GoToLoginForLoginPageToMyAccountPage(IUser user)
 		{

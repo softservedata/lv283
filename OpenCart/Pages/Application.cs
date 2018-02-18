@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenCart.Data;
 using OpenCart.Actions.User;
 using OpenCart.Tools;
+using OpenCart.Pages.User;
 
 namespace OpenCart.Pages
 {
@@ -18,6 +19,8 @@ namespace OpenCart.Pages
 		public ApplicationSource ApplicationSource { get; private set; }
 		//public FlexAssert FlexAssert { get; private set; }
 		public BrowserWrapper Browser { get; private set; }
+
+
 		public ISearch Search { get; private set; }
 
 		private Application(ApplicationSource applicationSource)
@@ -78,12 +81,12 @@ namespace OpenCart.Pages
 			return new HomeActions();
 		}
 
-		//public LoginPage Login()
-		//{
-		//	Browser.OpenUrl(ApplicationSource.BaseUrl);
-		//	//return new LoginPage(getBrowser().getDriver());
-		//	return new LoginPage();
-		//}
+		public LoginPage Login()
+		{
+			Browser.OpenUrl(ApplicationSource.BaseUrl);
+			//return new LoginPage(getBrowser().getDriver());
+			return new LoginPage();
+		}
 
 	}
 }
