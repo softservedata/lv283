@@ -8,5 +8,7 @@ namespace OpenCart.Actions.User
 {
 	public class EditPasswordActions
 	{
+
+
 	}
 }
