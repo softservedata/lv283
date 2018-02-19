@@ -44,7 +44,7 @@ namespace SeleniumTests
             RegisterModule login = new RegisterModule(driver);
 
             Assert.IsTrue(login.Register(user));
-            Assert.IsTrue(login.DeleteUser(user));
+            //Assert.IsTrue(login.DeleteUser(user));
         }
     }
 }
