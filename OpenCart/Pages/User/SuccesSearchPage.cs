@@ -5,16 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenCart.Tools;
 
 namespace OpenCart.Pages.User
 {
 	public class SuccesSearchPage : ANavigatePanelComponent
 	{
-		// TODO Add Search Criteria
+        // TODO Add Search Criteria
+        //public ISearch Search { get; private set; }
+            
 
 		public SuccesSearchPage() : base()
 		{
 			InitProductComponents(By.CssSelector(".product-layout"));
+
 		}
 
 		public new List<string> GetProductComponentTexts()
@@ -41,7 +45,6 @@ namespace OpenCart.Pages.User
 		public new void ClickAddToWishByProductName(string productName)
 		{
 			base.ClickAddToWishByProductName(productName);
-		}
-
-	}
+		}        
+    }
 }

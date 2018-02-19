@@ -34,6 +34,6 @@ namespace OpenCart.Actions.User
 		{
 			return SuccesSearchPageOperation.GetPriceAmountByProductName(productName);
 		}
-
-	}
+               
+    }
 }

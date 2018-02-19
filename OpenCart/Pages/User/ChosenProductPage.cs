@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenCart.Actions.User
+namespace OpenCart.Pages.User
 {
-    class uym_
+    public class ChosenProductPage
     {
     }
 }
