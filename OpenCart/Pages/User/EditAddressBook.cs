@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenCart.Tools;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-    public class EditAddressBook // : AColumnRightUserComponent // TODO
+    public class EditAddressBook  : AColumnRightUserComponent // TODO
     {
-        protected ISearch Search { get; private set; }
+        //protected ISearch Search { get; private set; }
 
         public IWebElement AddressBook
         { get { return Search.XPath("//a[contains(@href, '/address')]"); } }
 
         public IWebElement EditAddressBookButton
-        { get { return Search.Css("a.btn.btn-info"); } }
+        { get { return Search.CssSelector("a.btn.btn-info"); } }
 
         public IWebElement EditFirstNameField
         { get { return Search.Id("input-firstname"); } }

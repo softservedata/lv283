@@ -81,6 +81,12 @@ namespace OpenCart.Pages
 			return new HomeActions();
 		}
 
+		public LoginAccountActions LoadLoginAccountActions()
+		{
+			Browser.OpenUrl(ApplicationSource.BaseUrl);
+			return new LoginAccountActions();
+		}
+
 		public LoginPage Login()
 		{
 			Browser.OpenUrl(ApplicationSource.BaseUrl);

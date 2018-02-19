@@ -18,7 +18,7 @@ namespace OpenCart
 	public class SmokeLoginTest : TestRunner
 	{
 		private static readonly object[] SearchProduct =
-		{
+				{
 			new object[] { ProductRepository.macBook(), CurrencyRepository.Euro() },
 			new object[] { ProductRepository.macBook(), CurrencyRepository.PoundSterling() },
 			new object[] { ProductRepository.macBook(), CurrencyRepository.USDollar() }
@@ -27,10 +27,19 @@ namespace OpenCart
 		[Test, TestCaseSource(nameof(SearchProduct))]
 		public void VerifySearchByCurrency(Product product, string currencyName)
 		{
-			HomeActions homeActions = Application.Get().LoadHomeActions();
-			SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
+			//HomeActions homeActions = Application.Get().LoadHomeActions();
+			//SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
+			//
+			// Precondition
+			SuccesSearchActions searchActions = Application.Get()
+													.LoadHomeActions()
+													.SuccesSearchProduct(product.Name);
+			// Steps
 			searchActions = searchActions.ChooseCurrencyByPartialName(currencyName);
+			// Verify
 			Assert.AreEqual(product.GetPrice(currencyName), searchActions.GetPriceByProductName(product.Name), 0.01);
+			// Return to previous state
+			//searchActions.GotoHomeActions();
 			//
 			Thread.Sleep(2000);
 		}

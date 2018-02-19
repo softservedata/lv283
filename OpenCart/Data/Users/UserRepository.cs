@@ -57,26 +57,47 @@ namespace OpenCart.Data.Users
 		}
 
 		public IUser Admin()
-        {
-            return User.Get()
-                .SetFirstname("firstname8Admin")
-                .SetLastname("lastname")
-                .SetEmail("email")
-                .SetPhone("phone")
-                .SetAddressMain("addressMain")
-                .SetCity("city")
-                .SetPostcode("postcode")
-                .SetCoutry("coutry")
-                .SetRegionState("regionState")
-                .SetPassword("password")
-                .SetSubscribe(true)
-                .SetFax("fax")
-                .SetCompany("company")
-                .SetAddressAdd("addressAdd")
-                .Build();
-        }
+		{
+			return User.Get()
+				.SetFirstname("firstname8Admin")
+				.SetLastname("lastname")
+				.SetEmail("email")
+				.SetPhone("phone")
+				.SetAddressMain("addressMain")
+				.SetCity("city")
+				.SetPostcode("postcode")
+				.SetCoutry("coutry")
+				.SetRegionState("regionState")
+				.SetPassword("password")
+				.SetSubscribe(true)
+				.SetFax("fax")
+				.SetCompany("company")
+				.SetAddressAdd("addressAdd")
+				.Build();
+		}
 
-        public IUser DBUser()
+		public IUser Registered()
+		{
+			return User.Get()
+				.SetFirstname("firstname9")
+				.SetLastname("lastname")
+				.SetEmail("hahaha@gmail.com")
+				.SetPhone("1234567")
+				.SetAddressMain("addressMain")
+				.SetCity("city")
+				.SetPostcode("12345")
+				.SetCoutry("Ukraine")
+				.SetRegionState("L'vivs'ka Oblast'")
+				.SetPassword("qwerty")
+				.SetSubscribe(true)
+				.SetFax("fax")
+				.SetCompany("company")
+				.SetAddressAdd("addressAdd")
+				.Build();
+		}
+
+
+		public IUser DBUser()
         {
             // Read User From DB
             // Create Class for Read

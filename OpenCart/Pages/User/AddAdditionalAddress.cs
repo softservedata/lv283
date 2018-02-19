@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenCart.Tools;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-    public class AddAdditionalAddress  //: AColumnRightUserComponent // TODO
+    public class AddAdditionalAddress  : AColumnRightUserComponent // TODO
     {
-        protected ISearch Search { get; private set; }
+        //protected ISearch Search { get; private set; }
         public IWebElement AddressBook
         { get { return Search.XPath("//a[contains(@href, '/address')]"); } }
 

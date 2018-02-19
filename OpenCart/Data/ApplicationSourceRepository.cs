@@ -18,14 +18,14 @@ namespace OpenCart.Data
 		public static ApplicationSource FirefoxEpizy()
 		{
 			return new ApplicationSource("FirefoxTemporary", 10L,
-				"http://283-taqc.ml/index.php?route=account/login",
+				"http://283-taqc.ml/",
 				"http://atqc-shop.epizy.com/admin/");
 		}
 
 		public static ApplicationSource ChromeEpizy()
 		{
 			return new ApplicationSource("ChromeTemporary", 10L,
-				"http://283-taqc.ml/index.php?route=account/login",
+				"http://283-taqc.ml/",
 				"http://atqc-shop.epizy.com/admin/");
 		}
 

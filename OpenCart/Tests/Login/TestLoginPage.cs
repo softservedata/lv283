@@ -22,12 +22,15 @@ namespace OpenCart.Tests.Login
 		[Test, TestCaseSource(nameof(CData))]
 		public void VerifySuccessfulLogin(IUser user)
 		{
-			//HomePage homePage = Application.Get().LoadHomePage();
+			////HomePage homePage = Application.Get().LoadHomePage();
+			////Thread.Sleep(2000);
+			//// HomePage homePage = Application.Get().LoadHomePage();
+			////LoginPage loginPage = Application.Get().Login();
+			////loginPage.GoToLoginForLoginPageToMyAccountPage(user);
+			//LoginPage loginPage =  Application.Get()
+			//										.LoadLoginAccountActions()
+			//										.SuccessfulRegister(user);
 			//Thread.Sleep(2000);
-			// HomePage homePage = Application.Get().LoadHomePage();
-			LoginPage loginPage = Application.Get().Login();
-			loginPage.GoToLoginForLoginPageToMyAccountPage(user);
-			Thread.Sleep(2000);
 		}
 	}
 }

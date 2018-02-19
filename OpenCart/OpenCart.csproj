@@ -74,7 +74,10 @@
   <ItemGroup>
     <Compile Include="Actions\User\EditPasswordActions.cs" />
     <Compile Include="Actions\User\HomeActions.cs" />
-    <Compile Include="Actions\User\LoginAction.cs" />
+    <Compile Include="Actions\User\LoginAccountActions.cs" />
+    <Compile Include="Actions\User\MyAccountActions.cs" />
+    <Compile Include="Actions\User\RegisterAccountActions.cs" />
+    <Compile Include="Actions\User\SubCategoryProductsActions.cs" />
     <Compile Include="Actions\User\SuccesSearchActions.cs" />
     <Compile Include="Actions\User\ChosenProductActions.cs" />
     <Compile Include="BrowsersTest.cs" />
@@ -91,6 +94,7 @@
     <Compile Include="Pages\TagAttribute.cs" />
     <Compile Include="Pages\TestRunner.cs" />
     <Compile Include="Pages\User\AccountComponents.cs" />
+    <Compile Include="Pages\User\AColumnLeftComponent.cs" />
     <Compile Include="Pages\User\AColumnRightGuestComponent.cs" />
     <Compile Include="Pages\User\AColumnRightPartitionalComponent.cs" />
     <Compile Include="Pages\User\AColumnRightUserComponent.cs" />
@@ -108,6 +112,8 @@
     <Compile Include="Pages\User\MyAccountPage.cs" />
     <Compile Include="Pages\User\PasswordComponents.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
+    <Compile Include="Pages\User\RegisterAccountPage.cs" />
+    <Compile Include="Pages\User\SubCategoryProductsPage.cs" />
     <Compile Include="Pages\User\SuccesSearchPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmokeLoginTest.cs" />

@@ -55,6 +55,10 @@ namespace OpenCart.Pages.User
 		{
 			GetEmailAdressField().Clear();
 		}
+		public void SetEMailFieldText(string text)
+		{
+			EmailAdressField.SendKeys(text);
+		}
 
 		// Password
 		public IWebElement GetPasswordField()
@@ -75,6 +79,11 @@ namespace OpenCart.Pages.User
 		public void ClearPasswordField()
 		{
 			GetPasswordField().Clear();
+		}
+
+		public void SetPasswordFieldText(string text)
+		{
+			PasswordField.SendKeys(text);
 		}
 
 		//	Login
@@ -99,7 +108,7 @@ namespace OpenCart.Pages.User
 			GetEmailAdressField().SendKeys(emailAddress);
 		}
 
-		private void inputInPasswordField(string passwordField)
+		private void InputInPasswordField(string passwordField)
 		{
 			GetPasswordField().SendKeys(passwordField);
 		}
@@ -115,7 +124,7 @@ namespace OpenCart.Pages.User
 		{
 			ClickPasswordField();
 			ClearPasswordField();
-			inputInPasswordField(passwordField);
+			InputInPasswordField(passwordField);
 		}
 		
 		public void LoginForLoginPageToMyAccountPage(string email, string password)
@@ -143,6 +152,16 @@ namespace OpenCart.Pages.User
 		{
 			LoginForLoginPageToWarning(user.GetEmail(), user.GetPassword());
 			return new LoginPage();
+		}
+
+		// Business Logic
+		public void LoginUser(IUser user)
+		{
+			ClearEmailAddressField();
+			SetEMailFieldText(user.GetEmail());
+			ClearPasswordField();
+			SetPasswordFieldText(user.GetPassword());
+			ClickLoginButton();
 		}
 	}
 }

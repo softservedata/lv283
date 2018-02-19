@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenCart.Tools;
 using OpenQA.Selenium;
 
 namespace OpenCart.Pages.User
 {
-    public class DeleteAddressBook //: AColumnRightUserComponent // TODO
+    public class DeleteAddressBook : AColumnRightUserComponent // TODO
     {
-        protected ISearch Search { get; private set; }
+       // protected ISearch Search { get; private set; }
         public IWebElement AddressBook
         { get { return Search.XPath("//a[contains(@href, '/address')]"); } }
 
