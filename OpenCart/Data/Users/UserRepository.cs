@@ -56,6 +56,26 @@ namespace OpenCart.Data.Users
                 .Build();
         }
 
+        public IUser Registered()
+        {
+            return User.Get()
+                .SetFirstname("firstname9")
+                .SetLastname("lastname")
+                .SetEmail("hahaha@gmail.com")
+                .SetPhone("1234567")
+                .SetAddressMain("addressMain")
+                .SetCity("city")
+                .SetPostcode("12345")
+                .SetCoutry("Ukraine")
+                .SetRegionState("L'vivs'ka Oblast'")
+                .SetPassword("qwerty")
+                .SetSubscribe(true)
+                .SetFax("fax")
+                .SetCompany("company")
+                .SetAddressAdd("addressAdd")
+                .Build();
+        }
+
         public IUser DBUser()
         {
             // Read User From DB

@@ -16,6 +16,13 @@ namespace OpenCart.Actions.User
             SuccesSearchPageOperation = new SuccesSearchPage();
         }
 
+        public HomeActions GotoHomeActions()
+        {
+            SuccesSearchPageOperation.ClickLogo();
+            //return this;
+            return new HomeActions();
+        }
+
         public SuccesSearchActions SuccesSearchProduct(string partialProductName)
         {
             SuccesSearchPageOperation.SuccesSearchProduct(partialProductName);
