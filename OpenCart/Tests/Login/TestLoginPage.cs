@@ -1,13 +1,18 @@
-﻿using NUnit.Framework;
-using OpenCart.Data.Users;
-using OpenCart.Pages;
-using OpenCart.Pages.User;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenCart.Actions.User;
+using OpenCart.Pages;
+using OpenCart.Data.Commons;
+using OpenCart.Data.Products;
+using OpenCart.Data.Users;
+using OpenCart.Pages.User;
 
 namespace OpenCart.Tests.Login
 {
@@ -24,7 +29,8 @@ namespace OpenCart.Tests.Login
 		{
 			////HomePage homePage = Application.Get().LoadHomePage();
 			////Thread.Sleep(2000);
-			//// HomePage homePage = Application.Get().LoadHomePage();
+			MyAccountPage myAccountPage = Application.Get().LoadLoginAccountActions
+			//HomePage homePage = Application.Get().LoadHomeAction
 			////LoginPage loginPage = Application.Get().Login();
 			////loginPage.GoToLoginForLoginPageToMyAccountPage(user);
 			//LoginPage loginPage =  Application.Get()
