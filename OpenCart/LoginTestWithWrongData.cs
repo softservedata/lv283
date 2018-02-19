@@ -21,23 +21,30 @@ namespace OpenCart
     {
         private static readonly object[] UserData =
         {
-            //new object[] { UserRepository.Get().NewUser() },
-            new object[] { UserRepository.Get().InvalidUser(), UserRepository.Get().AdminUser() },
-            //new object[] { UserRepository.Get().AdminUser() }
+            new object[] { UserRepository.Get().InvalidUser(), UserRepository.Get().AdminUser(), MessagesRepository.DangerMessage() },
         };
 
         [Test, TestCaseSource(nameof(UserData))]
-        public void VerifyBlockUserByIncorrectPassword(IUser user, IUser admin)
+        public void VerifyBlockUserByIncorrectPassword(IUser invaliduser, IUser admin, string dangerMessage)
         {
-            Assert.IsTrue(Application.Get().LoadLoginPage().IsUserBlocked(user.GetEmail(), user.GetPassword()));
+            Assert.AreEqual(
+                Application.Get().LoadHomeActions().GetLoginPage()
+                .UnsuccessfulLogin(invaliduser)
+                .UnsuccessfulLogin(invaliduser)
+                .UnsuccessfulLogin(invaliduser)
+                .UnsuccessfulLogin(invaliduser)
+                .UnsuccessfulLogin(invaliduser)
+                .UnsuccessfulLogin(invaliduser)
+                .GetDangerAlertText(),
+                dangerMessage
+                );
 
-            Assert.IsTrue(Application.Get().LoadAdminPage().GetLoginToAdminPanel(admin.GetEmail(), admin.GetPassword())
-                .GetCustomers().GetUnlockCustomer(user.GetEmail()));
-
-            //Application.Get().LoadAdminPage().GetLoginToAdminPanel(admin.GetEmail(), admin.GetPassword())
-            //    .GetCustomers().GetDeletedCustomer(user.GetEmail()).GetAcceptPopUp();
-
-            Thread.Sleep(1000);
+            Assert.IsTrue(
+                Application.Get().LoadAdminActions().GetLoginPage(admin)
+                .GetCustomers()
+                .GetUnlockCustomer(invaliduser)
+                .IsCloseDisplayed()
+                );
         }
     }
 }

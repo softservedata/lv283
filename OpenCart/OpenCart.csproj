@@ -72,7 +72,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\AdminActions\AdminActions.cs" />
+    <Compile Include="Actions\AdminActions\AdminCustomersActions.cs" />
+    <Compile Include="Actions\AdminActions\AdminPanelActions.cs" />
     <Compile Include="Actions\User\HomeActions.cs" />
+    <Compile Include="Actions\User\LoginAccountActions.cs" />
+    <Compile Include="Actions\User\LogoutActions.cs" />
+    <Compile Include="Actions\User\MyAccountActions.cs" />
+    <Compile Include="Actions\User\RegisterAccountActions.cs" />
+    <Compile Include="Actions\User\SubCategoryProductsActions.cs" />
     <Compile Include="Actions\User\SuccesSearchActions.cs" />
     <Compile Include="AppiumTest.cs" />
     <Compile Include="Base\TestRunner.cs" />
@@ -84,6 +92,7 @@
     <Compile Include="Data\ApplicationSource.cs" />
     <Compile Include="Data\ApplicationSourceRepository.cs" />
     <Compile Include="Data\Commons\CurrencyRepository.cs" />
+    <Compile Include="Data\Commons\MessagesRepository.cs" />
     <Compile Include="Data\Products\Product.cs" />
     <Compile Include="Data\Products\ProductRepository.cs" />
     <Compile Include="Data\Rest\FoundationNET.cs" />
@@ -91,6 +100,7 @@
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="FunctionalTest.cs" />
+    <Compile Include="LoginTestWithCorrectData.cs" />
     <Compile Include="LoginTestWithWrongData.cs" />
     <Compile Include="Pages\AdminPanel\AdminCustomersPage.cs" />
     <Compile Include="Pages\AdminPanel\AdminDropRightColumn.cs" />
@@ -100,11 +110,16 @@
     <Compile Include="Pages\TestRunner.cs" />
     <Compile Include="Pages\User\LoginPage.cs" />
     <Compile Include="Pages\User\AHeadComponent.cs" />
+    <Compile Include="Pages\User\ALeftComponent.cs" />
     <Compile Include="Pages\User\ANavigatePanelComponent.cs" />
+    <Compile Include="Pages\User\ARightComponent.cs" />
     <Compile Include="Pages\User\HomePage.cs" />
     <Compile Include="Pages\User\LogoutPage.cs" />
+    <Compile Include="Pages\User\LoginAccountPage.cs" />
     <Compile Include="Pages\User\MyAccountPage.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
+    <Compile Include="Pages\User\RegisterAccountPage.cs" />
+    <Compile Include="Pages\User\SubCategoryProductsPage.cs" />
     <Compile Include="Pages\User\SuccesSearchPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestGitTest.cs" />
@@ -125,9 +140,7 @@
   <ItemGroup>
     <Content Include="283framework.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Actions\AdminActions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -26,10 +26,10 @@ namespace OpenCart.Pages.AdminPanel
             Customers.Click();
         }*/
 
-        public new AdminCustomersPage GetCustomers()
+        public new void GetCustomers()
         {
             base.GetCustomers();
-            return new AdminCustomersPage();
+            //return new AdminCustomersPage();
         }
     }
 }

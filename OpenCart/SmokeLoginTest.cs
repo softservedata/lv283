@@ -11,9 +11,6 @@ using OpenCart.Actions.User;
 using OpenCart.Pages;
 using OpenCart.Data.Commons;
 using OpenCart.Data.Products;
-using OpenCart.Pages.User;
-using OpenCart.Pages.AdminPanel;
-using OpenCart.Data.Users;
 
 namespace OpenCart
 {
@@ -30,10 +27,19 @@ namespace OpenCart
         [Test, TestCaseSource(nameof(SearchProduct))]
         public void VerifySearchByCurrency(Product product, string currencyName)
         {
-            HomeActions homeActions = Application.Get().LoadHomeActions();
-            SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
+            //HomeActions homeActions = Application.Get().LoadHomeActions();
+            //SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
+            //
+            // Precondition
+            SuccesSearchActions searchActions = Application.Get()
+                                                    .LoadHomeActions()
+                                                    .SuccesSearchProduct(product.Name);
+            // Steps
             searchActions = searchActions.ChooseCurrencyByPartialName(currencyName);
+            // Verify
             Assert.AreEqual(product.GetPrice(currencyName), searchActions.GetPriceByProductName(product.Name), 0.01);
+            // Return to previous state
+            //searchActions.GotoHomeActions();
             //
             Thread.Sleep(2000);
         }

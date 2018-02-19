@@ -25,8 +25,8 @@ namespace OpenCart.Data
         public static ApplicationSource ChromeEpizy()
         {
             return new ApplicationSource("ChromeTemporary", 10L,
-                //"http://zewer1bp.beget.tech",
-                "http://zewer1bp.beget.tech/index.php?route=account/login",
+                "http://zewer1bp.beget.tech",
+                //"http://zewer1bp.beget.tech/index.php?route=account/login",
                 "http://zewer1bp.beget.tech/admin/");
         }
 

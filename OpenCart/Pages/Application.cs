@@ -8,6 +8,7 @@ using OpenCart.Actions.User;
 using OpenCart.Tools;
 using OpenCart.Pages.User;
 using OpenCart.Pages.AdminPanel;
+using OpenCart.Actions.AdminActions;
 
 namespace OpenCart.Pages
 {
@@ -78,6 +79,13 @@ namespace OpenCart.Pages
         {
             Browser.OpenUrl(ApplicationSource.BaseUrl);
             return new HomeActions();
+        }
+
+        //*********************Admin panel Action*********************//
+        public AdminActions LoadAdminActions()
+        {
+            Browser.OpenUrl(ApplicationSource.AdminLoginUrl);
+            return new AdminActions();
         }
 
         //*********************Login Page code*********************//

@@ -7,6 +7,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenCart.Tools;
 using OpenCart.Pages.User;
+using OpenCart.Pages.AdminPanel;
+using OpenCart.Data.Users;
 
 namespace OpenCart.Pages.AdminPanel
 {
@@ -37,13 +39,18 @@ namespace OpenCart.Pages.AdminPanel
             //browserWrapper = new BrowserWrapper();
         }
 
+        public bool IsCloseDisplayed()
+        {
+            return Close.Displayed;
+        }
+
         //SearchEmail Field
         public void ClearSearchEmail()
         {
             SearchEmail.Clear();
         }
 
-        public void SendKeysShoppingCart(string email)
+        public void SendKeysToEmail(string email)
         {
             SearchEmail.SendKeys(email);
         }
@@ -78,31 +85,27 @@ namespace OpenCart.Pages.AdminPanel
             Close.Click();
         }
 
-        public bool GetUnlockCustomer(string email)
+        public void GetUnlockCustomer(IUser user)
         {
             ClearSearchEmail();
-            SendKeysShoppingCart(email);
+            SendKeysToEmail(user.GetEmail());
             ClickFilter();
-            Unlock.Click();
-            return Close.Displayed;
+            ClickUnlock();
         }
 
-        public AdminCustomersPage GetDeletedCustomer(string email)
+        public void GetDeletedCustomer(IUser user)
         {
             ClearSearchEmail();
-            SendKeysShoppingCart(email);
+            SendKeysToEmail(user.GetEmail());
             ClickFilter();
             ClickTextCenter();
             ClickDelete();
-            return this;
-            //browserWrapper.AcceptPopUp();
         }
 
-        /////////////////////////////
-        public AdminCustomersPage GetAcceptPopUp()
+        //Accept pop up from browser
+        public void GetAcceptPopUp()
         {
             AdminCustomersPage adminLoginPage = Application.Get().AcceptPopUp();
-            return this;
         }
     }
 }

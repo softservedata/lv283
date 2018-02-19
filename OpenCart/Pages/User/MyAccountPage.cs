@@ -9,16 +9,17 @@ using OpenCart.Tools;
 
 namespace OpenCart.Pages.User
 {
-    public class MyAccountPage
+    public class MyAccountPage : ARightComponent
     {
-        protected ISearch Search { get; private set; }
+        //need to unlock maybe
+        //protected ISearch Search { get; private set; }
 
         protected IWebElement Logout
         { get { return Search.CssSelector("a.list-group-item[href*='logout']"); } }
 
-        public MyAccountPage()
+        public MyAccountPage() : base()
         {
-            this.Search = Application.Get().Search;
+            //this.Search = Application.Get().Search;
         }
 
         //Logout Button
@@ -27,10 +28,10 @@ namespace OpenCart.Pages.User
             Logout.Click();
         }
 
-        public LogoutPage GetLogoutUser()
+        public void GetLogoutUser()
         {
             ClickLogout();
-            return new LogoutPage();
+            //return new LogoutPage();
         }
     }
 }

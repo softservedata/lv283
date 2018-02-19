@@ -67,6 +67,48 @@ namespace OpenCart.Pages.User
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    public class MyAccountOptions
+    {
+        private bool isLoggedin;
+        private ISearch Search { get; set; }
+        public IWebElement Register
+            { get { return Search.XPath("//a[contains(@href,'route=account/register')]"); } }
+
+        public IWebElement Login
+            { get { return Search.XPath("//a[contains(@href,'route=account/login')]"); } }
+
+        public MyAccountOptions()
+        {
+            this.isLoggedin = false;
+            this.Search = Application.Get().Search;
+        }
+
+        // Register
+        public string GetRegisterText()
+        {
+            return Register.Text;
+        }
+
+        public void ClickRegister()
+        {
+            Register.Click();
+        }
+
+        // Login
+        public string GetLoginText()
+        {
+            return Login.Text;
+        }
+
+        public void ClickLogin()
+        {
+            Login.Click();
+        }
+
+    }
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     public abstract class AHeadComponent
     {
         public const string TAG_ATTRIBUTE_VALEU = "value";
@@ -100,6 +142,7 @@ namespace OpenCart.Pages.User
         private DropdownOptions dropdownOptions;
         private DropdownOptions currencyOptions;
         protected List<ProductComponent> ProductComponents { get; private set; }
+        protected MyAccountOptions MyAccountOption { get; private set; }
         //private DropdownCart DropdownCart;
 
         protected AHeadComponent()
@@ -418,6 +461,25 @@ namespace OpenCart.Pages.User
             SetSearchProductField(partialProductName);
             ClickSearchProductButton();
         }
+
+        public void GotoRegister()
+        {
+            ClickSearchProductField();
+            ClickMyAccount();
+            //
+            MyAccountOption = new MyAccountOptions();
+            MyAccountOption.ClickRegister();
+        }
+
+        public void GotoLogin()
+        {
+            ClickSearchProductField();
+            ClickMyAccount();
+            //
+            MyAccountOption = new MyAccountOptions();
+            MyAccountOption.ClickLogin();
+        }
+
 
     }
 }

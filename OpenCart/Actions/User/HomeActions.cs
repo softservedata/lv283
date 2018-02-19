@@ -40,5 +40,10 @@ namespace OpenCart.Actions.User
             return HomePageOperation.GetPriceAmountByProductName(productName);
         }
 
+        public LoginAccountActions GetLoginPage()
+        {
+            HomePageOperation.GotoLogin();
+            return new LoginAccountActions();
+        }
     }
 }
