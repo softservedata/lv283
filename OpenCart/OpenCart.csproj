@@ -91,6 +91,7 @@
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
     <Compile Include="FunctionalTest.cs" />
+    <Compile Include="LoginTestWithWrongData.cs" />
     <Compile Include="Pages\AdminPanel\AdminCustomersPage.cs" />
     <Compile Include="Pages\AdminPanel\AdminDropRightColumn.cs" />
     <Compile Include="Pages\AdminPanel\AdminLoginPage.cs" />
