@@ -94,10 +94,13 @@
     <Compile Include="Pages\User\AColumnRightGuestComponent.cs" />
     <Compile Include="Pages\User\AColumnRightPartitionalComponent.cs" />
     <Compile Include="Pages\User\AColumnRightUserComponent.cs" />
+    <Compile Include="Pages\User\AddAdditionalAddress.cs" />
     <Compile Include="Pages\User\AHeadComponent.cs" />
     <Compile Include="Pages\User\ANavigatePanelComponent.cs" />
     <Compile Include="Pages\User\ChosenProductPage.cs" />
+    <Compile Include="Pages\User\DeleteAddressBook.cs" />
     <Compile Include="Pages\User\EditAccountPage.cs" />
+    <Compile Include="Pages\User\EditAddressBook.cs" />
     <Compile Include="Pages\User\EditPasswordPage.cs" />
     <Compile Include="Pages\User\HomePage.cs" />
     <Compile Include="Pages\User\LoginPage.cs" />
@@ -121,10 +124,12 @@
   <ItemGroup>
     <None Include="allureConfig.json" />
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\Admin\" />
+    <Folder Include="Tests\AddressBook\" />
     <Folder Include="Tests\EditAccount\" />
     <Folder Include="Tests\EditPassword\" />
   </ItemGroup>
