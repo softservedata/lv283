@@ -76,6 +76,7 @@
     <Compile Include="Actions\User\HomeActions.cs" />
     <Compile Include="Actions\User\LoginAction.cs" />
     <Compile Include="Actions\User\SuccesSearchActions.cs" />
+    <Compile Include="Actions\User\uym,.cs" />
     <Compile Include="BrowsersTest.cs" />
     <Compile Include="Data\ApplicationSource.cs" />
     <Compile Include="Data\ApplicationSourceRepository.cs" />
