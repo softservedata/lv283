@@ -118,6 +118,8 @@
     <Compile Include="UserTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="allureConfig.json" />
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
