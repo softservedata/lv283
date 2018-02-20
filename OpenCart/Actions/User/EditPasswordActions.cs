@@ -17,7 +17,17 @@ namespace OpenCart.Actions.User
 			EditPasswordPageOperation = new EditPasswordPage();
 		}
 
+		public EditPasswordActions UnsuccessfulChangePassword(Data.Passwords.IPassword invalidPassword)
+		{
+			EditPasswordPageOperation.ChangePassword(invalidPassword);
+			return new EditPasswordActions();
+		}
 
+		public EditPasswordActions SuccessfulChangePassword(Data.Passwords.IPassword validPassword)
+		{
+			EditPasswordPageOperation.ChangePassword(validPassword);
+			return new EditPasswordActions();
+		}
 
 	}
 }

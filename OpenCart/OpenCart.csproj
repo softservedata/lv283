@@ -122,7 +122,7 @@
     <Compile Include="Pages\User\LoginPage.cs" />
     <Compile Include="Pages\User\LogoutPage.cs" />
     <Compile Include="Pages\User\MyAccountPage.cs" />
-    <Compile Include="Pages\User\PasswordComponents.cs" />
+    <Compile Include="Pages\User\PasswordComponent.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
     <Compile Include="Pages\User\RegisterAccountPage.cs" />
     <Compile Include="Pages\User\RegisterPage.cs" />

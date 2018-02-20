@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenCart.Tools;
+using OpenCart.Data.Passwords;
 
 namespace OpenCart.Pages.User
 {
-	public class PasswordComponents
+	public class PasswordComponent : AColumnRightUserComponent
 	{
 		protected ISearch Search { get; private set; }
 		//
@@ -28,10 +29,10 @@ namespace OpenCart.Pages.User
 		public IWebElement ContinueButton
 		{ get { return Search.ClassName("pull-right"); } }
 
-		public IWebElement ChangePassword
+		public IWebElement ChangePasswordLabel
 		{ get { return Search.XPath("//a[contains(@href, '/password')]"); } }
 
-		protected PasswordComponents()
+		protected PasswordComponent()
 		{
 			this.Search = Application.Get().Search;
 		}
@@ -52,6 +53,11 @@ namespace OpenCart.Pages.User
 			PasswordField.Clear();
 		}
 
+		public void ClickPasswordField()
+		{
+			PasswordField.Click();
+		}
+
 		// ConfirmField
 		public string GetConfirmFieldText()
 		{
@@ -68,6 +74,11 @@ namespace OpenCart.Pages.User
 			ConfirmField.Clear();
 		}
 
+		public void ClickConfirmField()
+		{
+			ConfirmField.Click();
+		}
+
 		// DangerText
 		public string GetDangerTextText()
 		{
@@ -77,7 +88,7 @@ namespace OpenCart.Pages.User
 		// ChangePassword
 		public string GetChangePasswordText()
 		{
-			return ChangePassword.Text;
+			return ChangePasswordLabel.Text;
 		}
 
 		// BackButton
@@ -86,11 +97,40 @@ namespace OpenCart.Pages.User
 		    BackButton.Click();
 		}
 
-		// BackButton
+		// Continue Button
 		public void ClickContinueButton()
 		{
 			ContinueButton.Click();
 		}
+
+		// Set Functional
+
+		private void InputInPasswordField(string passwordField)
+		{
+			PasswordField.SendKeys(passwordField);
+		}
+
+		private void InputInConfirmField(string confirmField)
+		{
+			ConfirmField.SendKeys(confirmField);
+		}
+
+		public void InputPassword(string passwordField)
+		{
+			ClickPasswordField();
+			ClearPasswordField();
+			InputInPasswordField(passwordField);
+		}
+
+		public void InputConfirm(string confirmField)
+		{
+			ClickConfirmField();
+			ClearConfirmField();
+			InputInConfirmField(confirmField);
+		}
+
+		// Actions
+
 
 	}
 }
