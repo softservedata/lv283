@@ -8,7 +8,7 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-	public class MyAccountActions : AColumnRightUserComponent 
+	public class MyAccountActions : ColumnRightActions
 	{
 		public MyAccountPage MyAccountPageOperation { get; private set; }
 

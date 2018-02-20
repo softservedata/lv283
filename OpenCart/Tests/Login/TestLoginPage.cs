@@ -39,7 +39,7 @@ namespace OpenCart.Tests.Login
 			//
 			// Return to previous state
 			// TODO move to After Method
-			myAccountActions.ClickLogoutRightColumn();
+			myAccountActions.GotoLogoutAccountActions();
 			//
 			Thread.Sleep(2000);
 		}

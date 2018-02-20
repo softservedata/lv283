@@ -7,7 +7,7 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-	public class LogoutActions
+	public class LogoutActions : ColumnRightActions
 	{
 		public LogoutPage LogoutPageOperation { get; private set; }
 
