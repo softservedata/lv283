@@ -8,19 +8,19 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-	public class RegisterAccountActions
+	public class RegisterActions
 	{
 		public RegisterAccountPage RegisterAccountPageOperation { get; private set; }
 
-		public RegisterAccountActions()
+		public RegisterActions()
 		{
 			RegisterAccountPageOperation = new RegisterAccountPage();
 		}
 
-		public RegisterAccountActions UnsuccessfulRegister(IUser invalidUser)
+		public RegisterActions UnsuccessfulRegister(IUser invalidUser)
 		{
 			RegisterAccountPageOperation.RegisterUser(invalidUser);
-			return new RegisterAccountActions();
+			return new RegisterActions();
 		}
 
 		//public MyAccountActions SuccessfulRegister(IUser validUser)

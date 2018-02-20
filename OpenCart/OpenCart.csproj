@@ -72,11 +72,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\User\ColumnRightActions.cs" />
     <Compile Include="Actions\User\EditPasswordActions.cs" />
+    <Compile Include="Actions\User\AHeadActions.cs" />
     <Compile Include="Actions\User\HomeActions.cs" />
-    <Compile Include="Actions\User\LoginAccountActions.cs" />
+    <Compile Include="Actions\User\LoginActions.cs" />
+    <Compile Include="Actions\User\LogoutActions.cs" />
     <Compile Include="Actions\User\MyAccountActions.cs" />
-    <Compile Include="Actions\User\RegisterAccountActions.cs" />
+    <Compile Include="Actions\User\RegisterActions.cs" />
     <Compile Include="Actions\User\SubCategoryProductsActions.cs" />
     <Compile Include="Actions\User\SuccesSearchActions.cs" />
     <Compile Include="Actions\User\ChosenProductActions.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="Pages\User\EditAccountPage.cs" />
     <Compile Include="Pages\User\EditAddressBook.cs" />
     <Compile Include="Pages\User\EditPasswordPage.cs" />
+    <Compile Include="Pages\User\HeadPage.cs" />
     <Compile Include="Pages\User\HomePage.cs" />
     <Compile Include="Pages\User\LoginPage.cs" />
     <Compile Include="Pages\User\LogoutPage.cs" />
@@ -114,6 +118,8 @@
     <Compile Include="Pages\User\PasswordComponents.cs" />
     <Compile Include="Pages\User\ProductComponent.cs" />
     <Compile Include="Pages\User\RegisterAccountPage.cs" />
+    <Compile Include="Pages\User\RegisterPage.cs" />
+    <Compile Include="Pages\User\RightPage.cs" />
     <Compile Include="Pages\User\SubCategoryProductsPage.cs" />
     <Compile Include="Pages\User\SuccesSearchPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +128,7 @@
     <Compile Include="Tools\ASearch.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="Tools\BrowserWrapper.cs" />
+    <Compile Include="Tools\FlexAssert.cs" />
     <Compile Include="Tools\ISearch.cs" />
     <Compile Include="Tools\RegexUtils.cs" />
     <Compile Include="Tools\SearchElement.cs" />

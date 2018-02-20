@@ -8,7 +8,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace OpenCart.Pages.User
 {
-	public class ANavigatePanelComponent : AHeadComponent
+	public abstract class ANavigatePanelComponent : HeadPage
 	{
 		// TODO Init PathElements
 		public ICollection<IWebElement> PathElements { get; private set; }

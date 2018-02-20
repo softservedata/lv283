@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-	public class LogoutPage : AColumnRightGuestComponent
+	public class LogoutPage : RightPage
 	{
+		public LogoutPage() : base() { }
+
 		public IWebElement ContinueButton
 		{ get { return Search.CssSelector(".btn.btn - primary"); } }
 

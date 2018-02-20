@@ -18,23 +18,27 @@ namespace OpenCart.Data
 		public static ApplicationSource FirefoxEpizy()
 		{
 			return new ApplicationSource("FirefoxTemporary", 10L,
-				"http://283-taqc.ml/",
+				"http://atqc-shop.epizy.com",
+				"http://atqc-shop.epizy.com/index.php?route=account/logout",
 				"http://atqc-shop.epizy.com/admin/");
 		}
 
 		public static ApplicationSource ChromeEpizy()
 		{
 			return new ApplicationSource("ChromeTemporary", 10L,
-				"http://283-taqc.ml/",
+				"http://atqc-shop.epizy.com",
+				"http://atqc-shop.epizy.com/index.php?route=account/logout",
 				"http://atqc-shop.epizy.com/admin/");
 		}
 
 		public static ApplicationSource ChromeWithoutUIEpizy()
 		{
 			return new ApplicationSource("ChromeWithoutUI", 10L,
-				"http://283-taqc.ml/index.php?route=account/login",
+				"http://atqc-shop.epizy.com",
+				"http://atqc-shop.epizy.com/index.php?route=account/logout",
 				"http://atqc-shop.epizy.com/admin/");
 		}
+
 
 	}
 }
