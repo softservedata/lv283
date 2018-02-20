@@ -35,7 +35,7 @@ namespace OpenCart.Data
 		// URLs
 		public string BaseUrl { get; private set; }
 		//public string UserLoginUrl { get; private set; }
-		//public string UserLogoutUrl { get; private set; }
+		public string UserLogoutUrl { get; private set; }
 		//
 		public string AdminLoginUrl { get; private set; }
 		//public string AdminLogoutUrl { get; private set; }
@@ -49,6 +49,7 @@ namespace OpenCart.Data
 		public ApplicationSource(string browserName,
 				long implicitWaitTimeOut,
 				string baseUrl,
+				string userLogoutUrl,
 				string adminLoginUrl)
 		{
 			this.BrowserName = browserName;
@@ -56,7 +57,7 @@ namespace OpenCart.Data
 			this.ImplicitWaitTimeOut = implicitWaitTimeOut;
 			this.BaseUrl = baseUrl;
 			//this.UserLoginUrl = userLoginUrl;
-			//this.UserLogoutUrl = userLogoutUrl;
+			this.UserLogoutUrl = userLogoutUrl;
 			this.AdminLoginUrl = adminLoginUrl;
 			//this.AdminLogoutUrl = adminLogoutUrl;
 		}

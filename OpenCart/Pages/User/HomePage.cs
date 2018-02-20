@@ -8,14 +8,13 @@ using OpenQA.Selenium.Chrome;
 
 namespace OpenCart.Pages.User
 {
-	public class HomePage : AHeadComponent
+	public class HomePage : HeadPage
 	{
 		public HomePage() : base()
 		{
 			InitProductComponents(By.CssSelector(".product-layout"));
 		}
-
-
+		
 		public new List<string> GetProductComponentTexts()
 		{
 			return base.GetProductComponentTexts();

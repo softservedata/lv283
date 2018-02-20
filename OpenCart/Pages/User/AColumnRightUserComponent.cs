@@ -43,6 +43,10 @@ namespace OpenCart.Pages.User
 		{
 			return Logout;
 		}
+		public string GetLogoutText()
+		{
+			return Logout.Text;
+		}
 
 		public void ClickLogoutRightColumn()
 		{
