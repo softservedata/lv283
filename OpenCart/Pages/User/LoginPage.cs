@@ -18,7 +18,7 @@ namespace OpenCart.Pages.User
 
 		protected ISearch Search { get; private set; }
 
-		//	EmailAdress	
+		//	  EmailAdress	
 		public IWebElement EmailAdressField
 		{ get { return Search.Name("email"); } }
 
