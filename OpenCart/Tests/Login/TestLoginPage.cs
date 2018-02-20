@@ -11,7 +11,7 @@ using OpenCart.Data.Users;
 
 namespace OpenCart.Tests.Login
 {
-	public class TestLoginPage
+	public class TestLoginPage : TestRunner
 	{
 		//private static readonly object[] CData =
 		//{
