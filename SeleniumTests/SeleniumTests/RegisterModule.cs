@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SeleniumTests.Data.Users;
 using System;
+using System.Threading;
 
 namespace SeleniumTests
 {
@@ -42,18 +43,24 @@ namespace SeleniumTests
             driver.FindElement(By.Name("postcode")).SendKeys(user.GetPostcode());
 
             SelectElement select1 = new SelectElement(driver.FindElement(By.Name("country_id")));
-            IList<IWebElement> options1 = select1.Options;
+            //IList<IWebElement> options1 = select1.Options;
             select1.SelectByText(user.GetCoutry());
 
+
+
             SelectElement select2 = new SelectElement(driver.FindElement(By.Name("zone_id")));
-            IList<IWebElement> options2 = select2.Options;
+            //IList<IWebElement> options2 = select2.Options;
             select2.SelectByText(user.GetRegionState());
+
+            
 
             driver.FindElement(By.Name("password")).Clear();
             driver.FindElement(By.Name("password")).SendKeys(user.GetPassword());
             driver.FindElement(By.Name("confirm")).Clear();
             driver.FindElement(By.Name("confirm")).SendKeys(user.GetPassword());
 
+            Thread.Sleep(150000);
+            
             IList<IWebElement> rdBtn = driver.FindElements(By.Name("newsletter"));
 
             if (Convert.ToInt32(user.GetSubscribe()) == 1)
@@ -69,8 +76,9 @@ namespace SeleniumTests
             driver.FindElement(By.Name("agree")).Click();
 
             driver.FindElement(By.CssSelector(".btn.btn-primary")).Click();
-
+            
             return (driver.FindElement(By.CssSelector("a.list-group-item[href*='logout']")).Text == "Logout");
+            
         }
 
         public bool DeleteUser(IUser user)
