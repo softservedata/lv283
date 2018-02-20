@@ -12,13 +12,13 @@ namespace OpenCart.Pages.User
     public class LoginAccountPage : ARightComponent
     {
         public IWebElement EMailField
-        { get { return Search.CssSelector(""); } }
+            { get { return Search.Id("input-email"); } }
 
         public IWebElement PasswordField
-        { get { return Search.CssSelector(""); } }
+            { get { return Search.Id("input-password"); } }
 
         public IWebElement LoginButton
-        { get { return Search.CssSelector(""); } }
+            { get { return Search.CssSelector("input[type='submit']"); } }
 
         public LoginAccountPage() : base() { }
 

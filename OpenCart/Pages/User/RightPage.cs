@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace OpenCart.Pages.User
 {
-    public class MyAccountPage : ARightComponent
+    public class RightPage : ARightComponent
     {
-        public MyAccountPage() : base() { }
-
+        public RightPage() : base() { }
     }
 }

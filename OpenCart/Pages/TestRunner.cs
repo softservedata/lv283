@@ -39,6 +39,7 @@ namespace OpenCart.Pages
         public void TearDown()
         {
             // Logout
+            //Application.Get().LogoutAction().GotoHomeActions();
             Console.WriteLine("[TearDown] TearDown()");
         }
 

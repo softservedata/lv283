@@ -19,6 +19,7 @@ namespace OpenCart.Data
         {
             return new ApplicationSource("FirefoxTemporary", 10L,
                 "http://atqc-shop.epizy.com",
+                "http://atqc-shop.epizy.com/index.php?route=account/logout",
                 "http://atqc-shop.epizy.com/admin/");
         }
 
@@ -26,6 +27,7 @@ namespace OpenCart.Data
         {
             return new ApplicationSource("ChromeTemporary", 10L,
                 "http://atqc-shop.epizy.com",
+                "http://atqc-shop.epizy.com/index.php?route=account/logout",
                 "http://atqc-shop.epizy.com/admin/");
         }
 
@@ -33,6 +35,7 @@ namespace OpenCart.Data
         {
             return new ApplicationSource("ChromeWithoutUI", 10L,
                 "http://atqc-shop.epizy.com",
+                "http://atqc-shop.epizy.com/index.php?route=account/logout",
                 "http://atqc-shop.epizy.com/admin/");
         }
 

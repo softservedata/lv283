@@ -78,5 +78,11 @@ namespace OpenCart.Pages
             return new HomeActions();
         }
 
+        public LogoutActions LogoutAction()
+        {
+            Browser.OpenUrl(ApplicationSource.UserLogoutUrl);
+            return new LogoutActions();
+        }
+
     }
 }
