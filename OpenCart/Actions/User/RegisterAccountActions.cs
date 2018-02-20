@@ -23,11 +23,11 @@ namespace OpenCart.Actions.User
             return new RegisterAccountActions();
         }
 
-        //public MyAccountActions SuccessfulRegister(IUser validUser)
-        //{
-        //    RegisterAccountPageOperation.RegisterUser(validUser);
-        //    return new MyAccountActions();
-        //}
+        public MyAccountActions SuccessfulRegister(IUser validUser)
+        {
+            RegisterAccountPageOperation.RegisterUser(validUser);
+            return new MyAccountActions();
+        }
 
     }
 }

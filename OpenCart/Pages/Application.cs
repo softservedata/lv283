@@ -88,27 +88,28 @@ namespace OpenCart.Pages
             return new AdminActions();
         }
 
+        
         //*********************Login Page code*********************//
-
-        public LoginPage LoadLoginPage()
+        
+        /*public LoginPage LoadLoginPage()
         {
             Browser.OpenUrl(ApplicationSource.BaseUrl);
             return new LoginPage();
-        }
+        }*/
 
         //*********************Admin Panel code*********************//
 
-        public AdminLoginPage LoadAdminPage()
+        /*public AdminLoginPage LoadAdminPage()
         {
             Browser.OpenUrl(ApplicationSource.AdminLoginUrl);
             return new AdminLoginPage();
-        }
-
+        }*/
+        
         public AdminCustomersPage AcceptPopUp()
         {
             Browser.Driver.SwitchTo().Alert().Accept();
             return new AdminCustomersPage();
         }
-
+        
     }
 }

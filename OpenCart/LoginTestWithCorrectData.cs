@@ -17,6 +17,7 @@ using OpenCart.Data.Users;
 
 namespace OpenCart
 {
+    [TestFixture]
     public class LoginTestWithCorrectData : TestRunner
     {
         private static readonly object[] UserData =
