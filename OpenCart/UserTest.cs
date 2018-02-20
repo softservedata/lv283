@@ -21,7 +21,6 @@ namespace OpenCart
         [Test, TestCaseSource(nameof(UsersData))]
         public void CheckAddUser(IUser user)
         {
-           
             Console.WriteLine("user.firstname = " + user.GetFirstname());
         }
     }

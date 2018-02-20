@@ -11,8 +11,6 @@ namespace OpenCart.Pages.User
     public class AddAdditionalAddress  : AColumnRightUserComponent // TODO
     {
         //protected ISearch Search { get; private set; }
-        public IWebElement AddressBook
-        { get { return Search.XPath("//a[contains(@href, '/address')]"); } }
 
         public IWebElement AddToAddressBookButton
         { get { return Search.CssSelector("a.btn.btn-primary"); } }
@@ -41,16 +39,62 @@ namespace OpenCart.Pages.User
         public IWebElement InputPostCodeField
         { get { return Search.Id("input-postcode"); } }
 
+        public IWebElement SelectCountryList
+        { get { return Search.Id("input-country"); } }
+
+        public IWebElement SelectStateList
+        { get { return Search.Id("input-zone"); } }
+
+        public IWebElement ContinueButton
+        { get { return Search.CssSelector("input.btn.btn-primary"); } }
+
+        public void ClickAddToAddressBookButton()
+        {
+            AddToAddressBookButton.Click();
+        }
+
+        public void ClearEmailField()
+        {
+            EmailField.Clear();
+        }
+
+        public void ClearInputFirstNameField()
+        {
+            InputFirstNameField.Clear();
+        }
+
+        public void ClearInputLastNameField()
+        {
+            InputLastNameField.Clear();
+        }
+
+        public void ClearInputCompanyField()
+        {
+            InputCompanyField.Clear();
+        }
+
+        public void ClearInputDefaultAddressFiled()
+        {
+            InputDefaultAddressField.Clear();
+        }
+
+        public void ClearInputAdditionalAddressField()
+        {
+            InputAdditionalAddressField.Clear();
+        }
+
+        public void ClearInputCityField()
+        {
+            InputCityField.Clear();
+        }
+
+        public void ClearInputPostCodeField()
+        {
+            InputPostCodeField.Clear();
+        }
+
+
         //TODO in test`s
-
-        //OpenQA.Selenium.Support.UI.SelectElement selectCountry = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-country")));
-        //selectCountry.SelectByText("United Kingdom");
-            
-        //OpenQA.Selenium.Support.UI.SelectElement selectState = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-zone")));
-        //selectState.SelectByText("Greater London");
-
-        //IWebElement continueButton = driver.FindElement(By.CssSelector("input.btn.btn-primary"));
-        //continueButton.Click();
 
         ////Verify
         //IWebElement actual = driver.FindElement(By.CssSelector("div>.alert.alert-success"));

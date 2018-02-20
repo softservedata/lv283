@@ -27,9 +27,9 @@ namespace OpenCart.Tests.Login
 		[Test, TestCaseSource(nameof(CData))]
 		public void VerifySuccessfulLogin(IUser user)
 		{
-			////HomePage homePage = Application.Get().LoadHomePage();
-			////Thread.Sleep(2000);
-			MyAccountPage myAccountPage = Application.Get().LoadLoginAccountActions
+            ////HomePage homePage = Application.Get().LoadHomePage();
+            ////Thread.Sleep(2000);
+            //MyAccountPage myAccountPage = Application.Get().LoadLoginAccountActions();
 			//HomePage homePage = Application.Get().LoadHomeAction
 			////LoginPage loginPage = Application.Get().Login();
 			////loginPage.GoToLoginForLoginPageToMyAccountPage(user);

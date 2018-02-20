@@ -12,9 +12,6 @@ namespace OpenCart.Pages.User
     {
         //protected ISearch Search { get; private set; }
 
-        public IWebElement AddressBook
-        { get { return Search.XPath("//a[contains(@href, '/address')]"); } }
-
         public IWebElement EditAddressBookButton
         { get { return Search.CssSelector("a.btn.btn-info"); } }
 
@@ -36,18 +33,55 @@ namespace OpenCart.Pages.User
         public IWebElement EditPostCodeField
         { get { return Search.Id("input-postcode"); } }
 
+        public IWebElement SelectCountryList
+        { get { return Search.Id("input-country"); } }
+
+        public IWebElement SelectStateList
+        { get { return Search.Id("input-zone"); } }
+
+        public IWebElement EditButton
+        { get { return Search.CssSelector("input.btn.btn-primary"); } }
+
+        public void ClickEditAddressBookButton()
+        {
+            EditAddressBookButton.Click();
+        }
+
+        public void ClearEditFirstNameField()
+        {
+            EditFirstNameField.Clear();
+        }
+
+        public void ClearEditLastNameField()
+        {
+            EditLastNameField.Clear();
+        }
+
+        public void ClearEditDefaultAddressField()
+        {
+            EditDefaultAddressField.Clear();
+        }
+
+        public void ClearEditAdditionalAddressField()
+        {
+            EditAdditionalAddressField.Clear();
+        }
+
+        public void ClearEditCityField()
+        {
+            EditCityField.Clear();
+        }
+
+        public void ClearEditPostCodeField()
+        {
+            EditPostCodeField.Clear();
+        }
+
 
 
         /*
             Todo in test`s
-            OpenQA.Selenium.Support.UI.SelectElement selectCountryEdit = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-country")));
-            selectCountryEdit.SelectByText("Ireland");
-
-            OpenQA.Selenium.Support.UI.SelectElement selectStateEdit = new OpenQA.Selenium.Support.UI.SelectElement(driver.FindElement(By.Id("input-zone")));
-            selectStateEdit.SelectByText("Dublin");
-
-            driver.FindElement(By.CssSelector("input.btn.btn-primary")).Click();
-
+        
             //Verify
             IWebElement actual = driver.FindElement(By.CssSelector("div>.alert.alert-success"));
             Assert.AreEqual("Your address has been successfully updated", actual.Text);

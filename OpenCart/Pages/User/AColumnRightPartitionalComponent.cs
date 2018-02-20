@@ -11,7 +11,7 @@ namespace OpenCart.Pages.User
 	{
 		public IWebElement MyAccountRigthPanel
 		       { get { return Search.CssSelector("a.list-group-item[href*='account/account']"); } }
-		public IWebElement AddressBook
+		public IWebElement MyAddressBookRightPanel
 		       { get { return Search.CssSelector("a.list-group-item[href*='address']"); } }
 		public IWebElement WishListRigthPanel
 		       { get { return Search.CssSelector("a.list-group-item[href*='wishlist']"); } }
@@ -33,7 +33,7 @@ namespace OpenCart.Pages.User
 		//
 		public IWebElement GetAddressBook()
 		{
-			return AddressBook;
+			return MyAddressBookRightPanel;
 		}
 
 		public void ClickAddressBook()
