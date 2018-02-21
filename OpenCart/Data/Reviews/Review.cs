@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace OpenCart.Data.Reviews
 {
     public interface INameField 
@@ -89,6 +91,10 @@ namespace OpenCart.Data.Reviews
             return rating;
         }
 
+        int IReview.GetRatingField()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

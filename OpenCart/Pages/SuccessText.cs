@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages
 {
+    /// <summary>
+    /// To verify Messages while using Address Book
+    /// </summary>
     public class SuccessText
     {
         public const string SUCCESSFUL_ADDING_TO_ADDRESS_BOOK_MESSAGE = "Your address has been successfully inserted";

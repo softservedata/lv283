@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OpenCart.Pages.User
 {
-    public class EditAddressBook  : AColumnRightUserComponent // TODO
+    public class EditAddressBook  : AColumnRightUserComponent //TODO
     {
         //protected ISearch Search { get; private set; }
 
@@ -76,8 +76,6 @@ namespace OpenCart.Pages.User
         {
             EditPostCodeField.Clear();
         }
-
-
 
         /*
             Todo in test`s
