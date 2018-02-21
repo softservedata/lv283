@@ -32,7 +32,7 @@ namespace OpenCart.Data.Passwords
 
 		//Data for Admin user from admin panel
 		//Currently incorrect
-		public IPassword IncorrectPasswordLessThanFour()
+		public IPassword InvalidPasswordLessThanFour()
 		{
 			return Password.Get()
 				.SetPasswordField("qwe")
@@ -40,7 +40,7 @@ namespace OpenCart.Data.Passwords
 				.Build();
 		}
 
-		public IPassword IncorrectPasswordMoreThanTwentyOne()
+		public IPassword InvalidPasswordMoreThanTwentyOne()
 		{
 			return Password.Get()
 				.SetPasswordField("q20172017201720172017")
