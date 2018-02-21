@@ -110,6 +110,12 @@ namespace OpenCart.Pages
             Browser.Driver.SwitchTo().Alert().Accept();
             return new AdminCustomersPage();
         }
-        
+
+        //-----------------From Dev
+        public LogoutActions LogoutAction()
+        {
+            Browser.OpenUrl(ApplicationSource.UserLogoutUrl);
+            return new LogoutActions();
+        }
     }
 }

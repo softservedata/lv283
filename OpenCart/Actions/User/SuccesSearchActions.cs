@@ -7,27 +7,13 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-    public class SuccesSearchActions
+    public class SuccesSearchActions : HeadActions
     {
         public SuccesSearchPage SuccesSearchPageOperation { get; private set; }
 
         public SuccesSearchActions()
         {
             SuccesSearchPageOperation = new SuccesSearchPage();
-        }
-
-        public HomeActions GotoHomeActions()
-        {
-            SuccesSearchPageOperation.ClickLogo();
-            //return this;
-            return new HomeActions();
-        }
-
-        public SuccesSearchActions SuccesSearchProduct(string partialProductName)
-        {
-            SuccesSearchPageOperation.SuccesSearchProduct(partialProductName);
-            //return this;
-            return new SuccesSearchActions();
         }
 
         public SuccesSearchActions ChooseCurrencyByPartialName(string currencyName)

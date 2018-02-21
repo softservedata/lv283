@@ -8,7 +8,7 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-    public class LoginAccountActions
+    public class LoginAccountActions : RightActions
     {
         public LoginAccountPage LoginAccountPageOperation { get; private set; }
 

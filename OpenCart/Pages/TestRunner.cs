@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -39,7 +40,9 @@ namespace OpenCart.Pages
         public void TearDown()
         {
             // Logout
+            Application.Get().LogoutAction().GotoHomeActions();
             Console.WriteLine("[TearDown] TearDown()");
+            Thread.Sleep(4000);
         }
 
     }

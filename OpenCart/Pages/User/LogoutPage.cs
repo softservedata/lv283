@@ -8,8 +8,8 @@ using OpenQA.Selenium;
 
 
 namespace OpenCart.Pages.User
-{
-    public class LogoutPage : ARightComponent
+{               //RightPage from dev. Was ARightComponent
+    public class LogoutPage : RightPage //: ARightComponent
     {
         protected IWebElement Login
         { get { return Search.CssSelector("a.list-group-item[href*='login']"); } }

@@ -8,13 +8,14 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-    public class MyAccountActions : SubCategoryProductsActions
+    public class MyAccountActions : RightActions
     {
         public MyAccountPage MyAccountPageOperation { get; private set; }
 
-        public MyAccountActions()
+        public MyAccountActions() : base()
         {
             MyAccountPageOperation = new MyAccountPage();
+            MyAccountOptions.IsLoggedin = true;
         }
 
         public LogoutActions GetLogout()

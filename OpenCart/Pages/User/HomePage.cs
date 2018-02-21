@@ -8,7 +8,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace OpenCart.Pages.User
 {
-    public class HomePage : AHeadComponent
+    public class HomePage : HeadPage
     {
         public HomePage() : base()
         {

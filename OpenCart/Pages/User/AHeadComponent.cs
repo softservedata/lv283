@@ -69,17 +69,25 @@ namespace OpenCart.Pages.User
 
     public class MyAccountOptions
     {
-        private bool isLoggedin;
+        public static bool IsLoggedin { get; set; } = false;
+
         private ISearch Search { get; set; }
         public IWebElement Register
             { get { return Search.XPath("//a[contains(@href,'route=account/register')]"); } }
-
         public IWebElement Login
             { get { return Search.XPath("//a[contains(@href,'route=account/login')]"); } }
+        public IWebElement MyAccount
+            { get { return Search.XPath("//a[contains(@href,'route=account/account')]"); } }
+        public IWebElement Logout
+            { get { return Search.XPath("//a[contains(@href,'route=account/logout')]"); } }
+
+        //static MyAccountOptions()
+        //{
+        //    IsLoggedin = false;
+        //}
 
         public MyAccountOptions()
         {
-            this.isLoggedin = false;
             this.Search = Application.Get().Search;
         }
 
@@ -105,13 +113,35 @@ namespace OpenCart.Pages.User
             Login.Click();
         }
 
+        // MyAccount
+        public string GetMyAccountText()
+        {
+            return MyAccount.Text;
+        }
+
+        public void ClickMyAccount()
+        {
+            MyAccount.Click();
+        }
+
+        // Logout
+        public string GetLogoutText()
+        {
+            return Logout.Text;
+        }
+
+        public void ClickLogout()
+        {
+            Logout.Click();
+        }
+
     }
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     public abstract class AHeadComponent
     {
-        public const string TAG_ATTRIBUTE_VALEU = "value";
+        public const string TAG_ATTRIBUTE_VALUE = "value";
         public const string TAG_ATTRIBUTE_HREF = "href";
         public const string FIRST_ANCHOR_CSS = "a:first-child";
         public const string MENUTOP_OPTIONS_XPATH = "//li/a[contains(text(),'{0}')]/..//li/a";
@@ -142,7 +172,7 @@ namespace OpenCart.Pages.User
         private DropdownOptions dropdownOptions;
         private DropdownOptions currencyOptions;
         protected List<ProductComponent> ProductComponents { get; private set; }
-        protected MyAccountOptions MyAccountOption { get; private set; }
+        public MyAccountOptions MyAccountOption { get; private set; }
         //private DropdownCart DropdownCart;
 
         protected AHeadComponent()
@@ -239,7 +269,7 @@ namespace OpenCart.Pages.User
         // SearchProductField
         public string GetSearchProductFieldText()
         {
-            return SearchProductField.GetAttribute(TAG_ATTRIBUTE_VALEU);
+            return SearchProductField.GetAttribute(TAG_ATTRIBUTE_VALUE);
         }
 
         public void SetSearchProductField(string text)
@@ -360,6 +390,13 @@ namespace OpenCart.Pages.User
             dropdownOptions.ClickDropdownOptionByPartialName(optionName);
         }
 
+        public List<string> GetSubMenuTopByPartialName(string categoryName)
+        {
+            ClickMenuTopByCategoryPartialName(categoryName);
+            dropdownOptions = new DropdownOptions(By.XPath(String.Format(MENUTOP_OPTIONS_XPATH, categoryName)));
+            return dropdownOptions.GetListOptions();
+        }
+
         public void ClickSubMenuTopByPartialName(string categoryName, string optionName)
         {
             ClickMenuTopByCategoryPartialName(categoryName);
@@ -473,13 +510,40 @@ namespace OpenCart.Pages.User
 
         public void GotoLogin()
         {
+            if (MyAccountOptions.IsLoggedin)
+            {
+                throw new Exception("You Must be Logout");
+            }
             ClickSearchProductField();
             ClickMyAccount();
             //
             MyAccountOption = new MyAccountOptions();
             MyAccountOption.ClickLogin();
+            MyAccountOptions.IsLoggedin = true;
         }
 
+        public void GotoMyAccount()
+        {
+            ClickSearchProductField();
+            ClickMyAccount();
+            //
+            MyAccountOption = new MyAccountOptions();
+            MyAccountOption.ClickMyAccount();
+        }
+
+        public void GotoLogout()
+        {
+            if (!MyAccountOptions.IsLoggedin)
+            {
+                throw new Exception("You Must be Login");
+            }
+            ClickSearchProductField();
+            ClickMyAccount();
+            //
+            MyAccountOption = new MyAccountOptions();
+            MyAccountOption.ClickLogout();
+            MyAccountOptions.IsLoggedin = false;
+        }
 
     }
 }

@@ -7,25 +7,13 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-    public class HomeActions
+    public class HomeActions : HeadActions
     {
         public HomePage HomePageOperation { get; private set; }
 
-        public HomeActions()
+        public HomeActions() : base()
         {
             HomePageOperation = new HomePage();
-        }
-
-        public HomeActions GotoHomeActions()
-        {
-            HomePageOperation.GotoHome();
-            return new HomeActions();
-        }
-
-        public SuccesSearchActions SuccesSearchProduct(string partialProductName)
-        {
-            HomePageOperation.SuccesSearchProduct(partialProductName);
-            return new SuccesSearchActions();
         }
 
         public HomeActions ChooseCurrencyByPartialName(string currencyName)

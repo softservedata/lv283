@@ -19,6 +19,7 @@ namespace OpenCart.Data
         {
             return new ApplicationSource("FirefoxTemporary", 10L,
                 "http://zewer1bp.beget.tech",
+                "http://zewer1bp.beget.tech/index.php?route=account/logout",
                 "http://zewer1bp.beget.tech/admin/");
         }
 
@@ -26,7 +27,7 @@ namespace OpenCart.Data
         {
             return new ApplicationSource("ChromeTemporary", 10L,
                 "http://zewer1bp.beget.tech",
-                //"http://zewer1bp.beget.tech/index.php?route=account/login",
+                "http://zewer1bp.beget.tech/index.php?route=account/logout",
                 "http://zewer1bp.beget.tech/admin/");
         }
 
@@ -34,6 +35,7 @@ namespace OpenCart.Data
         {
             return new ApplicationSource("ChromeWithoutUI", 10L,
                 "http://zewer1bp.beget.tech",
+                "http://zewer1bp.beget.tech/index.php?route=account/logout",
                 "http://zewer1bp.beget.tech/admin/");
         }
 

@@ -84,5 +84,26 @@ namespace OpenCart.Tools
             return ExtractDoubles(text)[0];
         }
 
+        public static List<string> ExtractStrings(string text)
+        {
+            List<string> result = new List<string>();
+            MatchCollection collectionNumbers = ExtractMatchCollection(@"[a-zA-Z ]+", text);
+            if (collectionNumbers.Count == 0)
+            {
+                // TODO Develop Custom Exception
+                throw new Exception("String not Found in " + text);
+            }
+            foreach (string current in collectionNumbers)
+            {
+                result.Add(current);
+            }
+            return result;
+        }
+
+        public static string ExtractFirstString(string text)
+        {
+            return ExtractStrings(text)[0];
+        }
+
     }
 }
