@@ -11,7 +11,7 @@ namespace OpenCart.Actions.User
 	{
 		public HomePage HomePageOperation { get; private set; }
 
-		public HomeActions()
+		public HomeActions() : base()
 		{
 			HomePageOperation = new HomePage();
 		}

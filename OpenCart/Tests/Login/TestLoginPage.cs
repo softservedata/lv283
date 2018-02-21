@@ -34,7 +34,7 @@ namespace OpenCart.Tests.Login
 													.GotoLoginAccountActions()
 													.SuccessfulLogin(validUser);
 			// Verify
-			Assert.AreEqual("Logout", myAccountActions.MyAccountPageOperation.GetLogoutText());
+			Assert.AreEqual("Logout", myAccountActions.MyAccountPageOperation.GetLogoutTextLink());
 			Thread.Sleep(2000);
 			//
 			// Return to previous state

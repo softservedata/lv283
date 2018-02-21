@@ -15,7 +15,7 @@ namespace OpenCart.Actions.User
 		public MyAccountActions()
 		{
 			MyAccountPageOperation = new MyAccountPage();
-			MyAccountPageOperation.IsLoggedin = true;
+			MyAccountOptions.IsLoggedin = true;
 		}
 	}
 }

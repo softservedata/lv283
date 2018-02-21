@@ -12,13 +12,13 @@ namespace OpenCart.Pages.User
 
 		public EditAccountPage GotoEditAccountPageFromRightColumn()
 		{
-			ClickEditAccount();
+			ClickEditAccountLink();
 			return new EditAccountPage();
 		}
 
 		public EditPasswordPage GotoEditPasswordPageFromRightColumn()
 		{
-			ClickPassword();
+			ClickPasswordLink();
 			return new EditPasswordPage();
 		}
 	}

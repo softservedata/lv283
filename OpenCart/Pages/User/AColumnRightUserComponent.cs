@@ -9,55 +9,69 @@ namespace OpenCart.Pages.User
 {
 	public abstract class AColumnRightUserComponent : AColumnRightPartitionalComponent
 	{
-		public IWebElement EditAccount
+		public IWebElement MyAccountLink
+		{ get { return Search.CssSelector("a.list-group-item[href*='account']"); } }
+		public IWebElement EditAccountLink
 		{ get { return Search.CssSelector("a.list-group-item[href*='edit']"); } }
-        public IWebElement AddressBook
+        public IWebElement AddressBookLink
         { get { return Search.CssSelector("a.list-group-item[href*='address']"); } }
-        public IWebElement Password
+        public IWebElement PasswordLink
 		{ get { return Search.CssSelector("a.list-group-item[href*='password']"); } }
-		public IWebElement Logout
+		public IWebElement LogoutLink
 		{ get { return Search.CssSelector("a.list-group-item[href*='logout']"); } }
 
-		// EditAccount
-		public IWebElement GetEditAccount()
+
+		// MyAccountLink
+		public string GetMyAccountLinkText()
 		{
-			return EditAccount;
+			return MyAccountLink.Text;
 		}
-		public void ClickEditAccount()
+
+		public void ClickMyAccountLink()
 		{
-			GetEditAccount().Click();
+			MyAccountLink.Click();
+		}
+
+		// EditAccount
+		public IWebElement GetEditAccountLink()
+		{
+			return EditAccountLink;
+		}
+		public void ClickEditAccountLink()
+		{
+			GetEditAccountLink().Click();
 		}
 
 		// Password
-		public IWebElement GetPassword()
+		public IWebElement GetPasswordLink()
 		{
-			return Password;
+			return PasswordLink;
 		}
-		public void ClickPassword()
+		public void ClickPasswordLink()
 		{
-			GetPassword().Click();
+			GetPasswordLink().Click();
 		}
 
 		// Logout
-		public IWebElement GetLogout()
+		public IWebElement GetLogoutLink()
 		{
-			return Logout;
+			return LogoutLink;
 		}
-		public string GetLogoutText()
+		public string GetLogoutTextLink()
 		{
-			return Logout.Text;
+			return LogoutLink.Text;
 		}
 
-		public void ClickLogoutRightColumn()
+		public void ClickLogoutRightColumnLink()
 		{
-			GetLogout().Click();
+			GetLogoutLink().Click();
 		}
 
 		// Actions
 
 		public LogoutPage GotoLogoutPageRightColumn()
 		{
-			ClickLogoutRightColumn();
+			ClickLogoutRightColumnLink();
 			return new LogoutPage();
 		}
 	}
