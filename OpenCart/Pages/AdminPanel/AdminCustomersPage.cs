@@ -100,6 +100,7 @@ namespace OpenCart.Pages.AdminPanel
             ClickFilter();
             ClickTextCenter();
             ClickDelete();
+            GetAcceptPopUp();
         }
 
         //Accept pop up from browser

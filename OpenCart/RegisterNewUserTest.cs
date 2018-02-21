@@ -17,24 +17,31 @@ using OpenCart.Data.Users;
 
 namespace OpenCart
 {
-    [TestFixture]
-    public class LoginTestWithCorrectData : TestRunner
+    public class RegisterNewUserTest : TestRunner
     {
         private static readonly object[] UserData =
         {
-            new object[] { UserRepository.Get().ValidUser() },
+            new object[] { UserRepository.Get().NewUser(), UserRepository.Get().AdminUser() },
         };
 
         [Test, TestCaseSource(nameof(UserData))]
-        public void VerifyLogin(IUser validUser)
+        public void VerifyRegisterNewUser(IUser newUser, IUser admin)
         {
 
             Assert.IsTrue(
                 Application.Get().LoadHomeActions()
-                .GotoLoginAccountActions()
-                .SuccessfulLogin(validUser)
+                .GotoRegisterAccountActions()
+                .SuccessfulRegister(newUser)
                 .GetLogout()
                 .IsLoginDisplayed()
+                );
+            //Thread.Sleep(4000);
+
+            Assert.IsTrue(
+                Application.Get().LoadAdminActions().GetLoginPage(admin)
+                .GetCustomers()
+                .GetDeletedCustomer(newUser)
+                .IsCloseDisplayed()
                 );
 
             //Assert.IsTrue(
