@@ -11,20 +11,48 @@ namespace OpenCart.Pages.User
     public abstract class ARightComponent : ANavigatePanelComponent
     {
         //public ICollection<IWebElement> RightCategories { get; private set; }
-        public IWebElement Logout
+        public IWebElement MyAccountLink
+            { get { return Search.XPath("//div/a[contains(@href,'route=account/account')]"); } }
+
+        public IWebElement EditAccountLink
+            { get { return Search.XPath("//div/a[contains(@href,'route=account/edit')]"); } }
+
+        public IWebElement LogoutLink
             { get { return Search.XPath("//div/a[contains(@href,'route=account/logout')]"); } }
 
         public ARightComponent() : base() { }
 
-        // Logout
-        public string GetLogoutText()
+        // MyAccountLink
+        public string GetMyAccountLinkText()
         {
-            return Logout.Text;
+            return MyAccountLink.Text;
         }
 
-        public void ClickLogout()
+        public void ClickMyAccountLink()
         {
-            Logout.Click();
+            MyAccountLink.Click();
+        }
+
+        // EditAccountLink
+        public string GetEditAccountLinkText()
+        {
+            return EditAccountLink.Text;
+        }
+
+        public void ClickEditAccountLink()
+        {
+            EditAccountLink.Click();
+        }
+
+        // LogoutLink
+        public string GetLogoutLinkText()
+        {
+            return LogoutLink.Text;
+        }
+
+        public void ClickLogoutLink()
+        {
+            LogoutLink.Click();
         }
 
     }

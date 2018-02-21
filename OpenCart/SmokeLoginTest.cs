@@ -50,24 +50,47 @@ namespace OpenCart
             new object[] { UserRepository.Get().Registered() }
         };
 
-        [Test, TestCaseSource(nameof(SearchUsers))]
+        //[Test, TestCaseSource(nameof(SearchUsers))]
         public void VerifySuccessLogin(IUser validUser)
         {
             // Precondition
             // Steps
-            MyAccountActions myAccountActions = Application.Get()
+            //MyAccountActions myAccountActions = Application.Get()
+            EditAccountActions editAccountActions = Application.Get()
                                                     .LoadHomeActions()
                                                     .GotoLoginAccountActions()
-                                                    .SuccessfulLogin(validUser);
+                                                    .SuccessfulLogin(validUser)
+                                                    .GotoEditAccountActions();
             // Verify
-            Assert.AreEqual("Logout", myAccountActions.MyAccountPageOperation.GetLogoutText());
+            //Assert.AreEqual("Logout", myAccountActions.MyAccountPageOperation.GetLogoutLinkText());
+            Assert.AreEqual(validUser.GetFirstname(), editAccountActions.EditAccountPageOperation.GetFirstNameFieldText());
             Thread.Sleep(2000);
             //
             // Return to previous state
             // TODO move to After Method
-            myAccountActions.GotoLogoutAccountActions();
+            //myAccountActions.GotoLogoutAccountActions();
+            editAccountActions.GotoLogoutAccountActions();
             //
             Thread.Sleep(2000);
+        }
+
+        private static readonly object[] CategoriesItems =
+        {
+            new object[] { CategoryItemsRepository.Desktops() }
+        };
+
+        [Test, TestCaseSource(nameof(CategoriesItems))]
+        public void VerifySuccessLogin(CategoryItems categoryItems)
+        {
+            // Precondition
+            // Steps
+            HomeActions homeActions = Application.Get().LoadHomeActions();
+            // Verify
+            foreach (ElementItem elementItem in homeActions.GetAllElementItemsByCategoryName(categoryItems.Name))
+            {
+                Console.WriteLine("elementItem.Name" + elementItem.Name 
+                    + "   elementItem.Count" + elementItem.Count);
+            }
         }
     }
 }

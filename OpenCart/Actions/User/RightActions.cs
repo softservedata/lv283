@@ -16,5 +16,17 @@ namespace OpenCart.Actions.User
             RightPageOperation = new RightPage();
         }
 
+        public MyAccountActions GotoMyAccountActions()
+        {
+            RightPageOperation.ClickMyAccountLink();
+            return new MyAccountActions();
+        }
+
+        public EditAccountActions GotoEditAccountActions()
+        {
+            RightPageOperation.ClickEditAccountLink();
+            return new EditAccountActions();
+        }
+
     }
 }

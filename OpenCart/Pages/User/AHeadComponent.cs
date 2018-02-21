@@ -69,6 +69,8 @@ namespace OpenCart.Pages.User
 
     public class MyAccountOptions
     {
+        public static bool IsLoggedin { get; set; } = false;
+
         private ISearch Search { get; set; }
         public IWebElement Register
             { get { return Search.XPath("//a[contains(@href,'route=account/register')]"); } }
@@ -78,6 +80,11 @@ namespace OpenCart.Pages.User
             { get { return Search.XPath("//a[contains(@href,'route=account/account')]"); } }
         public IWebElement Logout
             { get { return Search.XPath("//a[contains(@href,'route=account/logout')]"); } }
+
+        //static MyAccountOptions()
+        //{
+        //    IsLoggedin = false;
+        //}
 
         public MyAccountOptions()
         {
@@ -134,7 +141,7 @@ namespace OpenCart.Pages.User
 
     public abstract class AHeadComponent
     {
-        public const string TAG_ATTRIBUTE_VALEU = "value";
+        public const string TAG_ATTRIBUTE_VALUE = "value";
         public const string TAG_ATTRIBUTE_HREF = "href";
         public const string FIRST_ANCHOR_CSS = "a:first-child";
         public const string MENUTOP_OPTIONS_XPATH = "//li/a[contains(text(),'{0}')]/..//li/a";
@@ -166,7 +173,6 @@ namespace OpenCart.Pages.User
         private DropdownOptions currencyOptions;
         protected List<ProductComponent> ProductComponents { get; private set; }
         public MyAccountOptions MyAccountOption { get; private set; }
-        public bool IsLoggedin { get; set; }
         //private DropdownCart DropdownCart;
 
         protected AHeadComponent()
@@ -263,7 +269,7 @@ namespace OpenCart.Pages.User
         // SearchProductField
         public string GetSearchProductFieldText()
         {
-            return SearchProductField.GetAttribute(TAG_ATTRIBUTE_VALEU);
+            return SearchProductField.GetAttribute(TAG_ATTRIBUTE_VALUE);
         }
 
         public void SetSearchProductField(string text)
@@ -384,6 +390,13 @@ namespace OpenCart.Pages.User
             dropdownOptions.ClickDropdownOptionByPartialName(optionName);
         }
 
+        public List<string> GetSubMenuTopByPartialName(string categoryName)
+        {
+            ClickMenuTopByCategoryPartialName(categoryName);
+            dropdownOptions = new DropdownOptions(By.XPath(String.Format(MENUTOP_OPTIONS_XPATH, categoryName)));
+            return dropdownOptions.GetListOptions();
+        }
+
         public void ClickSubMenuTopByPartialName(string categoryName, string optionName)
         {
             ClickMenuTopByCategoryPartialName(categoryName);
@@ -497,16 +510,16 @@ namespace OpenCart.Pages.User
 
         public void GotoLogin()
         {
-            if (IsLoggedin)
+            if (MyAccountOptions.IsLoggedin)
             {
-                //throw new Exception("You Must be Logout");
+                throw new Exception("You Must be Logout");
             }
             ClickSearchProductField();
             ClickMyAccount();
             //
             MyAccountOption = new MyAccountOptions();
             MyAccountOption.ClickLogin();
-            IsLoggedin = true;
+            MyAccountOptions.IsLoggedin = true;
         }
 
         public void GotoMyAccount()
@@ -520,16 +533,16 @@ namespace OpenCart.Pages.User
 
         public void GotoLogout()
         {
-            if (!IsLoggedin)
+            if (!MyAccountOptions.IsLoggedin)
             {
-                //throw new Exception("You Must be Login");
+                throw new Exception("You Must be Login");
             }
             ClickSearchProductField();
             ClickMyAccount();
             //
             MyAccountOption = new MyAccountOptions();
             MyAccountOption.ClickLogout();
-            IsLoggedin = false;
+            MyAccountOptions.IsLoggedin = false;
         }
 
     }
