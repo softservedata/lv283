@@ -42,7 +42,7 @@ namespace OpenCart.Pages
             // Logout
             Application.Get().LogoutAction().GotoHomeActions();
             Console.WriteLine("[TearDown] TearDown()");
-            Thread.Sleep(4000);
+            //Thread.Sleep(4000);
         }
 
     }

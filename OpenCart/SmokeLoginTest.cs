@@ -50,7 +50,7 @@ namespace OpenCart
             new object[] { UserRepository.Get().Registered() }
         };
 
-        //[Test, TestCaseSource(nameof(SearchUsers))]
+        [Test, TestCaseSource(nameof(SearchUsers))]
         public void VerifySuccessLogin(IUser validUser)
         {
             // Precondition
@@ -64,14 +64,14 @@ namespace OpenCart
             // Verify
             //Assert.AreEqual("Logout", myAccountActions.MyAccountPageOperation.GetLogoutLinkText());
             Assert.AreEqual(validUser.GetFirstname(), editAccountActions.EditAccountPageOperation.GetFirstNameFieldText());
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             //
             // Return to previous state
             // TODO move to After Method
             //myAccountActions.GotoLogoutAccountActions();
             editAccountActions.GotoLogoutAccountActions();
             //
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
         }
 
         private static readonly object[] CategoriesItems =
@@ -80,7 +80,7 @@ namespace OpenCart
         };
 
         [Test, TestCaseSource(nameof(CategoriesItems))]
-        public void VerifySuccessLogin(CategoryItems categoryItems)
+        public void VerifyItems(CategoryItems categoryItems)
         {
             // Precondition
             // Steps

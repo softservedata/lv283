@@ -29,7 +29,8 @@ namespace OpenCart
         public void VerifyBlockUserByIncorrectPassword(IUser invaliduser, IUser admin, string dangerMessage)
         {
             Assert.AreEqual(
-                Application.Get().LoadHomeActions().GetLoginPage()
+                Application.Get().LoadHomeActions()
+                .GotoLoginAccountActions()
                 .UnsuccessfulLogin(invaliduser)
                 .UnsuccessfulLogin(invaliduser)
                 .UnsuccessfulLogin(invaliduser)
@@ -46,6 +47,26 @@ namespace OpenCart
                 .GetUnlockCustomer(invaliduser)
                 .IsCloseDisplayed()
                 );
+
+
+            //Assert.AreEqual(
+            //    Application.Get().LoadHomeActions().GetLoginPage()
+            //    .UnsuccessfulLogin(invaliduser)
+            //    .UnsuccessfulLogin(invaliduser)
+            //    .UnsuccessfulLogin(invaliduser)
+            //    .UnsuccessfulLogin(invaliduser)
+            //    .UnsuccessfulLogin(invaliduser)
+            //    .UnsuccessfulLogin(invaliduser)
+            //    .GetDangerAlertText(),
+            //    dangerMessage
+            //    );
+
+            //Assert.IsTrue(
+            //    Application.Get().LoadAdminActions().GetLoginPage(admin)
+            //    .GetCustomers()
+            //    .GetUnlockCustomer(invaliduser)
+            //    .IsCloseDisplayed()
+            //    );
         }
     }
 }

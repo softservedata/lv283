@@ -115,6 +115,7 @@ namespace OpenCart.Pages
         public LogoutActions LogoutAction()
         {
             Browser.OpenUrl(ApplicationSource.UserLogoutUrl);
+            MyAccountOptions.IsLoggedin = false;
             return new LogoutActions();
         }
     }

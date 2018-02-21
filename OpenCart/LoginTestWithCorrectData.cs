@@ -25,15 +25,26 @@ namespace OpenCart
             new object[] { UserRepository.Get().ValidUser() },
         };
 
+
+
         [Test, TestCaseSource(nameof(UserData))]
-        public void VerifyLogin(IUser ValidUser)
+        public void VerifyLogin(IUser validUser)
         {
+
             Assert.IsTrue(
-                Application.Get().LoadHomeActions().GetLoginPage()
-                .SuccessfulLogin(ValidUser)
+                Application.Get().LoadHomeActions()
+                .GotoLoginAccountActions()
+                .SuccessfulLogin(validUser)
                 .GetLogout()
                 .IsLoginDisplayed()
                 );
+
+            //Assert.IsTrue(
+            //    Application.Get().LoadHomeActions().GetLoginPage()
+            //    .SuccessfulLogin(validUser)
+            //    .GetLogout()
+            //    .IsLoginDisplayed()
+            //    );
         }
     }
 }

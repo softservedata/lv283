@@ -21,7 +21,8 @@ namespace OpenCart.Actions.User
         public LogoutActions GetLogout()
         {
             MyAccountPageOperation.GetLogoutUser();
-            return new LogoutActions();
+            MyAccountOptions.IsLoggedin = false;
+            return new LogoutActions();            
         }
 
     }
