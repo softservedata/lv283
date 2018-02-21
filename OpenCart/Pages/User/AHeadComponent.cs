@@ -448,7 +448,28 @@ namespace OpenCart.Pages.User
 			return result;
 		}
 
-		protected List<String> GetProductComponentTexts()
+        protected void ClickProductComponentByProductName(string productName)
+        {
+            //Console.WriteLine("ProductComponents.Count = " + ProductComponents.Count + "  productName = " + productName);
+            ProductComponent result = null;
+            foreach (ProductComponent current in ProductComponents)
+            {
+                //Console.WriteLine("current = " + current.Name + "  productName = " + productName);
+                if (current.GetNameText().ToLower().Contains(productName.ToLower()))
+                {
+                    //Console.WriteLine("FOUND: ProductComponent current = " + current.Name);
+                    current.ClickName();
+                    break;
+                }
+            }
+            if (result == null)
+            {
+                // TODO Develop Custom Exceptions
+                throw new Exception("ProductComponent " + productName + " not Found");
+            }
+        }
+
+        protected List<String> GetProductComponentTexts()
 		{
 			List<string> result = new List<string>();
 			foreach (ProductComponent current in ProductComponents)

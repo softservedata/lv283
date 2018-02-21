@@ -28,5 +28,11 @@ namespace OpenCart.Actions.User
 			return SuccesSearchPageOperation.GetPriceAmountByProductName(productName);
 		}
 
-	}
+        public ChosenProductActions ChooseProductByPartialName(string productName)
+        {
+            SuccesSearchPageOperation.ClickProductComponentByProductName(productName);
+            //return this;
+            return new ChosenProductActions();
+        }
+    }
 }

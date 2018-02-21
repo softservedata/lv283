@@ -27,7 +27,6 @@ namespace OpenCart.Data.Reviews
     {
         string GetNameField();
         string GetReviewField();
-
         int GetRatingField();
 
     }
@@ -86,15 +85,12 @@ namespace OpenCart.Data.Reviews
             return reviewField;
         }
 
-        int GetRatingField()
+        public int GetRatingField()
         {
             return rating;
         }
 
-        int IReview.GetRatingField()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
 

@@ -20,7 +20,7 @@ namespace OpenCart.Actions.User
             ChosenProductOperation.ClickProductTab("Review");
         }
 
-        public ChosenProductPage WriteReview(string customerName, string review, int rating)
+        public ChosenProductActions WriteReview(string customerName, string review, int rating)
         {
             GotoReviewTab();
             ChosenProductOperation.ClearNameFieldText();
@@ -31,10 +31,10 @@ namespace OpenCart.Actions.User
             ChosenProductOperation.SetReviewField(review);
             ChosenProductOperation.ClickRatingFieldText(rating);
             ChosenProductOperation.ClickContinueButton();
-            return new ChosenProductPage();
+            return new ChosenProductActions();
         }
 
-        public ChosenProductPage WriteReviewAsRegisteredUser(string review, int rating)
+        public ChosenProductActions WriteReviewAsRegisteredUser(string review, int rating)
         {
             GotoReviewTab();
             ChosenProductOperation.ClearReviewFieldText();
@@ -42,7 +42,7 @@ namespace OpenCart.Actions.User
             ChosenProductOperation.SetReviewField(review);
             ChosenProductOperation.ClickRatingFieldText(rating);
             ChosenProductOperation.ClickContinueButton();
-            return new ChosenProductPage();
+            return new ChosenProductActions();
         }
     }
 }
