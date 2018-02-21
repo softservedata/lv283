@@ -40,7 +40,7 @@ namespace OpenCart.Data.Passwords
 				.Build();
 		}
 
-		public IPassword IncorrectPasswordLessThanTwentyOne()
+		public IPassword IncorrectPasswordMoreThanTwentyOne()
 		{
 			return Password.Get()
 				.SetPasswordField("q20172017201720172017")
