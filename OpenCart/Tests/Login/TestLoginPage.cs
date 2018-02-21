@@ -1,36 +1,47 @@
-﻿using NUnit.Framework;
-using OpenCart.Data.Users;
-using OpenCart.Pages;
-using OpenCart.Pages.User;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using NUnit.Framework;
+using OpenCart.Actions.User;
+using OpenCart.Pages;
+using OpenCart.Data.Users;
 
 namespace OpenCart.Tests.Login
 {
-	public class TestLoginPage
+	public class TestLoginPage : TestRunner
 	{
-		private static readonly object[] CData =
-		{
+		//private static readonly object[] CData =
+		//{
 
-			new object[] { UserRepository.Get().UserTestLogin()}
-		 };
+		//	new object[] { UserRepository.Get().UserTestLogin()}
+		// };
 
-		[Test, TestCaseSource(nameof(CData))]
-		public void VerifySuccessfulLogin(IUser user)
+		private static readonly object[] SearchUsers =
+				{
+			new object[] { UserRepository.Get().Registered() }
+		};
+
+		[Test, TestCaseSource(nameof(SearchUsers))]
+		public void VerifySuccessLogin(IUser validUser)
 		{
-			////HomePage homePage = Application.Get().LoadHomePage();
-			////Thread.Sleep(2000);
-			//// HomePage homePage = Application.Get().LoadHomePage();
-			////LoginPage loginPage = Application.Get().Login();
-			////loginPage.GoToLoginForLoginPageToMyAccountPage(user);
-			//LoginPage loginPage =  Application.Get()
-			//										.LoadLoginAccountActions()
-			//										.SuccessfulRegister(user);
-			//Thread.Sleep(2000);
+			// Precondition
+			// Steps
+			MyAccountActions myAccountActions = Application.Get()
+													.LoadHomeActions()
+													.GotoLoginAccountActions()
+													.SuccessfulLogin(validUser);
+			// Verify
+			Assert.AreEqual("Logout", myAccountActions.MyAccountPageOperation.GetLogoutText());
+			Thread.Sleep(2000);
+			//
+			// Return to previous state
+			// TODO move to After Method
+			myAccountActions.GotoLogoutAccountActions();
+			//
+			Thread.Sleep(2000);
 		}
 	}
 }

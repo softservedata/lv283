@@ -8,6 +8,7 @@ namespace OpenCart.Pages.User
 {
 	public class MyAccountPage : AColumnRightUserComponent
 	{
+		public MyAccountPage() : base() { }
 
 		public EditAccountPage GotoEditAccountPageFromRightColumn()
 		{

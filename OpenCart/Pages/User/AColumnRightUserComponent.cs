@@ -11,7 +11,9 @@ namespace OpenCart.Pages.User
 	{
 		public IWebElement EditAccount
 		{ get { return Search.CssSelector("a.list-group-item[href*='edit']"); } }
-		public IWebElement Password
+        public IWebElement AddressBook
+        { get { return Search.CssSelector("a.list-group-item[href*='address']"); } }
+        public IWebElement Password
 		{ get { return Search.CssSelector("a.list-group-item[href*='password']"); } }
 		public IWebElement Logout
 		{ get { return Search.CssSelector("a.list-group-item[href*='logout']"); } }
@@ -41,19 +43,22 @@ namespace OpenCart.Pages.User
 		{
 			return Logout;
 		}
+		public string GetLogoutText()
+		{
+			return Logout.Text;
+		}
 
 		public void ClickLogoutRightColumn()
 		{
 			GetLogout().Click();
 		}
 
-		// Actoins
+		// Actions
 
 		public LogoutPage GotoLogoutPageRightColumn()
 		{
 			ClickLogoutRightColumn();
 			return new LogoutPage();
 		}
-
 	}
 }

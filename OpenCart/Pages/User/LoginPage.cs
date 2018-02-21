@@ -10,7 +10,7 @@ using OpenCart.Data.Users;
 
 namespace OpenCart.Pages.User
 {
-	public class LoginPage
+	public class LoginPage : RightPage
 	{
 		public const string EXPECTED_FIRST_WARNING = "Warning: No match for E-Mail Address and/or Password.";
 		public const string EXPECTED_SECOND_WARNING = "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.";
@@ -18,7 +18,7 @@ namespace OpenCart.Pages.User
 
 		protected ISearch Search { get; private set; }
 
-		//	EmailAdress	
+		//	  EmailAdress	
 		public IWebElement EmailAdressField
 		{ get { return Search.Name("email"); } }
 
