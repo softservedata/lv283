@@ -37,6 +37,13 @@ namespace OpenCart.Pages.User
 			this.Search = Application.Get().Search;
 		}
 
+		// ChangePasswordLabel
+		public string GetChangePasswordLabelText()
+		{
+			return PasswordField.Text;
+		}
+
+
 		// PasswordField
 		public string GetPasswordFieldText()
 		{
@@ -80,7 +87,7 @@ namespace OpenCart.Pages.User
 		}
 
 		// DangerText
-		public string GetDangerTextText()
+		public string GetDangerText()
 		{
 			return DangerText.Text;
 		}
@@ -94,7 +101,7 @@ namespace OpenCart.Pages.User
 		// BackButton
 		public void ClickBackButton()
 		{
-		    BackButton.Click();
+			BackButton.Click();
 		}
 
 		// Continue Button

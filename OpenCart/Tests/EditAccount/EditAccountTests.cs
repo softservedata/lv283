@@ -19,7 +19,7 @@ namespace OpenCart.Tests.EditAccount
 		};
 
 		[Test, TestCaseSource(nameof(SearchUsers))]
-		public void VerifySuccessLogin(IUser validUser)
+		public void VerifySuccessChangeAccount(IUser validUser)
 		{
 			// Precondition
 			// Steps

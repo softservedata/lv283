@@ -22,6 +22,10 @@ namespace OpenCart.Pages
 
 		public const string CAN_NOT_DELETE_ADDRESS = "Warning: You can not delete your default address!";
 
-		
+		public const string PASSWORD_MUST_BE_4_TO_20 = "Password must be between 4 and 20 characters!";
+
+		public const string PASSWORD_CONFIRM_DOES_NOT_MATCH_PASSWORD = "Password confirmation does not match password!";
+
+
 	}
 }

@@ -47,7 +47,7 @@ namespace OpenCart.Pages.User
 		{
 			return PasswordLink;
 		}
-		public void ClickPasswordLink()
+		public void ClickEditPasswordLink()
 		{
 			GetPasswordLink().Click();
 		}

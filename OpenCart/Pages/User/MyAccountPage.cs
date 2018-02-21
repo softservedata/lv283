@@ -18,7 +18,7 @@ namespace OpenCart.Pages.User
 
 		public EditPasswordPage GotoEditPasswordPageFromRightColumn()
 		{
-			ClickPasswordLink();
+			ClickEditPasswordLink();
 			return new EditPasswordPage();
 		}
 	}

@@ -12,7 +12,7 @@ namespace OpenCart.Actions.User
 	{
 		public EditPasswordPage EditPasswordPageOperation { get; private set; }
 
-		public EditPasswordActions()
+		public EditPasswordActions() : base()
 		{
 			EditPasswordPageOperation = new EditPasswordPage();
 		}

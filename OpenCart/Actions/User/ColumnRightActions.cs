@@ -27,5 +27,11 @@ namespace OpenCart.Actions.User
 			RightPageOperation.ClickEditAccountLink();
 			return new EditAccountActions();
 		}
+
+		public EditPasswordActions GotoEditPasswordActions()
+		{
+			RightPageOperation.ClickEditPasswordLink();
+			return new EditPasswordActions();
+		}
 	}
 }
