@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenCart.Data.AccountsInfo;
+﻿using OpenCart.Data.AccountsInfo;
 using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
@@ -17,15 +12,45 @@ namespace OpenCart.Actions.User
 			EditAccountPageOperation = new EditAccountPage();
 		}
 
+		public EditAccountActions SuccessfulChangeAccount(IAccountInfo validAccountInfo)
+		{
+			EditAccountPageOperation.ChangeAccountData(validAccountInfo);
+			return new EditAccountActions();
+		}
+
 		public EditAccountActions UnsuccessfulChangeAccount(IAccountInfo invalidAccountInfo)
 		{
 			EditAccountPageOperation.ChangeAccountData(invalidAccountInfo);
 			return new EditAccountActions();
 		}
 
-		public EditAccountActions SuccessfulChangeAccount(IAccountInfo validAccountInfo)
+		public EditAccountActions UnsuccessfulChangeFirstnameFieldAccount(IAccountInfo invalidAccountInfo)
 		{
-			EditAccountPageOperation.ChangeAccountData(validAccountInfo);
+			EditAccountPageOperation.ChangeFirstname(invalidAccountInfo);
+			return new EditAccountActions();
+		}
+
+		public EditAccountActions UnsuccessfulChangeLastnameFieldAccount(IAccountInfo invalidAccountInfo)
+		{
+			EditAccountPageOperation.ChangeLastname(invalidAccountInfo);
+			return new EditAccountActions();
+		}
+
+		public EditAccountActions UnsuccessfulChangeEmailFieldAccount(IAccountInfo invalidAccountInfo)
+		{
+			EditAccountPageOperation.ChangeEmail(invalidAccountInfo);
+			return new EditAccountActions();
+		}
+
+		public EditAccountActions UnsuccessfulChangeTelephoneFieldAccount(IAccountInfo invalidAccountInfo)
+		{
+			EditAccountPageOperation.ChangeTelephone(invalidAccountInfo);
+			return new EditAccountActions();
+		}
+
+		public EditAccountActions UnsuccessfulChangeFaxFieldAccount(IAccountInfo invalidAccountInfo)
+		{
+			EditAccountPageOperation.ChangeFax(invalidAccountInfo);
 			return new EditAccountActions();
 		}
 	}

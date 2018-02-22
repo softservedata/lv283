@@ -12,6 +12,10 @@ namespace OpenCart.Pages
 
 		public const string LAST_NAME_MUST_BE_1_TO_32 = "Last Name must be between 1 and 32 characters!";
 
+		public const string TELEPHONE_MUST_BE_3_TO_32 = "Telephone must be between 3 and 32 characters!";
+
+		public const string EMAIL_DOES_NOT_APPER_TO_BE_VALID = "E-Mail Address does not appear to be valid!";		
+
 		public const string ADDRESS_MUST_BE_3_TO_128 = "Address must be between 3 and 128 characters!";
 
 		public const string CITY_MUST_BE_2_TO_128 = "City must be between 2 and 128 characters!";

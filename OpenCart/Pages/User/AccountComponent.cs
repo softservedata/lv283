@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenCart.Tools;
+﻿using OpenCart.Tools;
 using OpenQA.Selenium;
 
 namespace OpenCart.Pages.User
 {
-	public class AccountComponent
+	public class AccountComponent : AColumnRightUserComponent
 	{
 		protected ISearch Search { get; private set; }
 		//
@@ -38,6 +33,9 @@ namespace OpenCart.Pages.User
 
 		public IWebElement SuccessAlert
 		{ get { return Search.ClassName("fa fa-check-circle"); } }
+
+		public IWebElement DangerText
+		{ get { return Search.XPath("//div[@class='text-danger']"); } }
 
 		protected AccountComponent()
 		{
@@ -90,6 +88,11 @@ namespace OpenCart.Pages.User
 			FirstNameField.Submit();
 		}
 
+	    public string GetFirstNameFieldText()
+        {
+			return FirstNameField.GetAttribute(TAG_ATTRIBUTE_VALUE);
+        }
+
 		// LastName
 		public void ClickLastNameField()
 		{
@@ -110,6 +113,11 @@ namespace OpenCart.Pages.User
 			LastNameField.Submit();
 		}
 
+		public string GetLastNameFieldText()
+		{
+			return LastNameField.GetAttribute(TAG_ATTRIBUTE_VALUE);
+		}
+
 		// Email
 		public void ClickEmailField()
 		{
@@ -128,6 +136,10 @@ namespace OpenCart.Pages.User
 		public void SubmitEmailField()
 		{
 			EmailField.Submit();
+		}
+		public string GetEmailFieldText()
+		{
+			return EmailField.GetAttribute(TAG_ATTRIBUTE_VALUE);
 		}
 
 		// Telephone
@@ -150,6 +162,11 @@ namespace OpenCart.Pages.User
 			TelephoneField.Submit();
 		}
 
+		public string GetTelephoneFieldText()
+		{
+			return TelephoneField.GetAttribute(TAG_ATTRIBUTE_VALUE);
+		}
+
 		// Fax
 		public void ClickFaxField()
 		{
@@ -170,6 +187,11 @@ namespace OpenCart.Pages.User
 			FaxField.Submit();
 		}
 
+		public string GetFaxFieldText()
+		{
+			return FaxField.GetAttribute(TAG_ATTRIBUTE_VALUE);
+		}
+
 		// ChangePassword
 		public string GetChangeAccountText()
 		{
@@ -180,6 +202,12 @@ namespace OpenCart.Pages.User
 		public string GetSuccessAlertText()
 		{
 			return SuccessAlert.Text;
+		}
+
+		// DangerText
+		public string GetDangerText()
+		{
+			return DangerText.Text;
 		}
 
 		// Set Functional

@@ -48,7 +48,7 @@ namespace OpenCart.Data.AccountsInfo
 			return AccountInfo.Get()
 				.SetFirstname("20172017201720172017201720172017s")
 				.SetLastname("20172017201720172017201720172017s")
-				.SetEmail("lion@gmail.com")
+				.SetEmail("lio11111111111111111111111111111111111111111111111111111111111111111n@gmail.com")
 				.SetPhone("20172017201720172017201720172017s")
 				.SetFax("fax")
 				.Build();
