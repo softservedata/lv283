@@ -78,8 +78,7 @@ namespace OpenCart.Pages.User
         }
 
         /*
-            Todo in test`s
-        
+            Todo in test`s        
             //Verify
             IWebElement actual = driver.FindElement(By.CssSelector("div>.alert.alert-success"));
             Assert.AreEqual("Your address has been successfully updated", actual.Text);

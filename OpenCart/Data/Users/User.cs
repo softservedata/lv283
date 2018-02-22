@@ -10,7 +10,7 @@ namespace OpenCart.Data.Users
     public interface IFirstname
     {
         ILastname SetFirstname(string firstname);
-}
+    }
 
     public interface ILastname
     {
@@ -271,6 +271,7 @@ namespace OpenCart.Data.Users
         {
             return lastname;
         }
+
         public string GetEmail()
         {
             return email;
@@ -330,6 +331,5 @@ namespace OpenCart.Data.Users
         {
             return addressAdd;
         }
-
     }
 }

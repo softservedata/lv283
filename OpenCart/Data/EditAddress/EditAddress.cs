@@ -1,258 +1,208 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-///////////////////////TODO/////////////////////
-//namespace OpenCart.Data.EditAddress
-//{
-//    public interface IFirstname
-//    {
-//        ILastname SetFirstname(string firstname);
-//    }
+﻿using OpenCart.Data.EditAddress;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//    public interface ILastname
-//    {
-//        ICompany SetLastname(string lastname);
-//    }
+namespace OpenCart.Data.EditAddress
+{
+    //public interface IFirstname
+    //{
+    //    ILastname SetFirstname(string firstname);
+    //}
 
-//    public interface ICompany
-//    {
-//        IAddressMain SetPhone(string phone);
-//    }
+    //public interface ILastname
+    //{
+    //    ICompany SetLastname(string lastname);
+    //}
 
-//    public interface IAddressMain
-//    {
-//        ICity SetAddressMain(string addressMain);
-//    }
+    //public interface ICompany
+    //{
+    //    ICompany SetCompany(string phone);
+    //}
 
-//    public interface ICity
-//    {
-//        IPostcode SetCity(string city);
-//    }
+    //public interface IAddressMain
+    //{
+    //    IAddressMain SetAddressMain(string addressMain);
+    //}
 
-//    public interface IPostcode
-//    {
-//        ICoutry SetPostcode(string postcode);
-//    }
+    //public interface ICity
+    //{
+    //    ICity SetCity(string city);
+    //}
 
-//    public interface ICoutry
-//    {
-//        IRegionState SetCoutry(string coutry);
-//    }
+    //public interface IPostcode
+    //{
+    //    IPostcode SetPostcode(string postcode);
+    //}
 
-//    public interface IRegionState
-//    {
-//        IPassword SetRegionState(string regionState);
-//    }
+    //public interface ICoutry
+    //{
+    //    ICoutry SetCoutry(string coutry);
+    //}
 
-//    public interface IPassword
-//    {
-//        ISubscribe SetPassword(string password);
-//    }
+    //public interface IRegionState
+    //{
+    //    IRegionState SetRegionState(string regionState);
+    //}
+    
+    ////public interface ICompany : IEditUserBuilder
+    ////{
+    ////    IAdditionalAddress SetCompany(string company);
+    ////}
 
-//    public interface ISubscribe
-//    {
-//        IFax SetSubscribe(bool subscribe);
-//    }
+    //public interface IAdditionalAddress : IEditUserBuilder
+    //{
+    //    IEditUserBuilder SetAddressAdd(string addressAdd);
+    //}
 
+    //public interface IEditUserBuilder
+    //{
+    //    IEditAddress Build();
+    //}
 
-//    public interface ICompany : IEditUserAddressBuilder
-//    {
-//        IAddressAdd SetCompany(string company);
-//    }
+    //public interface IEditAddress
+    //{
+    //    string GetFirstname();
+    //    string GetLastname();
+    //    string GetCompany();
+    //    string GetAddressMain();
+    //    string GetAddressAdditional();
+    //    string GetCity();
+    //    string GetPostcode();
+    //    string GetCoutry();
+    //    string GetRegionState();
+    //}
 
-//    public interface IAddressAdd : IEditUserAddressBuilder
-//    {
-//        IEditUserAddressBuilder SetAddressAdd(string addressAdd);
-//    }
+    //public class EditAddress : IFirstname
+    ////,ILastname,
+    ////ICompany, IAddressMain, IAdditionalAddress, ICity, IPostcode,
+    ////ICoutry, IRegionState, IAdditionalAddress, IEditUserBuilder, IEditAddress
+    //{
+    //    // Required
+    //    private string firstname;
+    //    private string lastname;
+    //    private string company;
+    //    private string addressMain;
+    //    private string addressAdditional;
+    //    private string city;
+    //    private string postcode;
+    //    private string coutry;
+    //    private string regionState;
 
-//    public interface IEditUserBuilder
-//    {
-//        IEditAddress Build();
-//    }
+    //    private EditAddress()
+    //    { }
 
-//    public interface IEditAddress
-//    {
-//        string GetFirstname();
-//        string GetLastname();
-//        string GetEmail();
-//        string GetPhone();
-//        string GetAddressMain();
-//        string GetCity();
-//        string GetPostcode();
-//        string GetCoutry();
-//        string GetRegionState();
-//        string GetPassword();
-//        bool GetSubscribe();
-//        string GetFax();
-//        string GetCompany();
-//        string GetAddressAdd();
-//    }
+    //    public static IFirstname Get()
+    //    {
+    //        return new EditAddress();
+    //    }
 
-//    public class EditAddress : IFirstname, ILastname, 
-//        ICompany, ICity, IPostcode, ICoutry,
-//        IRegionState,  IAddressAdd, IEditUserAddressBuilder, IEditAddress
-//    {
-//        // Required
-//        private string firstname;
-//        private string lastname;
-//        private string company;
-//        private string addressMain;
-//        private string addressAdditional;
-//        private string city;
-//        private string postcode;
-//        private string coutry;
-//        private string regionState;
+    //    public ILastname SetFirstname(string firstname)
+    //    {
+    //        this.firstname = firstname;
+    //        return this;
+    //    }
 
-//        private EditAddress()
-//        { }
+    //    public IFirstname SetLastname(string lastname)
+    //    {
+    //        this.lastname = lastname;
+    //        return this;
+    //    }
 
-//        public static IFirstname Get()
-//        {
-//            return new EditAddress();
-//        }
+    //    public ICity SetAddressMain(string addressMain)
+    //    {
+    //        this.addressMain = addressMain;
+    //        return this;
+    //    }
 
-//        public ILastname SetFirstname(string firstname)
-//        {
-//            this.firstname = firstname;
-//            return this;
-//        }
+    //    public IPostcode SetCity(string city)
+    //    {
+    //        this.city = city;
+    //        return this;
+    //    }
 
-//        public IEmail SetLastname(string lastname)
-//        {
-//            this.lastname = lastname;
-//            return this;
-//        }
+    //    public ICoutry SetPostcode(string postcode)
+    //    {
+    //        this.postcode = postcode;
+    //        return this;
+    //    }
 
-//        public IPhone SetEmail(string email)
-//        {
-//            this.email = email;
-//            return this;
-//        }
+    //    public IRegionState SetCoutry(string coutry)
+    //    {
+    //        this.coutry = coutry;
+    //        return this;
+    //    }
 
-//        public IAddressMain SetPhone(string phone)
-//        {
-//            this.phone = phone;
-//            return this;
-//        }
+        //public ICountry SetRegionState(string regionState)
+        //{
+        //    this.regionState = regionState;
+        //    return this;
+        //}
+        
+        //public IAdditionalAddress SetCompany(string company)
+        //{
+        //    this.company = company;
+        //    return this;
+        //}
 
-//        public ICity SetAddressMain(string addressMain)
-//        {
-//            this.addressMain = addressMain;
-//            return this;
-//        }
+        //public IEditUserBuilder SetAddressAdd(string addressAdd)
+        //{
+        //    this.addressAdd = addressAdd;
+        //    return this;
+        //}
 
-//        public IPostcode SetCity(string city)
-//        {
-//            this.city = city;
-//            return this;
-//        }
+        //public IEditAddress Build()
+        //{
+        //    return this;
+        //}
 
-//        public ICoutry SetPostcode(string postcode)
-//        {
-//            this.postcode = postcode;
-//            return this;
-//        }
+        //// Getters
+        //public string GetFirstname()
+        //{
+        //    return firstname;
+        //}
 
-//        public IRegionState SetCoutry(string coutry)
-//        {
-//            this.coutry = coutry;
-//            return this;
-//        }
+        //public string GetLastname()
+        //{
+        //    return lastname;
+        //}
 
-//        public IPassword SetRegionState(string regionState)
-//        {
-//            this.regionState = regionState;
-//            return this;
-//        }
+        //public string GetAddressMain()
+        //{
+        //    return addressMain;
+        //}
 
-//        public ISubscribe SetPassword(string password)
-//        {
-//            this.password = password;
-//            return this;
-//        }
+        //public string GetCity()
+        //{
+        //    return city;
+        //}
 
-//        public IFax SetSubscribe(bool subscribe)
-//        {
-//            this.subscribe = subscribe;
-//            return this;
-//        }
+        //public string GetPostcode()
+        //{
+        //    return postcode;
+        //}
 
-//        public ICompany SetFax(string fax)
-//        {
-//            this.fax = fax;
-//            return this;
-//        }
+        //public string GetCoutry()
+        //{
+        //    return coutry;
+        //}
 
-//        public IAddressAdd SetCompany(string company)
-//        {
-//            this.company = company;
-//            return this;
-//        }
+        //public string GetRegionState()
+        //{
+        //    return regionState;
+        //}
 
-//        public IEditUserAddressBuilder SetAddressAdd(string addressAdd)
-//        {
-//            this.addressAdd = addressAdd;
-//            return this;
-//        }
+        //public string GetCompany()
+        //{
+        //    return company;
+        //}
 
-//        public IEditAddress Build()
-//        {
-//            return this;
-//        }
-
-//        // Getters
-
-//        public string GetFirstname()
-//        {
-//            return firstname;
-//        }
-
-//        public string GetLastname()
-//        {
-//            return lastname;
-//        }
-
-//        public string GetAddressMain()
-//        {
-//            return addressMain;
-//        }
-
-//        public string GetCity()
-//        {
-//            return city;
-//        }
-
-//        public string GetPostcode()
-//        {
-//            return postcode;
-//        }
-
-//        public string GetCoutry()
-//        {
-//            return coutry;
-//        }
-
-//        public string GetRegionState()
-//        {
-//            return regionState;
-//        }
-
-//        public string GetFax()
-//        {
-//            return fax;
-//        }
-
-//        public string GetCompany()
-//        {
-//            return company;
-//        }
-
-//        public string GetAddressAdd()
-//        {
-//            return addressAdd;
-//        }
-//    }
-//}
+        //public string GetAdditionalAddress()
+        //{
+        //    return addressAdditional;
+        //}
+    //}
+}
 

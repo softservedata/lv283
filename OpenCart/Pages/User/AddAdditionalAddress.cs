@@ -93,8 +93,7 @@ namespace OpenCart.Pages.User
         {
             InputPostCodeField.Clear();
         }
-
-
+        
         //TODO in test`s
 
         ////Verify

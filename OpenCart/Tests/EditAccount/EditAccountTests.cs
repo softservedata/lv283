@@ -14,7 +14,7 @@ namespace OpenCart.Tests.EditAccount
 	public class EditAccountTests : TestRunner
 	{
 		private static readonly object[] SearchUsers =
-				{
+		{
 			new object[] { UserRepository.Get().Registered() }
 		};
 

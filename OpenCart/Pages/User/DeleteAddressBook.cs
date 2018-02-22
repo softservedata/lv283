@@ -27,8 +27,7 @@ namespace OpenCart.Pages.User
         {
             BackButton.Click();
         }
-
-
+        
         //Todo in test`s
         ////Verify
         //IWebElement actual = driver.FindElement(By.CssSelector("div>.alert.alert-success"));
