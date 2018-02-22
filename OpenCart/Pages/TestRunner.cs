@@ -16,7 +16,7 @@ namespace OpenCart.Pages
         [OneTimeSetUp]
         public void BeforeAllMethods()
         {
-            Application.Get(ApplicationSourceRepository.ChromeEpizy());
+            Application.Get(ApplicationSourceRepository.ChromeWithoutUIEpizy());
             //Application.Get(ApplicationSourceRepository.ChromeWithoutUIEpizy());
             //Application.Get(); // Default
             Console.WriteLine("[OneTimeSetUp] BeforeAllMethods()");

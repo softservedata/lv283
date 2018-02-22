@@ -50,7 +50,7 @@ namespace OpenCart
             new object[] { UserRepository.Get().Registered() }
         };
 
-        [Test, TestCaseSource(nameof(SearchUsers))]
+        //[Test, TestCaseSource(nameof(SearchUsers))]
         public void VerifySuccessLogin(IUser validUser)
         {
             // Precondition
@@ -79,7 +79,7 @@ namespace OpenCart
             new object[] { CategoryItemsRepository.Desktops() }
         };
 
-        [Test, TestCaseSource(nameof(CategoriesItems))]
+        //[Test, TestCaseSource(nameof(CategoriesItems))]
         public void VerifyItems(CategoryItems categoryItems)
         {
             // Precondition

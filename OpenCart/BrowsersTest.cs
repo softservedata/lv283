@@ -51,7 +51,7 @@ namespace OpenCart
             //Console.WriteLine("[TearDown] TearDown()");
         }
 
-        [Test]
+        //[Test]
         public void CheckRemoteServer()
         {
             //

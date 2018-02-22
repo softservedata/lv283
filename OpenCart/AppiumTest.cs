@@ -19,7 +19,7 @@ namespace OpenCart
     [TestFixture]
     public class AppiumTest
     {
-        [Test]
+        //[Test]
         public void CheckAppiumAndroid()
         {
             //
