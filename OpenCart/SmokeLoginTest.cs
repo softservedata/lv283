@@ -79,7 +79,7 @@ namespace OpenCart
             new object[] { CategoryItemsRepository.Desktops() }
         };
 
-        [Test, TestCaseSource(nameof(CategoriesItems))]
+        //[Test, TestCaseSource(nameof(CategoriesItems))]
         public void VerifySuccessLogin(CategoryItems categoryItems)
         {
             // Precondition

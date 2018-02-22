@@ -29,7 +29,7 @@ namespace OpenCart
             new object[] { "core", "Home repository for .NET Core" }
         };
 
-        [Test, TestCaseSource(nameof(FoundationData))]
+        //[Test, TestCaseSource(nameof(FoundationData))]
         public void CheckFoundationExist(string name, string description)
         {
             FoundationNET actualFoundation = new FoundationBLL().GetFoundationByName(name);

@@ -47,7 +47,7 @@ namespace OpenCart
         //[Test, TestCaseSource(nameof(UsersData))]
         //[Test]
         // 7. Parameterize Test
-        [Test, TestCaseSource(nameof(UsersData))]
+        //[Test, TestCaseSource(nameof(UsersData))]
         public void CheckAddUser(IUser user)
         {
             // 1. Use Full Constructor

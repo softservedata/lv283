@@ -21,7 +21,7 @@ namespace OpenCart
             new object[] { "USD", "MacBook", "602.00" }
         };
 
-        [Test, TestCaseSource(nameof(CurrencyData))]
+        //[Test, TestCaseSource(nameof(CurrencyData))]
         public void CheckChangeCurrency(string currencyName, string itemName, string expectedPrice)
         {
             driver.FindElement(By.CssSelector(".btn.btn-link.dropdown-toggle")).Click();
