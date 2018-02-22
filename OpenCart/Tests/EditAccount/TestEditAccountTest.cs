@@ -33,6 +33,7 @@ namespace OpenCart.Tests.EditAccount
 													 .SuccessfulChangeAccount(validAccountInfo);
 			Thread.Sleep(2000);
 			// Verify
+
 			//Assert.AreEqual(validAccountInfo.GetFirstname(), editAccountActions.EditAccountPageOperation.GetFirstNameField());
 			Thread.Sleep(2000);
 			//
