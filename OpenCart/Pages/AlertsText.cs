@@ -26,6 +26,10 @@ namespace OpenCart.Pages
 
 		public const string PASSWORD_CONFIRM_DOES_NOT_MATCH_PASSWORD = "Password confirmation does not match password!";
 
+		public const string EDIT_INFORMATION = "Edit Information";
+
+		public const string SUCCESS = "Success: Your account has been successfully updated."; 
+
 
 	}
 }

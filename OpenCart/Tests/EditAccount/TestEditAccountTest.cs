@@ -33,7 +33,33 @@ namespace OpenCart.Tests.EditAccount
 													 .SuccessfulChangeAccount(validAccountInfo);
 			Thread.Sleep(2000);
 			// Verify
-			//Assert.AreEqual(validAccountInfo.GetFirstname(), editAccountActions.EditAccountPageOperation.GetFirstNameField());
+			//Aert.AreEqual(AlertsText.SUCCESS, editAccountActions.EditAccountPageOperation.GetSuccessAlertText());
+			Thread.Sleep(2000);
+			//
+			editAccountActions.GotoLogoutAccountActions();
+			//
+			Thread.Sleep(2000);
+		}
+
+		private static readonly object[] InvalidAccountData =
+        {
+			new object[] { UserRepository.Get().Registered(), AccountInfoRepository.Get().InvalidUser() }
+		};
+
+		[Test, TestCaseSource(nameof(InvalidAccountData))]
+		public void VerifyUnsuccessChangeAccount(IUser validUser, IAccountInfo invalidAccountInfo)
+		{
+			// Precondition
+			// Steps
+			EditAccountActions editAccountActions = Application.Get()
+													 .LoadHomeActions()
+													 .GotoLoginAccountActions()
+													 .SuccessfulLogin(validUser)
+													 .GotoEditAccountActions()
+													 .SuccessfulChangeAccount(invalidAccountInfo);
+			Thread.Sleep(2000);
+			// Verify
+			Assert.AreEqual(AlertsText.EDIT_INFORMATION, editAccountActions.EditAccountPageOperation.GetChangeAccountText());
 			Thread.Sleep(2000);
 			//
 			editAccountActions.GotoLogoutAccountActions();

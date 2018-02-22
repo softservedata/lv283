@@ -33,6 +33,12 @@ namespace OpenCart.Pages.User
 		public IWebElement ContinueButton
 		{ get { return Search.ClassName("pull-right"); } }
 
+		public IWebElement ChangeAccountLabel
+		{ get { return Search.XPath("//a[contains(@href, '/edit')]"); } }
+
+		public IWebElement SuccessAlert
+		{ get { return Search.ClassName("fa fa-check-circle"); } }
+
 		protected AccountComponent()
 		{
 			this.Search = Application.Get().Search;
@@ -163,6 +169,19 @@ namespace OpenCart.Pages.User
 		{
 			FaxField.Submit();
 		}
+
+		// ChangePassword
+		public string GetChangeAccountText()
+		{
+			return ChangeAccountLabel.Text;
+		}
+
+		// SuccessAlert
+		public string GetSuccessAlertText()
+		{
+			return SuccessAlert.Text;
+		}
+
 		// Set Functional
 		private void InputInFirstNameField(string firstNameField)
 		{

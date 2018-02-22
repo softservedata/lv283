@@ -26,7 +26,7 @@ namespace OpenCart.Tools
 
         public void RemoveImplicitWaits()
         {
-            Application.Get().Browser.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+			Application.Get().Browser.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
             // TODO ImplicitLoadTimeOut, ImplicitScriptTimeOut
         }
 
