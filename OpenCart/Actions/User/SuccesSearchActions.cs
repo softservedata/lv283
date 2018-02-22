@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
@@ -19,13 +15,17 @@ namespace OpenCart.Actions.User
         public SuccesSearchActions ChooseCurrencyByPartialName(string currencyName)
         {
             SuccesSearchPageOperation.ClickCurrencyByPartialName(currencyName);
-            //return this;
             return new SuccesSearchActions();
         }
 
         public double GetPriceByProductName(string productName)
         {
             return SuccesSearchPageOperation.GetPriceAmountByProductName(productName);
+        }
+
+        public List<string> GetProductComponentTexts()
+        {
+            return SuccesSearchPageOperation.GetProductComponentTexts();
         }
 
     }

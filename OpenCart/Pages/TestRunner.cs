@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenCart.Data;
 
 namespace OpenCart.Pages
@@ -17,8 +10,6 @@ namespace OpenCart.Pages
         public void BeforeAllMethods()
         {
             Application.Get(ApplicationSourceRepository.ChromeEpizy());
-            //Application.Get(ApplicationSourceRepository.ChromeWithoutUIEpizy());
-            //Application.Get(); // Default
             Console.WriteLine("[OneTimeSetUp] BeforeAllMethods()");
         }
 
@@ -42,7 +33,6 @@ namespace OpenCart.Pages
             // Logout
             Application.Get().LogoutAction().GotoHomeActions();
             Console.WriteLine("[TearDown] TearDown()");
-            Thread.Sleep(4000);
         }
 
     }
