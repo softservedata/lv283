@@ -143,6 +143,7 @@
     <Compile Include="Tests\AddressBook\AddressBookTest.cs" />
     <Compile Include="Tests\CreateReview\ReviewTest.cs" />
     <Compile Include="SmokeLoginTest.cs" />
+    <Compile Include="Tests\EditAccount\EditAccountTests.cs" />
     <Compile Include="Tests\EditAccount\TestEditAccountTest.cs" />
     <Compile Include="Tests\EditPassword\TestEditPasswordPage.cs" />
     <Compile Include="Tests\Login\TestLoginPage.cs" />
