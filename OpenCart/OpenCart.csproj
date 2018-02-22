@@ -113,7 +113,7 @@
     <Compile Include="Pages\SuccessText.cs" />
     <Compile Include="Pages\TagAttribute.cs" />
     <Compile Include="Pages\TestRunner.cs" />
-    <Compile Include="Pages\User\AccountComponents.cs" />
+    <Compile Include="Pages\User\AccountComponent.cs" />
     <Compile Include="Pages\User\AColumnLeftComponent.cs" />
     <Compile Include="Pages\User\AColumnRightGuestComponent.cs" />
     <Compile Include="Pages\User\AColumnRightPartitionalComponent.cs" />
@@ -143,7 +143,7 @@
     <Compile Include="Tests\AddressBook\AddressBookTest.cs" />
     <Compile Include="Tests\CreateReview\ReviewTest.cs" />
     <Compile Include="SmokeLoginTest.cs" />
-    <Compile Include="Tests\EditAccount\EditAccountTests.cs" />
+    <Compile Include="Tests\EditAccount\TestEditAccountTest.cs" />
     <Compile Include="Tests\EditPassword\TestEditPasswordPage.cs" />
     <Compile Include="Tests\Login\TestLoginPage.cs" />
     <Compile Include="Tools\ASearch.cs" />
