@@ -27,29 +27,29 @@ namespace OpenCart.Pages.User
         public IWebElement AlertMessage
         { get { return Search.CssSelector(".alert"); } }
 
+        public IWebElement TabReview
+        { get { return Search.XPath("//a[contains(@href ,\"#tab-review\")]"); } }
+        public IWebElement TabDescription
+        { get { return Search.XPath("//a[contains(@href ,\"#tab-description\")]"); } }
+        public IWebElement TabSpecification
+        { get { return Search.XPath("//a[contains(@href ,\"#tab-specification\")]"); } }
+
         public ChosenProductPage()
         {
             this.Search = Application.Get().Search;
         }
 
 
-        //Tabs
-        public ICollection<IWebElement> GetProductTabs()
+        //TabReview
+        public IWebElement GetReviewTab()
         {
 
-            return this.Search.CssSelectors(".nav.nav-tabs");
+            return TabReview;
         }
 
-        public void ClickProductTab(string tabName)
+        public void ClickReviewTab()
         {
-            foreach (IWebElement tab in GetProductTabs())
-            {
-                if (tab.Text.Contains(tabName))
-                {
-                    tab.Click();
-                    break;
-                }
-            }
+            TabReview.Click();
         }
 
         //Review

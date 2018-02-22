@@ -15,14 +15,16 @@ namespace OpenCart.Actions.User
         {
             ChosenProductOperation = new ChosenProductPage();
         }
-        public void GotoReviewTab()
-        {
-            ChosenProductOperation.ClickProductTab("Review");
-        }
+
+        //TODO
+        //public void GotoChosenTab(string tabName)
+        //{
+        //    ChosenProductOperation.ClickProductTab();
+        //}
 
         public ChosenProductActions WriteReview(string customerName, string review, int rating)
         {
-            GotoReviewTab();
+            ChosenProductOperation.ClickReviewTab();
             ChosenProductOperation.ClearNameFieldText();
             ChosenProductOperation.ClickNameFieldText();
             ChosenProductOperation.SetNameField(customerName);
@@ -36,7 +38,7 @@ namespace OpenCart.Actions.User
 
         public ChosenProductActions WriteReviewAsRegisteredUser(string review, int rating)
         {
-            GotoReviewTab();
+            ChosenProductOperation.ClickReviewTab();
             ChosenProductOperation.ClearReviewFieldText();
             ChosenProductOperation.ClearReviewFieldText();
             ChosenProductOperation.SetReviewField(review);

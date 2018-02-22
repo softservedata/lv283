@@ -26,7 +26,7 @@ namespace OpenCart
                                                     .ChooseProductByPartialName(product.Name)
                                                     .WriteReview(review.GetNameField(), review.GetReviewField(), review.GetRatingField());
 
-            Console.WriteLine(searchActions.ChosenProductOperation.AlertMessage);
+            Console.WriteLine(searchActions.ChosenProductOperation.GetMessage());
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿
-using System;
-
-namespace OpenCart.Data.Reviews
+﻿namespace OpenCart.Data.Reviews
 {
     public interface INameField 
     {
@@ -33,9 +30,9 @@ namespace OpenCart.Data.Reviews
 
 
     public class Review : INameField, IRatingField, IReview, IReviewField, IReviewBuilder
-	{
-		// Required
-		private string nameField;
+    {
+        // Required
+        private string nameField;
         private string reviewField;
         private int rating;
 

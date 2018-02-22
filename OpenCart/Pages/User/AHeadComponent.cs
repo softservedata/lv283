@@ -450,8 +450,6 @@ namespace OpenCart.Pages.User
 
         protected void ClickProductComponentByProductName(string productName)
         {
-            //Console.WriteLine("ProductComponents.Count = " + ProductComponents.Count + "  productName = " + productName);
-            ProductComponent result = null;
             foreach (ProductComponent current in ProductComponents)
             {
                 //Console.WriteLine("current = " + current.Name + "  productName = " + productName);
@@ -461,11 +459,6 @@ namespace OpenCart.Pages.User
                     current.ClickName();
                     break;
                 }
-            }
-            if (result == null)
-            {
-                // TODO Develop Custom Exceptions
-                throw new Exception("ProductComponent " + productName + " not Found");
             }
         }
 

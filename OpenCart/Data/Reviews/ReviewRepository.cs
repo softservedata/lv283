@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿
+using System.IO;
 
 namespace OpenCart.Data.Reviews
 {
@@ -29,7 +30,7 @@ namespace OpenCart.Data.Reviews
 
         public IReview NotExistingUserReview()
         {
-            return Review.Get()                    
+            return Review.Get()
                     .SetReviewField("This review contains more than 25 characters here")
                     .SetNameField("NotExistingUser")
                     .SetRatingField(3)
@@ -38,7 +39,7 @@ namespace OpenCart.Data.Reviews
 
         public IReview AuthorizedUserReviewLengthLessThan25()
         {
-            return Review.Get()                    
+            return Review.Get()
                     .SetReviewField("Less than 25 characters")
                     .SetRatingField(4)
                     .Build();
@@ -46,7 +47,7 @@ namespace OpenCart.Data.Reviews
 
         public IReview AuthorizedUserReview()
         {
-            return Review.Get()                    
+            return Review.Get()
                     .SetReviewField("This review contains more than 25 characters there")
                     .SetRatingField(1)
                     .Build();
@@ -54,8 +55,8 @@ namespace OpenCart.Data.Reviews
 
         public IReview AuthorizedUserReviewLengthMoreThan1000()
         {
-            return Review.Get()                    
-                    .SetReviewField(new StreamReader (@"C:\Users\mlukastc\Source\Repos\lv283.2\OpenCart\Data\Reviews\Review.txt").ReadToEnd())
+            return Review.Get()
+                    .SetReviewField(new StreamReader(@"C:\Users\mlukastc\Source\Repos\lv283.2\OpenCart\Data\Reviews\Review.txt").ReadToEnd())
                     .SetRatingField(5)
                     .Build();
         }
