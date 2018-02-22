@@ -32,7 +32,7 @@ namespace OpenCart.Data.Reviews
     }
 
 
-    class Review : INameField, IRatingField, IReview, IReviewField, IReviewBuilder
+    public class Review : INameField, IRatingField, IReview, IReviewField, IReviewBuilder
 	{
 		// Required
 		private string nameField;

@@ -8,10 +8,11 @@ using System;
 
 namespace OpenCart
 {
-    class ReviewTest
+    [TestFixture]
+    public class ReviewTest :TestRunner
     {
         private static readonly object[] SearchProduct =
-                {
+        {
             new object[] { ReviewRepository.Get().NotExistingUserReview(), ProductRepository.macBook() }
         };
 
