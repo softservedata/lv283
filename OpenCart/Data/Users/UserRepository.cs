@@ -81,7 +81,7 @@ namespace OpenCart.Data.Users
 			return User.Get()
 				.SetFirstname("firstname9")
 				.SetLastname("lastname")
-				.SetEmail("hahaha@gmail.com")
+				.SetEmail("lion@gmail.com")
 				.SetPhone("1234567")
 				.SetAddressMain("addressMain")
 				.SetCity("city")
