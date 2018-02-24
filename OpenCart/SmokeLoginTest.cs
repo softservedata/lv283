@@ -24,7 +24,7 @@ namespace OpenCart
 			new object[] { ProductRepository.macBook(), CurrencyRepository.USDollar() }
 		};
 
-		[Test, TestCaseSource(nameof(SearchProduct))]
+		[Test, TestCaseSource("SearchProduct")]
 		public void VerifySearchByCurrency(Product product, string currencyName)
 		{
 			//HomeActions homeActions = Application.Get().LoadHomeActions();
@@ -49,7 +49,7 @@ namespace OpenCart
 			new object[] { CategoryItemsRepository.Desktops() }
 		};
 
-		[Test, TestCaseSource(nameof(CategoriesItems))]
+		[Test, TestCaseSource("CategoriesItems")]
 		public void VerifySuccessLogin(CategoryItems categoryItems)
 		{
 			// Precondition
