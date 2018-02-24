@@ -16,7 +16,7 @@ namespace OpenCart
             new object[] { ReviewRepository.Get().NotExistingUserReview(), ProductRepository.macBook() }
         };
 
-        [Test, TestCaseSource(nameof(SearchProduct))]
+        [Test, TestCaseSource("SearchProduct")]
         public void VerifyReviewCreationForNotExistingUser(Review review, Product product)
         {
 

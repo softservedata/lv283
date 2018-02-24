@@ -19,7 +19,7 @@ namespace OpenCart.Tests.EditPassword
 			new object[] { UserRepository.Get().Registered(), PasswordRepository.Get().ValidPassword() }
 		};
 
-		[Test, TestCaseSource(nameof(SearchUsers))]
+		[Test, TestCaseSource("SearchUsers")]
 		public void VerifySuccessChangePassword(IUser validUser, Data.Passwords.IPassword validPassword)
 		{
 			// Precondition			// Steps
@@ -41,7 +41,7 @@ namespace OpenCart.Tests.EditPassword
 			new object[] { UserRepository.Get().Registered(), PasswordRepository.Get().InvalidPasswordMoreThanTwentyOne() }
 		};
 
-		[Test, TestCaseSource(nameof(InvalidPasswords))]
+		[Test, TestCaseSource("InvalidPasswords")]
 		public void VerifyUnsuccessChangePassword(IUser validUser, Data.Passwords.IPassword invalidPassword)
 		{
 			// Precondition			// Steps

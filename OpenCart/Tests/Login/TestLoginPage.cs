@@ -24,7 +24,7 @@ namespace OpenCart.Tests.Login
 			new object[] { UserRepository.Get().Registered() }
 		};
 
-		[Test, TestCaseSource(nameof(SearchUsers))]
+		[Test, TestCaseSource("SearchUsers")]
 		public void VerifySuccessLogin(IUser validUser)
 		{
 			// Precondition
