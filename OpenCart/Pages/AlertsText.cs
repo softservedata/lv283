@@ -30,17 +30,17 @@ namespace OpenCart.Pages
 
 		public const string PASSWORD_CONFIRM_DOES_NOT_MATCH_PASSWORD = "Password confirmation does not match password!";
 
-		public const string EDIT_INFORMATION = "Edit Information";
+		public const string EDIT_INFORMATION = "Edit your account information";
 
 		public const string SUCCESS = "Success: Your account has been successfully updated.";
 
-		public const string SUCCESSREVIEW = " Thank you for your review. It has been submitted to the webmaster for approval.";
+		public const string SUCCESSREVIEW = "Thank you for your review. It has been submitted to the webmaster for approval.";
 
-		public const string FAILLENGHTREVIEW = " Warning: Review Text must be between 25 and 1000 characters!";
+		public const string FAILLENGHTREVIEW = "Warning: Review Text must be between 25 and 1000 characters!";
 
-		public const string FAILRATINGCHOSE = " Warning: Review Text must be between 25 and 1000 characters!";
+		public const string FAILRATINGCHOSE = "Warning: Review Text must be between 25 and 1000 characters!";
 
-		public const string FAILNAMELENGTH = " Warning: Review Text must be between 25 and 1000 characters!";
+		public const string FAILNAMELENGTH = "Warning: Review Text must be between 25 and 1000 characters!";
 
 
 	}

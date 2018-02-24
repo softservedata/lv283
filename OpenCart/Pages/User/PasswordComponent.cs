@@ -5,7 +5,7 @@ namespace OpenCart.Pages.User
 {
 	public class PasswordComponent : AColumnRightUserComponent
 	{
-		protected ISearch Search { get; private set; }
+		//protected ISearch Search { get; private set; }
 		//
 		public IWebElement PasswordField
 		{ get { return Search.Id("input-password"); } }
@@ -27,7 +27,7 @@ namespace OpenCart.Pages.User
 
 		protected PasswordComponent()
 		{
-			this.Search = Application.Get().Search;
+			//this.Search = Application.Get().Search;
 		}
 
 		// ChangePasswordLabel

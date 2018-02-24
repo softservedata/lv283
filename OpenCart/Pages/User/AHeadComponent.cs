@@ -70,7 +70,8 @@ namespace OpenCart.Pages.User
 
 	public class MyAccountOptions
 	{
-		public static bool IsLoggedin { get; set; } = false;
+		public static bool IsLoggedin = false;
+		//public static bool IsLoggedin { get; set; } = false;
 		private ISearch Search { get; set; }
 		public IWebElement Register
 		{ get { return Search.XPath("//a[contains(@href,'route=account/register')]"); } }

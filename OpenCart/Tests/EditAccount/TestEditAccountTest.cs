@@ -25,14 +25,13 @@ namespace OpenCart.Tests.EditAccount
 													 .SuccessfulLogin(validUser)
 													 .GotoEditAccountActions()
 													 .SuccessfulChangeAccount(validAccountInfo);
-			Thread.Sleep(2000);
+
 			// Verify
-			//Aert.AreEqual(AlertsText.SUCCESS, editAccountActions.EditAccountPageOperation.GetSuccessAlertText());
-			Thread.Sleep(2000);
+			Assert.AreEqual(AlertsText.EDIT_INFORMATION, editAccountActions.EditAccountPageOperation.GetChangeAccountText());
 			//
 			editAccountActions.GotoLogoutAccountActions();
 			//
-			Thread.Sleep(2000);
+			
 		}
 
 		private static readonly object[] InvalidAccountData =
@@ -51,14 +50,14 @@ namespace OpenCart.Tests.EditAccount
 													 .SuccessfulLogin(validUser)
 													 .GotoEditAccountActions()
 													 .UnsuccessfulChangeAccount(invalidAccountInfo);
-			Thread.Sleep(2000);
+
 			// Verify
-			Assert.AreEqual(AlertsText.EDIT_INFORMATION, editAccountActions.EditAccountPageOperation.GetChangeAccountText());
-			Thread.Sleep(2000);
+			Assert.AreEqual(AlertsText.FIRST_NAME_MUST_BE_1_TO_32, editAccountActions.EditAccountPageOperation.GetDangerText());
+
 			//
 			editAccountActions.GotoLogoutAccountActions();
 			//
-			Thread.Sleep(2000);
+			
 		}
 
 		private static readonly object[] InvalidAccountFieldData =

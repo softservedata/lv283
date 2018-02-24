@@ -29,12 +29,10 @@ namespace OpenCart.Tests.EditPassword
 													 .SuccessfulLogin(validUser)
 													 .GotoEditPasswordActions()
 													 .SuccessfulChangePassword(validPassword);
-			Thread.Sleep(2000);
 			// Verify
             //Assert.IsFalse(editPasswordActions.EditPasswordPageOperation.GetChangePasswordLabelText().Equals("Change Password"));
 			//
 			editPasswordActions.GotoLogoutAccountActions();
-			Thread.Sleep(2000);
 		}
 
 		private static readonly object[] InvalidPasswords =
@@ -53,12 +51,10 @@ namespace OpenCart.Tests.EditPassword
 													 .SuccessfulLogin(validUser)
 													 .GotoEditPasswordActions()
 													 .SuccessfulChangePassword(invalidPassword);
-			Thread.Sleep(4000);
 			// Verify
 			Assert.AreEqual(AlertsText.PASSWORD_MUST_BE_4_TO_20, editPasswordActions.EditPasswordPageOperation.GetDangerText());
 			//
 			editPasswordActions.GotoLogoutAccountActions();
-			Thread.Sleep(2000);
 		}
 	}
 

@@ -29,7 +29,6 @@ namespace OpenCart.Actions.User
             ChosenProductOperation.ClickNameFieldText();
             ChosenProductOperation.SetNameField(customerName);
             ChosenProductOperation.ClearReviewFieldText();
-            ChosenProductOperation.ClearReviewFieldText();
             ChosenProductOperation.SetReviewField(review);
             ChosenProductOperation.ClickRatingFieldText(rating);
             ChosenProductOperation.ClickContinueButton();

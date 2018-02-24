@@ -12,8 +12,7 @@ namespace OpenCart.Pages.User
 			InputEmail(accountData.GetEmail());
 			InputTelephone(accountData.GetPhone());
 			InputFax(accountData.GetFax());
-			SubmitFaxField();
-			//ClickContinueButton();
+			SubmitFaxField();			
 		}
 
 		public void ChangeFirstname(IAccountInfo accountData)
