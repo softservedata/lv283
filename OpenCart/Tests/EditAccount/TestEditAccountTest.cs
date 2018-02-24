@@ -14,7 +14,7 @@ namespace OpenCart.Tests.EditAccount
 			new object[] { UserRepository.Get().Registered(), AccountInfoRepository.Get().ValidUser() }
 		};
 
-		[Test, TestCaseSource(nameof(SearchUsers))]
+		[Test, TestCaseSource("SearchUsers")]
 		public void VerifySuccessChangeAccount(IUser validUser, IAccountInfo validAccountInfo)
 		{
 			// Precondition
@@ -39,7 +39,7 @@ namespace OpenCart.Tests.EditAccount
 			new object[] { UserRepository.Get().Registered(), AccountInfoRepository.Get().InvalidUser() }
 		};
 
-		[Test, TestCaseSource(nameof(InvalidAccountData))]
+		[Test, TestCaseSource("InvalidAccountData")]
 		public void VerifyUnsuccessChangeAccount(IUser validUser, IAccountInfo invalidAccountInfo)
 		{
 			// Precondition
@@ -65,7 +65,7 @@ namespace OpenCart.Tests.EditAccount
 			new object[] { UserRepository.Get().Registered(), AccountInfoRepository.Get().InvalidUser() }
 		};
 
-		[Test, TestCaseSource(nameof(InvalidAccountData))]
+		[Test, TestCaseSource("InvalidAccountData")]
 		public void VerifyUnsuccessChangeAccountFirstnameField(IUser validUser, IAccountInfo invalidAccountInfo)
 		{
 			EditAccountActions editAccountActions = Application.Get()
@@ -80,7 +80,7 @@ namespace OpenCart.Tests.EditAccount
 			editAccountActions.GotoLogoutAccountActions();
 		}
 
-		[Test, TestCaseSource(nameof(InvalidAccountData))]
+		[Test, TestCaseSource("InvalidAccountData")]
 		public void VerifyUnsuccessChangeAccountLastnameField(IUser validUser, IAccountInfo invalidAccountInfo)
 		{
 			EditAccountActions editAccountActions = Application.Get()
@@ -95,7 +95,7 @@ namespace OpenCart.Tests.EditAccount
 			editAccountActions.GotoLogoutAccountActions();
 		}
 
-		[Test, TestCaseSource(nameof(InvalidAccountData))]
+		[Test, TestCaseSource("InvalidAccountData")]
 		public void VerifyUnsuccessChangeAccountTelephoneField(IUser validUser, IAccountInfo invalidAccountInfo)
 		{
 			EditAccountActions editAccountActions = Application.Get()
@@ -110,7 +110,7 @@ namespace OpenCart.Tests.EditAccount
 			editAccountActions.GotoLogoutAccountActions();
 		}
 
-		[Test, TestCaseSource(nameof(InvalidAccountData))]
+		[Test, TestCaseSource("InvalidAccountData")]
 		public void VerifyUnsuccessChangeAccountEmailField(IUser validUser, IAccountInfo invalidAccountInfo)
 		{
 			EditAccountActions editAccountActions = Application.Get()
