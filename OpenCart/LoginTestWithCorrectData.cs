@@ -44,5 +44,13 @@ namespace OpenCart
             //    .IsLoginDisplayed()
             //    );
         }
+
+        [Test]
+        public void Test_TrueReturned()
+        {
+            bool actual = true;
+
+            Assert.IsTrue(actual);
+        }
     }
 }
