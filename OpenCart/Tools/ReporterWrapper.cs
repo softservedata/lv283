@@ -10,7 +10,7 @@ using OpenQA.Selenium.Chrome;
 using OpenCart.Actions.User;
 using OpenCart.Pages;
 using OpenCart.Data;
-using Reporter;
+
 
 
 namespace OpenCart.Tools
