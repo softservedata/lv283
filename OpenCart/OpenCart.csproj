@@ -107,6 +107,9 @@
     <Compile Include="Data\Reviews\ReviewRepository.cs" />
     <Compile Include="Data\Users\User.cs" />
     <Compile Include="Data\Users\UserRepository.cs" />
+    <Compile Include="Pages\Admin\AdminDropdownsLeft.cs" />
+    <Compile Include="Pages\Admin\AdminLoginPage.cs" />
+    <Compile Include="Pages\Admin\AdminReviewsPage.cs" />
     <Compile Include="Pages\AlertsText.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\RegexPatterns.cs" />
@@ -162,7 +165,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Admin\" />
+    <Folder Include="Actions\Admin\" />
     <Folder Include="Tests\AddingToWish\" />
   </ItemGroup>
   <ItemGroup>
