@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 using NUnit.Framework;
 using OpenCart.Actions.User;
 using OpenCart.Pages;
@@ -15,7 +10,6 @@ namespace OpenCart.Tests.Login
 	{
 		//private static readonly object[] CData =
 		//{
-
 		//	new object[] { UserRepository.Get().UserTestLogin()}
 		// };
 

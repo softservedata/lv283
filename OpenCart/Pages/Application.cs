@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenCart.Data;
+﻿using OpenCart.Data;
 using OpenCart.Actions.User;
 using OpenCart.Tools;
-using OpenCart.Pages.User;
 
 namespace OpenCart.Pages
 {

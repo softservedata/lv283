@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenCart.Tools;
 
 namespace OpenCart.Pages.User
 {
