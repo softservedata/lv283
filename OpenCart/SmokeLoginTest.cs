@@ -44,24 +44,24 @@ namespace OpenCart
 			Thread.Sleep(2000);
 		}
 
-		private static readonly object[] CategoriesItems =
-		{
-			new object[] { CategoryItemsRepository.Desktops() }
-		};
+		//private static readonly object[] CategoriesItems =
+		//{
+		//	new object[] { CategoryItemsRepository.Desktops() }
+		//};
 
-		[Test, TestCaseSource("CategoriesItems")]
-		public void VerifySuccessLogin(CategoryItems categoryItems)
-		{
-			// Precondition
-			// Steps
-			HomeActions homeActions = Application.Get().LoadHomeActions();
-			// Verify
-			foreach (ElementItem elementItem in homeActions.GetAllElementItemsByCategoryName(categoryItems.Name))
-			{
-				Console.WriteLine("elementItem.Name" + elementItem.Name +
+		//[Test, TestCaseSource("CategoriesItems")]
+		//public void VerifySuccessLogin(CategoryItems categoryItems)
+		//{
+		//	// Precondition
+		//	// Steps
+		//	HomeActions homeActions = Application.Get().LoadHomeActions();
+		//	// Verify
+		//	foreach (ElementItem elementItem in homeActions.GetAllElementItemsByCategoryName(categoryItems.Name))
+		//	{
+		//		Console.WriteLine("elementItem.Name" + elementItem.Name +
 
-					 "   elementItem.Count" + elementItem.Count);
-			}
-		}
+		//			 "   elementItem.Count" + elementItem.Count);
+		//	}
+		//}
 	}
 }
