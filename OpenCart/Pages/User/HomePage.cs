@@ -35,10 +35,10 @@ namespace OpenCart.Pages.User
 			base.ClickAddToCartByProductName(productName);
 		}
 
-		public new void ClickAddToWishByProductName(string productName)
-		{
-			base.ClickAddToWishByProductName(productName);
-		}
+        public new void ClickAddToWishByProductName(string productName)
+        {
+            base.ClickAddToWishByProductName(productName);
+        }
 
-	}
+    }
 }

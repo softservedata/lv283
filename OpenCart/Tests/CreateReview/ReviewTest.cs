@@ -14,7 +14,7 @@ namespace OpenCart
     {
         private static readonly object[] SearchProduct =
         {
-            new object[] { ReviewRepository.Get().NotExistingUserReview(), ProductRepository.macBook() }
+            new object[] { ReviewRepository.Get().NotExistingUserReview(), ProductRepository.MacBook() }
         };
 
        // [Test, TestCaseSource("SearchProduct")]
@@ -33,7 +33,7 @@ namespace OpenCart
 
         private static readonly object[] ProductReviewForRegisteredUser =
          {
-            new object[] { UserRepository.Get().ReviewUser(), ProductRepository.macBook() }
+            new object[] { UserRepository.Get().ReviewUser(), ProductRepository.MacBook() }
         };
 
 

@@ -173,8 +173,6 @@ namespace OpenCart.Pages.User
 		protected AHeadComponent()
 		{
 			this.Search = Application.Get().Search;
-			//
-			// Verify Web Elements
 			VerifyWebElements();
 		}
 
@@ -426,28 +424,24 @@ namespace OpenCart.Pages.User
 			currencyOptions.ClickDropdownOptionByPartialName(currencyName);
 		}
 
-		// ProductComponents
-		protected ProductComponent GetProductComponentByProductName(string productName)
-		{
-			//Console.WriteLine("ProductComponents.Count = " + ProductComponents.Count + "  productName = " + productName);
-			ProductComponent result = null;
-			foreach (ProductComponent current in ProductComponents)
-			{
-				//Console.WriteLine("current = " + current.Name + "  productName = " + productName);
-				if (current.GetNameText().ToLower().Contains(productName.ToLower()))
-				{
-					//Console.WriteLine("FOUND: ProductComponent current = " + current.Name);
-					result = current;
-					break;
-				}
-			}
-			if (result == null)
-			{
-				// TODO Develop Custom Exceptions
-				throw new Exception("ProductComponent " + productName + " not Found");
-			}
-			return result;
-		}
+        // ProductComponents
+        protected ProductComponent GetProductComponentByProductName(string productName)
+        {
+            ProductComponent result = null;
+            foreach (ProductComponent current in ProductComponents)
+            {
+                if (current.GetNameText().ToLower().Contains(productName.ToLower()))
+                {
+                    result = current;
+                    break;
+                }
+            }
+            if (result == null)
+            {
+                throw new Exception("ProductComponent " + productName + " not Found");
+            }
+            return result;
+        }
 
         protected void ClickProductComponentByProductName(string productName)
         {
@@ -489,13 +483,13 @@ namespace OpenCart.Pages.User
 			GetProductComponentByProductName(productName).ClickAddToCart();
 		}
 
-		protected void ClickAddToWishByProductName(string productName)
-		{
-			GetProductComponentByProductName(productName).ClickAddToWish();
-		}
+        protected void ClickAddToWishByProductName(string productName)
+        {
+            GetProductComponentByProductName(productName).ClickAddToWish();
+        }
 
-		// Business Logic
-		public void GotoHome()
+        // Business Logic
+        public void GotoHome()
 		{
 			ClickLogo();
 		}

@@ -12,9 +12,9 @@ namespace OpenCart
 	{
 		private static readonly object[] SearchProduct =
 				{
-			new object[] { ProductRepository.macBook(), CurrencyRepository.Euro() },
-			new object[] { ProductRepository.macBook(), CurrencyRepository.PoundSterling() },
-			new object[] { ProductRepository.macBook(), CurrencyRepository.USDollar() }
+			new object[] { ProductRepository.MacBook(), CurrencyRepository.Euro() },
+			new object[] { ProductRepository.MacBook(), CurrencyRepository.PoundSterling() },
+			new object[] { ProductRepository.MacBook(), CurrencyRepository.USDollar() }
 		};
 
 		[Test, TestCaseSource("SearchProduct")]

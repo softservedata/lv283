@@ -27,17 +27,8 @@ namespace OpenCart.Pages.User
 		{
 			this.Search = Application.Get().Search;
 			this.ProductLayout = productLayout;
-			//
-			// Verify Web Elements
-			VerifyWebElements();
 		}
-
-		private void VerifyWebElements()
-		{
-			IWebElement verify = Name;
-			// TODO Check, if Web Elements Exist
-		}
-
+        
 		// Name
 		public string GetNameText()
 		{

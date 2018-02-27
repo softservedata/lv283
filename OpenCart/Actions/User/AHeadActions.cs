@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenCart.Pages.User;
 using OpenCart.Data.Commons;
 using OpenCart.Tools;
+using System.Threading;
 
 namespace OpenCart.Actions.User
 {
@@ -54,7 +55,14 @@ namespace OpenCart.Actions.User
 			return new LogoutActions();
 		}
 
-		public AHeadActions ChooseMenuTopByCategoryPartialName(string categoryName)
+        public WishListActions GoToWishListPage()
+        {
+            Thread.Sleep(1000);
+            HeadPageOperation.ClickWishList();
+            return new WishListActions();
+        }
+
+        public AHeadActions ChooseMenuTopByCategoryPartialName(string categoryName)
 		{
 			HeadPageOperation.ClickMenuTopByCategoryPartialName(categoryName);
 			//return new HeadActions();
@@ -76,6 +84,5 @@ namespace OpenCart.Actions.User
 			}
 			return result;
 		}
-
 	}
 }
