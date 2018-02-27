@@ -111,7 +111,7 @@ namespace OpenCart
             }
             // Return to previous state
             Thread.Sleep(2000);
-            //isTestSuccess = true;
+            isTestSuccess = true;
             log.Info("Done VerifySuccessLogin() categoryItems.Name = " + categoryItems.Name);
         }
     }
