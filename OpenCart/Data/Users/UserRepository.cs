@@ -154,7 +154,7 @@ namespace OpenCart.Data.Users
                 .SetPostcode("postcode")
                 .SetCoutry("coutry")
                 .SetRegionState("regionState")
-                .SetPassword("password")
+                .SetPassword("qwerty")
                 .SetSubscribe(true)
                 .SetFax("fax")
                 .SetCompany("company")

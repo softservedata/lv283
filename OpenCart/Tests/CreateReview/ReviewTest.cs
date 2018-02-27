@@ -17,7 +17,7 @@ namespace OpenCart
             new object[] { ReviewRepository.Get().NotExistingUserReview(), ProductRepository.macBook() }
         };
 
-        [Test, TestCaseSource("SearchProduct")]
+       // [Test, TestCaseSource("SearchProduct")]
         public void VerifyReviewCreationForNotExistingUser(Review review, Product product)
         {
 
@@ -29,31 +29,31 @@ namespace OpenCart
 
 			StringAssert.AreEqualIgnoringCase(AlertsText.SUCCESSREVIEW, searchActions.ChosenProductOperation.GetMessage());
 		}
-	
-	
-	   //private static readonly object[] ProductReviewForRegisteredUser =
-    //    {
-    //        new object[] { UserRepository.Get().ReviewUser(), ProductRepository.macBook() }
-    //    };
 
 
-    //    [Test, TestCaseSource("ProductReviewForRegisteredUser")]
-    //    public void VerifyUserNameForReviewCreate(IUser user, Product product)
-    //    {
-    //        string result = Application.Get()
-    //                                    .LoadHomeActions()
-    //                                    .GotoLoginAccountActions()
-    //                                    .SuccessfulLogin(user)
-    //                                    .GotoHomeActions()
-    //                                    .SuccesSearchProduct(product.Name)
-    //                                    .ChooseProductByPartialName(product.Name)
-    //                                    .ChosenProductOperation
-    //                                    .GetNameFieldFromReview();
+        private static readonly object[] ProductReviewForRegisteredUser =
+         {
+            new object[] { UserRepository.Get().ReviewUser(), ProductRepository.macBook() }
+        };
 
-    //        string expected = user.GetFirstname() + " " + user.GetLastname();
 
-    //        StringAssert.AreEqualIgnoringCase(expected, result);
-    //    }
-	
-	}
+        [Test, TestCaseSource("ProductReviewForRegisteredUser")]
+        public void VerifyUserNameForReviewCreate(IUser user, Product product)
+        {
+            string result = Application.Get()
+                                        .LoadHomeActions()
+                                        .GotoLoginAccountActions()
+                                        .SuccessfulLogin(user)
+                                        .GotoHomeActions()
+                                        .SuccesSearchProduct(product.Name)
+                                        .ChooseProductByPartialName(product.Name)
+                                        .ChosenProductOperation
+                                        .GetNameFieldFromReview();
+            Console.WriteLine(result);
+            string expected = user.GetFirstname() + " " + user.GetLastname();
+
+            Assert.IsTrue(expected.Equals( result));
+        }
+
+    }
 }
