@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenCart.Actions.User;
+﻿using NUnit.Framework;
 using OpenCart.Pages;
-using OpenCart.Data.Commons;
-using OpenCart.Data.Products;
-using OpenCart.Pages.User;
-using OpenCart.Pages.AdminPanel;
 using OpenCart.Data.Users;
 
 namespace OpenCart
@@ -27,7 +14,7 @@ namespace OpenCart
         [Test, TestCaseSource(nameof(UserData))]
         public void VerifyRegisterNewUser(IUser newUser, IUser admin)
         {
-
+            log.Info("Started VerifyRegisterNewUser() with email = " + newUser.GetEmail());
             Assert.IsTrue(
                 Application.Get().LoadHomeActions()
                 .GotoRegisterAccountActions()
@@ -35,21 +22,17 @@ namespace OpenCart
                 .GetLogout()
                 .IsLoginDisplayed()
                 );
-            //Thread.Sleep(4000);
+            log.Info("Finished VerifyRegisterNewUser() with email = " + newUser.GetEmail());
 
+            log.Info("Started deleting user with email = " + newUser.GetEmail());
             Assert.IsTrue(
                 Application.Get().LoadAdminActions().GetLoginPage(admin)
                 .GetCustomers()
                 .GetDeletedCustomer(newUser)
                 .IsCloseDisplayed()
                 );
-
-            //Assert.IsTrue(
-            //    Application.Get().LoadHomeActions().GetLoginPage()
-            //    .SuccessfulLogin(validUser)
-            //    .GetLogout()
-            //    .IsLoginDisplayed()
-            //    );
+            isTestSuccess = true;
+            log.Info("Finished deleting user with email = " + newUser.GetEmail());
         }
     }
 }

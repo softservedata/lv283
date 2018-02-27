@@ -136,7 +136,7 @@ namespace OpenCart.Pages.User
 
         public void SetCompany(string company)
         {
-            Fax.SendKeys(company);
+            Company.SendKeys(company);
         }
 
         //Address1

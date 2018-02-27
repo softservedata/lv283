@@ -28,6 +28,7 @@ namespace OpenCart
         [Test, TestCaseSource(nameof(UserData))]
         public void VerifyBlockUserByIncorrectPassword(IUser invaliduser, IUser admin, string dangerMessage)
         {
+            log.Info("Started VerifyBlockUserByIncorrectPassword() with email  = " + invaliduser.GetEmail());
             Assert.AreEqual(
                 Application.Get().LoadHomeActions()
                 .GotoLoginAccountActions()
@@ -40,33 +41,17 @@ namespace OpenCart
                 .GetDangerAlertText(),
                 dangerMessage
                 );
+            log.Info("Finished VerifyBlockUserByIncorrectPassword() with email  = " + invaliduser.GetEmail());
 
+            log.Info("Started unblock user with email  = " + invaliduser.GetEmail());
             Assert.IsTrue(
                 Application.Get().LoadAdminActions().GetLoginPage(admin)
                 .GetCustomers()
                 .GetUnlockCustomer(invaliduser)
                 .IsCloseDisplayed()
                 );
-
-
-            //Assert.AreEqual(
-            //    Application.Get().LoadHomeActions().GetLoginPage()
-            //    .UnsuccessfulLogin(invaliduser)
-            //    .UnsuccessfulLogin(invaliduser)
-            //    .UnsuccessfulLogin(invaliduser)
-            //    .UnsuccessfulLogin(invaliduser)
-            //    .UnsuccessfulLogin(invaliduser)
-            //    .UnsuccessfulLogin(invaliduser)
-            //    .GetDangerAlertText(),
-            //    dangerMessage
-            //    );
-
-            //Assert.IsTrue(
-            //    Application.Get().LoadAdminActions().GetLoginPage(admin)
-            //    .GetCustomers()
-            //    .GetUnlockCustomer(invaliduser)
-            //    .IsCloseDisplayed()
-            //    );
+            isTestSuccess = true;
+            log.Info("Finished unblock user with Admin name  = " + invaliduser.GetEmail());
         }
     }
 }

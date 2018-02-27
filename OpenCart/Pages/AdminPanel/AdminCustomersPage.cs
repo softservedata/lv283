@@ -14,7 +14,7 @@ namespace OpenCart.Pages.AdminPanel
         protected IWebElement Unlock
         { get { return Search.CssSelector(".fa.fa-unlock"); } }
 
-        protected IWebElement TextCenter
+        protected IWebElement SelectAllMark
         { get { return Search.ClassName("text-center"); } }
 
         protected IWebElement Delete
@@ -56,9 +56,9 @@ namespace OpenCart.Pages.AdminPanel
         }
 
         //Text Center
-        public void ClickTextCenter()
+        public void ClickSelectAllMark()
         {
-            TextCenter.Click();
+            SelectAllMark.Click();
         }
 
         //Delete Button
@@ -86,7 +86,7 @@ namespace OpenCart.Pages.AdminPanel
             ClearSearchEmail();
             SendKeysToEmail(user.GetEmail());
             ClickFilter();
-            ClickTextCenter();
+            ClickSelectAllMark();
             ClickDelete();
             GetAcceptPopUp();
         }
