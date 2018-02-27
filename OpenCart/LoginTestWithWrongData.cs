@@ -51,7 +51,7 @@ namespace OpenCart
                 .IsCloseDisplayed()
                 );
             isTestSuccess = true;
-            log.Info("Finished unblock user with Admin name  = " + invaliduser.GetEmail());
+            log.Info("Finished unblock user with user name  = " + invaliduser.GetEmail());
         }
     }
 }
