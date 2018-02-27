@@ -47,9 +47,9 @@ namespace OpenCart.Tools
                 // TODO Develop Custom Exception
                 throw new Exception("Digits not Found in " + text);
             }
-            foreach (string current in collectionNumbers)
+            foreach (Match current in collectionNumbers)
             {
-                result.Add(Convert.ToInt32(current));
+                result.Add(Convert.ToInt32(current.Value));
             }
             return result;
         }
@@ -93,9 +93,9 @@ namespace OpenCart.Tools
                 // TODO Develop Custom Exception
                 throw new Exception("String not Found in " + text);
             }
-            foreach (string current in collectionNumbers)
+            foreach (Match current in collectionNumbers)
             {
-                result.Add(current);
+                result.Add(current.Value);
             }
             return result;
         }

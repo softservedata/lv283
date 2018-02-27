@@ -8,11 +8,15 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenCart.Data;
+using NLog;
 
 namespace OpenCart.Pages
 {
     public abstract class TestRunner
     {
+        protected static Logger log = LogManager.GetCurrentClassLogger();
+        protected bool isTestSuccess;
+
         [OneTimeSetUp]
         public void BeforeAllMethods()
         {
@@ -32,6 +36,7 @@ namespace OpenCart.Pages
         [SetUp]
         public void SetUp()
         {
+            isTestSuccess = false;
             // Navigate to Home Page
             Console.WriteLine("[SetUp] SetUp()");
         }
@@ -39,6 +44,10 @@ namespace OpenCart.Pages
         [TearDown]
         public void TearDown()
         {
+            if (!isTestSuccess)
+            {
+                Application.Get().SaveCurrentState();
+            }
             // Logout
             Application.Get().LogoutAction().GotoHomeActions();
             Console.WriteLine("[TearDown] TearDown()");
