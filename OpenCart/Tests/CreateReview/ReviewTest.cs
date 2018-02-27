@@ -2,6 +2,7 @@
 using OpenCart.Actions.User;
 using OpenCart.Data.Products;
 using OpenCart.Data.Reviews;
+using OpenCart.Data.Users;
 using OpenCart.Pages;
 using System;
 
