@@ -1,12 +1,13 @@
 ﻿using System;
+using System.IO;
+using System.Drawing.Imaging;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenCart.Data;
+using System.Reflection;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace OpenCart.Tools
 {
@@ -86,17 +87,50 @@ namespace OpenCart.Tools
             //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
-        //public File GgetScreenshot()
-        //{
-        //    return ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
-        //}
+		private string GetTime()
+		{
+			DateTime localDate = DateTime.Now;
+			return localDate.ToString("yyyy_MM_dd_HH_mm_ss");
+		}
 
-        //public string GetSourceCode()
-        //{
-        //    return getDriver().getPageSource();
-        //}
+		private string GetCurrentDirectory()
+		{
+            return Path.GetDirectoryName(Assembly.GetAssembly(typeof(BrowserWrapper)).CodeBase).Substring(6);
+		}
 
-        public void OpenUrl(string url)
+		public string SaveScreenshot()
+		{
+			return SaveScreenshot(null);
+		}
+
+		public string SaveScreenshot(string namePrefix)
+		{
+			if ((namePrefix == null) || (namePrefix.Length == 0))
+			{
+				namePrefix = GetTime();
+			}
+            ITakesScreenshot takesScreenshot = Driver as ITakesScreenshot;
+			Screenshot screenshot = takesScreenshot.GetScreenshot();
+			screenshot.SaveAsFile(GetCurrentDirectory() + "\\" + namePrefix + "_Screenshot.png",
+				ScreenshotImageFormat.Png);
+			return namePrefix;
+		}
+
+		public string SaveSourceCode()
+		{
+			return SaveSourceCode(null);
+		}
+		public string SaveSourceCode(string namePrefix)
+		{
+			if ((namePrefix == null) || (namePrefix.Length == 0))
+			{
+				namePrefix = GetTime();
+			}
+			File.WriteAllText(GetCurrentDirectory() + "\\" + namePrefix + "_SourceCode.txt", Driver.PageSource);
+			return namePrefix;
+		}
+
+		public void OpenUrl(string url)
         {
             Driver.Navigate().GoToUrl(url);
         }

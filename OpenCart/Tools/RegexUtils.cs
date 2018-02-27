@@ -16,18 +16,7 @@ namespace OpenCart.Tools
 
 		public static double DoubleParseCulture(string text)
 		{
-			// I18N
-			//return Convert.ToDouble(text.Replace('.', ','));
-			//return Double.Parse(text, NumberStyles.AllowDecimalPoint);
-			//
-			//CultureInfo culture = new CultureInfo("ua");
-			//return Double.Parse(text, culture);
-			//
 			NumberFormatInfo format = new NumberFormatInfo();
-			// Set the 'splitter' for thousands
-			//format.NumberGroupSeparator = ".";
-			// Set the decimal seperator
-			//format.NumberDecimalSeparator = ",";
 			format.NumberDecimalSeparator = ".";
 			return Double.Parse(text, format);
 		}
@@ -47,9 +36,9 @@ namespace OpenCart.Tools
 				// TODO Develop Custom Exception
 				throw new Exception("Digits not Found in " + text);
 			}
-			foreach (string current in collectionNumbers)
+			foreach (Match current in collectionNumbers)
 			{
-				result.Add(Convert.ToInt32(current));
+				result.Add(Convert.ToInt32(current.Value));
 			}
 			return result;
 		}
@@ -93,9 +82,9 @@ namespace OpenCart.Tools
 				// TODO Develop Custom Exception
 				throw new Exception("String not Found in " + text);
 			}
-			foreach (string current in collectionNumbers)
+			foreach (Match current in collectionNumbers)
 			{
-				result.Add(current);
+				result.Add(current.Value);
 			}
 			return result;
 		}

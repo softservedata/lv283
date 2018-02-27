@@ -20,10 +20,8 @@ namespace OpenCart
 		[Test, TestCaseSource("SearchProduct")]
 		public void VerifySearchByCurrency(Product product, string currencyName)
 		{
-			//HomeActions homeActions = Application.Get().LoadHomeActions();
-			//SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
-			//
-			// Precondition
+			log.Info("Start VerifySuccessLogin() currencyName = " + currencyName);
+
 			SuccesSearchActions searchActions = Application.Get()
 													.LoadHomeActions()
 													.SuccesSearchProduct(product.Name);
@@ -31,10 +29,8 @@ namespace OpenCart
 			searchActions = searchActions.ChooseCurrencyByPartialName(currencyName);
 			// Verify
 			Assert.AreEqual(product.GetPrice(currencyName), searchActions.GetPriceByProductName(product.Name), 0.01);
-			// Return to previous state
-			//searchActions.GotoHomeActions();
-			//
 			Thread.Sleep(2000);
+			log.Info("Done VerifySuccessLogin() currencyName = " + currencyName);
 		}
 
 		//private static readonly object[] CategoriesItems =

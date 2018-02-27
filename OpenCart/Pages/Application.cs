@@ -1,6 +1,7 @@
 ﻿using OpenCart.Data;
 using OpenCart.Actions.User;
 using OpenCart.Tools;
+using NLog;
 
 namespace OpenCart.Pages
 {
@@ -8,6 +9,7 @@ namespace OpenCart.Pages
 	{
 		private volatile static Application instance;
 		private static object lockingObject = new object();
+		private static Logger log = LogManager.GetCurrentClassLogger();
 
 		// TODO Change for parallel work
 		public ApplicationSource ApplicationSource { get; private set; }
@@ -69,6 +71,7 @@ namespace OpenCart.Pages
 
 		public HomeActions LoadHomeActions()
 		{
+			log.Debug("Start LoadHomeActions()");
 			Browser.OpenUrl(ApplicationSource.BaseUrl);
 			return new HomeActions();
 		}
@@ -79,6 +82,12 @@ namespace OpenCart.Pages
 			return new LogoutActions();
 		}
 
+		public void SaveCurrentState()
+		{
+			log.Warn("Saved Current State");
+			string prefix = Browser.SaveScreenshot();
+			Browser.SaveSourceCode(prefix);
+		}
 	}
 }
 
