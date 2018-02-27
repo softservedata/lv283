@@ -37,7 +37,7 @@ namespace OpenCart
         };
 
 
-        [Test, TestCaseSource("ProductReviewForRegisteredUser")]
+        //[Test, TestCaseSource("ProductReviewForRegisteredUser")]
         public void VerifyUserNameForReviewCreate(IUser user, Product product)
         {
             string result = Application.Get()
