@@ -4,8 +4,6 @@ namespace OpenCart.Pages.User
 {
 	public class AccountComponent : AColumnRightUserComponent
 	{
-		//protected ISearch Search { get; private set; }
-		//
 		public IWebElement FirstNameField
 		{ get { return Search.Id("input-firstname"); } }
 
@@ -38,7 +36,7 @@ namespace OpenCart.Pages.User
 
 		protected AccountComponent()
 		{
-			//this.Search = Application.Get().Search;
+			
 		}
 
 		public IWebElement GetFirstNameField()

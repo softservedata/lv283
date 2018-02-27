@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -33,7 +30,6 @@ namespace OpenCart.Tools
 			MatchCollection collectionNumbers = ExtractMatchCollection(@"\d+", text);
 			if (collectionNumbers.Count == 0)
 			{
-				// TODO Develop Custom Exception
 				throw new Exception("Digits not Found in " + text);
 			}
 			foreach (Match current in collectionNumbers)
@@ -54,15 +50,11 @@ namespace OpenCart.Tools
 			MatchCollection collectionNumbers = ExtractMatchCollection(@"\d+\.\d+", text);
 			if (collectionNumbers.Count == 0)
 			{
-				// TODO Develop Custom Exception
 				throw new Exception("Double Type not Found in " + text);
 			}
-			//foreach (string current in collectionNumbers)
+
 			foreach (Match current in collectionNumbers)
 			{
-				//Console.WriteLine("current.Value = " + current.Value);
-				//result.Add(Convert.ToDouble(current.Value));
-				// I18N
 				result.Add(DoubleParseCulture(current.Value));
 			}
 			return result;
@@ -79,7 +71,21 @@ namespace OpenCart.Tools
 			MatchCollection collectionNumbers = ExtractMatchCollection(@"[a-zA-Z ]", text);
 			if (collectionNumbers.Count == 0)
 			{
-				// TODO Develop Custom Exception
+				throw new Exception("String not Found in " + text);
+			}
+			foreach (Match current in collectionNumbers)
+			{
+				result.Add(current.Value);
+			}
+			return result;
+		}
+
+		public static List<string> ExtractEmail(string text)
+		{
+			List<string> result = new List<string>();
+			MatchCollection collectionNumbers = ExtractMatchCollection(@"[a-zA-Z] ", text);
+			if (collectionNumbers.Count == 0)
+			{
 				throw new Exception("String not Found in " + text);
 			}
 			foreach (Match current in collectionNumbers)

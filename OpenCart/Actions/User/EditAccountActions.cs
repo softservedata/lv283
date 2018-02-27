@@ -53,5 +53,6 @@ namespace OpenCart.Actions.User
 			EditAccountPageOperation.ChangeFax(invalidAccountInfo);
 			return new EditAccountActions();
 		}
+
 	}
 }

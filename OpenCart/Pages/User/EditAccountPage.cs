@@ -4,7 +4,7 @@ namespace OpenCart.Pages.User
 {
 	public class EditAccountPage : AccountComponent
 	{
-		// Actions
+		//Actions
 		public void ChangeAccountData(IAccountInfo accountData)
 		{
 			InputFirstName(accountData.GetFirstname());

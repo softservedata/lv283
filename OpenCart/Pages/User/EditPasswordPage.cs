@@ -11,7 +11,18 @@ namespace OpenCart.Pages.User
 			InputPassword(password.GetPasswordField());
 			InputConfirm(password.GetConfirmField());
 			SubmitConfirmField();
-			//ClickContinueButton();
+		}
+
+		public void ChangeOnlyPasswordField(IPassword password)
+		{
+			InputPassword(password.GetPasswordField());
+			SubmitPasswordField();
+		}
+
+		public void ChangeOnlyConfirmField(IPassword password)
+		{
+			InputConfirm(password.GetConfirmField());
+			SubmitConfirmField();
 		}
 	}
 }
