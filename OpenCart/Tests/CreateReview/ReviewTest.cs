@@ -31,29 +31,29 @@ namespace OpenCart
 		}
 	
 	
-	private static readonly object[] ProductReviewForRegisteredUser =
-        {
-            new object[] { UserRepository.Get().ReviewUser(), ProductRepository.macBook() }
-        };
+	   //private static readonly object[] ProductReviewForRegisteredUser =
+    //    {
+    //        new object[] { UserRepository.Get().ReviewUser(), ProductRepository.macBook() }
+    //    };
 
 
-        [Test, TestCaseSource("ProductReviewForRegisteredUser")]
-        public void VerifyUserNameForReviewCreate(IUser user, Product product)
-        {
-            string result = Application.Get()
-                                        .LoadHomeActions()
-                                        .GotoLoginAccountActions()
-                                        .SuccessfulLogin(user)
-                                        .GotoHomeActions()
-                                        .SuccesSearchProduct(product.Name)
-                                        .ChooseProductByPartialName(product.Name)
-                                        .ChosenProductOperation
-                                        .GetNameFieldFromReview();
+    //    [Test, TestCaseSource("ProductReviewForRegisteredUser")]
+    //    public void VerifyUserNameForReviewCreate(IUser user, Product product)
+    //    {
+    //        string result = Application.Get()
+    //                                    .LoadHomeActions()
+    //                                    .GotoLoginAccountActions()
+    //                                    .SuccessfulLogin(user)
+    //                                    .GotoHomeActions()
+    //                                    .SuccesSearchProduct(product.Name)
+    //                                    .ChooseProductByPartialName(product.Name)
+    //                                    .ChosenProductOperation
+    //                                    .GetNameFieldFromReview();
 
-            string expected = user.GetFirstname() + " " + user.GetLastname();
+    //        string expected = user.GetFirstname() + " " + user.GetLastname();
 
-            StringAssert.AreEqualIgnoringCase(expected, result);
-        }
+    //        StringAssert.AreEqualIgnoringCase(expected, result);
+    //    }
 	
 	}
 }
