@@ -25,9 +25,40 @@ namespace OpenCart.Tests.EditAccount
 													 .GotoEditAccountActions()
 													 .SuccessfulChangeAccount(validAccountInfo);
 
-			// Verify
-			Assert.AreEqual(AlertsText.EDIT_INFORMATION, editAccountActions.EditAccountPageOperation.GetChangeAccountText());
-			//
+			log.Trace("Your account has been updated. Value= " + validAccountInfo.ToString());
+
+			Assert.AreEqual(AlertsText.EDIT_INFORMATION, 
+				           editAccountActions
+						   .EditAccountPageOperation
+						   .GetChangeAccountText());
+
+			editAccountActions.GotoLogoutAccountActions()
+							  .GotoLoginAccountActions()
+							  .SuccessfulLogin(validUser)
+							  .GotoEditAccountActions();
+
+			Assert.AreEqual(validAccountInfo.GetFirstname(),
+			                editAccountActions
+			                .EditAccountPageOperation
+			                .GetFirstNameFieldText());
+
+			Assert.AreEqual(validAccountInfo.GetLastname(),
+	                        editAccountActions
+	                        .EditAccountPageOperation
+	                        .GetLastNameFieldText());
+
+			Assert.AreEqual(validAccountInfo.GetEmail(),
+				            editAccountActions
+				            .EditAccountPageOperation
+				            .GetEmailFieldText());
+
+			Assert.AreEqual(validAccountInfo.GetPhone(),
+			             	editAccountActions
+				            .EditAccountPageOperation
+				            .GetTelephoneFieldText());
+
+			log.Trace(AlertsText.SUCCESS);
+
 			editAccountActions.GotoLogoutAccountActions();
 
 			log.Info("Done Start VerifySuccessChangeAccount()");
@@ -50,8 +81,12 @@ namespace OpenCart.Tests.EditAccount
 													 .GotoEditAccountActions()
 													 .UnsuccessfulChangeAccount(invalidAccountInfo);
 
-			// Verify
-			Assert.AreEqual(AlertsText.FIRST_NAME_MUST_BE_1_TO_32, editAccountActions.EditAccountPageOperation.GetDangerText());
+			log.Trace(AlertsText.FIRST_NAME_MUST_BE_1_TO_32 + " Value= " + invalidAccountInfo.GetEmail());
+
+			Assert.AreEqual(AlertsText.FIRST_NAME_MUST_BE_1_TO_32,
+				            editAccountActions
+							.EditAccountPageOperation
+							.GetDangerText());
 
 			editAccountActions.GotoLogoutAccountActions();
 
@@ -76,7 +111,12 @@ namespace OpenCart.Tests.EditAccount
 													 .GotoEditAccountActions()
 													 .UnsuccessfulChangeFirstnameFieldAccount(invalidAccountInfo);
 
-			Assert.AreEqual(AlertsText.FIRST_NAME_MUST_BE_1_TO_32, editAccountActions.EditAccountPageOperation.GetDangerText());
+			log.Trace(AlertsText.FIRST_NAME_MUST_BE_1_TO_32 + " Value= " + invalidAccountInfo.GetFirstname());
+
+			Assert.AreEqual(AlertsText.FIRST_NAME_MUST_BE_1_TO_32, 
+				            editAccountActions
+							.EditAccountPageOperation
+							.GetDangerText());
 
 			editAccountActions.GotoLogoutAccountActions();
 
@@ -95,7 +135,12 @@ namespace OpenCart.Tests.EditAccount
 													 .GotoEditAccountActions()
 													 .UnsuccessfulChangeLastnameFieldAccount(invalidAccountInfo);
 
-			Assert.AreEqual(AlertsText.LAST_NAME_MUST_BE_1_TO_32, editAccountActions.EditAccountPageOperation.GetDangerText());
+			log.Trace(AlertsText.LAST_NAME_MUST_BE_1_TO_32 + " Value= " + invalidAccountInfo.GetLastname());
+
+			Assert.AreEqual(AlertsText.LAST_NAME_MUST_BE_1_TO_32, 
+				            editAccountActions
+							.EditAccountPageOperation
+							.GetDangerText());
 
 			editAccountActions.GotoLogoutAccountActions();
 
@@ -114,7 +159,12 @@ namespace OpenCart.Tests.EditAccount
 													 .GotoEditAccountActions()
 													 .UnsuccessfulChangeTelephoneFieldAccount(invalidAccountInfo);
 
-			Assert.AreEqual(AlertsText.TELEPHONE_MUST_BE_3_TO_32, editAccountActions.EditAccountPageOperation.GetDangerText());
+			log.Trace(AlertsText.TELEPHONE_MUST_BE_3_TO_32 + " Value= " + invalidAccountInfo.GetPhone());
+
+			Assert.AreEqual(AlertsText.TELEPHONE_MUST_BE_3_TO_32, 
+				           editAccountActions
+						   .EditAccountPageOperation
+						   .GetDangerText());
 
 			editAccountActions.GotoLogoutAccountActions();
 
@@ -133,8 +183,13 @@ namespace OpenCart.Tests.EditAccount
 													 .GotoEditAccountActions()
 													 .UnsuccessfulChangeEmailFieldAccount(invalidAccountInfo);
 
-			Assert.AreEqual(AlertsText.EMAIL_DOES_NOT_APPER_TO_BE_VALID, editAccountActions.EditAccountPageOperation.GetDangerText());
+			log.Trace(AlertsText.EMAIL_DOES_NOT_APPER_TO_BE_VALID + " Value= " + invalidAccountInfo.GetEmail());
 
+			Assert.AreEqual(AlertsText.EMAIL_DOES_NOT_APPER_TO_BE_VALID, 
+				            editAccountActions
+							.EditAccountPageOperation
+							.GetDangerText());
+			 
 			editAccountActions.GotoLogoutAccountActions();
 
 			log.Info("Done VerifyUnsuccessChangeAccountEmailField()");

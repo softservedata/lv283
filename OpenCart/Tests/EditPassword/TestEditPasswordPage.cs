@@ -8,12 +8,12 @@ namespace OpenCart.Tests.EditPassword
 {
 	public class TestEditPasswordPage : TestRunner
 	{
-		private static readonly object[] SearchUsers =
+		private static readonly object[] Users =
 	    {
 			new object[] { UserRepository.Get().Registered(), PasswordRepository.Get().ValidPassword() }
 		};
 
-		[Test, TestCaseSource("SearchUsers")]
+		[Test, TestCaseSource("Users")]
 		public void VerifySuccessChangePassword(IUser validUser, Data.Passwords.IPassword validPassword)
 		{
 			log.Info("Start VerifySuccessChangePassword() validUser = " + validUser.GetEmail());
@@ -24,6 +24,19 @@ namespace OpenCart.Tests.EditPassword
 													 .SuccessfulLogin(validUser)
 													 .GotoEditPasswordActions()
 													 .SuccessfulChangePassword(validPassword);
+
+			log.Trace("Password has been updated. Value= " + validPassword.GetPasswordField());
+
+			editPasswordActions.GotoLogoutAccountActions()
+								.GotoLoginAccountActions()
+							    .SuccessfulLogin(validUser);
+
+			Assert.AreEqual(AlertsText.LOGOUT,
+						   editPasswordActions
+						   .EditPasswordPageOperation
+						   .GetLogoutTextLink());
+
+			log.Trace("Password has been successfully updated. Value= " + validPassword.GetPasswordField());
 
 			editPasswordActions.GotoLogoutAccountActions();
 
@@ -47,9 +60,11 @@ namespace OpenCart.Tests.EditPassword
 													 .SuccessfulLogin(validUser)
 													 .GotoEditPasswordActions()
 													 .SuccessfulChangePassword(invalidPassword);
-			// Verify
+
+			log.Trace(AlertsText.PASSWORD_MUST_BE_4_TO_20 + " Value= " + invalidPassword.GetPasswordField());
+
 			Assert.AreEqual(AlertsText.PASSWORD_MUST_BE_4_TO_20,
-				           editPasswordActions
+				            editPasswordActions
 				           .EditPasswordPageOperation
 				           .GetDangerText());
 

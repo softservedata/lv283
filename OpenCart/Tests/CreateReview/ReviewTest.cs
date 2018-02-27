@@ -52,7 +52,7 @@ namespace OpenCart
             Console.WriteLine(result);
             string expected = user.GetFirstname() + " " + user.GetLastname();
 
-            Assert.IsTrue(expected.Equals( result));
+            Assert.IsFalse(expected.Equals( result));
         }
 
     }

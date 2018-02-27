@@ -38,6 +38,6 @@
 
 		public const string FAILNAMELENGTH = "Warning: Review Text must be between 25 and 1000 characters!";
 
-
+		public const string LOGOUT = "Logout";
 	}
 }
