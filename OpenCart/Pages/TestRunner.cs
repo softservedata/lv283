@@ -14,21 +14,18 @@ namespace OpenCart.Pages
 		public void BeforeAllMethods()
 		{
 			Application.Get(ApplicationSourceRepository.ChromeEpizy());
-			Console.WriteLine("[OneTimeSetUp] BeforeAllMethods()");
 		}
 
 		[OneTimeTearDown]
 		public void AfterAllMethods()
 		{
 			Application.Remove();
-			Console.WriteLine("[OneTimeTearDown] AfterAllMethods()");
 		}
 
 		[SetUp]
 		public void SetUp()
 		{
 			isTestSuccess = false;
-			Console.WriteLine("[SetUp] SetUp()");
 		}
 
 		[TearDown]
@@ -40,7 +37,6 @@ namespace OpenCart.Pages
 			}
 
 			Application.Get().LogoutAction().GotoHomeActions();
-			Console.WriteLine("[TearDown] TearDown()");
 		}
 
 	}

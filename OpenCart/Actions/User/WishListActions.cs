@@ -24,14 +24,6 @@ namespace OpenCart.Actions.User
 
         public WishedProductComponent VerifyProductExistence(string productName)
         {
-            try
-            {
-                WishListPageOperation.GetProductComponentByProductName(productName);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Exeption");
-            }
             return WishListPageOperation.GetProductComponentByProductName(productName);
         }
     }

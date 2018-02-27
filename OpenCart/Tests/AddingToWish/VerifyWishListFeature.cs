@@ -4,10 +4,6 @@ using OpenCart.Data.Products;
 using OpenCart.Data.Users;
 using OpenCart.Pages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OpenCart.Tests.AddingToWish
 {
@@ -20,9 +16,10 @@ namespace OpenCart.Tests.AddingToWish
             new object[] { ProductRepository.IPhone() }
         };
 
-        [Test, TestCaseSource(nameof(SearchedProducts))]
+        [Test, TestCaseSource(nameof(SearchedProducts)), Order(1)]
         public void VerifySuccessAddingToWishList(Product product)
         {
+            log.Info("Start VerifySuccessAddingToWishList productName = " + product.Name);
             IUser validUser = UserRepository.Get().Registered();
             WishListActions wishListActions = Application.Get()
                                                     .LoadHomeActions()
@@ -32,9 +29,10 @@ namespace OpenCart.Tests.AddingToWish
                                                     .ClickAddToWishByProductName(product.Name)
                                                     .GoToWishListPage();
             wishListActions.VerifyProductExistence(product.Name);
+            log.Info("Done VerifySuccessAddingToWishList");
         }
 
-        [Test, TestCaseSource(nameof(SearchedProducts))]
+        [Test, TestCaseSource(nameof(SearchedProducts)), Order(2)]
         public void VerifySuccessRemovingFromWishList(Product product)
         {
             IUser validUser = UserRepository.Get().Registered();

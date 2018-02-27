@@ -10,11 +10,13 @@ namespace OpenCart.Pages.User
 {
     public class WishedProductComponent
     {
+        private const string SECOND_COLUMN_ANCHOR = "td:nth-child(2) > a";
+
         protected ISearch Search { get; private set; }
         public IWebElement ProductLayout { get; private set; }
         //
         public IWebElement Name
-        { get { return Search.CssSelector("td:nth-child(2) > a", ProductLayout); } }
+        { get { return Search.CssSelector(SECOND_COLUMN_ANCHOR, ProductLayout); } }
         public IWebElement RemoveFromWish
         { get { return Search.CssSelector(".btn.btn-danger", ProductLayout); } }
 
