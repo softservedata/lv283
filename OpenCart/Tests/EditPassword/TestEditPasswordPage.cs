@@ -15,7 +15,9 @@ namespace OpenCart.Tests.EditPassword
 
 		[Test, TestCaseSource("SearchUsers")]
 		public void VerifySuccessChangePassword(IUser validUser, Data.Passwords.IPassword validPassword)
-		{			
+		{
+			log.Info("Start VerifySuccessChangePassword() validUser = " + validUser.GetEmail());
+
 			EditPasswordActions editPasswordActions = Application.Get()
 													 .LoadHomeActions()
 													 .GotoLoginAccountActions()
@@ -24,6 +26,8 @@ namespace OpenCart.Tests.EditPassword
 													 .SuccessfulChangePassword(validPassword);
 
 			editPasswordActions.GotoLogoutAccountActions();
+
+			log.Info("Done VerifySuccessChangePassword()");
 		}
 
 		private static readonly object[] InvalidPasswords =
@@ -35,6 +39,8 @@ namespace OpenCart.Tests.EditPassword
 		[Test, TestCaseSource("InvalidPasswords")]
 		public void VerifyUnsuccessChangePassword(IUser validUser, Data.Passwords.IPassword invalidPassword)
 		{
+			log.Info("Start VerifyUnsuccessChangePassword() validUser = " + validUser.GetEmail());
+
 			EditPasswordActions editPasswordActions = Application.Get()
 													 .LoadHomeActions()
 													 .GotoLoginAccountActions()
@@ -48,6 +54,8 @@ namespace OpenCart.Tests.EditPassword
 				           .GetDangerText());
 
 			editPasswordActions.GotoLogoutAccountActions();
+
+			log.Info("Done VerifyUnsuccessChangePassword()");
 		}
 	}
 
