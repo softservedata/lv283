@@ -76,21 +76,43 @@ namespace OpenCart
 
         private static readonly object[] CategoriesItems =
         {
-            new object[] { CategoryItemsRepository.Desktops() }
+            //new object[] { CategoryItemsRepository.Desktops() },
+            new object[] { CategoryItemsRepository.Software() }
         };
 
         [Test, TestCaseSource(nameof(CategoriesItems))]
         public void VerifySuccessLogin(CategoryItems categoryItems)
         {
+            log.Info("Start VerifySuccessLogin() categoryItems.Name = " + categoryItems.Name);
+            bool isFoundName = false;
+            bool isFoundCount = false;
             // Precondition
             // Steps
             HomeActions homeActions = Application.Get().LoadHomeActions();
+            //
             // Verify
             foreach (ElementItem elementItem in homeActions.GetAllElementItemsByCategoryName(categoryItems.Name))
             {
-                Console.WriteLine("elementItem.Name" + elementItem.Name 
-                    + "   elementItem.Count" + elementItem.Count);
+                Console.WriteLine("elementItem.Name= " + elementItem.Name 
+                    + "   elementItem.Count = " + elementItem.Count);
+                isFoundName = false;
+                isFoundCount = false;
+                foreach (ElementItem expectedElementItem in categoryItems.ElementItems)
+                {
+                    isFoundName = expectedElementItem.Name.ToLower().Equals(elementItem.Name.ToLower());
+                    isFoundCount = expectedElementItem.Count == elementItem.Count;
+                    if (isFoundName && isFoundCount)
+                    {
+                        break;
+                    }
+                }
+                Assert.IsTrue(isFoundName);
+                Assert.IsTrue(isFoundCount);
             }
+            // Return to previous state
+            Thread.Sleep(2000);
+            //isTestSuccess = true;
+            log.Info("Done VerifySuccessLogin() categoryItems.Name = " + categoryItems.Name);
         }
     }
 }
