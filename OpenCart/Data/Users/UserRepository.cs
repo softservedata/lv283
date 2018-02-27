@@ -31,87 +31,87 @@ namespace OpenCart.Data.Users
             return instance;
         }
 
-		public IUser UserTestLogin()
-		{
-			return User.Get()
-					.SetFirstname("FIRSTNAME")
-					.SetLastname("LASTNAME")
-					.SetEmail("hahaha@gmail.com")
-					.SetPhone("380511223344")
-					.SetAddressMain("TEST_ADDRESS")
-					.SetCity("Lviv")
-					.SetPostcode("79000")
-					.SetCoutry("Ukraine")
-				    .SetRegionState("L'vivs'ka Oblast'")
-				    .SetPassword("qwerty")
-				    .SetSubscribe(true)
-				    .SetFax("fax")
-				    .SetCompany("company")
-				    .SetAddressAdd("addressAdd")
-					.Build();
+	public IUser UserTestLogin()
+	{
+		return User.Get()
+			.SetFirstname("FIRSTNAME")
+			.SetLastname("LASTNAME")
+			.SetEmail("hahaha@gmail.com")
+			.SetPhone("380511223344")
+			.SetAddressMain("TEST_ADDRESS")
+			.SetCity("Lviv")
+			.SetPostcode("79000")
+			.SetCoutry("Ukraine")
+      		        .SetRegionState("L'vivs'ka Oblast'")
+			.SetPassword("qwerty")
+			.SetSubscribe(true)
+			.SetFax("fax")
+			.SetCompany("company")
+			.SetAddressAdd("addressAdd")
+			.Build();
 		}
 
-		public IUser Admin()
-		{
-			return User.Get()
-				.SetFirstname("firstname8Admin")
-				.SetLastname("lastname")
-				.SetEmail("email")
-				.SetPhone("phone")
-				.SetAddressMain("addressMain")
-				.SetCity("city")
-				.SetPostcode("postcode")
-				.SetCoutry("coutry")
-				.SetRegionState("regionState")
-				.SetPassword("password")
-				.SetSubscribe(true)
-				.SetFax("fax")
-				.SetCompany("company")
-				.SetAddressAdd("addressAdd")
-				.Build();
-		}
+	public IUser Admin()
+	{
+		return User.Get()
+			.SetFirstname("firstname8Admin")
+			.SetLastname("lastname")
+			.SetEmail("email")
+			.SetPhone("phone")
+			.SetAddressMain("addressMain")
+			.SetCity("city")
+			.SetPostcode("postcode")
+			.SetCoutry("coutry")
+			.SetRegionState("regionState")
+			.SetPassword("password")
+			.SetSubscribe(true)
+			.SetFax("fax")
+			.SetCompany("company")
+			.SetAddressAdd("addressAdd")
+			.Build();
+	}
 
-		public IUser Registered()
-		{
-			return User.Get()
-				.SetFirstname("firstname9")
-				.SetLastname("lastname")
-				.SetEmail("hahaha@gmail.com")
-				.SetPhone("1234567")
-				.SetAddressMain("addressMain")
-				.SetCity("city")
-				.SetPostcode("12345")
-				.SetCoutry("Ukraine")
-				.SetRegionState("L'vivs'ka Oblast'")
-				.SetPassword("qwerty")
-				.SetSubscribe(true)
-				.SetFax("fax")
-				.SetCompany("company")
-				.SetAddressAdd("addressAdd")
-				.Build();
-		}
+	public IUser Registered()
+	{
+		return User.Get()
+			.SetFirstname("firstname9")
+			.SetLastname("lastname")
+			.SetEmail("hahaha@gmail.com")
+			.SetPhone("1234567")
+			.SetAddressMain("addressMain")
+			.SetCity("city")
+			.SetPostcode("12345")
+			.SetCoutry("Ukraine")
+			.SetRegionState("L'vivs'ka Oblast'")
+			.SetPassword("qwerty")
+			.SetSubscribe(true)
+			.SetFax("fax")
+			.SetCompany("company")
+			.SetAddressAdd("addressAdd")
+			.Build();
+	}
 
 
-		public IUser DBUser()
+	public IUser DBUser()
         {
             // Read User From DB
             // Create Class for Read
-            return User.Get()
-                .SetFirstname("firstname9")
-                .SetLastname("lastname")
-                .SetEmail("email")
-                .SetPhone("phone")
-                .SetAddressMain("addressMain")
-                .SetCity("city")
-                .SetPostcode("postcode")
-                .SetCoutry("coutry")
-                .SetRegionState("regionState")
-                .SetPassword("password")
-                .SetSubscribe(true)
-                .SetFax("fax")
-                .SetCompany("company")
-                .SetAddressAdd("addressAdd")
-                .Build();
+           	 return User.Get()
+                	.SetFirstname("firstname9")
+          	      .SetLastname("lastname")
+          	      .SetEmail("email")
+          	      .SetPhone("phone")
+          	      .SetAddressMain("addressMain")
+          	      .SetCity("city")
+          	      .SetPostcode("postcode")
+          	      .SetCoutry("coutry")
+          	      .SetRegionState("regionState")
+          	      .SetPassword("password")
+          	      .SetSubscribe(true)
+         	      .SetFax("fax")
+               	      .SetCompany("company")
+               	      .SetAddressAdd("addressAdd")
+               	      .Build();
         }
 
         public List<IUser> ExcelUsers()
@@ -138,6 +138,28 @@ namespace OpenCart.Data.Users
                 .Build()
             );
             return result;
+        }
+	    
+	     public IUser ReviewUser()
+        {
+            // Read User From DB
+            // Create Class for Read
+            return User.Get()
+                .SetFirstname("Vova")
+                .SetLastname("Lion")
+                .SetEmail("hahaha@gmail.com")
+                .SetPhone("+3865656565656")
+                .SetAddressMain("addressMain")
+                .SetCity("city")
+                .SetPostcode("postcode")
+                .SetCoutry("coutry")
+                .SetRegionState("regionState")
+                .SetPassword("password")
+                .SetSubscribe(true)
+                .SetFax("fax")
+                .SetCompany("company")
+                .SetAddressAdd("addressAdd")
+                .Build();
         }
     }
 }
