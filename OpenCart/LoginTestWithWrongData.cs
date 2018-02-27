@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenCart.Actions.User;
+﻿using NUnit.Framework;
 using OpenCart.Pages;
 using OpenCart.Data.Commons;
-using OpenCart.Data.Products;
-using OpenCart.Pages.User;
-using OpenCart.Pages.AdminPanel;
 using OpenCart.Data.Users;
 
 namespace OpenCart
