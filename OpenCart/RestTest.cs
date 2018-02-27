@@ -78,7 +78,7 @@ namespace OpenCart
             return repositories;
         }
 
-        [Test]
+        //[Test]
         public void CheckFoundationExist()
         {
             RestTest restTest = new RestTest();

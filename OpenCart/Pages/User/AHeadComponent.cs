@@ -454,7 +454,7 @@ namespace OpenCart.Pages.User
             return result;
         }
 
-        protected List<String> GetProductComponentTexts()
+        protected List<String> GetProductComponentTextList()
         {
             List<string> result = new List<string>();
             foreach (ProductComponent current in ProductComponents)

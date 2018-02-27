@@ -3,29 +3,29 @@ using OpenCart.Pages.User;
 
 namespace OpenCart.Actions.User
 {
-    public class SuccesSearchActions : HeadActions
+    public class SuccessSearchActions : HeadActions
     {
-        public SuccesSearchPage SuccesSearchPageOperation { get; private set; }
+        public SuccessSearchPage SuccessSearchPageOperation { get; private set; }
 
-        public SuccesSearchActions()
+        public SuccessSearchActions()
         {
-            SuccesSearchPageOperation = new SuccesSearchPage();
+            SuccessSearchPageOperation = new SuccessSearchPage();
         }
 
-        public SuccesSearchActions ChooseCurrencyByPartialName(string currencyName)
+        public SuccessSearchActions ChooseCurrencyByPartialName(string currencyName)
         {
-            SuccesSearchPageOperation.ClickCurrencyByPartialName(currencyName);
-            return new SuccesSearchActions();
+            SuccessSearchPageOperation.ClickCurrencyByPartialName(currencyName);
+            return new SuccessSearchActions();
         }
 
         public double GetPriceByProductName(string productName)
         {
-            return SuccesSearchPageOperation.GetPriceAmountByProductName(productName);
+            return SuccessSearchPageOperation.GetPriceAmountByProductName(productName);
         }
 
-        public List<string> GetProductComponentTexts()
+        public List<string> GetProductComponentTextList()
         {
-            return SuccesSearchPageOperation.GetProductComponentTexts();
+            return SuccessSearchPageOperation.GetProductComponentTextList();
         }
 
     }

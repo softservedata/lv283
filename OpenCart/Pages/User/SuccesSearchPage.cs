@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace OpenCart.Pages.User
 {
-    public class SuccesSearchPage : ANavigatePanelComponent
+    public class SuccessSearchPage : ANavigatePanelComponent
     {
         public IWebElement KeyWords
         { get { return Search.Id("input-search"); } }
@@ -33,7 +33,7 @@ namespace OpenCart.Pages.User
         { get { return Search.XPath("//div[@id='content']/p[contains(text(), 'no product')]"); } }
 
 
-        public SuccesSearchPage() : base()
+        public SuccessSearchPage() : base()
         {
             InitProductComponents(By.CssSelector(".product-layout"));
         }
@@ -81,17 +81,17 @@ namespace OpenCart.Pages.User
         {
             SubCategories.Click();
         }
-        public bool GetIsSelectedSubCategories()
+        public bool IsSubCategoriesSelected()
         {
             return SubCategories.Selected;
         }
 
-        //SearchProductDeskription
-        public void ClickSearchProductDeskription()
+        //SearchProductDescription
+        public void ClickSearchProductDescription()
         {
             SearchProductDescription.Click();
         }
-        public bool GetIsSelectedSearchProductDeskription()
+        public bool IsSearchProductDescriptionSelected()
         {
             return SearchProductDescription.Selected;
         }
@@ -114,9 +114,9 @@ namespace OpenCart.Pages.User
         }
 
         //ProductComponent
-        public new List<string> GetProductComponentTexts()
+        public new List<string> GetProductComponentTextList()
         {
-            return base.GetProductComponentTexts();
+            return base.GetProductComponentTextList();
         }
 
         public new string GetPriceTextByProductName(string productName)

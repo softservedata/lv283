@@ -18,7 +18,7 @@ namespace OpenCart.Pages.User
         
     public new List<string> GetProductComponentTexts()
         {
-            return base.GetProductComponentTexts();
+            return base.GetProductComponentTextList();
         }
 
     public new string GetPriceTextByProductName(string productName)

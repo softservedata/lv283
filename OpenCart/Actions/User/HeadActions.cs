@@ -24,10 +24,10 @@ namespace OpenCart.Actions.User
             return new HomeActions();
         }
 
-        public SuccesSearchActions SuccesSearchProduct(string partialProductName)
+        public SuccessSearchActions SuccessSearchProduct(string partialProductName)
         {
             HeadPageOperation.SuccesSearchProduct(partialProductName);
-            return new SuccesSearchActions();
+            return new SuccessSearchActions();
         }
 
         public RegisterAccountActions GotoRegisterAccountActions()

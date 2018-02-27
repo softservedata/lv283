@@ -29,12 +29,12 @@ namespace OpenCart
         public void VerifySearchByCurrency(Product product, string currencyName)
         {
             //HomeActions homeActions = Application.Get().LoadHomeActions();
-            //SuccesSearchActions searchActions = homeActions.SuccesSearchProduct(product.Name);
+            //SuccessSearchActions searchActions = homeActions.SuccessSearchProduct(product.Name);
             //
             // Precondition
-            SuccesSearchActions searchActions = Application.Get()
+            SuccessSearchActions searchActions = Application.Get()
                                                     .LoadHomeActions()
-                                                    .SuccesSearchProduct(product.Name);
+                                                    .SuccessSearchProduct(product.Name);
             // Steps
             searchActions = searchActions.ChooseCurrencyByPartialName(currencyName);
             // Verify

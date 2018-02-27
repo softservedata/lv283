@@ -12,21 +12,21 @@ namespace OpenCart
         private string steps = "";
 
         //[TestMethod]
-        [Test, Order(3)]
+        //[Test, Order(3)]
         public void CheckOpen()
         {
             steps += "\nCheckOpen() done";
             Console.WriteLine("CheckOpen() done steps = " + steps);
         }
 
-        [Test, Order(1)]
+        //[Test, Order(1)]
         public void CheckRunning()
         {
             steps += "\nCheckRunning() done";
             Console.WriteLine("CheckRunning() done steps = " + steps);
         }
 
-        [Test, Order(2)]
+        //[Test, Order(2)]
         public void CheckClose()
         {
             steps += "\nCheckClose() done";
@@ -34,7 +34,7 @@ namespace OpenCart
             throw new Exception("ha-ha-ha");
         }
 
-        [Test]
+        //[Test]
         public void CheckDependency()
         {
             steps += "\nCheckRunning() done";
