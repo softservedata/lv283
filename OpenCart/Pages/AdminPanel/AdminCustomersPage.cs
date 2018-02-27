@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenCart.Tools;
-using OpenCart.Pages.User;
-using OpenCart.Pages.AdminPanel;
+﻿using OpenQA.Selenium;
 using OpenCart.Data.Users;
 
 namespace OpenCart.Pages.AdminPanel
 {
     public class AdminCustomersPage : AdminDropDownColumn
     {
-        //BrowserWrapper browserWrapper;
-
         protected IWebElement SearchEmail
         { get { return Search.Name("filter_email"); } }
 
@@ -36,7 +25,6 @@ namespace OpenCart.Pages.AdminPanel
 
         public AdminCustomersPage() : base()
         {
-            //browserWrapper = new BrowserWrapper();
         }
 
         public bool IsCloseDisplayed()

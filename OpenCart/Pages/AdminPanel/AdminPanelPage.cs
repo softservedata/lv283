@@ -16,20 +16,9 @@ namespace OpenCart.Pages.AdminPanel
         {
         }
 
-        /*protected void ClickCustomersMenu()
-        {
-            CustomersMenu.Click();
-        }
-
-        protected void ClickCustomers()
-        {
-            Customers.Click();
-        }*/
-
         public new void GetCustomers()
         {
             base.GetCustomers();
-            //return new AdminCustomersPage();
         }
     }
 }

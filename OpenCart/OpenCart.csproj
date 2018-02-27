@@ -114,7 +114,6 @@
     <Compile Include="Pages\AdminPanel\AdminPanelPage.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\TestRunner.cs" />
-    <Compile Include="Pages\User\LoginPage.cs" />
     <Compile Include="Pages\User\AHeadComponent.cs" />
     <Compile Include="Pages\User\ALeftComponent.cs" />
     <Compile Include="Pages\User\ANavigatePanelComponent.cs" />

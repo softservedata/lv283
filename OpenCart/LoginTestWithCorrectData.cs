@@ -28,7 +28,6 @@ namespace OpenCart
         [Test, TestCaseSource(nameof(UserData))]
         public void VerifyLogin(IUser validUser)
         {
-
             Assert.IsTrue(
                 Application.Get().LoadHomeActions()
                 .GotoLoginAccountActions()

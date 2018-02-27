@@ -8,7 +8,6 @@ using OpenQA.Selenium.Chrome;
 using OpenCart.Tools;
 using OpenCart.Pages.User;
 using OpenCart.Data.Users;
-//using OpenCart.Pages.AdminPanel;
 
 namespace OpenCart.Pages.AdminPanel
 {
@@ -63,7 +62,6 @@ namespace OpenCart.Pages.AdminPanel
             ClearPasswordField();
             SetPasswordField(admin.GetPassword());
             ClickLogin();
-            //return new AdminPanelPage();
         }
     }
 }

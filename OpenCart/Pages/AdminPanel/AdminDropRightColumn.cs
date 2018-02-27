@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
 using OpenCart.Tools;
-using OpenCart.Pages.User;
 
 namespace OpenCart.Pages.AdminPanel
 {
     public abstract class AdminDropDownColumn
     {
         protected ISearch Search { get; private set; }
-        //
 
         protected IWebElement CustomersMenu
         { get { return Search.CssSelector(".fa.fa-user.fw"); } }
