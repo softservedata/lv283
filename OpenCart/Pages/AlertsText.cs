@@ -26,6 +26,8 @@
 
 		public const string EDIT_INFORMATION = "Edit your account information";
 
+		public const string CHANGE_PASSWORD = "Change Password";
+
 		public const string SUCCESS = "Success: Your account has been successfully updated.";
 
 		public const string SUCCESSREVIEW = "Thank you for your review. It has been submitted to the webmaster for approval.";

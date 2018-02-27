@@ -15,17 +15,14 @@ namespace OpenCart.Tests.EditPassword
 
 		[Test, TestCaseSource("SearchUsers")]
 		public void VerifySuccessChangePassword(IUser validUser, Data.Passwords.IPassword validPassword)
-		{
-			// Precondition			// Steps
+		{			
 			EditPasswordActions editPasswordActions = Application.Get()
 													 .LoadHomeActions()
 													 .GotoLoginAccountActions()
 													 .SuccessfulLogin(validUser)
 													 .GotoEditPasswordActions()
 													 .SuccessfulChangePassword(validPassword);
-			// Verify
-            //Assert.IsFalse(editPasswordActions.EditPasswordPageOperation.GetChangePasswordLabelText().Equals("Change Password"));
-			//
+
 			editPasswordActions.GotoLogoutAccountActions();
 		}
 
@@ -38,7 +35,6 @@ namespace OpenCart.Tests.EditPassword
 		[Test, TestCaseSource("InvalidPasswords")]
 		public void VerifyUnsuccessChangePassword(IUser validUser, Data.Passwords.IPassword invalidPassword)
 		{
-			// Precondition			// Steps
 			EditPasswordActions editPasswordActions = Application.Get()
 													 .LoadHomeActions()
 													 .GotoLoginAccountActions()
@@ -46,8 +42,11 @@ namespace OpenCart.Tests.EditPassword
 													 .GotoEditPasswordActions()
 													 .SuccessfulChangePassword(invalidPassword);
 			// Verify
-			Assert.AreEqual(AlertsText.PASSWORD_MUST_BE_4_TO_20, editPasswordActions.EditPasswordPageOperation.GetDangerText());
-			//
+			Assert.AreEqual(AlertsText.PASSWORD_MUST_BE_4_TO_20,
+				           editPasswordActions
+				           .EditPasswordPageOperation
+				           .GetDangerText());
+
 			editPasswordActions.GotoLogoutAccountActions();
 		}
 	}

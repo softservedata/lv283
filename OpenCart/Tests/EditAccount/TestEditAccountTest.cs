@@ -16,8 +16,6 @@ namespace OpenCart.Tests.EditAccount
 		[Test, TestCaseSource("SearchUsers")]
 		public void VerifySuccessChangeAccount(IUser validUser, IAccountInfo validAccountInfo)
 		{
-			// Precondition
-			// Steps
 			EditAccountActions editAccountActions = Application.Get()
 													 .LoadHomeActions()
 													 .GotoLoginAccountActions()

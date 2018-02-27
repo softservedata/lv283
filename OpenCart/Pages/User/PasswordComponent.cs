@@ -4,8 +4,6 @@ namespace OpenCart.Pages.User
 {
 	public class PasswordComponent : AColumnRightUserComponent
 	{
-		//protected ISearch Search { get; private set; }
-		//
 		public IWebElement PasswordField
 		{ get { return Search.Id("input-password"); } }
 
@@ -26,7 +24,7 @@ namespace OpenCart.Pages.User
 
 		protected PasswordComponent()
 		{
-			//this.Search = Application.Get().Search;
+			
 		}
 
 		// ChangePasswordLabel
@@ -34,8 +32,7 @@ namespace OpenCart.Pages.User
 		{
 			return PasswordField.Text;
 		}
-
-
+		
 		// PasswordField
 		public string GetPasswordFieldText()
 		{
@@ -103,7 +100,6 @@ namespace OpenCart.Pages.User
 		}
 
 		// Set Functional
-
 		private void InputInPasswordField(string passwordField)
 		{
 			PasswordField.SendKeys(passwordField);
@@ -127,9 +123,6 @@ namespace OpenCart.Pages.User
 			ClearConfirmField();
 			InputInConfirmField(confirmField);
 		}
-
-		// Actions
-
 
 	}
 }

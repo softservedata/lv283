@@ -71,8 +71,8 @@ namespace OpenCart.Actions.User
 			List<ElementItem> result = new List<ElementItem>();
 			foreach (string current in GetAllSubMenuTopByCategoryName(categoryName))
 			{
-				result.Add(new ElementItem(RegexUtils.ExtractFirstString(current),
-					RegexUtils.ExtractFirstNumber(current)));
+				result.Add(new ElementItem(RegexUtils.ExtractFirstString(current).Trim(),
+				   RegexUtils.ExtractFirstNumber(current)));
 			}
 			return result;
 		}
