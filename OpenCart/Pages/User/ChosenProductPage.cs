@@ -53,6 +53,12 @@ namespace OpenCart.Pages.User
         }
 
         //Review
+        
+        public string GetNameFieldFromReview()
+        {
+            ClickReviewTab();
+            return NameField.Text;
+        }
         //Name
         public string GetNameFieldText()
         {
