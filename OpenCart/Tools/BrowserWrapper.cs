@@ -1,13 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Drawing.Imaging;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenCart.Data;
 using System.Reflection;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace OpenCart.Tools
 {
