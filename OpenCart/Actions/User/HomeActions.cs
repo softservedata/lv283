@@ -28,5 +28,10 @@ namespace OpenCart.Actions.User
 			return HomePageOperation.GetPriceAmountByProductName(productName);
 		}
 
-	}
+        public HomeActions ClickAddToWishByProductName(string productName)
+        {
+            HomePageOperation.ClickAddToWishByProductName(productName);
+            return this;
+        }
+    }
 }

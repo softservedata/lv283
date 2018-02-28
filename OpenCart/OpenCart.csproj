@@ -92,6 +92,7 @@
     <Compile Include="Actions\User\SubCategoryProductsActions.cs" />
     <Compile Include="Actions\User\SuccesSearchActions.cs" />
     <Compile Include="Actions\User\ChosenProductActions.cs" />
+    <Compile Include="Actions\User\WishListActions.cs" />
     <Compile Include="Data\AccountsInfo\AccountInfo.cs" />
     <Compile Include="Data\AccountsInfo\AccountInfoRepository.cs" />
     <Compile Include="Data\ApplicationSource.cs" />
@@ -144,8 +145,10 @@
     <Compile Include="Pages\User\RightPage.cs" />
     <Compile Include="Pages\User\SubCategoryProductsPage.cs" />
     <Compile Include="Pages\User\SuccesSearchPage.cs" />
+    <Compile Include="Pages\User\WishedProductComponent.cs" />
     <Compile Include="Pages\User\WishListPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AddingToWish\VerifyWishListFeature.cs" />
     <Compile Include="Tests\AddressBook\AddressBookTest.cs" />
     <Compile Include="Tests\CreateReview\ReviewTest.cs" />
     <Compile Include="SmokeLoginTest.cs" />
@@ -174,7 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Actions\Admin\" />
-    <Folder Include="Tests\AddingToWish\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />

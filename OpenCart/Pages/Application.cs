@@ -2,6 +2,7 @@
 using OpenCart.Actions.User;
 using OpenCart.Tools;
 using NLog;
+using OpenCart.Pages.User;
 
 namespace OpenCart.Pages
 {
@@ -79,6 +80,7 @@ namespace OpenCart.Pages
 		public LogoutActions LogoutAction()
 		{
 			Browser.OpenUrl(ApplicationSource.UserLogoutUrl);
+            MyAccountOptions.IsLoggedin = false;
 			return new LogoutActions();
 		}
 

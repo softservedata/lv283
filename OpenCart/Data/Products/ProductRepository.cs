@@ -6,7 +6,7 @@ namespace OpenCart.Data.Products
 	{
 		private ProductRepository() { }
 
-		public static Product macBook()
+		public static Product MacBook()
 		{
 			Dictionary<string, double> macBookPrices = new Dictionary<string, double>();
 			macBookPrices.Add("Euro", 472.33);
@@ -17,5 +17,16 @@ namespace OpenCart.Data.Products
 				macBookPrices);
 		}
 
-	}
+        public static Product IPhone()
+        {
+            Dictionary<string, double> macBookPrices = new Dictionary<string, double>();
+            macBookPrices.Add("Euro", 472.33);
+            macBookPrices.Add("Pound Sterling", 368.73);
+            macBookPrices.Add("US Dollar", 602.00);
+            return new Product("IPhone",
+                "Intel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.1..",
+                macBookPrices);
+        }
+
+    }
 }
