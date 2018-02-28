@@ -49,10 +49,12 @@ namespace OpenCart
                                         .ChooseProductByPartialName(product.Name)
                                         .ChosenProductOperation
                                         .GetNameFieldFromReview();
-            Console.WriteLine(result);
+            log.Info("Result value:" + result);
             string expected = user.GetFirstname() + " " + user.GetLastname();
 
-            Assert.IsFalse(expected.Equals(result));
+            log.Info("Expected value:" + expected);
+
+            Assert.IsFalse(result.Equals(expected));
         }
     }
 }
