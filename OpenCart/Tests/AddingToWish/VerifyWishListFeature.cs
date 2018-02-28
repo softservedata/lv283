@@ -16,7 +16,7 @@ namespace OpenCart.Tests.AddingToWish
             new object[] { ProductRepository.IPhone() }
         };
 
-        [Test, TestCaseSource(nameof(SearchedProducts)), Order(1)]
+        [Test, TestCaseSource("SearchedProducts"), Order(1)]
         public void VerifySuccessAddingToWishList(Product product)
         {
             log.Info("Start VerifySuccessAddingToWishList productName = " + product.Name);
@@ -32,7 +32,7 @@ namespace OpenCart.Tests.AddingToWish
             log.Info("Done VerifySuccessAddingToWishList");
         }
 
-        [Test, TestCaseSource(nameof(SearchedProducts)), Order(2)]
+        [Test, TestCaseSource("SearchedProducts"), Order(2)]
         public void VerifySuccessRemovingFromWishList(Product product)
         {
             IUser validUser = UserRepository.Get().Registered();
