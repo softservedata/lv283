@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OpenCart.Actions.AdminActions.AdminActions" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Actions\AdminActions\AdminActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.AdminActions.AdminCustomersActions" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAIAAAAAACAAAAAAAAAAAAAABAAAAABAAA=</HashCode>
+      <FileName>Actions\AdminActions\AdminCustomersActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.AdminActions.AdminPanelActions" Collapsed="true">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABAAA=</HashCode>
+      <FileName>Actions\AdminActions\AdminPanelActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.EditAccountActions" Collapsed="true">
+    <Position X="1" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Actions\User\EditAccountActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.HeadActions" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAEAAAAABAAAAAAIAAAAAAgAAAAABEEACIAAAA=</HashCode>
+      <FileName>Actions\User\HeadActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.HomeActions" Collapsed="true">
+    <Position X="12.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actions\User\HomeActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.LoginAccountActions" Collapsed="true">
+    <Position X="3.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAAAAEAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actions\User\LoginAccountActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.LogoutActions" Collapsed="true">
+    <Position X="5.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Actions\User\LogoutActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.MyAccountActions" Collapsed="true">
+    <Position X="7.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAA=</HashCode>
+      <FileName>Actions\User\MyAccountActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.RegisterAccountActions" Collapsed="true">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAABAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Actions\User\RegisterAccountActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.RightActions" Collapsed="true">
+    <Position X="4.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAA=</HashCode>
+      <FileName>Actions\User\RightActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.SubCategoryProductsActions" Collapsed="true">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Actions\User\SubCategoryProductsActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Actions.User.SuccesSearchActions" Collapsed="true">
+    <Position X="10" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actions\User\SuccesSearchActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.AppiumTest" Collapsed="true">
+    <Position X="27" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppiumTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.BrowsersTest" Collapsed="true">
+    <Position X="25.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAggAAAABUCAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>BrowsersTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.CurrencyTest" Collapsed="true">
+    <Position X="8.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CurrencyTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.FunctionalTest" Collapsed="true">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAIAAAAAIBAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>FunctionalTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.LoginTestWithCorrectData" Collapsed="true">
+    <Position X="13" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>LoginTestWithCorrectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.LoginTestWithWrongData" Collapsed="true">
+    <Position X="15.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>LoginTestWithWrongData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.RegisterNewUserTest" Collapsed="true">
+    <Position X="17.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAIAAA=</HashCode>
+      <FileName>RegisterNewUserTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.RestGitTest" Collapsed="true">
+    <Position X="25.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>RestGitTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.ResultJsonObj" Collapsed="true">
+    <Position X="28.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>RestTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.RestTest" Collapsed="true">
+    <Position X="27" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAFAAAAAAEAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>RestTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.SmokeLoginTest" Collapsed="true">
+    <Position X="10.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAACAAQBAAAAAAAAAACAAAAAAACA=</HashCode>
+      <FileName>SmokeLoginTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.UserTest" Collapsed="true">
+    <Position X="27" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Base.TestRunner" Collapsed="true">
+    <Position X="8.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAggAAAABQCAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\TestRunner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.BLL.FoundationBLL" Collapsed="true">
+    <Position X="27" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAEAQAA=</HashCode>
+      <FileName>BLL\FoundationBLL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.DAL.FoundationDAL" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\FoundationDAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.DAL.RestGeneral&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAMAAAAAgACBAEAAAI=</HashCode>
+      <FileName>DAL\RestGeneral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.ApplicationSource" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAgAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Data\ApplicationSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.ApplicationSourceRepository" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAwAAIAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Data\ApplicationSourceRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Commons.CategoryItems" Collapsed="true">
+    <Position X="28.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Data\Commons\CategoryItems.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Commons.CategoryItemsRepository" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
+      <FileName>Data\Commons\CategoryItemsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Commons.CurrencyRepository" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAgAAAAAAAAAAAAAAAgAABAAAAAA=</HashCode>
+      <FileName>Data\Commons\CurrencyRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Commons.ElementItem" Collapsed="true">
+    <Position X="25.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Commons\ElementItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Commons.MessagesRepository" Collapsed="true">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Commons\MessagesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Products.Product" Collapsed="true">
+    <Position X="27" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Products\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Products.ProductRepository" Collapsed="true">
+    <Position X="20" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Products\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Rest.FoundationNET" Collapsed="true">
+    <Position X="28.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Rest\FoundationNET.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Rest.FoundationRepository" Collapsed="true">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAABAAAAAAAAAAABAAAAAAQAAAgABAAA=</HashCode>
+      <FileName>Data\Rest\FoundationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Data.Users.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACgAAACCIhIQghogAAGCEIIAoAAgmQgQEAAhgQAAiQ=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OpenCart.Data.Users.UserRepository" Collapsed="true">
+    <Position X="25.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAECABAEACAAQAAAABQABAAAAABAAABAAA=</HashCode>
+      <FileName>Data\Users\UserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.AdminPanel.AdminCustomersPage" Collapsed="true">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hggAAEAAIAAIAAQAAgCIAAAAABEAAAAAAACAAACBAIA=</HashCode>
+      <FileName>Pages\AdminPanel\AdminCustomersPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.AdminPanel.AdminDropDownColumn" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAgABAAAAAAAAAAAAAAgAAAAAAAAhAAA=</HashCode>
+      <FileName>Pages\AdminPanel\AdminDropRightColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.AdminPanel.AdminLoginPage" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACCQAQMAQgAAA=</HashCode>
+      <FileName>Pages\AdminPanel\AdminLoginPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.AdminPanel.AdminPanelPage" Collapsed="true">
+    <Position X="13.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Pages\AdminPanel\AdminPanelPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.Application" Collapsed="true">
+    <Position X="28.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAACAABgBCAADAAAAAFAQAAAAAAAAAglAAA=</HashCode>
+      <FileName>Pages\Application.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.TestRunner" Collapsed="true">
+    <Position X="14" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAggAAAADQAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Pages\TestRunner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.DropdownOptions" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAIAAAAAAAAAEAAAAAAAAAAAEAAAAAEAAAAgAAA=</HashCode>
+      <FileName>Pages\User\AHeadComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.MyAccountOptions" Collapsed="true">
+    <Position X="25.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAADAAAAAAAAAAAAAIAEAAhAAAACAASAAAggIA=</HashCode>
+      <FileName>Pages\User\AHeadComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.AHeadComponent" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>LALQAUioDAIEFZgAAUICAEgwLoIZCDJAkAFAIYBo4AA=</HashCode>
+      <FileName>Pages\User\AHeadComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.ALeftComponent" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\User\ALeftComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.ANavigatePanelComponent" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Pages\User\ANavigatePanelComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.ARightComponent" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAQQAAAAAAAAAAgAAiAAAAAACAggA=</HashCode>
+      <FileName>Pages\User\ARightComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.EditAccountPage" Collapsed="true">
+    <Position X="8" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\User\EditAccountPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.HeadPage" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\User\HeadPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.HomePage" Collapsed="true">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAgAIAAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>Pages\User\HomePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.LoginAccountPage" Collapsed="true">
+    <Position X="10.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABCAAABgAIAAQAACQAAAAAAAAAgCAgAAAAAgACCAE=</HashCode>
+      <FileName>Pages\User\LoginAccountPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.LogoutPage" Collapsed="true">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAI=</HashCode>
+      <FileName>Pages\User\LogoutPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.MyAccountPage" Collapsed="true">
+    <Position X="12.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAGAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\User\MyAccountPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.ProductComponent" Collapsed="true">
+    <Position X="28.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAAAACQAAAAAAAABAgAQAQAAAgAAAAAAAAABgBCA=</HashCode>
+      <FileName>Pages\User\ProductComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.RegisterAccountPage" Collapsed="true">
+    <Position X="14.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECgAAEAAgKQKACAowgAkCAEJAEMCAAICioCAhYQIKww=</HashCode>
+      <FileName>Pages\User\RegisterAccountPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.RightPage" Collapsed="true">
+    <Position X="17" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\User\RightPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.SubCategoryProductsPage" Collapsed="true">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\User\SubCategoryProductsPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Pages.User.SuccesSearchPage" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAgAIAAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>Pages\User\SuccesSearchPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Tools.ASearch" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAADgAIEQAAAAAAQEAAABAAAAAAAABUAICgg=</HashCode>
+      <FileName>Tools\ASearch.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenCart.Tools.Browser" Collapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\Browser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Tools.BrowserWrapper" Collapsed="true">
+    <Position X="27" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAABAAlAIAAAAAAgEAFAAAAAAAGAQA=</HashCode>
+      <FileName>Tools\BrowserWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Tools.RegexUtils" Collapsed="true">
+    <Position X="21.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAQASgAEAAAAAAAABAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\RegexUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenCart.Tools.SearchElement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAADAAIAQAAAAAAUEAAABAAAAAAAAAUgoCgg=</HashCode>
+      <FileName>Tools\SearchElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OpenCart.Tools.SearchImplicit" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAAAACIAAg=</HashCode>
+      <FileName>Tools\SearchImplicit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="OpenCart.Data.Users.IFirstname" Collapsed="true">
+    <Position X="27" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.ILastname" Collapsed="true">
+    <Position X="28.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IEmail" Collapsed="true">
+    <Position X="25.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IPhone" Collapsed="true">
+    <Position X="21.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IAddressMain" Collapsed="true">
+    <Position X="20" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.ICity" Collapsed="true">
+    <Position X="21.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IPostcode" Collapsed="true">
+    <Position X="23.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.ICoutry" Collapsed="true">
+    <Position X="23.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IRegionState" Collapsed="true">
+    <Position X="25.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IPassword" Collapsed="true">
+    <Position X="20" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.ISubscribe" Collapsed="true">
+    <Position X="28.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IFax" Collapsed="true">
+    <Position X="0.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.ICompany" Collapsed="true">
+    <Position X="3" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IAddressAdd" Collapsed="true">
+    <Position X="5.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IUserBuilder" Collapsed="true">
+    <Position X="3" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Data.Users.IUser" Collapsed="true">
+    <Position X="20" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACgAAAACAAAQggIAAAAAAAAAgAAgAAgQAAABAAAAAA=</HashCode>
+      <FileName>Data\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OpenCart.Tools.ISearch" Collapsed="true">
+    <Position X="27" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAADAAIAQAAAAAAQEAAABAAAAAAAAAUAICgg=</HashCode>
+      <FileName>Tools\ISearch.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -15,6 +15,7 @@ namespace OpenCart
         public void VerifyRegisterNewUser(IUser newUser, IUser admin)
         {
             log.Info("Started VerifyRegisterNewUser() with email = " + newUser.GetEmail());
+
             Assert.IsTrue(
                 Application.Get().LoadHomeActions()
                 .GotoRegisterAccountActions()
@@ -22,15 +23,18 @@ namespace OpenCart
                 .GetLogout()
                 .IsLoginDisplayed()
                 );
+
             log.Info("Finished VerifyRegisterNewUser() with email = " + newUser.GetEmail());
 
             log.Info("Started deleting user with email = " + newUser.GetEmail());
+
             Assert.IsTrue(
                 Application.Get().LoadAdminActions().GetLoginPage(admin)
                 .GetCustomers()
                 .GetDeletedCustomer(newUser)
                 .IsCloseDisplayed()
                 );
+
             isTestSuccess = true;
             log.Info("Finished deleting user with email = " + newUser.GetEmail());
         }

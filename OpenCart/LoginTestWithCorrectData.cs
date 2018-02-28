@@ -16,6 +16,7 @@ namespace OpenCart
         public void VerifyLogin(IUser validUser)
         {
             log.Info("Started VerifyLogin() with email = " + validUser.GetEmail());
+
             Assert.IsTrue(
                 Application.Get().LoadHomeActions()
                 .GotoLoginAccountActions()
@@ -23,6 +24,7 @@ namespace OpenCart
                 .GetLogout()
                 .IsLoginDisplayed()
                 );
+
             isTestSuccess = true;
             log.Info("Finished VerifyLogin() with email = " + validUser.GetEmail());
         }

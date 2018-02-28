@@ -17,6 +17,7 @@ namespace OpenCart
         public void VerifyBlockUserByIncorrectPassword(IUser invaliduser, IUser admin, string dangerMessage)
         {
             log.Info("Started VerifyBlockUserByIncorrectPassword() with email  = " + invaliduser.GetEmail());
+
             Assert.AreEqual(
                 Application.Get().LoadHomeActions()
                 .GotoLoginAccountActions()
@@ -29,15 +30,18 @@ namespace OpenCart
                 .GetDangerAlertText(),
                 dangerMessage
                 );
+
             log.Info("Finished VerifyBlockUserByIncorrectPassword() with email  = " + invaliduser.GetEmail());
 
             log.Info("Started unblock user with email  = " + invaliduser.GetEmail());
+
             Assert.IsTrue(
                 Application.Get().LoadAdminActions().GetLoginPage(admin)
                 .GetCustomers()
                 .GetUnlockCustomer(invaliduser)
                 .IsCloseDisplayed()
                 );
+
             isTestSuccess = true;
             log.Info("Finished unblock user with user name  = " + invaliduser.GetEmail());
         }
