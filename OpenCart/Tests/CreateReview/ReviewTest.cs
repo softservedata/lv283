@@ -9,51 +9,51 @@ using System;
 
 namespace OpenCart
 {
-    [TestFixture]
-    public class ReviewTest :TestRunner
-    {
-        private static readonly object[] SearchProduct =
-        {
-            new object[] { ReviewRepository.Get().NotExistingUserReview(), ProductRepository.MacBook() }
-        };
+    ////[TestFixture]
+    ////public class ReviewTest : TestRunner
+    ////{
+    ////    private static readonly object[] SearchProduct =
+    ////    {
+    ////        new object[] { ReviewRepository.Get().NotExistingUserReview(), ProductRepository.MacBook() }
+    ////    };
 
-       // [Test, TestCaseSource("SearchProduct")]
-        public void VerifyReviewCreationForNotExistingUser(Review review, Product product)
-        {
+    ////    [Test, TestCaseSource("SearchProduct")]
+    ////    public void VerifyReviewCreationForNotExistingUser(Review review, Product product)
+    ////    {
 
-            ChosenProductActions searchActions = Application.Get()
-                                                    .LoadHomeActions()
-                                                    .SuccesSearchProduct(product.Name)
-                                                    .ChooseProductByPartialName(product.Name)
-                                                    .WriteReview(review.GetNameField(), review.GetReviewField(), review.GetRatingField());
+    ////        ChosenProductActions searchActions = Application.Get()
+    ////                                                .LoadHomeActions()
+    ////                                                .SuccesSearchProduct(product.Name)
+    ////                                                .ChooseProductByPartialName(product.Name)
+    ////                                                .WriteReview(review.GetNameField(), review.GetReviewField(), review.GetRatingField());
 
-			StringAssert.AreEqualIgnoringCase(AlertsText.SUCCESSREVIEW, searchActions.ChosenProductOperation.GetMessage());
-		}
-
-
-        private static readonly object[] ProductReviewForRegisteredUser =
-         {
-            new object[] { UserRepository.Get().ReviewUser(), ProductRepository.MacBook() }
-        };
+    ////        StringAssert.AreEqualIgnoringCase(AlertsText.SUCCESSREVIEW, searchActions.ChosenProductOperation.GetMessage());
+    ////    }
 
 
-        //[Test, TestCaseSource("ProductReviewForRegisteredUser")]
-        public void VerifyUserNameForReviewCreate(IUser user, Product product)
-        {
-            string result = Application.Get()
-                                        .LoadHomeActions()
-                                        .GotoLoginAccountActions()
-                                        .SuccessfulLogin(user)
-                                        .GotoHomeActions()
-                                        .SuccesSearchProduct(product.Name)
-                                        .ChooseProductByPartialName(product.Name)
-                                        .ChosenProductOperation
-                                        .GetNameFieldFromReview();
-            Console.WriteLine(result);
-            string expected = user.GetFirstname() + " " + user.GetLastname();
+    ////    private static readonly object[] ProductReviewForRegisteredUser =
+    ////     {
+    ////        new object[] { UserRepository.Get().ReviewUser(), ProductRepository.MacBook() }
+    ////    };
 
-            Assert.IsFalse(expected.Equals( result));
-        }
 
-    }
+    ////    [Test, TestCaseSource("ProductReviewForRegisteredUser")]
+    ////    public void VerifyUserNameForReviewCreate(IUser user, Product product)
+    ////    {
+    ////        string result = Application.Get()
+    ////                                    .LoadHomeActions()
+    ////                                    .GotoLoginAccountActions()
+    ////                                    .SuccessfulLogin(user)
+    ////                                    .GotoHomeActions()
+    ////                                    .SuccesSearchProduct(product.Name)
+    ////                                    .ChooseProductByPartialName(product.Name)
+    ////                                    .ChosenProductOperation
+    ////                                    .GetNameFieldFromReview();
+    ////        Console.WriteLine(result);
+    ////        string expected = user.GetFirstname() + " " + user.GetLastname();
+
+    ////        Assert.IsTrue(expected.Equals(result));
+    ////    }
+
+    ////}
 }
