@@ -54,6 +54,5 @@ namespace OpenCart
 
             Assert.IsFalse(expected.Equals(result));
         }
-
     }
 }

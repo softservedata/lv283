@@ -62,7 +62,7 @@ namespace OpenCart.Pages.User
         //Name
         public string GetNameFieldText()
         {
-            return NameField.Text;
+            return NameField.GetAttribute("value");
         }
 
         public void ClearNameFieldText()
