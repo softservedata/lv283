@@ -8,10 +8,7 @@ namespace OpenCart.Tests.Login
 {
 	public class TestLoginPage : TestRunner
 	{
-		//private static readonly object[] CData =
-		//{
-		//	new object[] { UserRepository.Get().UserTestLogin()}
-		// };
+
 
 		private static readonly object[] SearchUsers =
 				{
