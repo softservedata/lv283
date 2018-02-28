@@ -145,8 +145,8 @@ namespace OpenCart.Data.Users
             // Read User From DB
             // Create Class for Read
             return User.Get()
-                .SetFirstname("Vova")
-                .SetLastname("Lion")
+                .SetFirstname("firstname9")
+                .SetLastname("lastname")
                 .SetEmail("hahaha@gmail.com")
                 .SetPhone("+3865656565656")
                 .SetAddressMain("addressMain")
